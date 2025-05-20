@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>samgrover.com/2023/03/06/adding-api-accessible.html</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <link rel="stylesheet" href="https://samgrover.github.io/hugo-theme-console/css/terminal-0.7.4.min.css">
+    <link rel="stylesheet" href="https://samgrover.github.io/hugo-theme-console/css/animate-4.1.1.min.css">
+    <link rel="stylesheet" href="https://samgrover.github.io/hugo-theme-console/css/console.css">
+    
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+       <meta property="og:title" content="Adding API Accessible Devices to the Home Climate Monitoring Setup" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://samgrover.github.io/2023/03/06/adding-api-accessible.html" /><meta property="article:published_time" content="2023-03-06T11:47:34-07:00" />
+
+
+
+<meta name="twitter:title" content="Adding API Accessible Devices to the Home Climate Monitoring Setup"/>
+<meta name="twitter:description" content="I was thinking about getting more of those AcuRite sensors for expanding my home climate monitoring when I realized that I already have a couple of devices recording this and other data.
+
+These include my Ecobee Thermostat and Remote Sensor and my IQAir AirVisual Pro. Both of these have means of getting the data off of them using an API. This blog post by Den Delimarsky really helped with the IQAir API. Ecobee API was straightforward. And after some coding and testing, I had a couple of scripts running that could pull metrics from them and send them to influxdb. So now I have a few more data points for existing metrics, and have added air quality to it."/>
+
+</head>
+<body class="terminal">
+    <div class="container">
+        <div class="terminal-nav">
+          <header class="terminal-logo">
+            <div class="logo terminal-prompt">
+              
+              
+              <a href="https://samgrover.github.io/" class="no-style ">samgrover.com, or The Aptly Named, Sam&#39;s Blog</a>:~# 
+              <a href='https://samgrover.github.io/2023'>2023</a>/<a href='https://samgrover.github.io/2023/03'>03</a>/<a href='https://samgrover.github.io/2023/03/06'>06</a>/<a href='https://samgrover.github.io/2023/03/06/adding-api-accessible.html'>adding-api-accessible.html</a>/</div></header>
+          <nav class="terminal-menu">
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a property="item" typeof="WebPage" href="https://samgrover.github.io/posts/">
+                    <span property="name">All Posts</span></a>
+                    <meta property="position" content="1" />
+                </li>
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a property="item" typeof="WebPage" href="https://samgrover.github.io/about/">
+                    <span property="name">About</span></a>
+                    <meta property="position" content="2" />
+                </li>
+                
+            </ul>
+          </nav>
+        </div>
+    </div>
+
+    <div class="container " >
+        
+<h1>Adding API Accessible Devices to the Home Climate Monitoring Setup</h1>
+
+Mar. 6, 2023
+
+
+<br/><br/>
+<p>I was thinking about getting more of those AcuRite sensors for expanding my <a href="https://samgrover.com/2023/03/01/home-climate-monitoring.html">home climate monitoring</a> when I realized that I already have a couple of devices recording this and other data.</p>
+<p><a href="https://samgrover.com/uploads/2023/346875b7ca.png"><img src="https://samgrover.com/uploads/2023/346875b7ca.png" alt="Screenshot showing charts of temperature, humidity, and air quality time series."></a></p>
+<p>These include my <a href="https://amzn.to/3ZnOfFX">Ecobee Thermostat and Remote Sensor</a> and my <a href="https://amzn.to/41MeiIK">IQAir AirVisual Pro</a>. Both of these have means of getting the data off of them using an API. This <a href="https://den.dev/blog/air/">blog post</a> by Den Delimarsky really helped with the IQAir API. <a href="https://www.ecobee.com/en-us/developers/">Ecobee API</a> was straightforward. And after some coding and testing, I had a couple of scripts running that could pull metrics from them and send them to <code>influxdb</code>. So now I have a few more data points for existing metrics, and have added air quality to it.</p>
+<p>In the previous blog post , I wrote:</p>
+<blockquote>
+<p>I’m going to take a break from any further optimizing/tweaking for now.</p></blockquote>
+<p>Well, that didn&rsquo;t happen! But maybe now 🤔</p>
+<p>P.S. The screenshot above illustrates a few other things:</p>
+<ul>
+<li>How I got the scripts going in starts and stops as I figured out the issues in having them always running.</li>
+<li>A macOS update that I started before heading out for a few hours, which led to a large gap because I still have all of this on my desktop Mac.</li>
+<li>The dots show how some data was reduced in granularity overnight because of device settings that put it to sleep. So I changed those settings the next day.</li>
+</ul>
+
+
+
+        <div class="footer">
+    © 2004-2025 Sam Grover
+</div>
+
+    </div>
+  </body>
+</html>

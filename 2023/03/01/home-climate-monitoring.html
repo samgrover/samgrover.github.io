@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>samgrover.com/2023/03/01/home-climate-monitoring.html</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <link rel="stylesheet" href="https://samgrover.github.io/hugo-theme-console/css/terminal-0.7.4.min.css">
+    <link rel="stylesheet" href="https://samgrover.github.io/hugo-theme-console/css/animate-4.1.1.min.css">
+    <link rel="stylesheet" href="https://samgrover.github.io/hugo-theme-console/css/console.css">
+    
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+       <meta property="og:title" content="Home Climate Monitoring" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://samgrover.github.io/2023/03/01/home-climate-monitoring.html" /><meta property="article:published_time" content="2023-03-01T10:16:43-07:00" />
+
+
+
+<meta name="twitter:title" content="Home Climate Monitoring"/>
+<meta name="twitter:description" content="Sometime last year my friend Andrew made me aware of the sensors and software he was using to monitor temperature and humidity in his home. I thought that was cool and it introduced me to several hardware and software tools that I had not known about. I wanted to set this up at my home so I filed a project for a later date.
+Well, that day arrived a few weeks ago and here&rsquo;s what it looks like today:"/>
+
+</head>
+<body class="terminal">
+    <div class="container">
+        <div class="terminal-nav">
+          <header class="terminal-logo">
+            <div class="logo terminal-prompt">
+              
+              
+              <a href="https://samgrover.github.io/" class="no-style ">samgrover.com, or The Aptly Named, Sam&#39;s Blog</a>:~# 
+              <a href='https://samgrover.github.io/2023'>2023</a>/<a href='https://samgrover.github.io/2023/03'>03</a>/<a href='https://samgrover.github.io/2023/03/01'>01</a>/<a href='https://samgrover.github.io/2023/03/01/home-climate-monitoring.html'>home-climate-monitoring.html</a>/</div></header>
+          <nav class="terminal-menu">
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a property="item" typeof="WebPage" href="https://samgrover.github.io/posts/">
+                    <span property="name">All Posts</span></a>
+                    <meta property="position" content="1" />
+                </li>
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a property="item" typeof="WebPage" href="https://samgrover.github.io/about/">
+                    <span property="name">About</span></a>
+                    <meta property="position" content="2" />
+                </li>
+                
+            </ul>
+          </nav>
+        </div>
+    </div>
+
+    <div class="container " >
+        
+<h1>Home Climate Monitoring</h1>
+
+Mar. 1, 2023
+
+
+<br/><br/>
+<p>Sometime last year my friend Andrew made me aware of the sensors and software he was using to monitor temperature and humidity in his home. I thought that was cool and it introduced me to several hardware and software tools that I had not known about. I wanted to set this up at my home so I filed a project for a later date.</p>
+<p>Well, that day arrived a few weeks ago and here&rsquo;s what it looks like today:</p>
+<p><a href="https://samgrover.com/uploads/2023/7387c64251.png"><img src="https://samgrover.com/uploads/2023/7387c64251.png" alt="Screenshot showing charts of temperature and humidity time series."></a></p>
+<p>To get started exploring this I purchased an <a href="https://amzn.to/3ky05hO">AcuRite bundle</a> of three sensor towers and one display. I set up the towers around my home and put the display in my home office. It was neat to see the display showing the measurements at any given time. Soon I wanted to go to the next level and record and see the data over time.</p>
+<p>These sensors broadcast the data over <a href="https://en.wikipedia.org/wiki/LPD433">433 MHz</a> and there are consumer level antennas and software available to read this data. I bought a <a href="https://amzn.to/3Y6Ew5x">NooElec bundle</a> which gave me all the hardware I needed to receive this data on my computer. Setting it up was straightforward. I used <a href="https://github.com/merbanan/rtl_433">rtl_433</a> and was able to start seeing the wireless data immediately in the terminal on my Mac.</p>
+<p>The next step was storing all this data. That&rsquo;s where <a href="https://github.com/influxdata/influxdb">influxdb</a> came in. And the glue to get it from <code>rtl_433</code> to <code>influxdb</code> involved <a href="https://mqtt.org">MQTT</a> and <a href="https://github.com/influxdata/telegraf">telegraf</a>.</p>
+<p>There was a lot of trial and error but I finally got it all set up and was able to get the data into <code>influxdb</code>. I even made a dashboard in there to visualize it. The options on that dashboard were limited so I got <a href="https://github.com/grafana/grafana">grafana</a> set up and built a dashboard in that which can be seen at the top of this post as seen on my desktop browser. It also looks great on mobile devices.</p>
+<p>Except for <code>rtl_433</code>, the rest of the tools all run on docker on my desktop Mac. At some point I may migrate that off to a Raspberry Pi but for now it&rsquo;s all working and I&rsquo;m going to take a break from any further optimizing/tweaking for now.</p>
+<p><strong>Update (6th March, 2023):</strong> <a href="https://samgrover.com/2023/03/06/adding-api-accessible.html">Follow up post</a> about expanding on this effort.</p>
+
+
+
+        <div class="footer">
+    © 2004-2025 Sam Grover
+</div>
+
+    </div>
+  </body>
+</html>
