@@ -37,7 +37,7 @@
 
   
 
-  <link rel="preload" as="image" href="https://samgrover.github.io/github.svg" /><link rel="preload" as="image" href="https://samgrover.github.io/linkedin.svg" /><link rel="preload" as="image" href="https://samgrover.github.io/mastodon.svg" /><link rel="preload" as="image" href="https://samgrover.github.io/bluesky.svg" /><link rel="preload" as="image" href="https://samgrover.github.io/rss.svg" />
+  <link rel="preload" as="image" href="https://samgrover.github.io/rss.svg" />
 
   
 
@@ -79,7 +79,7 @@
     <a
       class="-translate-y-[1px] text-2xl font-medium"
       href="https://samgrover.github.io/"
-      >The Aptly Named, Sam&#39;s Blog</a
+      >samgrover.com</a
     >
     <div
       class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
@@ -140,36 +140,14 @@
   <div
     class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
   ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      ></nav><nav
       class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
     >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/samgrover"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./linkedin.svg)"
-        href="https://linkedin.com/in/samgrover"
-        target="_blank"
-        rel="me"
-      >linkedin</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./mastodon.svg)"
-        href="https://xoxo.zone/@sam"
-        target="_blank"
-        rel="me"
-      >mastodon</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./bluesky.svg)"
-        href="https://bsky.app/profile/samgrover.bsky.social"
-        target="_blank"
-        rel="me"
-      >bluesky</a>
       <a
         class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./rss.svg)"
@@ -190,8 +168,12 @@
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2019/04/17/a-short-break.html"
     ></a
-  ><p>A short break on a muddy spot. From a few weeks ago.</p>
-<p><a href="https://samgrover.com/uploads/2019/ed5ff8e94e.jpg"><img src="https://samgrover.micro.blog/uploads/2019/ed5ff8e94e.jpg" alt=""></a></p></section>
+  >
+</section>
+
+<section><p>A short break on a muddy spot. From a few weeks ago.</p>
+<p><a href="https://samgrover.com/uploads/2019/ed5ff8e94e.jpg"><img src="https://samgrover.micro.blog/uploads/2019/ed5ff8e94e.jpg" alt=""></a></p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Importing Foursquare/Swarm history into Day One</h2>
   <time class="text-xs antialiased opacity-80"
@@ -199,7 +181,16 @@
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2019/04/16/importing-foursquareswarm-history.html"
     >Importing Foursquare/Swarm history into Day One</a
-  ><p>I&rsquo;ve been journaling in <a href="https://dayoneapp.com">Day One</a> for some time now. I like it for a lot of reasons, and it&rsquo;s working out great. So far I&rsquo;ve been using it as a plain old journal, where you write what&rsquo;s on your mind. Recently, I decided that I wanted to get my digital history into it as well. One of the first things that came to mind was my <a href="https://foursquare.com">Foursquare/Swarm</a> checkin history which goes back to 2009. I decided to start there.</p></section>
+  >
+</section>
+
+<section><p>I&rsquo;ve been journaling in <a href="https://dayoneapp.com">Day One</a> for some time now. I like it for a lot of reasons, and it&rsquo;s working out great. So far I&rsquo;ve been using it as a plain old journal, where you write what&rsquo;s on your mind. Recently, I decided that I wanted to get my digital history into it as well. One of the first things that came to mind was my <a href="https://foursquare.com">Foursquare/Swarm</a> checkin history which goes back to 2009. I decided to start there.</p>
+<p>I exported all my data and wrote a script in Python to extract what I needed from it to make journal entries. The two relevant files were <code>checkins.json</code> and <code>photos.json</code>. You can <a href="https://gist.github.com/samgrover/26939e0b68a26b7fe03a7a4bd37bdcf6">get my script on Github by selecting here</a> if you&rsquo;d like to use it, or dig into it. It should also appear embedded at the end of this post. First the script pre-processes the data to get all the photos attached to checkins. Then it goes over the checkin history to extract most of what I want, but since the exported data doesn&rsquo;t include venue coordinates, it has to do a little more.</p>
+<p>It makes calls to the <a href="https://developer.foursquare.com/docs">Foursquare API</a> to fetch the venue coordinates for each checkin. Then it puts everything together and makes the actual entry using Day One&rsquo;s <a href="http://dayoneapp.com/support/CLI">command line utility</a>. I had several thousand entries but the free plan for the API has a daily limit of 500 calls, so I manually ran it a few times over the course of a couple of weeks until they&rsquo;d all been imported. I could&rsquo;ve automated that but I wasn&rsquo;t keen on spending the time on that.</p>
+<p>Day One does allow one to link it to <a href="https://help.dayoneapp.com/tips-and-tutorials/using-ifttt-with-day-one">IFTTT</a> so that all <em>new</em> checkins get logged automatically, and I enabled that a while back, but I&rsquo;ve not been happy with that integration. Now that I&rsquo;m familiar with the flow of data, I plan to create new entries every couple of months or so, perhaps with a new script that works entirely with the API.</p>
+<p>I&rsquo;d love to hear if you have automated any journaling as I&rsquo;m keen to explore other ways of doing so myself.</p>
+<script src="https://gist.github.com/samgrover/26939e0b68a26b7fe03a7a4bd37bdcf6.js"></script>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Initial experience with Setapp</h2>
   <time class="text-xs antialiased opacity-80"
@@ -207,8 +198,42 @@
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2019/04/14/initial-experience-with.html"
     >Initial experience with Setapp</a
-  ><p>I signed up for <a href="https://go.setapp.com/invite/v6jr3hc8">Setapp</a> for a free trial week. Setapp is an app subscription service for macOS where you sign up for $10 a month to gain full access to a catalog of over 100 apps.</p>
-<p>This is not a review of Setapp, but rather my initial experience with it after having heard about it a few times on the <a href="https://www.relay.fm/mpu/">Mac Power Users</a> podcast. Many of apps in the Setapp catalog are well known and as such I was already aware of them. But there are several that are new to me.</p></section>
+  >
+</section>
+
+<section><p>I signed up for <a href="https://go.setapp.com/invite/v6jr3hc8">Setapp</a> for a free trial week. Setapp is an app subscription service for macOS where you sign up for $10 a month to gain full access to a catalog of over 100 apps.</p>
+<p>This is not a review of Setapp, but rather my initial experience with it after having heard about it a few times on the <a href="https://www.relay.fm/mpu/">Mac Power Users</a> podcast. Many of apps in the Setapp catalog are well known and as such I was already aware of them. But there are several that are new to me.</p>
+<p>Apps that I found myself using often during the trial:</p>
+<ul>
+<li>Marked</li>
+<li>Mindnode</li>
+<li>Flume</li>
+<li>Timing</li>
+<li>iStat Menus</li>
+</ul>
+<p>Apps I installed and use occasionally and would expect to use occasionally in the future:</p>
+<ul>
+<li>WiFi Explorer</li>
+<li>World Clock Pro</li>
+</ul>
+<p>Apps I tried but then uninstalled after using just one or two times:</p>
+<ul>
+<li>CleanMyMac X</li>
+<li>IconJar</li>
+<li>Luminar Flex</li>
+</ul>
+<p>Apps that are included in Setapp but which I&rsquo;ve previously bought individually and use anyway:</p>
+<ul>
+<li>Screens</li>
+<li>Paw</li>
+<li>Sip</li>
+</ul>
+<p>So with a very rough mental calculation I think the math would work out alright. Of course the main hook/promise of Setapp is the <em>potential</em> of all the other apps. Many may not be relevant today but may become relevant tomorrow. Their <a href="https://support.setapp.com/hc/en-us/articles/115000890969-Setapp-applications">stated goal</a>:</p>
+<blockquote>
+<p>We have 100+ apps in the stack and are steadily adding more of them to cover all of your main needs. Eventually, Setapp is to deliver about 300 Mac apps, all per a single $9.99 fee (+ taxes).</p></blockquote>
+<p>I have already identified some apps that I plan to use soon but just didn&rsquo;t have a chance to use during the trial period. I&rsquo;ve now subscribed for one month, and if it still seems useful after that, I will likely switch to the annual plan for 10% off.</p>
+<p>If you would like to try out Setapp, <a href="https://go.setapp.com/invite/v6jr3hc8">select here to use my referral code</a>.</p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -216,8 +241,12 @@
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2019/04/12/its-that-time.html"
     ></a
-  ><p>It’s that time of the biennial.</p>
-<p><a href="http://samgrover.micro.blog/uploads/2019/1a4d7314ad.jpg"><img src="https://samgrover.micro.blog/uploads/2019/1a4d7314ad.jpg" alt=""></a></p></section>
+  >
+</section>
+
+<section><p>It’s that time of the biennial.</p>
+<p><a href="http://samgrover.micro.blog/uploads/2019/1a4d7314ad.jpg"><img src="https://samgrover.micro.blog/uploads/2019/1a4d7314ad.jpg" alt=""></a></p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -225,10 +254,14 @@
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2019/04/11/when-rain-gave.html"
     ></a
-  ><p>When rain gave way to the setting Sun,<br>
+  >
+</section>
+
+<section><p>When rain gave way to the setting Sun,<br>
 briefly the other day</p>
 <p>😍</p>
-<p><a href="http://samgrover.micro.blog/uploads/2019/c618fa9f8c.jpg"><img src="https://samgrover.micro.blog/uploads/2019/c618fa9f8c.jpg" alt=""></a></p></section>
+<p><a href="http://samgrover.micro.blog/uploads/2019/c618fa9f8c.jpg"><img src="https://samgrover.micro.blog/uploads/2019/c618fa9f8c.jpg" alt=""></a></p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -236,7 +269,11 @@ briefly the other day</p>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2019/04/09/204819.html"
     ></a
-  ><p>I went down memory lane and discovered that Federico Viticci reviewed my first and only indie iOS app way back in the day 😊 <a href="https://www.macstories.net/news/tweeple-tap-iphone-game-to-recognize-people-by-their-tweets/">www.macstories.net/news/twee&hellip;</a></p></section>
+  >
+</section>
+
+<section><p>I went down memory lane and discovered that Federico Viticci reviewed my first and only indie iOS app way back in the day 😊 <a href="https://www.macstories.net/news/tweeple-tap-iphone-game-to-recognize-people-by-their-tweets/">www.macstories.net/news/twee&hellip;</a></p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Hiking at Angel&#39;s Rest</h2>
   <time class="text-xs antialiased opacity-80"
@@ -244,12 +281,32 @@ briefly the other day</p>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2019/04/09/hiking-at-angels.html"
     >Hiking at Angel&#39;s Rest</a
-  ><p><img src="http://samgrover.micro.blog/uploads/2019/532ddfe3da.jpg" alt=""></p>
+  >
+</section>
+
+<section><p><img src="http://samgrover.micro.blog/uploads/2019/532ddfe3da.jpg" alt=""></p>
 <p>Last Saturday we went hiking at <a href="https://www.oregonhikers.org/field_guide/Angels_Rest_Hike">Angel&rsquo;s Rest</a> in the gorge. I&rsquo;ve been on this hike several times and always enjoy it. It is only a thirty minute drive from home, and offers great views and a good workout.</p>
 <p><img src="http://samgrover.micro.blog/uploads/2019/88bb5df549.jpg" alt=""></p>
 <p>This trail, along with many others had been closed for over a year since the <a href="https://en.wikipedia.org/wiki/Eagle_Creek_Fire">Eagle Creek Fire</a>, and had reopened last fall.</p>
 <p><img src="http://samgrover.micro.blog/uploads/2019/a49110943e.jpg" alt=""></p>
-<p>All the way from the trailhead to the viewpoint on the top of the cliff there were charred trees. I&rsquo;ve never hiked through a place devastated by fire before, so it was a new an interesting experience from that regard.</p></section>
+<p>All the way from the trailhead to the viewpoint on the top of the cliff there were charred trees. I&rsquo;ve never hiked through a place devastated by fire before, so it was a new an interesting experience from that regard.</p>
+<p><img src="http://samgrover.micro.blog/uploads/2019/977f3a474e.jpg" alt=""></p>
+<p><img src="http://samgrover.micro.blog/uploads/2019/2aea63ac05.jpg" alt=""></p>
+<p>Some areas on the trail were a bit muddy with puddles but mostly it was fine.</p>
+<p><img src="http://samgrover.micro.blog/uploads/2019/daffebc942.jpg" alt=""></p>
+<p><img src="http://samgrover.micro.blog/uploads/2019/3263620192.jpg" alt=""></p>
+<p>Views were great as always.</p>
+<p><img src="http://samgrover.micro.blog/uploads/2019/e136270465.jpg" alt=""></p>
+<p><img src="http://samgrover.micro.blog/uploads/2019/2738ab5688.jpg" alt=""></p>
+<p><img src="http://samgrover.micro.blog/uploads/2019/39e0a35afe.jpg" alt=""></p>
+<p><img src="http://samgrover.micro.blog/uploads/2019/f72751ca3b.jpg" alt=""></p>
+<p><img src="http://samgrover.micro.blog/uploads/2019/23f58fb814.jpg" alt=""></p>
+<p><img src="http://samgrover.micro.blog/uploads/2019/a8c28eb5ae.jpg" alt=""></p>
+<h3 id="activity-stats">Activity stats:</h3>
+<p>Distance: 4.9 miles<br>
+Elevation Gain: 1484 ft<br>
+Time (including breaks): 3h 5m</p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -257,8 +314,12 @@ briefly the other day</p>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2019/04/06/who-doesnt-like.html"
     ></a
-  ><p>Who doesn’t like a nice sunbeam on a cool spring day?</p>
-<p><a href="http://samgrover.micro.blog/uploads/2019/e5b93fc35a.jpg"><img src="https://samgrover.micro.blog/uploads/2019/e5b93fc35a.jpg" alt=""></a></p></section>
+  >
+</section>
+
+<section><p>Who doesn’t like a nice sunbeam on a cool spring day?</p>
+<p><a href="http://samgrover.micro.blog/uploads/2019/e5b93fc35a.jpg"><img src="https://samgrover.micro.blog/uploads/2019/e5b93fc35a.jpg" alt=""></a></p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -266,8 +327,12 @@ briefly the other day</p>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2019/04/06/194702.html"
     ></a
-  ><p>🙋‍♀️🌸</p>
-<p><a href="http://samgrover.micro.blog/uploads/2019/7ed322f74d.jpg"><img src="https://samgrover.micro.blog/uploads/2019/7ed322f74d.jpg" alt=""></a></p></section>
+  >
+</section>
+
+<section><p>🙋‍♀️🌸</p>
+<p><a href="http://samgrover.micro.blog/uploads/2019/7ed322f74d.jpg"><img src="https://samgrover.micro.blog/uploads/2019/7ed322f74d.jpg" alt=""></a></p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -275,9 +340,13 @@ briefly the other day</p>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2019/03/30/it-was-a.html"
     ></a
-  ><p>It was a nice day for a hike.</p>
+  >
+</section>
+
+<section><p>It was a nice day for a hike.</p>
 <p>St. Johns Bridge from Ridge Trail. Portland, Oregon. 30th March, 2019.</p>
-<p><a href="http://samgrover.micro.blog/uploads/2019/e78b94ce46.jpg"><img src="https://samgrover.micro.blog/uploads/2019/e78b94ce46.jpg" alt=""></a></p></section><nav class="mt-14 flex"><a class="btn not-prose" href="/page/74/"
+<p><a href="http://samgrover.micro.blog/uploads/2019/e78b94ce46.jpg"><img src="https://samgrover.micro.blog/uploads/2019/e78b94ce46.jpg" alt=""></a></p>
+</section><nav class="mt-14 flex"><a class="btn not-prose" href="/page/74/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/76/"
     >Next Page→</a
@@ -285,7 +354,6 @@ briefly the other day</p>
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
   <div class="mr-auto">© 2004-2025 samgrover.com</div>
-  
 </footer>
 </body>
 </html>

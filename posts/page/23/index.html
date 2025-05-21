@@ -37,7 +37,7 @@
 
   
 
-  <link rel="preload" as="image" href="https://samgrover.github.io/github.svg" /><link rel="preload" as="image" href="https://samgrover.github.io/linkedin.svg" /><link rel="preload" as="image" href="https://samgrover.github.io/mastodon.svg" /><link rel="preload" as="image" href="https://samgrover.github.io/bluesky.svg" /><link rel="preload" as="image" href="https://samgrover.github.io/rss.svg" />
+  <link rel="preload" as="image" href="https://samgrover.github.io/rss.svg" />
 
   
 
@@ -79,7 +79,7 @@
     <a
       class="-translate-y-[1px] text-2xl font-medium"
       href="https://samgrover.github.io/"
-      >The Aptly Named, Sam&#39;s Blog</a
+      >samgrover.com</a
     >
     <div
       class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
@@ -140,36 +140,14 @@
   <div
     class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
   ><nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    ><a
+        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      ></nav><nav
       class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
     >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./github.svg)"
-        href="https://github.com/samgrover"
-        target="_blank"
-        rel="me"
-      >github</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./linkedin.svg)"
-        href="https://linkedin.com/in/samgrover"
-        target="_blank"
-        rel="me"
-      >linkedin</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./mastodon.svg)"
-        href="https://xoxo.zone/@sam"
-        target="_blank"
-        rel="me"
-      >mastodon</a>
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./bluesky.svg)"
-        href="https://bsky.app/profile/samgrover.bsky.social"
-        target="_blank"
-        rel="me"
-      >bluesky</a>
       <a
         class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./rss.svg)"
@@ -190,7 +168,11 @@
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2023/03/16/on-a-scale.html"
     ></a
-  ><p>On a scale of 1 to 10, the entropy of my home office and the desk therein hovers between 4 and 8. Currently both are at about 8. Each time I organize, I try to get it below 4 but it never happens.</p></section>
+  >
+</section>
+
+<section><p>On a scale of 1 to 10, the entropy of my home office and the desk therein hovers between 4 and 8. Currently both are at about 8. Each time I organize, I try to get it below 4 but it never happens.</p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">An App for Mapping My Outdoor Activities With Apple Watch Using GPX Tracks</h2>
   <time class="text-xs antialiased opacity-80"
@@ -198,9 +180,21 @@
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2023/03/12/an-app-for.html"
     >An App for Mapping My Outdoor Activities With Apple Watch Using GPX Tracks</a
-  ><p>I use an Apple Watch to track my activities, whether that be workouts or recreational. For outdoor activities, the watch records location data throughout the activity. This is later shown on a map in the <a href="https://apps.apple.com/us/app/fitness/id1208224953">Fitness app</a> on the iPhone. While that map is interactive, exporting it only exports a low resolution image, and not the actual route.</p>
+  >
+</section>
+
+<section><p>I use an Apple Watch to track my activities, whether that be workouts or recreational. For outdoor activities, the watch records location data throughout the activity. This is later shown on a map in the <a href="https://apps.apple.com/us/app/fitness/id1208224953">Fitness app</a> on the iPhone. While that map is interactive, exporting it only exports a low resolution image, and not the actual route.</p>
 <p><a href="https://samgrover.com/uploads/2023/cc30649b50.jpg"><img src="https://samgrover.com/uploads/2023/cc30649b50.jpg" alt="A walking track is overlaid on a map."></a></p>
-<p>When I share an activity on a blog post I like to show the map but I don&rsquo;t like the idea of just sharing an image of the map. I would like to get the actual data out so that it can be overlaid on an interactive map using various mapping tools.</p></section>
+<p>When I share an activity on a blog post I like to show the map but I don&rsquo;t like the idea of just sharing an image of the map. I would like to get the actual data out so that it can be overlaid on an interactive map using various mapping tools.</p>
+<p>I found an app on the App Store that can export the data, among many other features, but I wasn&rsquo;t keen on paying a subscription for this one small occasional use case. As an app developer, I know that access to this data is controlled by the Health related privacy settings on the iPhone and is accessible using the HealthKit framework. So I decided make a small app to get this data out while also gaining familiarity with that part of the iOS SDK. A few weeks ago I got started on it. I worked on it in small chunks of time, as I usually do with such side projects. The UI came together pretty quickly as a SwiftUI app. It is nothing special but looks presentable and gets the job done.</p>
+<p><a href="https://samgrover.com/uploads/2023/622da65a84.png"><img src="https://samgrover.com/uploads/2023/622da65a84.png" alt="Screenshot of an app showing a list of workouts with options to fetch and share the route from some of them."></a></p>
+<p>It took just a little bit longer to get the data out from HealthKit. Converting it to GPX files was straightforward. Once I had created a file I could use the share sheet to get it into other apps or to simply save it. From there it can be imported into tools that <a href="https://wiki.openstreetmap.org/wiki/Track_drawing_websites">put it on a map</a>.</p>
+<p>For example, here&rsquo;s a <a href="https://gist.github.com/samgrover/0d81059365aaaca3183267436fa988bb">GPX file</a> of a walk at <a href="https://www.travelportland.com/attractions/mount-tabor-park/">Mount Tabor Park</a>. It can be utilized to create an embedded map as shown below.</p>
+<iframe width="100%" height="500px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/en/map/walking-at-mt-tabor_882915?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe><p><a href="//umap.openstreetmap.fr/en/map/walking-at-mt-tabor_882915" target="_blank">See full screen</a></p>
+<p>Or even into <a href="https://www.google.com/maps/d/u/0/edit?mid=1ktetwF5600NqxWJ1cub7ODZfLVvW6jk&amp;usp=sharing">Google Maps</a>. In fact once imported there, you can view the track with elevation by selecting the option for Google Earth and enabling the 3D view. I love this option as it adds another dimension (literally 😂) to the activity.</p>
+<p><a href="https://samgrover.com/uploads/2023/45ecc99609.jpg"><img src="https://samgrover.com/uploads/2023/45ecc99609.jpg" alt="Screenshot of track on 3D view from Google Earth."></a></p>
+<p>Both these presentation styles are far more interesting to me than just a low resolution image out of the Fitness app.</p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -208,9 +202,13 @@
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2023/03/12/film-kentmere-pan.html"
     ></a
-  ><p><a href="https://samgrover.com/uploads/2023/f7d6353987.jpg"><img src="https://samgrover.com/uploads/2023/f7d6353987.jpg" alt="Grainy black and white image of a view through a window to an arbor in the yard. The window has blurry reflections of a geometric pattern."></a></p>
+  >
+</section>
+
+<section><p><a href="https://samgrover.com/uploads/2023/f7d6353987.jpg"><img src="https://samgrover.com/uploads/2023/f7d6353987.jpg" alt="Grainy black and white image of a view through a window to an arbor in the yard. The window has blurry reflections of a geometric pattern."></a></p>
 <p>Film: Kentmere PAN 400<br>
-Camera: Voigtländer Bessa R2a</p></section>
+Camera: Voigtländer Bessa R2a</p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Adding API Accessible Devices to the Home Climate Monitoring Setup</h2>
   <time class="text-xs antialiased opacity-80"
@@ -218,9 +216,23 @@ Camera: Voigtländer Bessa R2a</p></section>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2023/03/06/adding-api-accessible.html"
     >Adding API Accessible Devices to the Home Climate Monitoring Setup</a
-  ><p>I was thinking about getting more of those AcuRite sensors for expanding my <a href="https://samgrover.com/2023/03/01/home-climate-monitoring.html">home climate monitoring</a> when I realized that I already have a couple of devices recording this and other data.</p>
+  >
+</section>
+
+<section><p>I was thinking about getting more of those AcuRite sensors for expanding my <a href="https://samgrover.com/2023/03/01/home-climate-monitoring.html">home climate monitoring</a> when I realized that I already have a couple of devices recording this and other data.</p>
 <p><a href="https://samgrover.com/uploads/2023/346875b7ca.png"><img src="https://samgrover.com/uploads/2023/346875b7ca.png" alt="Screenshot showing charts of temperature, humidity, and air quality time series."></a></p>
-<p>These include my <a href="https://amzn.to/3ZnOfFX">Ecobee Thermostat and Remote Sensor</a> and my <a href="https://amzn.to/41MeiIK">IQAir AirVisual Pro</a>. Both of these have means of getting the data off of them using an API. This <a href="https://den.dev/blog/air/">blog post</a> by Den Delimarsky really helped with the IQAir API. <a href="https://www.ecobee.com/en-us/developers/">Ecobee API</a> was straightforward. And after some coding and testing, I had a couple of scripts running that could pull metrics from them and send them to <code>influxdb</code>. So now I have a few more data points for existing metrics, and have added air quality to it.</p></section>
+<p>These include my <a href="https://amzn.to/3ZnOfFX">Ecobee Thermostat and Remote Sensor</a> and my <a href="https://amzn.to/41MeiIK">IQAir AirVisual Pro</a>. Both of these have means of getting the data off of them using an API. This <a href="https://den.dev/blog/air/">blog post</a> by Den Delimarsky really helped with the IQAir API. <a href="https://www.ecobee.com/en-us/developers/">Ecobee API</a> was straightforward. And after some coding and testing, I had a couple of scripts running that could pull metrics from them and send them to <code>influxdb</code>. So now I have a few more data points for existing metrics, and have added air quality to it.</p>
+<p>In the previous blog post , I wrote:</p>
+<blockquote>
+<p>I’m going to take a break from any further optimizing/tweaking for now.</p></blockquote>
+<p>Well, that didn&rsquo;t happen! But maybe now 🤔</p>
+<p>P.S. The screenshot above illustrates a few other things:</p>
+<ul>
+<li>How I got the scripts going in starts and stops as I figured out the issues in having them always running.</li>
+<li>A macOS update that I started before heading out for a few hours, which led to a large gap because I still have all of this on my desktop Mac.</li>
+<li>The dots show how some data was reduced in granularity overnight because of device settings that put it to sleep. So I changed those settings the next day.</li>
+</ul>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -228,9 +240,13 @@ Camera: Voigtländer Bessa R2a</p></section>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2023/03/02/the-unfocused-ios.html"
     ></a
-  ><p>The Unfocused iOS Developer Life</p>
+  >
+</section>
+
+<section><p>The Unfocused iOS Developer Life</p>
 <p><a href="https://samgrover.com/uploads/2023/934713ee13.jpg"><img src="https://samgrover.com/uploads/2023/934713ee13.jpg" alt="A screenshot of four identical squircle icons containing a geometrical pattern."></a></p>
-<p>#iosdev</p></section>
+<p>#iosdev</p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -238,7 +254,11 @@ Camera: Voigtländer Bessa R2a</p></section>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2023/03/01/psa-thirty-days.html"
     ></a
-  ><p>PSA: Thirty days left on the <a href="https://darksky.net/dev">DarkSky API</a>. Port your apps, port your scripts!</p></section>
+  >
+</section>
+
+<section><p>PSA: Thirty days left on the <a href="https://darksky.net/dev">DarkSky API</a>. Port your apps, port your scripts!</p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Home Climate Monitoring</h2>
   <time class="text-xs antialiased opacity-80"
@@ -246,8 +266,19 @@ Camera: Voigtländer Bessa R2a</p></section>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2023/03/01/home-climate-monitoring.html"
     >Home Climate Monitoring</a
-  ><p>Sometime last year my friend Andrew made me aware of the sensors and software he was using to monitor temperature and humidity in his home. I thought that was cool and it introduced me to several hardware and software tools that I had not known about. I wanted to set this up at my home so I filed a project for a later date.</p>
-<p>Well, that day arrived a few weeks ago and here&rsquo;s what it looks like today:</p></section>
+  >
+</section>
+
+<section><p>Sometime last year my friend Andrew made me aware of the sensors and software he was using to monitor temperature and humidity in his home. I thought that was cool and it introduced me to several hardware and software tools that I had not known about. I wanted to set this up at my home so I filed a project for a later date.</p>
+<p>Well, that day arrived a few weeks ago and here&rsquo;s what it looks like today:</p>
+<p><a href="https://samgrover.com/uploads/2023/7387c64251.png"><img src="https://samgrover.com/uploads/2023/7387c64251.png" alt="Screenshot showing charts of temperature and humidity time series."></a></p>
+<p>To get started exploring this I purchased an <a href="https://amzn.to/3ky05hO">AcuRite bundle</a> of three sensor towers and one display. I set up the towers around my home and put the display in my home office. It was neat to see the display showing the measurements at any given time. Soon I wanted to go to the next level and record and see the data over time.</p>
+<p>These sensors broadcast the data over <a href="https://en.wikipedia.org/wiki/LPD433">433 MHz</a> and there are consumer level antennas and software available to read this data. I bought a <a href="https://amzn.to/3Y6Ew5x">NooElec bundle</a> which gave me all the hardware I needed to receive this data on my computer. Setting it up was straightforward. I used <a href="https://github.com/merbanan/rtl_433">rtl_433</a> and was able to start seeing the wireless data immediately in the terminal on my Mac.</p>
+<p>The next step was storing all this data. That&rsquo;s where <a href="https://github.com/influxdata/influxdb">influxdb</a> came in. And the glue to get it from <code>rtl_433</code> to <code>influxdb</code> involved <a href="https://mqtt.org">MQTT</a> and <a href="https://github.com/influxdata/telegraf">telegraf</a>.</p>
+<p>There was a lot of trial and error but I finally got it all set up and was able to get the data into <code>influxdb</code>. I even made a dashboard in there to visualize it. The options on that dashboard were limited so I got <a href="https://github.com/grafana/grafana">grafana</a> set up and built a dashboard in that which can be seen at the top of this post as seen on my desktop browser. It also looks great on mobile devices.</p>
+<p>Except for <code>rtl_433</code>, the rest of the tools all run on docker on my desktop Mac. At some point I may migrate that off to a Raspberry Pi but for now it&rsquo;s all working and I&rsquo;m going to take a break from any further optimizing/tweaking for now.</p>
+<p><strong>Update (6th March, 2023):</strong> <a href="https://samgrover.com/2023/03/06/adding-api-accessible.html">Follow up post</a> about expanding on this effort.</p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -255,9 +286,14 @@ Camera: Voigtländer Bessa R2a</p></section>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2023/02/28/i-had-no.html"
     ></a
-  ><p>I had no idea that that name had such an association and am glad that they are making this change.</p>
+  >
+</section>
+
+<section><p>I had no idea that that name had such an association and am glad that they are making this change.</p>
 <blockquote>
-<p>What has been dismissed, ignored, or overlooked until the last few years by both Portland Audubon and the larger Audubon community is the fact that John James Audubon enslaved and sold Black people, opposed the abolition of slavery, and dug up and stole the human remains of Native Americans from their graves.</p></section>
+<p>What has been dismissed, ignored, or overlooked until the last few years by both Portland Audubon and the larger Audubon community is the fact that John James Audubon enslaved and sold Black people, opposed the abolition of slavery, and dug up and stole the human remains of Native Americans from their graves.</p></blockquote>
+<p>🔗 <a href="https://audubonportland.org/blog/portland-audubon-commits-to-dropping-the-name-audubon/">Portland Audubon Commits to Dropping the Name Audubon - Portland Audubon</a></p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -265,7 +301,11 @@ Camera: Voigtländer Bessa R2a</p></section>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2023/02/28/081300.html"
     ></a
-  ><p><a href="https://samgrover.com/uploads/2023/e9fa689924.jpg"><img src="https://samgrover.com/uploads/2023/e9fa689924.jpg" alt="Momo (a buff tabby cat) sleeps on a colorful blanket on a greenish blue sofa."></a></p></section>
+  >
+</section>
+
+<section><p><a href="https://samgrover.com/uploads/2023/e9fa689924.jpg"><img src="https://samgrover.com/uploads/2023/e9fa689924.jpg" alt="Momo (a buff tabby cat) sleeps on a colorful blanket on a greenish blue sofa."></a></p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -273,8 +313,12 @@ Camera: Voigtländer Bessa R2a</p></section>
   >
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.github.io/2023/02/27/over-the-weekend.html"
     ></a
-  ><p>📽️ Over the weekend we saw the <a href="https://shorts.tv/theoscarshorts/">2023 Oscar Animated Shorts</a> at a local theater. That was the first time I had gone to see something like that and it was quite enjoyable. Most of the films are a delight. The theater had cozy seats and serves brunch so that made it a little extra fun.</p>
-<p><a href="https://samgrover.com/uploads/2023/c49bf12f90.png"><img src="https://samgrover.com/uploads/2023/c49bf12f90.png" alt="Screenshot showing the names and images of the short films: An Ostrich Told Me the World Is Fake and I Think I Believe it. Ice Merchants. My Year of Dicks. The Boy, the Mole, the Fox, and the Horse. The Flying Sailor."></a></p></section><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/22/"
+  >
+</section>
+
+<section><p>📽️ Over the weekend we saw the <a href="https://shorts.tv/theoscarshorts/">2023 Oscar Animated Shorts</a> at a local theater. That was the first time I had gone to see something like that and it was quite enjoyable. Most of the films are a delight. The theater had cozy seats and serves brunch so that made it a little extra fun.</p>
+<p><a href="https://samgrover.com/uploads/2023/c49bf12f90.png"><img src="https://samgrover.com/uploads/2023/c49bf12f90.png" alt="Screenshot showing the names and images of the short films: An Ostrich Told Me the World Is Fake and I Think I Believe it. Ice Merchants. My Year of Dicks. The Boy, the Mole, the Fox, and the Horse. The Flying Sailor."></a></p>
+</section><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/22/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/24/"
     >Next Page→</a
@@ -282,7 +326,6 @@ Camera: Voigtländer Bessa R2a</p></section>
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
   <div class="mr-auto">© 2004-2025 samgrover.com</div>
-  
 </footer>
 </body>
 </html>
