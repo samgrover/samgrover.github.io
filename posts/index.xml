@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© 2004-2025 samgrover.com</copyright>
-    <lastBuildDate>Thu, 15 May 2025 18:08:51 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 21 May 2025 17:54:11 -0700</lastBuildDate>
     <atom:link href="https://samgrover.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://samgrover.com/2025/05/21/blog-moving-day.html</link>
+      <pubDate>Wed, 21 May 2025 17:54:11 -0700</pubDate>
+      <guid>https://samgrover.com/2025/05/21/blog-moving-day.html</guid>
+      <description>&lt;p&gt;This blog has moved over to a &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; based site that I generate manually. I did most of the prep work over last weekend and just completed the finishing touches. I&amp;rsquo;ve started with a simple theme, and hope to build on it in the future. I&amp;rsquo;ve wanted to do this for a very long time and I&amp;rsquo;m glad to have gotten here.&lt;/p&gt;&#xA;&lt;p&gt;It is now hosted on &lt;a href=&#34;https://pages.github.com&#34;&gt;Github Pages&lt;/a&gt; where the feature set easily accommodates my needs at this time. I was trying to recall the journey of this blog, and from memory it seems to have gone this route over the last 20-ish years: Blogger, Wordpress, Tumblr, Wordpress, and lastly Micro.blog.&lt;/p&gt;</description>
+    </item>
     <item>
       <title></title>
       <link>https://samgrover.com/2025/05/15/theres-a-person-in-my.html</link>
