@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on samgrover.com</title>
-    <link>https://samgrover.github.io/tags/</link>
+    <link>https://samgrover.com/tags/</link>
     <description>Recent content in Tags on samgrover.com</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© 2004-2025 samgrover.com</copyright>
-    <atom:link href="https://samgrover.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://samgrover.com/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
