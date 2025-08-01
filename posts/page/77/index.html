@@ -52,8 +52,8 @@
 
   <meta name="generator" content="Hugo 0.147.3">
   <meta itemprop="name" content="Posts">
-  <meta itemprop="datePublished" content="2025-07-31T16:21:26-07:00">
-  <meta itemprop="dateModified" content="2025-07-31T16:21:26-07:00"><meta property="og:url" content="https://samgrover.com/posts/">
+  <meta itemprop="datePublished" content="2025-08-01T11:22:37-07:00">
+  <meta itemprop="dateModified" content="2025-08-01T11:22:37-07:00"><meta property="og:url" content="https://samgrover.com/posts/">
   <meta property="og:site_name" content="samgrover.com">
   <meta property="og:title" content="Posts">
   <meta property="og:locale" content="en_us">
@@ -165,6 +165,23 @@
 <main
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     >
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Importing Foursquare/Swarm history into Day One</h2>
+  <time class="text-xs antialiased opacity-80"
+    >Apr 16, 2019</time
+  >
+  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/16/importing-foursquareswarm-history.html"
+    >Importing Foursquare/Swarm history into Day One</a
+  >
+</section>
+
+<section><p>I&rsquo;ve been journaling in <a href="https://dayoneapp.com">Day One</a> for some time now. I like it for a lot of reasons, and it&rsquo;s working out great. So far I&rsquo;ve been using it as a plain old journal, where you write what&rsquo;s on your mind. Recently, I decided that I wanted to get my digital history into it as well. One of the first things that came to mind was my <a href="https://foursquare.com">Foursquare/Swarm</a> checkin history which goes back to 2009. I decided to start there.</p>
+<p>I exported all my data and wrote a script in Python to extract what I needed from it to make journal entries. The two relevant files were <code>checkins.json</code> and <code>photos.json</code>. You can <a href="https://gist.github.com/samgrover/26939e0b68a26b7fe03a7a4bd37bdcf6">get my script on Github by selecting here</a> if you&rsquo;d like to use it, or dig into it. It should also appear embedded at the end of this post. First the script pre-processes the data to get all the photos attached to checkins. Then it goes over the checkin history to extract most of what I want, but since the exported data doesn&rsquo;t include venue coordinates, it has to do a little more.</p>
+<p>It makes calls to the <a href="https://developer.foursquare.com/docs">Foursquare API</a> to fetch the venue coordinates for each checkin. Then it puts everything together and makes the actual entry using Day One&rsquo;s <a href="https://dayoneapp.com/support/CLI">command line utility</a>. I had several thousand entries but the free plan for the API has a daily limit of 500 calls, so I manually ran it a few times over the course of a couple of weeks until they&rsquo;d all been imported. I could&rsquo;ve automated that but I wasn&rsquo;t keen on spending the time on that.</p>
+<p>Day One does allow one to link it to <a href="https://help.dayoneapp.com/tips-and-tutorials/using-ifttt-with-day-one">IFTTT</a> so that all <em>new</em> checkins get logged automatically, and I enabled that a while back, but I&rsquo;ve not been happy with that integration. Now that I&rsquo;m familiar with the flow of data, I plan to create new entries every couple of months or so, perhaps with a new script that works entirely with the API.</p>
+<p>I&rsquo;d love to hear if you have automated any journaling as I&rsquo;m keen to explore other ways of doing so myself.</p>
+<script src="https://gist.github.com/samgrover/26939e0b68a26b7fe03a7a4bd37bdcf6.js"></script>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Initial experience with Setapp</h2>
   <time class="text-xs antialiased opacity-80"
@@ -333,18 +350,6 @@ Time (including breaks): 3h 5m</p>
 
 <section><p>Stop. 🌥.</p>
 <p><a href="https://live.staticflickr.com/65535/54550502519_799379313a_h.jpg"><img src="https://live.staticflickr.com/65535/54550502519_799379313a_h.jpg" alt=""></a></p>
-</section>
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Mar 28, 2019</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/03/28/it-boggles-my.html"
-    ></a
-  >
-</section>
-
-<section><p>It boggles my mind that the Activity app on the Apple Watch shows percentage completed for the rings, but the one on the phone does not ¯_(ツ)_/¯</p>
 </section><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/76/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/78/"
