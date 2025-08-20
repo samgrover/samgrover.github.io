@@ -52,8 +52,8 @@
 
   <meta name="generator" content="Hugo 0.147.3">
   <meta itemprop="name" content="Posts">
-  <meta itemprop="datePublished" content="2025-08-19T08:59:30-07:00">
-  <meta itemprop="dateModified" content="2025-08-19T08:59:30-07:00"><meta property="og:url" content="https://samgrover.com/posts/">
+  <meta itemprop="datePublished" content="2025-08-20T12:36:10-07:00">
+  <meta itemprop="dateModified" content="2025-08-20T12:36:10-07:00"><meta property="og:url" content="https://samgrover.com/posts/">
   <meta property="og:site_name" content="samgrover.com">
   <meta property="og:title" content="Posts">
   <meta property="og:locale" content="en_us">
@@ -165,6 +165,26 @@
 <main
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     >
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Home Climate Monitoring</h2>
+  <time class="text-xs antialiased opacity-80"
+    >Mar 1, 2023</time
+  >
+  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/03/01/home-climate-monitoring.html"
+    >Home Climate Monitoring</a
+  >
+</section>
+
+<section><p>Sometime last year my friend Andrew made me aware of the sensors and software he was using to monitor temperature and humidity in his home. I thought that was cool and it introduced me to several hardware and software tools that I had not known about. I wanted to set this up at my home so I filed a project for a later date.</p>
+<p>Well, that day arrived a few weeks ago and here&rsquo;s what it looks like today:</p>
+<p><a href="https://samgrover.micro.blog/uploads/2023/7387c64251.png"><img src="https://samgrover.micro.blog/uploads/2023/7387c64251.png" alt="Screenshot showing charts of temperature and humidity time series."></a></p>
+<p>To get started exploring this I purchased an <a href="https://amzn.to/3ky05hO">AcuRite bundle</a> of three sensor towers and one display. I set up the towers around my home and put the display in my home office. It was neat to see the display showing the measurements at any given time. Soon I wanted to go to the next level and record and see the data over time.</p>
+<p>These sensors broadcast the data over <a href="https://en.wikipedia.org/wiki/LPD433">433 MHz</a> and there are consumer level antennas and software available to read this data. I bought a <a href="https://amzn.to/3Y6Ew5x">NooElec bundle</a> which gave me all the hardware I needed to receive this data on my computer. Setting it up was straightforward. I used <a href="https://github.com/merbanan/rtl_433">rtl_433</a> and was able to start seeing the wireless data immediately in the terminal on my Mac.</p>
+<p>The next step was storing all this data. That&rsquo;s where <a href="https://github.com/influxdata/influxdb">influxdb</a> came in. And the glue to get it from <code>rtl_433</code> to <code>influxdb</code> involved <a href="https://mqtt.org">MQTT</a> and <a href="https://github.com/influxdata/telegraf">telegraf</a>.</p>
+<p>There was a lot of trial and error but I finally got it all set up and was able to get the data into <code>influxdb</code>. I even made a dashboard in there to visualize it. The options on that dashboard were limited so I got <a href="https://github.com/grafana/grafana">grafana</a> set up and built a dashboard in that which can be seen at the top of this post as seen on my desktop browser. It also looks great on mobile devices.</p>
+<p>Except for <code>rtl_433</code>, the rest of the tools all run on docker on my desktop Mac. At some point I may migrate that off to a Raspberry Pi but for now it&rsquo;s all working and I&rsquo;m going to take a break from any further optimizing/tweaking for now.</p>
+<p><strong>Update (6th March, 2023):</strong> <a href="https://samgrover.com/2023/03/06/adding-api-accessible.html">Follow up post</a> about expanding on this effort.</p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -311,19 +331,6 @@
 <p>Walmart Labs existed in Portland for the better part of a year before <a href="https://techcrunch.com/2012/01/04/walmartlabs-acquires-mobile-agency-small-society/">the Small Society acquisition in January 2012</a>. And while Walmart Labs worked out of a coworking space for a few months, Small Society (as part of Walmart Labs) never did. After the acquisition they continued to operate from their existing office.</p>
 <p>For eight months Walmart Labs was split across two offices until we all moved into the space above the erstwhile Rock Bottom Brewery (2nd and Morrison) in September 2012.</p>
 <p>Edited to clarify: During recent years Walmart Labs did move into a coworking space but that was long after all the original people had moved on.</p>
-</section>
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Feb 13, 2023</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/02/13/macos-app-that.html"
-    ></a
-  >
-</section>
-
-<section><p>macOS app that can never remember what I was doing last time I used it even though I really wish it did: Music.</p>
-<p>macOS app that always remembers what I was doing last time I used it even though I don&rsquo;t give a damn: Contacts.</p>
 </section><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/25/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/27/"
