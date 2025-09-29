@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© 2004-2025 samgrover.com</copyright>
-    <lastBuildDate>Thu, 25 Sep 2025 17:41:35 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 29 Sep 2025 15:45:40 -0700</lastBuildDate>
     <atom:link href="https://samgrover.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://samgrover.com/2025/09/29/apple-weather-widget.html</link>
+      <pubDate>Mon, 29 Sep 2025 15:45:40 -0700</pubDate>
+      <guid>https://samgrover.com/2025/09/29/apple-weather-widget.html</guid>
+      <description>&lt;p&gt;One of my pet peeves about iOS is that the Apple Weather widget does not show the temperature when it is raining, so I just submitted the following feedback:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The weather widget should show the temperature at all times. It should show the temperature when it is raining. If you live in a place where it rains a lot you don’t see the temperature when it is raining, which can sometimes be several days in a row, and that is just silly.&lt;/p&gt;</description>
+    </item>
     <item>
       <title></title>
       <link>https://samgrover.com/2025/09/25/shrimping.html</link>
