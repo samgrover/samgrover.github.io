@@ -166,6 +166,28 @@
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     >
 
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">An App for Mapping My Outdoor Activities With Apple Watch Using GPX Tracks</h2>
+  <time class="text-xs antialiased opacity-80"
+    >Mar 12, 2023</time
+  >
+  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/03/12/an-app-for.html"
+    >An App for Mapping My Outdoor Activities With Apple Watch Using GPX Tracks</a
+  >
+</section>
+
+<section><p>I use an Apple Watch to track my activities, whether that be workouts or recreational. For outdoor activities, the watch records location data throughout the activity. This is later shown on a map in the <a href="https://apps.apple.com/us/app/fitness/id1208224953">Fitness app</a> on the iPhone. While that map is interactive, exporting it only exports a low resolution image, and not the actual route.</p>
+<p><a href="https://samgrover.micro.blog/uploads/2023/cc30649b50.jpg"><img src="https://samgrover.micro.blog/uploads/2023/cc30649b50.jpg" alt="A walking track is overlaid on a map."></a></p>
+<p>When I share an activity on a blog post I like to show the map but I don&rsquo;t like the idea of just sharing an image of the map. I would like to get the actual data out so that it can be overlaid on an interactive map using various mapping tools.</p>
+<p>I found an app on the App Store that can export the data, among many other features, but I wasn&rsquo;t keen on paying a subscription for this one small occasional use case. As an app developer, I know that access to this data is controlled by the Health related privacy settings on the iPhone and is accessible using the HealthKit framework. So I decided make a small app to get this data out while also gaining familiarity with that part of the iOS SDK. A few weeks ago I got started on it. I worked on it in small chunks of time, as I usually do with such side projects. The UI came together pretty quickly as a SwiftUI app. It is nothing special but looks presentable and gets the job done.</p>
+<p><a href="https://samgrover.micro.blog/uploads/2023/622da65a84.png"><img src="https://samgrover.micro.blog/uploads/2023/622da65a84.png" alt="Screenshot of an app showing a list of workouts with options to fetch and share the route from some of them."></a></p>
+<p>It took just a little bit longer to get the data out from HealthKit. Converting it to GPX files was straightforward. Once I had created a file I could use the share sheet to get it into other apps or to simply save it. From there it can be imported into tools that <a href="https://wiki.openstreetmap.org/wiki/Track_drawing_websites">put it on a map</a>.</p>
+<p>For example, here&rsquo;s a <a href="https://gist.github.com/samgrover/0d81059365aaaca3183267436fa988bb">GPX file</a> of a walk at <a href="https://www.travelportland.com/attractions/mount-tabor-park/">Mount Tabor Park</a>. It can be utilized to create an embedded map as shown below.</p>
+<iframe width="100%" height="500px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/en/map/walking-at-mt-tabor_882915?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe><p><a href="//umap.openstreetmap.fr/en/map/walking-at-mt-tabor_882915" target="_blank">See full screen</a></p>
+<p>Or even into <a href="https://www.google.com/maps/d/u/0/edit?mid=1ktetwF5600NqxWJ1cub7ODZfLVvW6jk&amp;usp=sharing">Google Maps</a>. In fact once imported there, you can view the track with elevation by selecting the option for Google Earth and enabling the 3D view. I love this option as it adds another dimension (literally 😂) to the activity.</p>
+<p><a href="https://samgrover.micro.blog/uploads/2023/45ecc99609.jpg"><img src="https://samgrover.micro.blog/uploads/2023/45ecc99609.jpg" alt="Screenshot of track on 3D view from Google Earth."></a></p>
+<p>Both these presentation styles are far more interesting to me than just a low resolution image out of the Fitness app.</p>
+</section>
+
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
     >Mar 12, 2023</time
@@ -303,26 +325,6 @@ Camera: Voigtländer Bessa R2a</p>
 <blockquote>
 <p>But this complaint only starts to address the problems with AmazonSmile, and the reasons I’m not sorry to see it go.</p></blockquote>
 <p>🔗 <a href="https://www.philanthropy.com/article/the-end-of-amazon-smile-is-an-opportunity-for-nonprofits-to-revisit-their-values">The End of AmazonSmile Is an Opportunity for Nonprofits to Revisit Their Values</a></p>
-</section>
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Feb 26, 2023</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/02/26/snow-day-walk.html"
-    ></a
-  >
-</section>
-
-<section><p>Snow Day Walk in the Neighborhood</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/edb9c3dcb4.jpg"><img src="https://samgrover.micro.blog/uploads/2023/edb9c3dcb4.jpg" alt="Jenni stands on the sidewalk with one foot deep into the snow on the ground. There’s snow on everything, lit by the sunset."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/c956afc58a.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c956afc58a.jpg" alt="A house lit by the sunset. There’s snow on everything."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/95b0493e05.jpg"><img src="https://samgrover.micro.blog/uploads/2023/95b0493e05.jpg" alt="A house lit by the sunset. There’s snow on everything."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/d3737feda6.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d3737feda6.jpg" alt="Jenni stands in front of a house lit by sunset light. There’s snow on everything."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/f6ec863117.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f6ec863117.jpg" alt="A parked van is backlit by the sunset light. There’s snow on it clumped on its features. There’s snow on everything else around as well."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/d44e80f871.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d44e80f871.jpg" alt="Two teenagers run across the snow packed street and sidewalks with shovels in their hands. Behind them are houses and the sky is lit by the sunset."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/2afe9886c7.jpg"><img src="https://samgrover.micro.blog/uploads/2023/2afe9886c7.jpg" alt="A street with snow all over the ground and the houses nearby. A breeze spins up some snow which glows in the light of the sunset."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/1dd01354ca.jpg"><img src="https://samgrover.micro.blog/uploads/2023/1dd01354ca.jpg" alt="Looking down at my boots in the snow with the sharp light and shadows of the setting sun."></a></p>
 </section><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/26/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/28/"
