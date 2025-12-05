@@ -52,8 +52,8 @@
 
   <meta name="generator" content="Hugo 0.151.2">
   <meta itemprop="name" content="samgrover.com">
-  <meta itemprop="datePublished" content="2025-11-25T08:29:25-08:00">
-  <meta itemprop="dateModified" content="2025-11-25T08:29:25-08:00"><meta property="og:url" content="https://samgrover.com/">
+  <meta itemprop="datePublished" content="2025-12-05T12:09:20-08:00">
+  <meta itemprop="dateModified" content="2025-12-05T12:09:20-08:00"><meta property="og:url" content="https://samgrover.com/">
   <meta property="og:site_name" content="samgrover.com">
   <meta property="og:title" content="samgrover.com">
   <meta property="og:locale" content="en_us">
@@ -165,6 +165,32 @@
 <main
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     >
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Vibing Pi o&#39;Clock</h2>
+  <time class="text-xs antialiased opacity-80"
+    >Mar 31, 2025</time
+  >
+  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2025/03/31/vibing-pi-oclock.html"
+    >Vibing Pi o&#39;Clock</a
+  >
+</section>
+
+<section><p><a href="https://raw.githubusercontent.com/samgrover/VibeClockPi/refs/heads/main/Resources/VibeClockPi.gif"><img src="https://raw.githubusercontent.com/samgrover/VibeClockPi/refs/heads/main/Resources/VibeClockPi.gif" alt="An animation of a clock face where the seconds hand is jumping by a different number of places with each passing second."></a></p>
+<p>When I wrote up <a href="https://samgrover.com/2025/03/14/yesterday-it-dawned-on-me.html">Piterator.swift</a> on <a href="https://en.wikipedia.org/wiki/Pi_Day">Pi Day</a> earlier this month, I was actually trying to do something with the values it returns but I didn&rsquo;t get around to that fun part due to lack of time.</p>
+<p>A few days after that I imagined a clock face where the seconds hand moves in jumps of the values returned by the iterator at the rate of once per second. So as the values start coming in like 3, 1, 4, etc, the second hand jumps by those many seconds.</p>
+<p>I started to write the code for a Mac app but Quartz 2D drawing is not something I have ever really done, so it was tricky wrapping my mind around the coordinate system and laying out individual marks on the canvas.</p>
+<p>Fast forward to yesterday when I decided to try out <a href="https://simonwillison.net/2025/Mar/19/vibe-coding/">vibe coding</a> for this project. As I got going though, it became more of an AI assisted coding because I started to edit it myself after a couple of initial rounds of code generation. Old habits die hard!</p>
+<p>For this purpose I used the recently released <a href="https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/#gemini-2-5-thinking">Google&rsquo;s Gemini 2.5 Pro</a> via <a href="https://llm.datasette.io/en/stable/">LLM</a>, essentially as described in <a href="https://simonwillison.net/2025/Mar/26/notes/">this post</a>.</p>
+<p>I was very impressed by the code generation. The first prompt I gave was for a static drawing, and it was thus:</p>
+<pre tabindex="0"><code>llm -m gemini-2.5-pro-exp-03-25 &#34;Write a SwiftUI View that draws a clock face on a Canvas. It should draw each of the 60 tick marks, with 0 and every multiple of 5 being a slightly thicker tick mark. It should also draw the time using an hour hand, a minute hand and a second hand. The second hand should be red. The time should be 10th hour, 10th minute, 30th second.&#34;
+</code></pre><p>The result was exactly as I expected. It even improvised and put that little circle in the center which was a nice touch.</p>
+<p>Then I gave it this second prompt which also included the <code>Piterator.swift</code> code:</p>
+<pre tabindex="0"><code>files-to-prompt . -e swift -c | \
+      llm -m gemini-2.5-pro-exp-03-25 -s \
+      &#39;Update the ClockView to make it animatable using TimelineView. Then hook it up to Piterator so that every second, the second hand moves forward by as many seconds as the number returned by the Piterator.&#39;
+</code></pre><p>This generated code that had a couple of small bugs that raised compiler errors. After I resolved that I had it working exactly as I envisioned it, and the whole thing took about an hour 🤯</p>
+<p><a href="https://github.com/samgrover/VibeClockPi">All the code is on Github</a></p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Mimi Uploader is no longer in active development</h2>
   <time class="text-xs antialiased opacity-80"
@@ -333,21 +359,6 @@
 
 <section><p><a href="https://live.staticflickr.com/65535/54519770095_3a1fe17817_h.jpg"><img src="https://live.staticflickr.com/65535/54519770095_3a1fe17817_h.jpg" alt="A monochrome photo depicting a cozy living room scene. A person covered with a blanket is sitting on a couch. A cat is perched on the back of the couch, looking towards the person. Sunlight creates patterns on the wall."></a></p>
 <p>Good morning. 6th January, 2025.</p>
-<p>📷 Hasselblad 500C/M<br>
-🎞️ Cinestill Double-X (ISO 200)</p>
-</section>
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Feb 4, 2025</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2025/02/04/laurelhurst-park-portland-oregon-th.html"
-    ></a
-  >
-</section>
-
-<section><p><a href="https://live.staticflickr.com/65535/54519769960_6689deab05_h.jpg"><img src="https://live.staticflickr.com/65535/54519769960_6689deab05_h.jpg" alt="A black and white photo of a fallen, decaying tree trunk in a forest. The textured bark and exposed wood are prominently visible, surrounded by leaf litter and foliage. Trees can be seen in the blurred background."></a></p>
-<p>Laurelhurst Park, Portland, Oregon. 9th November, 2024.</p>
 <p>📷 Hasselblad 500C/M<br>
 🎞️ Cinestill Double-X (ISO 200)</p>
 </section><nav class="mt-14 flex"><a class="btn not-prose" href="/page/5/"

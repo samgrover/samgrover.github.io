@@ -52,8 +52,8 @@
 
   <meta name="generator" content="Hugo 0.151.2">
   <meta itemprop="name" content="Posts">
-  <meta itemprop="datePublished" content="2025-11-25T08:29:25-08:00">
-  <meta itemprop="dateModified" content="2025-11-25T08:29:25-08:00"><meta property="og:url" content="https://samgrover.com/posts/">
+  <meta itemprop="datePublished" content="2025-12-05T12:09:20-08:00">
+  <meta itemprop="dateModified" content="2025-12-05T12:09:20-08:00"><meta property="og:url" content="https://samgrover.com/posts/">
   <meta property="og:site_name" content="samgrover.com">
   <meta property="og:title" content="Posts">
   <meta property="og:locale" content="en_us">
@@ -165,6 +165,33 @@
 <main
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     >
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Script Kitty</h2>
+  <time class="text-xs antialiased opacity-80"
+    >Aug 19, 2020</time
+  >
+  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2020/08/19/script-kitty.html"
+    >Script Kitty</a
+  >
+</section>
+
+<section><p>We wanted to adopt a kitten from the <a href="https://www.oregonhumane.org">Oregon Humane Society</a>. In these days of the pandemic, their adoption process has changed and you&rsquo;re only allowed to apply online. So we checked their website regularly. That&rsquo;s when we noticed that demand is very high these days so the window to apply was very short. New kittens would get posted but by the time we noticed and applied, they would already have been spoken for. This went on for a week or so.</p>
+<p>So I did what any programmer might do, I implemented a script to detect when new kittens are posted. It was run every five minutes for about three weeks. Now it has been retired with the arrival of Mr. Momo a few weeks ago.</p>
+<p><a href="https://live.staticflickr.com/65535/54600869864_bba1bd18e3_h.jpg"><img src="https://live.staticflickr.com/65535/54600869864_bba1bd18e3_h.jpg" alt=""></a></p>
+<p>The script flow is pretty straightforward:</p>
+<ul>
+<li>Retrieve the page that lists kittens.</li>
+<li>Use some regular expressions to get the relevant data out.</li>
+<li>Open a local JSON file of saved kittens from the previous run so that the new kittens can be identified.</li>
+<li>If there are new kittens, use <a href="https://www.pushcut.io">Pushcut</a> to send a notification to my phone (and watch).</li>
+<li>If the notification is successful, save the list of currently available kittens in a local JSON file for referencing in the next run.</li>
+</ul>
+<p><a href="https://live.staticflickr.com/65535/54600987895_d9375357b7_w.jpg"><img src="https://live.staticflickr.com/65535/54600987895_d9375357b7_w.jpg" alt=""></a></p>
+<p>It was loaded as a <a href="https://en.wikipedia.org/wiki/Launchd"><code>launchd</code></a> service on my always-on Mac, which I manage using <a href="https://www.soma-zone.com/LaunchControl/">LaunchControl.app</a>.</p>
+<p>Here&rsquo;s the script in its entirety:</p>
+<script src="https://gist.github.com/samgrover/d06723e113ecd8140efff1d6773aaf70.js"></script>
+<p>😻</p>
+</section>
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
   <time class="text-xs antialiased opacity-80"
@@ -320,20 +347,6 @@
 
 <section><p>A cheese board can totally be a sound dinner <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
 <p><img src="https://live.staticflickr.com/65535/54596609711_31b3204cb6_h.jpg" alt=""></p>
-<p>Uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
-</section>
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Aug 11, 2020</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2020/08/11/transport-mbaug-uploaded.html"
-    ></a
-  >
-</section>
-
-<section><p>Transport <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
-<p><img src="https://live.staticflickr.com/65535/54596921885_78a63dc691_h.jpg" alt=""></p>
 <p>Uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/58/"
     >←Prev Page</a
