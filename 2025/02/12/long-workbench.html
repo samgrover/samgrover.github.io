@@ -6,9 +6,13 @@
 
 
 
+
+
+
+
 <html
   class="not-ready lg:text-base"
-  style="--bg:#faf8f1"
+  style="--bg-light:#fffef9; --bg-dark:#0c3928; --text-light:#c41e3a; --text-dark:#ffd700; --accent:#165b33; --accent-dark:#e85445; --bg:#fffef9; --text:#c41e3a"
   lang="en-us"
   dir="ltr"
 ><head>
@@ -108,8 +112,37 @@
   <link rel="canonical" href="https://samgrover.com/2025/02/12/long-workbench.html" />
 </head>
 <body
-    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
-  ><header
+    class="bg-(--bg) antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent]"
+  >
+    <style>
+       
+      article, article *, .prose, .prose *, main p, main p * {
+        color: var(--text-light) !important;
+      }
+       
+      header, header *, footer, footer * {
+        color: var(--accent) !important;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-color: transparent;
+        pointer-events: none;
+      }
+       
+      html.dark article, html.dark article *, html.dark .prose, html.dark .prose *, html.dark main p, html.dark main p * {
+        color: var(--text-dark) !important;
+      }
+       
+      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
+        color: var(--accent-dark) !important;
+      }
+      html.dark body::before {
+        background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
+      }
+    </style><header
   class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
 >
   <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
@@ -146,21 +179,25 @@
 
     
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const lightBg = '#fffef9'.replace(/"/g, '');
+    const darkBg = '#0c3928'.replace(/"/g, '');
     const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
       localStorage.setItem('dark', isDark);
     };
 
     
     const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    let isDarkMode;
     if (htmlClass.contains('dark')) {
-      setDark(true);
+      isDarkMode = true;
     } else {
       const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+      isDarkMode = darkVal ? darkVal === 'true' : darkScheme.matches;
     }
+    
+    setDark(isDarkMode);
 
     
     darkScheme.addEventListener('change', (event) => {
