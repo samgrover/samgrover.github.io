@@ -87,8 +87,8 @@
 
   
   <meta itemprop="name" content="samgrover.com">
-  <meta itemprop="datePublished" content="2025-12-28T00:00:00-07:00">
-  <meta itemprop="dateModified" content="2025-12-28T00:00:00-07:00"><meta property="og:url" content="https://samgrover.com/">
+  <meta itemprop="datePublished" content="2025-12-31T10:06:49-08:00">
+  <meta itemprop="dateModified" content="2025-12-31T10:06:49-08:00"><meta property="og:url" content="https://samgrover.com/">
   <meta property="og:site_name" content="samgrover.com">
   <meta property="og:title" content="samgrover.com">
   <meta property="og:locale" content="en_us">
@@ -242,6 +242,20 @@
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     >
 
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
+  <time class="text-xs antialiased opacity-80"
+    >Apr 26, 2023</time
+  >
+  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/04/26/in-the-last.html"
+    ></a
+  >
+</section>
+
+<section><p>In the last week I used ChatGPT to replace three text manipulation scripts I used on and off. And yes, I spent hours writing/maintaining those over the years.</p>
+<p>I also used it to aid in creating a new shell script.</p>
+<p>It was disgusting/wonderful how straightforward all that was.</p>
+</section>
+
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">New version of Mimi Uploader is out 🎉</h2>
   <time class="text-xs antialiased opacity-80"
     >Apr 20, 2023</time
@@ -369,28 +383,6 @@ Camera: Voigtländer Bessa R2a</p>
 </section>
 
 <section><p>On a scale of 1 to 10, the entropy of my home office and the desk therein hovers between 4 and 8. Currently both are at about 8. Each time I organize, I try to get it below 4 but it never happens.</p>
-</section>
-
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">An App for Mapping My Outdoor Activities With Apple Watch Using GPX Tracks</h2>
-  <time class="text-xs antialiased opacity-80"
-    >Mar 12, 2023</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/03/12/an-app-for.html"
-    >An App for Mapping My Outdoor Activities With Apple Watch Using GPX Tracks</a
-  >
-</section>
-
-<section><p>I use an Apple Watch to track my activities, whether that be workouts or recreational. For outdoor activities, the watch records location data throughout the activity. This is later shown on a map in the <a href="https://apps.apple.com/us/app/fitness/id1208224953">Fitness app</a> on the iPhone. While that map is interactive, exporting it only exports a low resolution image, and not the actual route.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/cc30649b50.jpg"><img src="https://samgrover.micro.blog/uploads/2023/cc30649b50.jpg" alt="A walking track is overlaid on a map."></a></p>
-<p>When I share an activity on a blog post I like to show the map but I don&rsquo;t like the idea of just sharing an image of the map. I would like to get the actual data out so that it can be overlaid on an interactive map using various mapping tools.</p>
-<p>I found an app on the App Store that can export the data, among many other features, but I wasn&rsquo;t keen on paying a subscription for this one small occasional use case. As an app developer, I know that access to this data is controlled by the Health related privacy settings on the iPhone and is accessible using the HealthKit framework. So I decided make a small app to get this data out while also gaining familiarity with that part of the iOS SDK. A few weeks ago I got started on it. I worked on it in small chunks of time, as I usually do with such side projects. The UI came together pretty quickly as a SwiftUI app. It is nothing special but looks presentable and gets the job done.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/622da65a84.png"><img src="https://samgrover.micro.blog/uploads/2023/622da65a84.png" alt="Screenshot of an app showing a list of workouts with options to fetch and share the route from some of them."></a></p>
-<p>It took just a little bit longer to get the data out from HealthKit. Converting it to GPX files was straightforward. Once I had created a file I could use the share sheet to get it into other apps or to simply save it. From there it can be imported into tools that <a href="https://wiki.openstreetmap.org/wiki/Track_drawing_websites">put it on a map</a>.</p>
-<p>For example, here&rsquo;s a <a href="https://gist.github.com/samgrover/0d81059365aaaca3183267436fa988bb">GPX file</a> of a walk at <a href="https://www.travelportland.com/attractions/mount-tabor-park/">Mount Tabor Park</a>. It can be utilized to create an embedded map as shown below.</p>
-<iframe width="100%" height="500px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/en/map/walking-at-mt-tabor_882915?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe><p><a href="//umap.openstreetmap.fr/en/map/walking-at-mt-tabor_882915" target="_blank">See full screen</a></p>
-<p>Or even into <a href="https://www.google.com/maps/d/u/0/edit?mid=1ktetwF5600NqxWJ1cub7ODZfLVvW6jk&amp;usp=sharing">Google Maps</a>. In fact once imported there, you can view the track with elevation by selecting the option for Google Earth and enabling the 3D view. I love this option as it adds another dimension (literally 😂) to the activity.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/45ecc99609.jpg"><img src="https://samgrover.micro.blog/uploads/2023/45ecc99609.jpg" alt="Screenshot of track on 3D view from Google Earth."></a></p>
-<p>Both these presentation styles are far more interesting to me than just a low resolution image out of the Fitness app.</p>
 </section><nav class="mt-14 flex"><a class="btn not-prose" href="/page/26/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/28/"
