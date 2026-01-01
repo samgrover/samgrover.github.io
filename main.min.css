@@ -112,4 +112,4 @@
 }@property --tw-ring-offset-shadow{syntax: "*";
   inherits: false;
   initial-value: 0 0 #0000;
-}@keyframes spin{to{transform:rotate(360deg)}}@reference './app.css'
+}@keyframes spin{to{transform:rotate(360deg)}}@reference './app.css';article a img,section a img{border:12px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.1);display:block}html.dark article a img,html.dark section a img{border:12px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3)}
