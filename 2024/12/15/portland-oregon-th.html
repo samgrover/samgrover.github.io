@@ -12,7 +12,7 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#fffef9; --bg-dark:#0c3928; --text-light:#c41e3a; --text-dark:#ffd700; --accent:#165b33; --accent-dark:#e85445; --bg:#fffef9; --text:#c41e3a"
+  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
   lang="en-us"
   dir="ltr"
 ><head>
@@ -180,8 +180,8 @@ Portland, Oregon. 14th December, 2024." />
 
     
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fffef9'.replace(/"/g, '');
-    const darkBg = '#0c3928'.replace(/"/g, '');
+    const lightBg = '#f0ebe2'.replace(/"/g, '');
+    const darkBg = '#1a1410'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
