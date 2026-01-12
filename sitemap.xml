@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://samgrover.com/posts/</loc>
-    <lastmod>2026-01-06T17:27:10-08:00</lastmod>
+    <loc>https://samgrover.com/2026/01/11/leguin-exhibit.html</loc>
+    <lastmod>2026-01-11T18:03:32-08:00</lastmod>
   </url><url>
-    <loc>https://samgrover.com/2026/01/06/read-on.html</loc>
-    <lastmod>2026-01-06T17:27:10-08:00</lastmod>
+    <loc>https://samgrover.com/posts/</loc>
+    <lastmod>2026-01-11T18:03:32-08:00</lastmod>
   </url><url>
     <loc>https://samgrover.com/</loc>
+    <lastmod>2026-01-11T18:03:32-08:00</lastmod>
+  </url><url>
+    <loc>https://samgrover.com/2026/01/06/read-on.html</loc>
     <lastmod>2026-01-06T17:27:10-08:00</lastmod>
   </url><url>
     <loc>https://samgrover.com/2026/01/04/recent-moons.html</loc>
