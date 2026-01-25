@@ -161,6 +161,15 @@ Supported for both export options, Markdown and HTML. It can be filtered in the 
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
+       
+      .btn {
+        background-color: var(--text-light) !important;
+        color: var(--bg-light) !important;
+      }
+      html.dark .btn {
+        background-color: var(--text-dark) !important;
+        color: var(--bg-dark) !important;
+      }
     </style><header
   class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
 >
