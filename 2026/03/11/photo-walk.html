@@ -148,6 +148,25 @@
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
+      article figure, section figure {
+        margin-bottom: 1.5em !important;
+      }
+      article figure a, section figure a {
+        display: block !important;
+        line-height: 0 !important;
+      }
+      article figure img, section figure img {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      article figure figcaption, section figure figcaption {
+        font-size: 0.75em !important;
+        font-style: normal !important;
+        opacity: 0.75 !important;
+        margin-top: 0.3rem !important;
+        text-align: left !important;
+      }
+       
       .btn {
         background-color: var(--text-light) !important;
         color: var(--bg-light) !important;
@@ -272,7 +291,9 @@
 
   <nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
-  ><a
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://samgrover.com/2026/03/14/spring.html"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a
+    ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
       href="https://samgrover.com/2026/03/11/window-cats.html"
       ><span></span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
