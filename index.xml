@@ -9,13 +9,24 @@
     <copyright>© 2004-2025 samgrover.com</copyright>
     <lastBuildDate>Wed, 18 Mar 2026 00:00:00 -0700</lastBuildDate><atom:link href="https://samgrover.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Bessa</title>
+      <link>https://samgrover.com/bessa/</link>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 -0700</pubDate>
+      
+      <guid>https://samgrover.com/bessa/</guid>
+      <description>&lt;p&gt;Photos made with my Voigtländer Bessa R2a camera.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Photos made with my Voigtländer Bessa R2a camera.</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>Hasselblad</title>
       <link>https://samgrover.com/hasselblad/</link>
       <pubDate>Wed, 18 Mar 2026 00:00:00 -0700</pubDate>
       
       <guid>https://samgrover.com/hasselblad/</guid>
-      <description>&lt;p&gt;Add your description here.&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>Add your description here.</p>
+      <description>&lt;p&gt;Photos made with my Hasselblad 500C/M camera.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Photos made with my Hasselblad 500C/M camera.</p>
 ]]></content:encoded>
     </item>
     
