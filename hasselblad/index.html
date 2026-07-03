@@ -59,7 +59,7 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
-  <meta name="generator" content="Hugo 0.160.1">
+  <meta name="generator" content="Hugo 0.163.3">
   <style>
     body,
     body * {
@@ -86,22 +86,22 @@
   </style>
 
   
-  <meta itemprop="name" content="Hasselblad">
-  <meta itemprop="description" content="Photos made with my Hasselblad 500C/M camera.">
-  <meta itemprop="datePublished" content="2026-03-18T00:00:00-07:00">
-  <meta itemprop="dateModified" content="2026-03-18T00:00:00-07:00">
-  <meta itemprop="wordCount" content="7"><meta property="og:url" content="https://samgrover.com/hasselblad/">
-  <meta property="og:site_name" content="samgrover.com">
-  <meta property="og:title" content="Hasselblad">
-  <meta property="og:description" content="Photos made with my Hasselblad 500C/M camera.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2026-03-18T00:00:00-07:00">
-    <meta property="article:modified_time" content="2026-03-18T00:00:00-07:00">
+	<meta itemprop="name" content="Hasselblad">
+	<meta itemprop="description" content="Photos made with my Hasselblad 500C/M camera.">
+	<meta itemprop="datePublished" content="2026-03-18T00:00:00-07:00">
+	<meta itemprop="dateModified" content="2026-03-18T00:00:00-07:00">
+	<meta itemprop="wordCount" content="7"><meta property="og:url" content="https://samgrover.com/hasselblad/">
+	<meta property="og:site_name" content="samgrover.com">
+	<meta property="og:title" content="Hasselblad">
+	<meta property="og:description" content="Photos made with my Hasselblad 500C/M camera.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:published_time" content="2026-03-18T00:00:00-07:00">
+		<meta property="article:modified_time" content="2026-03-18T00:00:00-07:00">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hasselblad">
-  <meta name="twitter:description" content="Photos made with my Hasselblad 500C/M camera.">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Hasselblad">
+	<meta name="twitter:description" content="Photos made with my Hasselblad 500C/M camera.">
 
   <link rel="me" href="https://xoxo.zone/@sam" />
   <link rel="me" href="https://samgrover.studio" />
@@ -273,818 +273,614 @@
 
 
 
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
 <style>
    
-  .hblad-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.75rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(139, 115, 85, 0.25);
-  }
-
-  .hblad-header h1 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
+  .hb-header { margin-bottom: 1.5rem; }
+  .hb-eyebrow {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+    opacity: 0.6; margin: 0 0 0.4rem;
     color: var(--text-light) !important;
-    margin: 0;
   }
-  html.dark .hblad-header h1 {
-    color: var(--text-dark) !important;
-  }
-
-  .hblad-meta {
-    font-size: 0.8rem;
+  html.dark .hb-eyebrow { color: var(--text-dark) !important; }
+  .hb-header h1 {
+    font-family: 'Nunito', sans-serif; font-weight: 800;
+    font-size: 1.9rem; letter-spacing: -0.02em; margin: 0;
     color: var(--text-light) !important;
-    opacity: 0.55;
-    font-style: italic;
-    white-space: nowrap;
   }
-  html.dark .hblad-meta {
-    color: var(--text-dark) !important;
-  }
+  html.dark .hb-header h1 { color: var(--text-dark) !important; }
+  .hb-subtitle { font-size: 0.9rem; opacity: 0.7; margin: 0.35rem 0 0; }
 
    
-  .hblad-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-     
-    background-color: rgba(100, 85, 65, 0.18);
-  }
-  html.dark .hblad-grid {
-    background-color: rgba(0, 0, 0, 0.35);
-  }
-
-  @media (min-width: 480px) {
-    .hblad-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  @media (min-width: 720px) {
-    .hblad-grid { grid-template-columns: repeat(4, 1fr); }
-  }
-
-   
-  .hblad-cell {
-    display: block;
+  .hb-stage {
     position: relative;
-    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    aspect-ratio: 1280 / 960;
+    border-radius: 10px;
     overflow: hidden;
-    background-color: rgba(100, 85, 65, 0.08);
-    text-decoration: none !important;
-     
-    line-height: 0;
-    font-size: 0;
-     
-    opacity: 0;
-    animation: hblad-fade 0.4s ease forwards;
+    box-shadow: 0 16px 30px -14px rgba(0,0,0,0.5);
   }
+  .hb-frame { position: absolute; inset: 0; width: 100% !important; height: 100% !important;
+    max-width: none !important; object-fit: cover; margin: 0 !important; border: 0 !important;
+    box-shadow: none !important; display: block; }
 
    
-  .hblad-cell:nth-child(4n+1) { animation-delay: 0.00s; }
-  .hblad-cell:nth-child(4n+2) { animation-delay: 0.04s; }
-  .hblad-cell:nth-child(4n+3) { animation-delay: 0.08s; }
-  .hblad-cell:nth-child(4n+4) { animation-delay: 0.12s; }
-
-  @keyframes hblad-fade {
-    to { opacity: 1; }
-  }
-
-  .hblad-cell img {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    max-width: none !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 3px solid white !important;
-    box-shadow: none !important;
-    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                filter 0.45s ease;
-  }
-
-  .hblad-cell:hover img {
-    transform: scale(1.05);
-    filter: brightness(0.88);
-  }
-
-   
-  .hblad-overlay {
+  .hb-glass {
     position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 0.5rem 0.6rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, transparent 55%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+    left: 34.22%; top: 37.29%; width: 25.78%; height: 31.25%;
+    overflow: hidden; background: #0b0c09;
   }
-
-  .hblad-cell:hover .hblad-overlay {
-    opacity: 1;
+  .hb-glass img {
+    position: absolute; inset: 0; width: 100% !important; height: 100% !important;
+    max-width: none !important; object-fit: cover; margin: 0 !important; border: 0 !important;
+    box-shadow: none !important; display: block;
+    filter: saturate(0.98) brightness(0.99) contrast(1.02);
+    transition: opacity 0.28s ease;
   }
-
-  .hblad-overlay-date {
-    font-size: 0.65rem;
-    letter-spacing: 0.05em;
-    color: rgba(255,255,255,0.88) !important;
-    font-family: 'PT Sans', sans-serif;
-    line-height: 1;
-  }
-
-  .hblad-overlay-arrow {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.75) !important;
-    line-height: 1;
+  .hb-glass.mirror img { transform: scaleX(-1); }
+  .hb-glass.swapping img { opacity: 0; }
+  .hb-glass::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(118deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 30%);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.35);
   }
 
    
-  .hblad-intro {
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
+  .hb-arrow {
+    display: none;  
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(20,16,12,0.42);
+    -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+    color: #fff !important;
+    width: clamp(38px, 9vw, 50px); height: clamp(38px, 9vw, 50px);
+    border-radius: 50%; place-items: center; cursor: pointer;
+    transition: transform 0.12s ease, background 0.18s ease, border-color 0.18s ease;
   }
+  .hb-page.js .hb-arrow { display: grid; }
+  .hb-arrow.prev { left: clamp(6px, 1.6vw, 14px); }
+  .hb-arrow.next { right: clamp(6px, 1.6vw, 14px); }
+  .hb-arrow svg { width: 44%; height: 44%; stroke: #fff; }
+  .hb-arrow:hover { background: var(--accent); border-color: var(--accent); }
+  html.dark .hb-arrow:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+  .hb-arrow:active { transform: translateY(-50%) scale(0.9); }
+  .hb-arrow:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
    
-  .hblad-footer {
-    margin-top: 1.5rem;
-    font-size: 0.78rem;
+  .hb-readout {
+    margin-top: 1.4rem; display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 0.5rem 1rem;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.78rem; letter-spacing: 0.03em;
     color: var(--text-light) !important;
-    opacity: 0.45;
-    font-style: italic;
-    text-align: center;
   }
-  html.dark .hblad-footer {
-    color: var(--text-dark) !important;
+  html.dark .hb-readout { color: var(--text-dark) !important; }
+  .hb-counter { font-variant-numeric: tabular-nums; font-weight: 700; }
+  .hb-readout .dot { opacity: 0.4; }
+  .hb-post {
+    color: var(--accent) !important; text-decoration: none;
+    border-bottom: 1px solid transparent; transition: border-color 0.15s ease;
+  }
+  html.dark .hb-post { color: var(--accent-dark) !important; }
+  .hb-post:hover { border-bottom-color: currentColor; }
+
+   
+  .hb-controls { display: none; margin-top: 1.2rem; justify-content: center; }
+  .hb-page.js .hb-controls { display: flex; }
+  .hb-seg {
+    display: inline-flex; border: 1px solid rgba(139,115,85,0.4);
+    border-radius: 999px; padding: 3px; gap: 2px;
+  }
+  html.dark .hb-seg { border-color: rgba(245,245,220,0.25); }
+  .hb-seg button {
+    appearance: none; border: 0; background: transparent; font: inherit;
+    font-size: 0.72rem; padding: 0.4rem 0.85rem; border-radius: 999px; cursor: pointer;
+    color: var(--text-light) !important; opacity: 0.75;
+    transition: background 0.16s ease, opacity 0.16s ease, color 0.16s ease;
+  }
+  html.dark .hb-seg button { color: var(--text-dark) !important; }
+  .hb-seg button[aria-pressed="true"] {
+    background: var(--accent); color: #fff !important; opacity: 1;
+  }
+  html.dark .hb-seg button[aria-pressed="true"] { background: var(--accent-dark); }
+  .hb-seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .hb-hint {
+    display: none; text-align: center; margin-top: 0.9rem;
+    font-family: ui-monospace, Menlo, monospace; font-size: 0.7rem;
+    letter-spacing: 0.05em; opacity: 0.55;
+    color: var(--text-light) !important;
+  }
+  html.dark .hb-hint { color: var(--text-dark) !important; }
+  .hb-page.js .hb-hint { display: block; }
+  .hb-hint kbd {
+    border: 1px solid rgba(139,115,85,0.35); border-radius: 4px;
+    padding: 0.15em 0.4em;
+  }
+  html.dark .hb-hint kbd { border-color: rgba(245,245,220,0.25); }
+  .hb-hint kbd svg { display: inline-block; width: 0.72em; height: 0.72em; vertical-align: -0.06em; stroke: currentColor; }
+
+   
+  .hb-sheet { margin-top: 2.5rem; border-top: 1px solid rgba(139,115,85,0.25); padding-top: 1.1rem; }
+  html.dark .hb-sheet { border-top-color: rgba(0,0,0,0.35); }
+  .hb-sheet summary {
+    cursor: pointer; list-style: none; display: flex; align-items: center; gap: 0.5rem;
+    font-family: ui-monospace, Menlo, monospace; font-size: 0.7rem;
+    letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.7;
+    color: var(--text-light) !important;
+  }
+  html.dark .hb-sheet summary { color: var(--text-dark) !important; }
+  .hb-sheet summary::-webkit-details-marker { display: none; }
+  .hb-sheet summary .chev { transition: transform 0.2s ease; }
+  .hb-sheet[open] summary .chev { transform: rotate(90deg); }
+  .hb-grid {
+    margin-top: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
+    background: rgba(100,85,65,0.18);
+  }
+  html.dark .hb-grid { background: rgba(0,0,0,0.35); }
+  @media (min-width: 480px) { .hb-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 720px) { .hb-grid { grid-template-columns: repeat(6, 1fr); } }
+  .hb-cell {
+    display: block; aspect-ratio: 1/1; overflow: hidden; background: #0b0c09;
+    line-height: 0; cursor: pointer; text-decoration: none !important;
+  }
+  .hb-cell img {
+    width: 100% !important; height: 100% !important; max-width: none !important;
+    object-fit: cover; margin: 0 !important; border: 0 !important; box-shadow: none !important;
+    display: block; transition: transform 0.4s ease;
+  }
+  .hb-cell:hover img { transform: scale(1.06); }
+  .hb-cell[aria-current="true"] { outline: 3px solid var(--accent); outline-offset: -3px; }
+
+  .hb-footer {
+    margin-top: 2rem; font-size: 0.74rem; font-style: italic; text-align: center;
+    opacity: 0.5; color: var(--text-light) !important;
+  }
+  html.dark .hb-footer { color: var(--text-dark) !important; }
+
+  .hb-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hb-glass img, .hb-arrow, .hb-cell img, .hb-seg button { transition: none !important; }
   }
 </style>
 
-<article class="post-single hblad-page">
-  <div class="hblad-header">
+<article class="post-single hb-page" id="hb">
+  <div class="hb-header">
+    <p class="hb-eyebrow">Film · Medium Format</p>
     <h1>Hasselblad</h1>
-    <span class="hblad-meta">
-      49 photos &middot; Hasselblad 500 C/M · medium format film
-    </span>
+    <p class="hb-subtitle">Hasselblad 500 C/M · medium format film</p>
   </div>
 
-  <div class="post-content">
-    <div class="hblad-intro"><p>Photos made with my Hasselblad 500C/M camera.</p>
+  <div class="hb-stage">
+    <img class="hb-frame" src="/img/hasselblad-finder.jpg" alt="Hasselblad with the waist-level finder open, seen from above" />
+    <div class="hb-glass" id="hb-glass">
+      <img id="hb-photo" src="https://live.staticflickr.com/65535/55054334498_12f0275730_h.jpg" alt="Hasselblad photo" loading="eager" />
+    </div>
+    <button class="hb-arrow prev" id="hb-prev" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="hb-arrow next" id="hb-next" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <div class="hb-readout">
+    <span class="hb-counter" id="hb-counter">01 / 49</span>
+    <span class="dot">·</span>
+    <span id="hb-date">Jan 21, 2026</span>
+    <span class="dot">·</span>
+    <a class="hb-post" id="hb-post" href="/2026/01/21/buxton.html">View post &#8599;</a>
+  </div>
+
+  <div class="hb-controls">
+    <div class="hb-seg" role="group" aria-label="Image orientation">
+      <button id="hb-mode-shot" aria-pressed="true">As shot</button>
+      <button id="hb-mode-finder" aria-pressed="false">As seen in finder</button>
+    </div>
+  </div>
+
+  <p class="hb-hint">
+    <kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></kbd>
+    <kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></kbd>
+    to change frame
+  </p>
+
+  <div class="hb-intro" style="margin-top:1.5rem;"><p>Photos made with my Hasselblad 500C/M camera.</p>
 </div>
-    <div class="hblad-grid">
+
+  <details class="hb-sheet">
+    <summary><span class="chev">&rsaquo;</span> Contact sheet &mdash; all 49 photos</summary>
+    <div class="hb-grid" id="hb-grid">
       
-        <a href="/2026/01/21/buxton.html" class="hblad-cell" title="View post from 2026-01-21">
-          <img
-            src="https://live.staticflickr.com/65535/55054334498_12f0275730_h.jpg"
-            alt="Hasselblad photo from 2026-01-21"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2026-01-21</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2026/01/21/buxton.html" class="hb-cell" data-idx="0" title="Jan 21, 2026">
+          <img src="https://live.staticflickr.com/65535/55054334498_12f0275730_h.jpg" alt="Hasselblad photo from 2026-01-21" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2026/01/14/rainy-day-farm.html" class="hblad-cell" title="View post from 2026-01-14">
-          <img
-            src="https://live.staticflickr.com/65535/55041486391_785ebdb627_h.jpg"
-            alt="Hasselblad photo from 2026-01-14"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2026-01-14</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2026/01/14/rainy-day-farm.html" class="hb-cell" data-idx="1" title="Jan 14, 2026">
+          <img src="https://live.staticflickr.com/65535/55041486391_785ebdb627_h.jpg" alt="Hasselblad photo from 2026-01-14" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/12/24/gorge.html" class="hblad-cell" title="View post from 2025-12-24">
-          <img
-            src="https://live.staticflickr.com/65535/55003743304_e81d76e0f2_h.jpg"
-            alt="Hasselblad photo from 2025-12-24"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-12-24</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/12/24/gorge.html" class="hb-cell" data-idx="2" title="Dec 24, 2025">
+          <img src="https://live.staticflickr.com/65535/55003743304_e81d76e0f2_h.jpg" alt="Hasselblad photo from 2025-12-24" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/12/18/oregon.html" class="hblad-cell" title="View post from 2025-12-18">
-          <img
-            src="https://live.staticflickr.com/65535/54992736040_a64a769c38_h.jpg"
-            alt="Hasselblad photo from 2025-12-18"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-12-18</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/12/18/oregon.html" class="hb-cell" data-idx="3" title="Dec 18, 2025">
+          <img src="https://live.staticflickr.com/65535/54992736040_a64a769c38_h.jpg" alt="Hasselblad photo from 2025-12-18" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/10/08/caleb-japanese-garden.html" class="hblad-cell" title="View post from 2025-10-08">
-          <img
-            src="https://live.staticflickr.com/65535/54841300433_8926d02150_h.jpg"
-            alt="Hasselblad photo from 2025-10-08"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-10-08</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/10/08/caleb-japanese-garden.html" class="hb-cell" data-idx="4" title="Oct 8, 2025">
+          <img src="https://live.staticflickr.com/65535/54841300433_8926d02150_h.jpg" alt="Hasselblad photo from 2025-10-08" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/10/08/caleb-japanese-garden.html" class="hblad-cell" title="View post from 2025-10-08">
-          <img
-            src="https://live.staticflickr.com/65535/54841300488_377ffd5b0d_h.jpg"
-            alt="Hasselblad photo from 2025-10-08"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-10-08</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/10/08/caleb-japanese-garden.html" class="hb-cell" data-idx="5" title="Oct 8, 2025">
+          <img src="https://live.staticflickr.com/65535/54841300488_377ffd5b0d_h.jpg" alt="Hasselblad photo from 2025-10-08" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/10/06/three-trees.html" class="hblad-cell" title="View post from 2025-10-06">
-          <img
-            src="https://live.staticflickr.com/65535/54836567379_c3ea44c0f1_h.jpg"
-            alt="Hasselblad photo from 2025-10-06"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-10-06</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/10/06/three-trees.html" class="hb-cell" data-idx="6" title="Oct 6, 2025">
+          <img src="https://live.staticflickr.com/65535/54836567379_c3ea44c0f1_h.jpg" alt="Hasselblad photo from 2025-10-06" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/10/06/three-trees.html" class="hblad-cell" title="View post from 2025-10-06">
-          <img
-            src="https://live.staticflickr.com/65535/54836567129_435f7210e9_h.jpg"
-            alt="Hasselblad photo from 2025-10-06"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-10-06</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/10/06/three-trees.html" class="hb-cell" data-idx="7" title="Oct 6, 2025">
+          <img src="https://live.staticflickr.com/65535/54836567129_435f7210e9_h.jpg" alt="Hasselblad photo from 2025-10-06" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/10/06/three-trees.html" class="hblad-cell" title="View post from 2025-10-06">
-          <img
-            src="https://live.staticflickr.com/65535/54835473407_9a4702bbc1_h.jpg"
-            alt="Hasselblad photo from 2025-10-06"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-10-06</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/10/06/three-trees.html" class="hb-cell" data-idx="8" title="Oct 6, 2025">
+          <img src="https://live.staticflickr.com/65535/54835473407_9a4702bbc1_h.jpg" alt="Hasselblad photo from 2025-10-06" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/02/22/puzzling-st-december-hasselblad-cm.html" class="hblad-cell" title="View post from 2025-02-22">
-          <img
-            src="https://live.staticflickr.com/65535/54517121947_41a138a23c_h.jpg"
-            alt="Hasselblad photo from 2025-02-22"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-02-22</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/02/22/puzzling-st-december-hasselblad-cm.html" class="hb-cell" data-idx="9" title="Feb 22, 2025">
+          <img src="https://live.staticflickr.com/65535/54517121947_41a138a23c_h.jpg" alt="Hasselblad photo from 2025-02-22" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/02/10/good-morning-th-january-hasselblad.html" class="hblad-cell" title="View post from 2025-02-10">
-          <img
-            src="https://live.staticflickr.com/65535/54519770095_3a1fe17817_h.jpg"
-            alt="Hasselblad photo from 2025-02-10"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-02-10</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/02/10/good-morning-th-january-hasselblad.html" class="hb-cell" data-idx="10" title="Feb 10, 2025">
+          <img src="https://live.staticflickr.com/65535/54519770095_3a1fe17817_h.jpg" alt="Hasselblad photo from 2025-02-10" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/02/04/laurelhurst-park-portland-oregon-th.html" class="hblad-cell" title="View post from 2025-02-04">
-          <img
-            src="https://live.staticflickr.com/65535/54519769960_6689deab05_h.jpg"
-            alt="Hasselblad photo from 2025-02-04"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-02-04</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/02/04/laurelhurst-park-portland-oregon-th.html" class="hb-cell" data-idx="11" title="Feb 4, 2025">
+          <img src="https://live.staticflickr.com/65535/54519769960_6689deab05_h.jpg" alt="Hasselblad photo from 2025-02-04" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2025/01/31/laurelhurst-park-portland-oregon-th.html" class="hblad-cell" title="View post from 2025-01-31">
-          <img
-            src="https://live.staticflickr.com/65535/54519602704_d68c5a7def_h.jpg"
-            alt="Hasselblad photo from 2025-01-31"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2025-01-31</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2025/01/31/laurelhurst-park-portland-oregon-th.html" class="hb-cell" data-idx="12" title="Jan 31, 2025">
+          <img src="https://live.staticflickr.com/65535/54519602704_d68c5a7def_h.jpg" alt="Hasselblad photo from 2025-01-31" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/12/01/momo-and-fall.html" class="hblad-cell" title="View post from 2024-12-01">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/d4896cba-230d-4fa1-998b-ebe66fea1583.jpg"
-            alt="Hasselblad photo from 2024-12-01"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-12-01</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/12/01/momo-and-fall.html" class="hb-cell" data-idx="13" title="Dec 1, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/d4896cba-230d-4fa1-998b-ebe66fea1583.jpg" alt="Hasselblad photo from 2024-12-01" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/11/29/scenes-of-fall.html" class="hblad-cell" title="View post from 2024-11-29">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/f0983370-146d-4add-906f-e42b881a6fda.jpg"
-            alt="Hasselblad photo from 2024-11-29"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-11-29</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/11/29/scenes-of-fall.html" class="hb-cell" data-idx="14" title="Nov 29, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/f0983370-146d-4add-906f-e42b881a6fda.jpg" alt="Hasselblad photo from 2024-11-29" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/11/29/scenes-of-fall.html" class="hblad-cell" title="View post from 2024-11-29">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/b593f1fd-6356-4f87-afc7-73dc3c184cb1.jpg"
-            alt="Hasselblad photo from 2024-11-29"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-11-29</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/11/29/scenes-of-fall.html" class="hb-cell" data-idx="15" title="Nov 29, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/b593f1fd-6356-4f87-afc7-73dc3c184cb1.jpg" alt="Hasselblad photo from 2024-11-29" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/11/29/scenes-of-fall.html" class="hblad-cell" title="View post from 2024-11-29">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/5d2d0a92-8470-4a76-8371-36a8e0e6438a.jpg"
-            alt="Hasselblad photo from 2024-11-29"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-11-29</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/11/29/scenes-of-fall.html" class="hb-cell" data-idx="16" title="Nov 29, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/5d2d0a92-8470-4a76-8371-36a8e0e6438a.jpg" alt="Hasselblad photo from 2024-11-29" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/11/29/scenes-of-fall.html" class="hblad-cell" title="View post from 2024-11-29">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/b8f5d1d7-257c-4cb1-8195-2e9e86b30408.jpg"
-            alt="Hasselblad photo from 2024-11-29"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-11-29</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/11/29/scenes-of-fall.html" class="hb-cell" data-idx="17" title="Nov 29, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/b8f5d1d7-257c-4cb1-8195-2e9e86b30408.jpg" alt="Hasselblad photo from 2024-11-29" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/11/24/scenes-of-fall.html" class="hblad-cell" title="View post from 2024-11-24">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/b91dc2e9-fb92-449f-9f9d-1e4c5f04d6e0.jpg"
-            alt="Hasselblad photo from 2024-11-24"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-11-24</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/11/24/scenes-of-fall.html" class="hb-cell" data-idx="18" title="Nov 24, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/b91dc2e9-fb92-449f-9f9d-1e4c5f04d6e0.jpg" alt="Hasselblad photo from 2024-11-24" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/11/24/scenes-of-fall.html" class="hblad-cell" title="View post from 2024-11-24">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/dacca681-035c-4600-917c-295458f38eef.jpg"
-            alt="Hasselblad photo from 2024-11-24"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-11-24</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/11/24/scenes-of-fall.html" class="hb-cell" data-idx="19" title="Nov 24, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/dacca681-035c-4600-917c-295458f38eef.jpg" alt="Hasselblad photo from 2024-11-24" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/11/24/scenes-of-fall.html" class="hblad-cell" title="View post from 2024-11-24">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/13dd387c-8a6e-4620-80b5-36d1f2d0bd99.jpg"
-            alt="Hasselblad photo from 2024-11-24"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-11-24</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/11/24/scenes-of-fall.html" class="hb-cell" data-idx="20" title="Nov 24, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/13dd387c-8a6e-4620-80b5-36d1f2d0bd99.jpg" alt="Hasselblad photo from 2024-11-24" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/11/21/mom-and-momo.html" class="hblad-cell" title="View post from 2024-11-21">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/9e38194d-dde7-4150-983a-6bcc0f5f6a69.jpg"
-            alt="Hasselblad photo from 2024-11-21"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-11-21</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/11/21/mom-and-momo.html" class="hb-cell" data-idx="21" title="Nov 21, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/9e38194d-dde7-4150-983a-6bcc0f5f6a69.jpg" alt="Hasselblad photo from 2024-11-21" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/11/15/dad-and-mom.html" class="hblad-cell" title="View post from 2024-11-15">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/e19833ee-2db3-4561-8cc1-4bbdceadde5b.jpg"
-            alt="Hasselblad photo from 2024-11-15"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-11-15</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/11/15/dad-and-mom.html" class="hb-cell" data-idx="22" title="Nov 15, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/e19833ee-2db3-4561-8cc1-4bbdceadde5b.jpg" alt="Hasselblad photo from 2024-11-15" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/11/14/momo-in-the.html" class="hblad-cell" title="View post from 2024-11-14">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/046048ec-b843-4ba2-b7c3-5ef0b8b834f2.jpg"
-            alt="Hasselblad photo from 2024-11-14"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-11-14</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/11/14/momo-in-the.html" class="hb-cell" data-idx="23" title="Nov 14, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/046048ec-b843-4ba2-b7c3-5ef0b8b834f2.jpg" alt="Hasselblad photo from 2024-11-14" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/09/09/flora-at-home.html" class="hblad-cell" title="View post from 2024-09-09">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/bf66090b-fbc0-4ea1-b576-3f0c76873694.jpg"
-            alt="Hasselblad photo from 2024-09-09"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-09-09</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/09/09/flora-at-home.html" class="hb-cell" data-idx="24" title="Sep 9, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/bf66090b-fbc0-4ea1-b576-3f0c76873694.jpg" alt="Hasselblad photo from 2024-09-09" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/09/04/sunrise-at-pittock.html" class="hblad-cell" title="View post from 2024-09-04">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/13574582-141c-47b5-a7e7-06947959665a.jpg"
-            alt="Hasselblad photo from 2024-09-04"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-09-04</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/09/04/sunrise-at-pittock.html" class="hb-cell" data-idx="25" title="Sep 4, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/13574582-141c-47b5-a7e7-06947959665a.jpg" alt="Hasselblad photo from 2024-09-04" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/08/30/portland-oregon-th.html" class="hblad-cell" title="View post from 2024-08-30">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/b8dcd913-021b-44f1-9e07-cc04b449f20f.jpg"
-            alt="Hasselblad photo from 2024-08-30"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-08-30</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/08/30/portland-oregon-th.html" class="hb-cell" data-idx="26" title="Aug 30, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/b8dcd913-021b-44f1-9e07-cc04b449f20f.jpg" alt="Hasselblad photo from 2024-08-30" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/08/13/hasselblad-cm-fujifilm.html" class="hblad-cell" title="View post from 2024-08-13">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/75165ce9-6597-4d65-a852-a40ec6c083a3.jpg"
-            alt="Hasselblad photo from 2024-08-13"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-08-13</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/08/13/hasselblad-cm-fujifilm.html" class="hb-cell" data-idx="27" title="Aug 13, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/75165ce9-6597-4d65-a852-a40ec6c083a3.jpg" alt="Hasselblad photo from 2024-08-13" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/07/26/astoriamegler-bridge-at.html" class="hblad-cell" title="View post from 2024-07-26">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/9855e168-de7e-436b-b951-631cd7ff4cf5.jpg"
-            alt="Hasselblad photo from 2024-07-26"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-07-26</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/07/26/astoriamegler-bridge-at.html" class="hb-cell" data-idx="28" title="Jul 26, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/9855e168-de7e-436b-b951-631cd7ff4cf5.jpg" alt="Hasselblad photo from 2024-07-26" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/07/26/astoriamegler-bridge-at.html" class="hblad-cell" title="View post from 2024-07-26">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/f6a3141b-6fa9-4f45-8f09-5a5458539f1f.jpg"
-            alt="Hasselblad photo from 2024-07-26"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-07-26</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/07/26/astoriamegler-bridge-at.html" class="hb-cell" data-idx="29" title="Jul 26, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/f6a3141b-6fa9-4f45-8f09-5a5458539f1f.jpg" alt="Hasselblad photo from 2024-07-26" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/07/10/this-was-taken.html" class="hblad-cell" title="View post from 2024-07-10">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/578d489f-b138-4382-afea-1651d83c67f5.jpg"
-            alt="Hasselblad photo from 2024-07-10"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-07-10</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/07/10/this-was-taken.html" class="hb-cell" data-idx="30" title="Jul 10, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/578d489f-b138-4382-afea-1651d83c67f5.jpg" alt="Hasselblad photo from 2024-07-10" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/07/09/replica-of-chief.html" class="hblad-cell" title="View post from 2024-07-09">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/a3b851b9-866b-4a16-a85f-31231fbe50db.jpg"
-            alt="Hasselblad photo from 2024-07-09"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-07-09</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/07/09/replica-of-chief.html" class="hb-cell" data-idx="31" title="Jul 9, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/a3b851b9-866b-4a16-a85f-31231fbe50db.jpg" alt="Hasselblad photo from 2024-07-09" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/06/25/uss-montgomery-lcs.html" class="hblad-cell" title="View post from 2024-06-25">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/32fd9062-8a01-4469-a3a1-65dc9cfc52c6.jpg"
-            alt="Hasselblad photo from 2024-06-25"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-06-25</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/06/25/uss-montgomery-lcs.html" class="hb-cell" data-idx="32" title="Jun 25, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/32fd9062-8a01-4469-a3a1-65dc9cfc52c6.jpg" alt="Hasselblad photo from 2024-06-25" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/06/25/uss-montgomery-lcs.html" class="hblad-cell" title="View post from 2024-06-25">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/45ed2df2-719a-4eb0-9b1e-8e2e2de86a0a.jpg"
-            alt="Hasselblad photo from 2024-06-25"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-06-25</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/06/25/uss-montgomery-lcs.html" class="hb-cell" data-idx="33" title="Jun 25, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/45ed2df2-719a-4eb0-9b1e-8e2e2de86a0a.jpg" alt="Hasselblad photo from 2024-06-25" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/06/25/uss-montgomery-lcs.html" class="hblad-cell" title="View post from 2024-06-25">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/8d07013d-25a3-49cb-97b3-19fd4ad2e192.jpg"
-            alt="Hasselblad photo from 2024-06-25"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-06-25</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/06/25/uss-montgomery-lcs.html" class="hb-cell" data-idx="34" title="Jun 25, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/8d07013d-25a3-49cb-97b3-19fd4ad2e192.jpg" alt="Hasselblad photo from 2024-06-25" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/06/25/uss-montgomery-lcs.html" class="hblad-cell" title="View post from 2024-06-25">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/473d75ac-4dbe-46f5-9982-6473769c6f7c.jpg"
-            alt="Hasselblad photo from 2024-06-25"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-06-25</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/06/25/uss-montgomery-lcs.html" class="hb-cell" data-idx="35" title="Jun 25, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/473d75ac-4dbe-46f5-9982-6473769c6f7c.jpg" alt="Hasselblad photo from 2024-06-25" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/06/22/portland-oregon-th.html" class="hblad-cell" title="View post from 2024-06-22">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/0d359d58-0d96-49ad-9465-e29648f79d8a.jpg"
-            alt="Hasselblad photo from 2024-06-22"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-06-22</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/06/22/portland-oregon-th.html" class="hb-cell" data-idx="36" title="Jun 22, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/0d359d58-0d96-49ad-9465-e29648f79d8a.jpg" alt="Hasselblad photo from 2024-06-22" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/06/22/portland-oregon-th.html" class="hblad-cell" title="View post from 2024-06-22">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/2cbf021a-106f-47d3-861d-b6ae0269feae.jpg"
-            alt="Hasselblad photo from 2024-06-22"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-06-22</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/06/22/portland-oregon-th.html" class="hb-cell" data-idx="37" title="Jun 22, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/2cbf021a-106f-47d3-861d-b6ae0269feae.jpg" alt="Hasselblad photo from 2024-06-22" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/06/18/salem-oregon-th.html" class="hblad-cell" title="View post from 2024-06-18">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/149886cb-d6d0-4be3-bff2-2b6afc204cd8.jpg"
-            alt="Hasselblad photo from 2024-06-18"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-06-18</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/06/18/salem-oregon-th.html" class="hb-cell" data-idx="38" title="Jun 18, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/149886cb-d6d0-4be3-bff2-2b6afc204cd8.jpg" alt="Hasselblad photo from 2024-06-18" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/06/18/salem-oregon-th.html" class="hblad-cell" title="View post from 2024-06-18">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/4a4a9bdc-449d-44ae-8539-d0f3b2a73183.jpg"
-            alt="Hasselblad photo from 2024-06-18"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-06-18</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/06/18/salem-oregon-th.html" class="hb-cell" data-idx="39" title="Jun 18, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/4a4a9bdc-449d-44ae-8539-d0f3b2a73183.jpg" alt="Hasselblad photo from 2024-06-18" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/06/17/hi-hasselblad-cm.html" class="hblad-cell" title="View post from 2024-06-17">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/8e16eff1-de5d-42f7-925a-7ec5e39690b8.jpg"
-            alt="Hasselblad photo from 2024-06-17"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-06-17</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/06/17/hi-hasselblad-cm.html" class="hb-cell" data-idx="40" title="Jun 17, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/8e16eff1-de5d-42f7-925a-7ec5e39690b8.jpg" alt="Hasselblad photo from 2024-06-17" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/05/21/mt-tabor-park.html" class="hblad-cell" title="View post from 2024-05-21">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/93a19860-ba67-41e1-aaa4-dc967a154aa0.jpg"
-            alt="Hasselblad photo from 2024-05-21"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-05-21</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/05/21/mt-tabor-park.html" class="hb-cell" data-idx="41" title="May 21, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/93a19860-ba67-41e1-aaa4-dc967a154aa0.jpg" alt="Hasselblad photo from 2024-05-21" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/05/18/coos-bay-oregon.html" class="hblad-cell" title="View post from 2024-05-18">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/3ea8a35b-4902-41ca-a951-225f7c7939cb.jpg"
-            alt="Hasselblad photo from 2024-05-18"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-05-18</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/05/18/coos-bay-oregon.html" class="hb-cell" data-idx="42" title="May 18, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/3ea8a35b-4902-41ca-a951-225f7c7939cb.jpg" alt="Hasselblad photo from 2024-05-18" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/05/06/coquille-point-bandon.html" class="hblad-cell" title="View post from 2024-05-06">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/014fea51-c84d-4914-a60d-825b57788b54.jpg"
-            alt="Hasselblad photo from 2024-05-06"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-05-06</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/05/06/coquille-point-bandon.html" class="hb-cell" data-idx="43" title="May 6, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/014fea51-c84d-4914-a60d-825b57788b54.jpg" alt="Hasselblad photo from 2024-05-06" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/05/06/coquille-point-bandon.html" class="hblad-cell" title="View post from 2024-05-06">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/3374781b-57bd-4276-9d5f-b5a089a11477.jpg"
-            alt="Hasselblad photo from 2024-05-06"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-05-06</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/05/06/coquille-point-bandon.html" class="hb-cell" data-idx="44" title="May 6, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/3374781b-57bd-4276-9d5f-b5a089a11477.jpg" alt="Hasselblad photo from 2024-05-06" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/05/04/portland-oregon-st.html" class="hblad-cell" title="View post from 2024-05-04">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/79d13780-b964-4828-a9b7-e8e9a1d5324a.jpg"
-            alt="Hasselblad photo from 2024-05-04"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-05-04</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/05/04/portland-oregon-st.html" class="hb-cell" data-idx="45" title="May 4, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/79d13780-b964-4828-a9b7-e8e9a1d5324a.jpg" alt="Hasselblad photo from 2024-05-04" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/05/03/shore-acres-state.html" class="hblad-cell" title="View post from 2024-05-03">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/0b086e83-6677-4d1c-aa2e-73203bedd2fb.jpg"
-            alt="Hasselblad photo from 2024-05-03"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-05-03</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/05/03/shore-acres-state.html" class="hb-cell" data-idx="46" title="May 3, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/0b086e83-6677-4d1c-aa2e-73203bedd2fb.jpg" alt="Hasselblad photo from 2024-05-03" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/05/02/portland-oregon-th.html" class="hblad-cell" title="View post from 2024-05-02">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/63a31685-73e3-4bad-a114-39a1bb92e1e2.jpg"
-            alt="Hasselblad photo from 2024-05-02"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-05-02</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/05/02/portland-oregon-th.html" class="hb-cell" data-idx="47" title="May 2, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/63a31685-73e3-4bad-a114-39a1bb92e1e2.jpg" alt="Hasselblad photo from 2024-05-02" loading="lazy" decoding="async" />
         </a>
       
-        <a href="/2024/05/02/portland-oregon-th.html" class="hblad-cell" title="View post from 2024-05-02">
-          <img
-            src="https://samgrover.micro.blog/uploads/2024/504aca13-5d46-4116-b59a-9063abee30aa.jpg"
-            alt="Hasselblad photo from 2024-05-02"
-            loading="lazy"
-            decoding="async"
-          >
-          <div class="hblad-overlay">
-            <span class="hblad-overlay-date">2024-05-02</span>
-            <span class="hblad-overlay-arrow">&#8599;</span>
-          </div>
+        <a href="/2024/05/02/portland-oregon-th.html" class="hb-cell" data-idx="48" title="May 2, 2024">
+          <img src="https://samgrover.micro.blog/uploads/2024/504aca13-5d46-4116-b59a-9063abee30aa.jpg" alt="Hasselblad photo from 2024-05-02" loading="lazy" decoding="async" />
         </a>
       
     </div>
+  </details>
 
-    <p class="hblad-footer">
-      Each photo links to its original post. &middot;
-      Run <code>tools/update-camera-gallery.py</code> after adding new Hasselblad posts.
-    </p>
-  </div>
+  <p class="hb-footer">
+    Each photo was made on the Hasselblad and links to its original post.
+  </p>
+
+  <div class="hb-sr" role="status" aria-live="polite" id="hb-live"></div>
 </article>
+
+<script>
+(function () {
+  var PHOTOS = [{"date":"Jan 21, 2026","src":"https://live.staticflickr.com/65535/55054334498_12f0275730_h.jpg","url":"/2026/01/21/buxton.html"},{"date":"Jan 14, 2026","src":"https://live.staticflickr.com/65535/55041486391_785ebdb627_h.jpg","url":"/2026/01/14/rainy-day-farm.html"},{"date":"Dec 24, 2025","src":"https://live.staticflickr.com/65535/55003743304_e81d76e0f2_h.jpg","url":"/2025/12/24/gorge.html"},{"date":"Dec 18, 2025","src":"https://live.staticflickr.com/65535/54992736040_a64a769c38_h.jpg","url":"/2025/12/18/oregon.html"},{"date":"Oct 8, 2025","src":"https://live.staticflickr.com/65535/54841300433_8926d02150_h.jpg","url":"/2025/10/08/caleb-japanese-garden.html"},{"date":"Oct 8, 2025","src":"https://live.staticflickr.com/65535/54841300488_377ffd5b0d_h.jpg","url":"/2025/10/08/caleb-japanese-garden.html"},{"date":"Oct 6, 2025","src":"https://live.staticflickr.com/65535/54836567379_c3ea44c0f1_h.jpg","url":"/2025/10/06/three-trees.html"},{"date":"Oct 6, 2025","src":"https://live.staticflickr.com/65535/54836567129_435f7210e9_h.jpg","url":"/2025/10/06/three-trees.html"},{"date":"Oct 6, 2025","src":"https://live.staticflickr.com/65535/54835473407_9a4702bbc1_h.jpg","url":"/2025/10/06/three-trees.html"},{"date":"Feb 22, 2025","src":"https://live.staticflickr.com/65535/54517121947_41a138a23c_h.jpg","url":"/2025/02/22/puzzling-st-december-hasselblad-cm.html"},{"date":"Feb 10, 2025","src":"https://live.staticflickr.com/65535/54519770095_3a1fe17817_h.jpg","url":"/2025/02/10/good-morning-th-january-hasselblad.html"},{"date":"Feb 4, 2025","src":"https://live.staticflickr.com/65535/54519769960_6689deab05_h.jpg","url":"/2025/02/04/laurelhurst-park-portland-oregon-th.html"},{"date":"Jan 31, 2025","src":"https://live.staticflickr.com/65535/54519602704_d68c5a7def_h.jpg","url":"/2025/01/31/laurelhurst-park-portland-oregon-th.html"},{"date":"Dec 1, 2024","src":"https://samgrover.micro.blog/uploads/2024/d4896cba-230d-4fa1-998b-ebe66fea1583.jpg","url":"/2024/12/01/momo-and-fall.html"},{"date":"Nov 29, 2024","src":"https://samgrover.micro.blog/uploads/2024/f0983370-146d-4add-906f-e42b881a6fda.jpg","url":"/2024/11/29/scenes-of-fall.html"},{"date":"Nov 29, 2024","src":"https://samgrover.micro.blog/uploads/2024/b593f1fd-6356-4f87-afc7-73dc3c184cb1.jpg","url":"/2024/11/29/scenes-of-fall.html"},{"date":"Nov 29, 2024","src":"https://samgrover.micro.blog/uploads/2024/5d2d0a92-8470-4a76-8371-36a8e0e6438a.jpg","url":"/2024/11/29/scenes-of-fall.html"},{"date":"Nov 29, 2024","src":"https://samgrover.micro.blog/uploads/2024/b8f5d1d7-257c-4cb1-8195-2e9e86b30408.jpg","url":"/2024/11/29/scenes-of-fall.html"},{"date":"Nov 24, 2024","src":"https://samgrover.micro.blog/uploads/2024/b91dc2e9-fb92-449f-9f9d-1e4c5f04d6e0.jpg","url":"/2024/11/24/scenes-of-fall.html"},{"date":"Nov 24, 2024","src":"https://samgrover.micro.blog/uploads/2024/dacca681-035c-4600-917c-295458f38eef.jpg","url":"/2024/11/24/scenes-of-fall.html"},{"date":"Nov 24, 2024","src":"https://samgrover.micro.blog/uploads/2024/13dd387c-8a6e-4620-80b5-36d1f2d0bd99.jpg","url":"/2024/11/24/scenes-of-fall.html"},{"date":"Nov 21, 2024","src":"https://samgrover.micro.blog/uploads/2024/9e38194d-dde7-4150-983a-6bcc0f5f6a69.jpg","url":"/2024/11/21/mom-and-momo.html"},{"date":"Nov 15, 2024","src":"https://samgrover.micro.blog/uploads/2024/e19833ee-2db3-4561-8cc1-4bbdceadde5b.jpg","url":"/2024/11/15/dad-and-mom.html"},{"date":"Nov 14, 2024","src":"https://samgrover.micro.blog/uploads/2024/046048ec-b843-4ba2-b7c3-5ef0b8b834f2.jpg","url":"/2024/11/14/momo-in-the.html"},{"date":"Sep 9, 2024","src":"https://samgrover.micro.blog/uploads/2024/bf66090b-fbc0-4ea1-b576-3f0c76873694.jpg","url":"/2024/09/09/flora-at-home.html"},{"date":"Sep 4, 2024","src":"https://samgrover.micro.blog/uploads/2024/13574582-141c-47b5-a7e7-06947959665a.jpg","url":"/2024/09/04/sunrise-at-pittock.html"},{"date":"Aug 30, 2024","src":"https://samgrover.micro.blog/uploads/2024/b8dcd913-021b-44f1-9e07-cc04b449f20f.jpg","url":"/2024/08/30/portland-oregon-th.html"},{"date":"Aug 13, 2024","src":"https://samgrover.micro.blog/uploads/2024/75165ce9-6597-4d65-a852-a40ec6c083a3.jpg","url":"/2024/08/13/hasselblad-cm-fujifilm.html"},{"date":"Jul 26, 2024","src":"https://samgrover.micro.blog/uploads/2024/9855e168-de7e-436b-b951-631cd7ff4cf5.jpg","url":"/2024/07/26/astoriamegler-bridge-at.html"},{"date":"Jul 26, 2024","src":"https://samgrover.micro.blog/uploads/2024/f6a3141b-6fa9-4f45-8f09-5a5458539f1f.jpg","url":"/2024/07/26/astoriamegler-bridge-at.html"},{"date":"Jul 10, 2024","src":"https://samgrover.micro.blog/uploads/2024/578d489f-b138-4382-afea-1651d83c67f5.jpg","url":"/2024/07/10/this-was-taken.html"},{"date":"Jul 9, 2024","src":"https://samgrover.micro.blog/uploads/2024/a3b851b9-866b-4a16-a85f-31231fbe50db.jpg","url":"/2024/07/09/replica-of-chief.html"},{"date":"Jun 25, 2024","src":"https://samgrover.micro.blog/uploads/2024/32fd9062-8a01-4469-a3a1-65dc9cfc52c6.jpg","url":"/2024/06/25/uss-montgomery-lcs.html"},{"date":"Jun 25, 2024","src":"https://samgrover.micro.blog/uploads/2024/45ed2df2-719a-4eb0-9b1e-8e2e2de86a0a.jpg","url":"/2024/06/25/uss-montgomery-lcs.html"},{"date":"Jun 25, 2024","src":"https://samgrover.micro.blog/uploads/2024/8d07013d-25a3-49cb-97b3-19fd4ad2e192.jpg","url":"/2024/06/25/uss-montgomery-lcs.html"},{"date":"Jun 25, 2024","src":"https://samgrover.micro.blog/uploads/2024/473d75ac-4dbe-46f5-9982-6473769c6f7c.jpg","url":"/2024/06/25/uss-montgomery-lcs.html"},{"date":"Jun 22, 2024","src":"https://samgrover.micro.blog/uploads/2024/0d359d58-0d96-49ad-9465-e29648f79d8a.jpg","url":"/2024/06/22/portland-oregon-th.html"},{"date":"Jun 22, 2024","src":"https://samgrover.micro.blog/uploads/2024/2cbf021a-106f-47d3-861d-b6ae0269feae.jpg","url":"/2024/06/22/portland-oregon-th.html"},{"date":"Jun 18, 2024","src":"https://samgrover.micro.blog/uploads/2024/149886cb-d6d0-4be3-bff2-2b6afc204cd8.jpg","url":"/2024/06/18/salem-oregon-th.html"},{"date":"Jun 18, 2024","src":"https://samgrover.micro.blog/uploads/2024/4a4a9bdc-449d-44ae-8539-d0f3b2a73183.jpg","url":"/2024/06/18/salem-oregon-th.html"},{"date":"Jun 17, 2024","src":"https://samgrover.micro.blog/uploads/2024/8e16eff1-de5d-42f7-925a-7ec5e39690b8.jpg","url":"/2024/06/17/hi-hasselblad-cm.html"},{"date":"May 21, 2024","src":"https://samgrover.micro.blog/uploads/2024/93a19860-ba67-41e1-aaa4-dc967a154aa0.jpg","url":"/2024/05/21/mt-tabor-park.html"},{"date":"May 18, 2024","src":"https://samgrover.micro.blog/uploads/2024/3ea8a35b-4902-41ca-a951-225f7c7939cb.jpg","url":"/2024/05/18/coos-bay-oregon.html"},{"date":"May 6, 2024","src":"https://samgrover.micro.blog/uploads/2024/014fea51-c84d-4914-a60d-825b57788b54.jpg","url":"/2024/05/06/coquille-point-bandon.html"},{"date":"May 6, 2024","src":"https://samgrover.micro.blog/uploads/2024/3374781b-57bd-4276-9d5f-b5a089a11477.jpg","url":"/2024/05/06/coquille-point-bandon.html"},{"date":"May 4, 2024","src":"https://samgrover.micro.blog/uploads/2024/79d13780-b964-4828-a9b7-e8e9a1d5324a.jpg","url":"/2024/05/04/portland-oregon-st.html"},{"date":"May 3, 2024","src":"https://samgrover.micro.blog/uploads/2024/0b086e83-6677-4d1c-aa2e-73203bedd2fb.jpg","url":"/2024/05/03/shore-acres-state.html"},{"date":"May 2, 2024","src":"https://samgrover.micro.blog/uploads/2024/63a31685-73e3-4bad-a114-39a1bb92e1e2.jpg","url":"/2024/05/02/portland-oregon-th.html"},{"date":"May 2, 2024","src":"https://samgrover.micro.blog/uploads/2024/504aca13-5d46-4116-b59a-9063abee30aa.jpg","url":"/2024/05/02/portland-oregon-th.html"}];
+  if (!PHOTOS.length) return;
+
+  var i = 0;
+  var page = document.getElementById('hb');
+  var glass = document.getElementById('hb-glass');
+  var photo = document.getElementById('hb-photo');
+  var counter = document.getElementById('hb-counter');
+  var dateEl = document.getElementById('hb-date');
+  var post = document.getElementById('hb-post');
+  var live = document.getElementById('hb-live');
+  var cells = Array.prototype.slice.call(document.querySelectorAll('#hb-grid .hb-cell'));
+  var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+
+  page.classList.add('js'); 
+
+  function preload(idx) {
+    [idx - 1, idx + 1].forEach(function (k) {
+      var im = new Image();
+      im.src = PHOTOS[(k + PHOTOS.length) % PHOTOS.length].src;
+    });
+  }
+
+  function render(animate) {
+    var p = PHOTOS[i];
+    var apply = function () {
+      photo.src = p.src;
+      photo.alt = 'Photo from ' + p.date;
+      glass.classList.remove('swapping');
+    };
+    if (animate) { glass.classList.add('swapping'); setTimeout(apply, 130); }
+    else { apply(); }
+    counter.textContent = pad(i + 1) + ' / ' + pad(PHOTOS.length);
+    dateEl.textContent = p.date;
+    post.href = p.url;
+    live.textContent = 'Photo ' + (i + 1) + ' of ' + PHOTOS.length + ', ' + p.date;
+    cells.forEach(function (c, k) { c.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+    preload(i);
+  }
+
+  function go(d) { i = (i + d + PHOTOS.length) % PHOTOS.length; render(true); }
+  function jump(idx) { i = idx; render(true); }
+
+  function setMirror(on) {
+    glass.classList.toggle('mirror', on);
+    document.getElementById('hb-mode-shot').setAttribute('aria-pressed', String(!on));
+    document.getElementById('hb-mode-finder').setAttribute('aria-pressed', String(on));
+  }
+
+  document.getElementById('hb-prev').addEventListener('click', function () { go(-1); });
+  document.getElementById('hb-next').addEventListener('click', function () { go(1); });
+  document.getElementById('hb-mode-shot').addEventListener('click', function () { setMirror(false); });
+  document.getElementById('hb-mode-finder').addEventListener('click', function () { setMirror(true); });
+
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { go(-1); }
+    else if (e.key === 'ArrowRight') { go(1); }
+  });
+
+  
+  cells.forEach(function (c, k) {
+    c.addEventListener('click', function (e) {
+      e.preventDefault();
+      jump(k);
+      page.querySelector('.hb-stage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+
+  render(false);
+})();
+</script>
 </main><footer
   class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
 >
