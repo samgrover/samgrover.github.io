@@ -61,7 +61,7 @@ A few days after that I imagined a clock face where the seconds hand moves in ju
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
-  <meta name="generator" content="Hugo 0.164.0">
+  <meta name="generator" content="Hugo 0.165.0">
   <style>
     body,
     body * {
@@ -275,11 +275,9 @@ A few days after that I imagined a clock face where the seconds hand moves in ju
 </header>
 <main
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">Vibing Pi o&#39;Clock</h1><div class="text-xs antialiased opacity-60"><time>Mar 31, 2025</time></div></header>
-
-  <section><p><a href="https://raw.githubusercontent.com/samgrover/VibeClockPi/refs/heads/main/Resources/VibeClockPi.gif"><img src="https://raw.githubusercontent.com/samgrover/VibeClockPi/refs/heads/main/Resources/VibeClockPi.gif" alt="An animation of a clock face where the seconds hand is jumping by a different number of places with each passing second."></a></p>
+    ><article><header class="mb-10">
+    <h1 class="my-0!">Vibing Pi o&#39;Clock</h1>
+  </header><section><p><a href="https://raw.githubusercontent.com/samgrover/VibeClockPi/refs/heads/main/Resources/VibeClockPi.gif"><img src="https://raw.githubusercontent.com/samgrover/VibeClockPi/refs/heads/main/Resources/VibeClockPi.gif" alt="An animation of a clock face where the seconds hand is jumping by a different number of places with each passing second."></a></p>
 <p>When I wrote up <a href="https://samgrover.com/2025/03/14/yesterday-it-dawned-on-me.html">Piterator.swift</a> on <a href="https://en.wikipedia.org/wiki/Pi_Day">Pi Day</a> earlier this month, I was actually trying to do something with the values it returns but I didn&rsquo;t get around to that fun part due to lack of time.</p>
 <p>A few days after that I imagined a clock face where the seconds hand moves in jumps of the values returned by the iterator at the rate of once per second. So as the values start coming in like 3, 1, 4, etc, the second hand jumps by those many seconds.</p>
 <p>I started to write the code for a Mac app but Quartz 2D drawing is not something I have ever really done, so it was tricky wrapping my mind around the coordinate system and laying out individual marks on the canvas.</p>
@@ -296,7 +294,13 @@ A few days after that I imagined a clock face where the seconds hand moves in ju
 <p><a href="https://github.com/samgrover/VibeClockPi">All the code is on Github</a></p>
 </section>
 
-  <nav
+  <footer class="post-meta">
+    <div class="post-meta-line">
+      <span class="post-meta-label">Published on</span>
+      <time class="post-meta-date" datetime="2025-03-31T15:24:35-07:00"
+        >Mar 31, 2025</time
+      ></div>
+  </footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   ><a class="ltr:pr-3 rtl:pl-3" href="https://samgrover.com/2025/04/01/sunrise-over-the-hill-in.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a

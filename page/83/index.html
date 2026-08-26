@@ -59,7 +59,7 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
-  <meta name="generator" content="Hugo 0.164.0">
+  <meta name="generator" content="Hugo 0.165.0">
   <style>
     body,
     body * {
@@ -270,15 +270,6 @@
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     >
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Apr 17, 2019</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/17/a-short-break.html"
-    ></a
-  >
-</section>
-
 <section><p>A short break on a muddy spot. From a few weeks ago.</p>
 <figure>
   <a href="https://live.staticflickr.com/65535/40725609973_f75cd00eee_h.jpg"><img src="https://live.staticflickr.com/65535/40725609973_f75cd00eee_h.jpg" alt=""></a>
@@ -287,16 +278,20 @@
 
 </section>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Importing Foursquare/Swarm history into Day One</h2>
-  <time class="text-xs antialiased opacity-80"
-    >Apr 16, 2019</time
-  >
+<footer class="post-meta post-meta-list">
+  <a class="post-meta-line" href="https://samgrover.com/2019/04/17/a-short-break.html">
+    <span class="post-meta-label">Published on</span>
+    <time class="post-meta-date" datetime="2019-04-17T08:40:13-07:00"
+      >Apr 17, 2019</time
+    >
+  </a>
+</footer>
+
+<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Importing Foursquare/Swarm history into Day One</h2>
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/16/importing-foursquareswarm-history.html"
     >Importing Foursquare/Swarm history into Day One</a
   >
-</section>
-
-<section><p>I&rsquo;ve been journaling in <a href="https://dayoneapp.com">Day One</a> for some time now. I like it for a lot of reasons, and it&rsquo;s working out great. So far I&rsquo;ve been using it as a plain old journal, where you write what&rsquo;s on your mind. Recently, I decided that I wanted to get my digital history into it as well. One of the first things that came to mind was my <a href="https://foursquare.com">Foursquare/Swarm</a> checkin history which goes back to 2009. I decided to start there.</p>
+</section><section><p>I&rsquo;ve been journaling in <a href="https://dayoneapp.com">Day One</a> for some time now. I like it for a lot of reasons, and it&rsquo;s working out great. So far I&rsquo;ve been using it as a plain old journal, where you write what&rsquo;s on your mind. Recently, I decided that I wanted to get my digital history into it as well. One of the first things that came to mind was my <a href="https://foursquare.com">Foursquare/Swarm</a> checkin history which goes back to 2009. I decided to start there.</p>
 <p>I exported all my data and wrote a script in Python to extract what I needed from it to make journal entries. The two relevant files were <code>checkins.json</code> and <code>photos.json</code>. You can <a href="https://gist.github.com/samgrover/26939e0b68a26b7fe03a7a4bd37bdcf6">get my script on Github by selecting here</a> if you&rsquo;d like to use it, or dig into it. It should also appear embedded at the end of this post. First the script pre-processes the data to get all the photos attached to checkins. Then it goes over the checkin history to extract most of what I want, but since the exported data doesn&rsquo;t include venue coordinates, it has to do a little more.</p>
 <p>It makes calls to the <a href="https://developer.foursquare.com/docs">Foursquare API</a> to fetch the venue coordinates for each checkin. Then it puts everything together and makes the actual entry using Day One&rsquo;s <a href="https://dayoneapp.com/support/CLI">command line utility</a>. I had several thousand entries but the free plan for the API has a daily limit of 500 calls, so I manually ran it a few times over the course of a couple of weeks until they&rsquo;d all been imported. I could&rsquo;ve automated that but I wasn&rsquo;t keen on spending the time on that.</p>
 <p>Day One does allow one to link it to <a href="https://help.dayoneapp.com/tips-and-tutorials/using-ifttt-with-day-one">IFTTT</a> so that all <em>new</em> checkins get logged automatically, and I enabled that a while back, but I&rsquo;ve not been happy with that integration. Now that I&rsquo;m familiar with the flow of data, I plan to create new entries every couple of months or so, perhaps with a new script that works entirely with the API.</p>
@@ -304,16 +299,20 @@
 <script src="https://gist.github.com/samgrover/26939e0b68a26b7fe03a7a4bd37bdcf6.js"></script>
 </section>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Initial experience with Setapp</h2>
-  <time class="text-xs antialiased opacity-80"
-    >Apr 14, 2019</time
-  >
+<footer class="post-meta post-meta-list">
+  <a class="post-meta-line" href="https://samgrover.com/2019/04/16/importing-foursquareswarm-history.html">
+    <span class="post-meta-label">Published on</span>
+    <time class="post-meta-date" datetime="2019-04-16T19:38:57-07:00"
+      >Apr 16, 2019</time
+    >
+  </a>
+</footer>
+
+<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Initial experience with Setapp</h2>
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/14/initial-experience-with.html"
     >Initial experience with Setapp</a
   >
-</section>
-
-<section><p>I signed up for <a href="https://go.setapp.com/invite/v6jr3hc8">Setapp</a> for a free trial week. Setapp is an app subscription service for macOS where you sign up for $10 a month to gain full access to a catalog of over 100 apps.</p>
+</section><section><p>I signed up for <a href="https://go.setapp.com/invite/v6jr3hc8">Setapp</a> for a free trial week. Setapp is an app subscription service for macOS where you sign up for $10 a month to gain full access to a catalog of over 100 apps.</p>
 <p>This is not a review of Setapp, but rather my initial experience with it after having heard about it a few times on the <a href="https://www.relay.fm/mpu/">Mac Power Users</a> podcast. Many of apps in the Setapp catalog are well known and as such I was already aware of them. But there are several that are new to me.</p>
 <p>Apps that I found myself using often during the trial:</p>
 <ul>
@@ -348,14 +347,14 @@
 <p>If you would like to try out Setapp, <a href="https://go.setapp.com/invite/v6jr3hc8">select here to use my referral code</a>.</p>
 </section>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Apr 12, 2019</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/12/its-that-time.html"
-    ></a
-  >
-</section>
+<footer class="post-meta post-meta-list">
+  <a class="post-meta-line" href="https://samgrover.com/2019/04/14/initial-experience-with.html">
+    <span class="post-meta-label">Published on</span>
+    <time class="post-meta-date" datetime="2019-04-14T12:16:31-07:00"
+      >Apr 14, 2019</time
+    >
+  </a>
+</footer>
 
 <section><p>It’s that time of the biennial.</p>
 <figure>
@@ -365,14 +364,14 @@
 
 </section>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Apr 11, 2019</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/11/when-rain-gave.html"
-    ></a
-  >
-</section>
+<footer class="post-meta post-meta-list">
+  <a class="post-meta-line" href="https://samgrover.com/2019/04/12/its-that-time.html">
+    <span class="post-meta-label">Published on</span>
+    <time class="post-meta-date" datetime="2019-04-12T06:41:59-07:00"
+      >Apr 12, 2019</time
+    >
+  </a>
+</footer>
 
 <section><p>When rain gave way to the setting Sun,<br>
 briefly the other day</p>
@@ -384,28 +383,32 @@ briefly the other day</p>
 
 </section>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Apr 9, 2019</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/09/204819.html"
-    ></a
-  >
-</section>
+<footer class="post-meta post-meta-list">
+  <a class="post-meta-line" href="https://samgrover.com/2019/04/11/when-rain-gave.html">
+    <span class="post-meta-label">Published on</span>
+    <time class="post-meta-date" datetime="2019-04-11T19:42:46-07:00"
+      >Apr 11, 2019</time
+    >
+  </a>
+</footer>
 
 <section><p>I went down memory lane and discovered that Federico Viticci reviewed my first and only indie iOS app way back in the day 😊 <a href="https://www.macstories.net/news/tweeple-tap-iphone-game-to-recognize-people-by-their-tweets/">www.macstories.net/news/twee&hellip;</a></p>
 </section>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!">Hiking at Angel&#39;s Rest</h2>
-  <time class="text-xs antialiased opacity-80"
-    >Apr 9, 2019</time
-  >
+<footer class="post-meta post-meta-list">
+  <a class="post-meta-line" href="https://samgrover.com/2019/04/09/204819.html">
+    <span class="post-meta-label">Published on</span>
+    <time class="post-meta-date" datetime="2019-04-09T20:48:19-07:00"
+      >Apr 9, 2019</time
+    >
+  </a>
+</footer>
+
+<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Hiking at Angel&#39;s Rest</h2>
   <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/09/hiking-at-angels.html"
     >Hiking at Angel&#39;s Rest</a
   >
-</section>
-
-<section><figure>
+</section><section><figure>
   <a href="https://live.staticflickr.com/65535/54550541609_a9623912ae_h.jpg"><img src="https://live.staticflickr.com/65535/54550541609_a9623912ae_h.jpg" alt=""></a>
   
 </figure>
@@ -481,14 +484,14 @@ Elevation Gain: 1484 ft<br>
 Time (including breaks): 3h 5m</p>
 </section>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Apr 6, 2019</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/06/who-doesnt-like.html"
-    ></a
-  >
-</section>
+<footer class="post-meta post-meta-list">
+  <a class="post-meta-line" href="https://samgrover.com/2019/04/09/hiking-at-angels.html">
+    <span class="post-meta-label">Published on</span>
+    <time class="post-meta-date" datetime="2019-04-09T09:40:58-07:00"
+      >Apr 9, 2019</time
+    >
+  </a>
+</footer>
 
 <section><p>Who doesn’t like a nice sunbeam on a cool spring day?</p>
 <figure>
@@ -498,14 +501,14 @@ Time (including breaks): 3h 5m</p>
 
 </section>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Apr 6, 2019</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/06/194702.html"
-    ></a
-  >
-</section>
+<footer class="post-meta post-meta-list">
+  <a class="post-meta-line" href="https://samgrover.com/2019/04/06/who-doesnt-like.html">
+    <span class="post-meta-label">Published on</span>
+    <time class="post-meta-date" datetime="2019-04-06T22:28:31-07:00"
+      >Apr 6, 2019</time
+    >
+  </a>
+</footer>
 
 <section><p>🙋‍♀️🌸</p>
 <figure>
@@ -515,14 +518,14 @@ Time (including breaks): 3h 5m</p>
 
 </section>
 
-<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="my-0!"></h2>
-  <time class="text-xs antialiased opacity-80"
-    >Mar 30, 2019</time
-  >
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/03/30/it-was-a.html"
-    ></a
-  >
-</section>
+<footer class="post-meta post-meta-list">
+  <a class="post-meta-line" href="https://samgrover.com/2019/04/06/194702.html">
+    <span class="post-meta-label">Published on</span>
+    <time class="post-meta-date" datetime="2019-04-06T19:47:02-07:00"
+      >Apr 6, 2019</time
+    >
+  </a>
+</footer>
 
 <section><p>It was a nice day for a hike.</p>
 <p>St. Johns Bridge from Ridge Trail. Portland, Oregon. 30th March, 2019.</p>
@@ -531,7 +534,16 @@ Time (including breaks): 3h 5m</p>
   
 </figure>
 
-</section><nav class="mt-14 flex"><a class="btn not-prose" href="/page/82/"
+</section>
+
+<footer class="post-meta post-meta-list">
+  <a class="post-meta-line" href="https://samgrover.com/2019/03/30/it-was-a.html">
+    <span class="post-meta-label">Published on</span>
+    <time class="post-meta-date" datetime="2019-03-30T18:10:03-07:00"
+      >Mar 30, 2019</time
+    >
+  </a>
+</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/82/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/84/"
     >Next Page→</a

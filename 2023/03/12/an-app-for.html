@@ -61,7 +61,7 @@ When I share an activity on a blog post I like to show the map but I don&rsquo;t
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
-  <meta name="generator" content="Hugo 0.164.0">
+  <meta name="generator" content="Hugo 0.165.0">
   <style>
     body,
     body * {
@@ -275,11 +275,9 @@ When I share an activity on a blog post I like to show the map but I don’t lik
 </header>
 <main
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">An App for Mapping My Outdoor Activities With Apple Watch Using GPX Tracks</h1><div class="text-xs antialiased opacity-60"><time>Mar 12, 2023</time></div></header>
-
-  <section><p>I use an Apple Watch to track my activities, whether that be workouts or recreational. For outdoor activities, the watch records location data throughout the activity. This is later shown on a map in the <a href="https://apps.apple.com/us/app/fitness/id1208224953">Fitness app</a> on the iPhone. While that map is interactive, exporting it only exports a low resolution image, and not the actual route.</p>
+    ><article><header class="mb-10">
+    <h1 class="my-0!">An App for Mapping My Outdoor Activities With Apple Watch Using GPX Tracks</h1>
+  </header><section><p>I use an Apple Watch to track my activities, whether that be workouts or recreational. For outdoor activities, the watch records location data throughout the activity. This is later shown on a map in the <a href="https://apps.apple.com/us/app/fitness/id1208224953">Fitness app</a> on the iPhone. While that map is interactive, exporting it only exports a low resolution image, and not the actual route.</p>
 <p><a href="https://samgrover.micro.blog/uploads/2023/cc30649b50.jpg"><img src="https://samgrover.micro.blog/uploads/2023/cc30649b50.jpg" alt="A walking track is overlaid on a map."></a></p>
 <p>When I share an activity on a blog post I like to show the map but I don&rsquo;t like the idea of just sharing an image of the map. I would like to get the actual data out so that it can be overlaid on an interactive map using various mapping tools.</p>
 <p>I found an app on the App Store that can export the data, among many other features, but I wasn&rsquo;t keen on paying a subscription for this one small occasional use case. As an app developer, I know that access to this data is controlled by the Health related privacy settings on the iPhone and is accessible using the HealthKit framework. So I decided make a small app to get this data out while also gaining familiarity with that part of the iOS SDK. A few weeks ago I got started on it. I worked on it in small chunks of time, as I usually do with such side projects. The UI came together pretty quickly as a SwiftUI app. It is nothing special but looks presentable and gets the job done.</p>
@@ -292,7 +290,13 @@ When I share an activity on a blog post I like to show the map but I don’t lik
 <p>Both these presentation styles are far more interesting to me than just a low resolution image out of the Fitness app.</p>
 </section>
 
-  <nav
+  <footer class="post-meta">
+    <div class="post-meta-line">
+      <span class="post-meta-label">Published on</span>
+      <time class="post-meta-date" datetime="2023-03-12T15:58:30-07:00"
+        >Mar 12, 2023</time
+      ></div>
+  </footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   ><a class="ltr:pr-3 rtl:pl-3" href="https://samgrover.com/2023/03/16/on-a-scale.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a

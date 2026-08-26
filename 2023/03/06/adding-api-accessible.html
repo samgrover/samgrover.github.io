@@ -61,7 +61,7 @@ These include my Ecobee Thermostat and Remote Sensor and my IQAir AirVisual Pro.
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
-  <meta name="generator" content="Hugo 0.164.0">
+  <meta name="generator" content="Hugo 0.165.0">
   <style>
     body,
     body * {
@@ -275,11 +275,9 @@ These include my Ecobee Thermostat and Remote Sensor and my IQAir AirVisual Pro.
 </header>
 <main
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article>
-  <header class="mb-14">
-    <h1 class="my-0! pb-2.5">Adding API Accessible Devices to the Home Climate Monitoring Setup</h1><div class="text-xs antialiased opacity-60"><time>Mar 6, 2023</time></div></header>
-
-  <section><p>I was thinking about getting more of those AcuRite sensors for expanding my <a href="https://samgrover.com/2023/03/01/home-climate-monitoring.html">home climate monitoring</a> when I realized that I already have a couple of devices recording this and other data.</p>
+    ><article><header class="mb-10">
+    <h1 class="my-0!">Adding API Accessible Devices to the Home Climate Monitoring Setup</h1>
+  </header><section><p>I was thinking about getting more of those AcuRite sensors for expanding my <a href="https://samgrover.com/2023/03/01/home-climate-monitoring.html">home climate monitoring</a> when I realized that I already have a couple of devices recording this and other data.</p>
 <p><a href="https://samgrover.micro.blog/uploads/2023/346875b7ca.png"><img src="https://samgrover.micro.blog/uploads/2023/346875b7ca.png" alt="Screenshot showing charts of temperature, humidity, and air quality time series."></a></p>
 <p>These include my <a href="https://amzn.to/3ZnOfFX">Ecobee Thermostat and Remote Sensor</a> and my <a href="https://amzn.to/41MeiIK">IQAir AirVisual Pro</a>. Both of these have means of getting the data off of them using an API. This <a href="https://den.dev/blog/air/">blog post</a> by Den Delimarsky really helped with the IQAir API. <a href="https://www.ecobee.com/en-us/developers/">Ecobee API</a> was straightforward. And after some coding and testing, I had a couple of scripts running that could pull metrics from them and send them to <code>influxdb</code>. So now I have a few more data points for existing metrics, and have added air quality to it.</p>
 <p>In the previous blog post , I wrote:</p>
@@ -295,7 +293,13 @@ These include my Ecobee Thermostat and Remote Sensor and my IQAir AirVisual Pro.
 </ul>
 </section>
 
-  <nav
+  <footer class="post-meta">
+    <div class="post-meta-line">
+      <span class="post-meta-label">Published on</span>
+      <time class="post-meta-date" datetime="2023-03-06T11:47:34-07:00"
+        >Mar 6, 2023</time
+      ></div>
+  </footer><nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   ><a class="ltr:pr-3 rtl:pl-3" href="https://samgrover.com/2023/03/12/film-kentmere-pan.html"
       ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a
