@@ -281,31 +281,299 @@
 
 
 
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+
 <style>
+   
+  .pj-regional {
+    --rg-paper: #f3eedf;             
+    --rg-accent: #c4472c;            
+    --rg-ink: #2f4a37;               
+    --rg-text: #2b2622;              
+    --rg-rule: #d8ceb6;
+  }
+  html.dark .pj-regional {
+    --rg-paper: #27241d;
+    --rg-accent: #e2775c;
+    --rg-ink: #a9c9a4;
+    --rg-text: #ece4d2;
+    --rg-rule: #4a4334;
+  }
+
   .rg-header h1 {
     font-family: 'Nunito', sans-serif; font-weight: 800;
     font-size: 1.9rem; letter-spacing: -0.02em; margin: 0;
   }
   .rg-intro { margin-top: 0.5rem; opacity: 0.85; }
   .rg-intro p { margin: 0; }
-  .rg-grid {
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1.4rem 1rem; margin-top: 2rem;
+
+   
+  .rg-log { margin-top: 2.2rem; }
+  .rg-year { margin-top: 2.6rem; }
+  .rg-year:first-child { margin-top: 0; }
+  .prose .pj-regional .rg-year h2 {
+    margin: 0 !important; display: flex; align-items: baseline; gap: 0.6rem;
+    font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.5rem; line-height: 1;
+    color: var(--rg-ink) !important;
   }
-  @media (min-width: 640px) { .rg-grid { grid-template-columns: repeat(3, 1fr); } }
-  .rg-card { display: block; text-decoration: none !important; }
+  .prose .pj-regional .rg-year h2 small {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.6; color: var(--rg-text) !important;
+  }
+
+   
+  .rg-cards {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row dense; align-items: start;
+    gap: 1.3rem 1rem; margin-top: 1.1rem;
+  }
+  @media (min-width: 640px) { .rg-cards { grid-template-columns: repeat(3, 1fr); } }
+  .prose .pj-regional .rg-card { display: block; min-width: 0; text-decoration: none !important; }
+  .prose .pj-regional .rg-card.rg-set { grid-column: span 2; }
   .rg-photo {
-    display: block; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 4px;
+    display: block; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 5px;
     background: rgba(100, 85, 65, 0.15);
   }
-  .rg-photo img {
+  .rg-photo img, .rg-mosaic img {
     width: 100% !important; height: 100% !important; max-width: none !important;
     object-fit: cover; margin: 0 !important; border: 0 !important; box-shadow: none !important; display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
-  .rg-text { display: block; margin-top: 0.45rem; font-size: 0.85rem; line-height: 1.35; }
+  .rg-card:hover .rg-photo img, .rg-card:hover .rg-mosaic img { transform: scale(1.04); }
+  .prose .pj-regional .rg-place {
+    display: flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.58rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3;
+    color: var(--rg-accent) !important;
+  }
+  .rg-place svg { flex: none; width: 0.7rem; height: 0.7rem; fill: currentColor; }
+  .rg-text { display: block; margin-top: 0.3rem; font-size: 0.85rem; line-height: 1.4; }
+  .rg-photo + .rg-text, .rg-mosaic + .rg-text { margin-top: 0.5rem; }
   .rg-text.excerpt { font-style: italic; opacity: 0.8; }
   .rg-card:hover .rg-text { text-decoration: underline; }
+
+   
+  .rg-mosaic {
+    position: relative; display: grid; gap: 4px;
+    grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr;
+    aspect-ratio: 2 / 1; overflow: hidden; border-radius: 5px;
+    background: rgba(100, 85, 65, 0.15);
+  }
+  .rg-mosaic .rg-m { display: block; overflow: hidden; min-height: 0; }
+  .rg-mosaic .rg-m:first-child { grid-row: 1 / 3; }
+  .rg-mosaic.n1 { grid-template-columns: 1fr; }
+  .rg-mosaic.n2 .rg-m:nth-child(2) { grid-row: 1 / 3; }
+  .prose .pj-regional .rg-count {
+    position: absolute; left: 7px; top: 7px; z-index: 1;
+    padding: 0.15rem 0.45rem; border-radius: 3px;
+    background: rgba(20, 16, 12, 0.72); color: #fffdf7 !important;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+   
+  .prose .pj-regional .rg-note {
+    padding: 0.8rem 0.9rem 0.9rem; border-radius: 5px;
+    background: var(--rg-paper); border: 1px solid var(--rg-rule);
+  }
+  .prose .pj-regional .rg-note .rg-kicker { margin-bottom: 0.4rem; }
+  .prose .pj-regional .rg-note .rg-text { margin-top: 0; color: var(--rg-text) !important; }
+
+   
+  .prose .pj-regional .rg-story {
+    grid-column: 1 / -1; position: relative; overflow: hidden;
+    display: grid; grid-template-columns: 1fr; gap: 0.9rem;
+    padding: 10px 10px 1.1rem; border-radius: 6px;
+    background: var(--rg-paper); border: 1px solid var(--rg-rule);
+  }
+  .rg-story .rg-mosaic { position: relative; aspect-ratio: 3 / 2; }
+  .rg-report { position: relative; display: block; padding: 0 0.5rem; }
+  @media (min-width: 640px) {
+    .prose .pj-regional .rg-story { grid-template-columns: 3fr 2fr; gap: 1.4rem; padding: 12px; }
+     
+    .rg-story .rg-mosaic { aspect-ratio: auto; min-height: 18rem; }
+    .rg-report { padding: 0.6rem 0.8rem 0.6rem 0; }
+  }
+  .prose .pj-regional .rg-kicker {
+    display: block; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--rg-ink) !important;
+  }
+  .prose .pj-regional .rg-story .rg-story-title {
+    display: block; margin-top: 0.35rem;
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 1.3rem; line-height: 1.2;
+    color: var(--rg-text) !important;
+  }
+  .prose .pj-regional .rg-story .rg-text {
+    margin-top: 0.55rem; font-size: 0.88rem; line-height: 1.55; color: var(--rg-text) !important;
+  }
+  .prose .pj-regional .rg-story:hover .rg-text { text-decoration: none; }
+  .prose .pj-regional .rg-read {
+    display: inline-block; margin-top: 0.7rem; font-size: 0.8rem; font-weight: 700;
+    color: var(--rg-accent) !important; border-bottom: 1.5px dashed currentColor;
+  }
+  .prose .pj-regional .rg-story:hover .rg-read { border-bottom-style: solid; }
+
   .rg-empty { margin-top: 2rem; opacity: 0.6; font-style: italic; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rg-photo img, .rg-mosaic img { transition: none !important; }
+  }
 </style>
 
 <article class="post-single pj-regional">
@@ -331,278 +599,1293 @@
   </header>
 
   
-    <div class="rg-grid">
+    <div class="rg-log">
       
-        <a class="rg-card" href="/2025/11/25/love-oregon.html">
-          <span class="rg-photo"><img src="https://live.staticflickr.com/65535/54945483709_630b50bf4c_h.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">Had the day off yesterday and decided to go on a drive to explore …</span>
-          
-        </a>
+        
+        
+        <section class="rg-year" id="y2025">
+          <h2>2025 <small>6 posts</small></h2>
+          <div class="rg-cards">
+            
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-story" href="/2025/11/25/love-oregon.html">
       
-        <a class="rg-card" href="/2026/01/14/rainy-day-farm.html">
-          <span class="rg-photo"><img src="https://live.staticflickr.com/65535/55041486391_785ebdb627_h.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt"> Clatskanie, Oregon. 24th November, 2025.
-📷 Hasselblad 500C/M
-🎞️ Kodak …</span>
-          
-        </a>
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://live.staticflickr.com/65535/54945483709_630b50bf4c_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54945221826_2a3ba1bca6_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54945221911_2feb7bacb8_h.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">9 photos</span>
+  </span>
+
+      <span class="rg-report">
+        <span class="rg-kicker">Trip report · 1 min read</span>
+        
+        
+  
+
+        <span class="rg-text">Had the day off yesterday and decided to go on a drive to explore new-to-me places. Saw some bald eagles. I swear two of them separately looked at me directly and then flew away, with what I assumed was a, “city boy with camera 🙄” vibes…
+…this little waterfall with a bunch of Fall-en leaves…
+…a …</span>
+        <span class="rg-read">Read the trip report →</span>
+      </span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2026/01/14/rainy-day-farm.html">
+      <span class="rg-photo"><img src="https://live.staticflickr.com/65535/55041486391_785ebdb627_h.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2026/01/21/buxton.html">
-          <span class="rg-photo"><img src="https://live.staticflickr.com/65535/55054334498_12f0275730_h.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt"> Buxton, Oregon. 24th November, 2025.
-📷 Hasselblad 500C/M
-🎞️ Kodak …</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Clatskanie, Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2025/10/05/day-off-east.html">
-          <span class="rg-photo"><img src="https://live.staticflickr.com/65535/54832686703_a47a8fa47e_h.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">On Friday I had the day off, so I took the opportunity to be outside …</span>
-          
-        </a>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2026/01/21/buxton.html">
+      <span class="rg-photo"><img src="https://live.staticflickr.com/65535/55054334498_12f0275730_h.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2025/12/18/oregon.html">
-          <span class="rg-photo"><img src="https://live.staticflickr.com/65535/54992736040_a64a769c38_h.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt"> Oregon. 3rd October, 2025.
-📷 Hasselblad 500C/M
-🎞️ Kodak Portra 160
-</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Buxton, Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2025/12/24/gorge.html">
-          <span class="rg-photo"><img src="https://live.staticflickr.com/65535/55003743304_e81d76e0f2_h.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt"> Oregon. 3rd October, 2025.
-📷 Hasselblad 500C/M
-🎞️ Kodak Portra 160
-</span>
-          
-        </a>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-set" href="/2025/10/05/day-off-east.html">
       
-        <a class="rg-card" href="/2024/10/13/cannon-beach-oregon.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/e6315a5d-8ff5-4da1-8391-eb6c2d18b86c.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-Cannon Beach, Oregon. 12th October, 2024.
-</span>
-          
-        </a>
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://live.staticflickr.com/65535/54832686703_a47a8fa47e_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54834002333_21f5130f37_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54833985479_ac5851dd5e_h.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">6 photos</span>
+  </span>
+
       
-        <a class="rg-card" href="/2024/06/28/astoria-oregon-th.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/8b628cb3-a65c-4d99-b3cc-94acc6a7ec2d.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-Astoria, Oregon. 19th June, 2024.
-</span>
-          
-        </a>
+  
+
+      <span class="rg-text excerpt">On Friday I had the day off, so I took the opportunity to be outside all day exploring …</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2025/12/18/oregon.html">
+      <span class="rg-photo"><img src="https://live.staticflickr.com/65535/54992736040_a64a769c38_h.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2024/07/03/astoria-oregon-th.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/ad6d50a5-1527-4180-987e-1882e2bed50f.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-Astoria, Oregon. 19th June, 2024.
-</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2024/07/10/this-was-taken.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/578d489f-b138-4382-afea-1651d83c67f5.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-This was taken at about the same time and location as another photo I …</span>
-          
-        </a>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2025/12/24/gorge.html">
+      <span class="rg-photo"><img src="https://live.staticflickr.com/65535/55003743304_e81d76e0f2_h.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2024/06/21/astoria-oregon-th.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/f628519c-08ae-414a-8bfe-412f58e9ceb5.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-Astoria, Oregon. 18th June, 2024.
-</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2024/06/26/looking-south-from.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/02d77b76-709b-4740-bbb3-4b6f6f95d133.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-Looking south from the base of the Astoria Column. 18th June, 2024.
-</span>
-          
-        </a>
+    </a>
+  
+
+          </div>
+        </section>
       
-        <a class="rg-card" href="/2024/07/09/replica-of-chief.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/a3b851b9-866b-4a16-a85f-31231fbe50db.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-Replica of Chief Comcomly’s burial canoe. Astoria, Oregon. 18th June, …</span>
-          
-        </a>
+        
+        
+        <section class="rg-year" id="y2024">
+          <h2>2024 <small>13 posts</small></h2>
+          <div class="rg-cards">
+            
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/10/13/cannon-beach-oregon.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/e6315a5d-8ff5-4da1-8391-eb6c2d18b86c.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2024/07/26/astoriamegler-bridge-at.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/9855e168-de7e-436b-b951-631cd7ff4cf5.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-Astoria-Megler bridge at early morning, and just past sunset. …</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Cannon Beach, Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2024/06/18/salem-oregon-th.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/149886cb-d6d0-4be3-bff2-2b6afc204cd8.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-Salem, Oregon. 19th May, 2024.
-📷 Hasselblad 500C/M
-🎞️ Kodak Portra …</span>
-          
-        </a>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/06/28/astoria-oregon-th.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/8b628cb3-a65c-4d99-b3cc-94acc6a7ec2d.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2024/05/18/coos-bay-oregon.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/3ea8a35b-4902-41ca-a951-225f7c7939cb.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-Coos Bay, Oregon. 28th April, 2024.
-📷 Hasselblad 500C/M
-🎞️ Kodak …</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Astoria, Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2024/04/26/oregon-coast-delivers.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/7864a54a-9e6e-44b6-a8ad-7f7065e2ce41.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">Oregon coast delivers as per usual…
-</span>
-          
-        </a>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/07/03/astoria-oregon-th.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/ad6d50a5-1527-4180-987e-1882e2bed50f.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2024/05/03/shore-acres-state.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/0b086e83-6677-4d1c-aa2e-73203bedd2fb.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">
-Shore Acres State Park, Oregon. 27th April, 2024.
-📷 Hasselblad 500C/M …</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Astoria, Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2024/05/06/coquille-point-bandon.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/014fea51-c84d-4914-a60d-825b57788b54.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">Coquille Point, Bandon, Oregon. 27th April, 2024.
-📷 Hasselblad 500C/M …</span>
-          
-        </a>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/07/10/this-was-taken.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/578d489f-b138-4382-afea-1651d83c67f5.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2022/06/29/hiking-up-steamboat.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2022/b4ee634e37.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text">Hiking up Steamboat Rock</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Astoria, Oregon</span>
+  
+
+      <span class="rg-text excerpt">This was taken at about the same time and location as another photo I …</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/06/21/astoria-oregon-th.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/f628519c-08ae-414a-8bfe-412f58e9ceb5.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2022/06/05/sunset-at-steamboat.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2022/bdce3b546f.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">Sunset at Steamboat Rock
-Upload images using Mimi.
-</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Astoria, Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2021/10/22/a-late-summer.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2021/7c9272afc5.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">📷 A Late Summer Hike Around Trillium Lake
-Upload images using Mimi.
-</span>
-          
-        </a>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/06/26/looking-south-from.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/02d77b76-709b-4740-bbb3-4b6f6f95d133.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2021/09/17/smoky-valleys-in.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2021/6df4e02ce8.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">Smoky valleys in the Mt. Hood area this morning.
-Upload images using …</span>
-          
-        </a>
+  
+
+      <span class="rg-text excerpt">Looking south from the base of the Astoria Column. 18th June, 2024.</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/07/09/replica-of-chief.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/a3b851b9-866b-4a16-a85f-31231fbe50db.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2021/09/15/mt-hood-looking.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2021/6b79c67c86.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">Mt. Hood looking super dry and bare at the end of summer. Trillium …</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Astoria, Oregon</span>
+  
+
+      <span class="rg-text excerpt">Replica of Chief Comcomly’s burial canoe.</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/07/26/astoriamegler-bridge-at.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/9855e168-de7e-436b-b951-631cd7ff4cf5.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2021/07/03/neskowin-ghost-forest.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2021/02c2b0abf9.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text">Neskowin Ghost Forest 📷</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Astoria, Oregon</span>
+  
+
+      <span class="rg-text excerpt">Astoria-Megler bridge at early morning, and just past sunset.</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/06/18/salem-oregon-th.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/149886cb-d6d0-4be3-bff2-2b6afc204cd8.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2021/06/28/the-winds-changed.html">
-          <span class="rg-photo"></span>
-          
-            <span class="rg-text excerpt">The winds changed on the coast here last night. It got cooler …</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Salem, Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2021/06/27/a-walk-on.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2021/8bab9e5189.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text">A Walk on the Beach 📷</span>
-          
-        </a>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/05/18/coos-bay-oregon.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/3ea8a35b-4902-41ca-a951-225f7c7939cb.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2021/06/27/hope-friends-in.html">
-          <span class="rg-photo"></span>
-          
-            <span class="rg-text excerpt">Hope friends in Portland are staying cool. As luck would have it, we …</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Coos Bay, Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2021/06/26/light-effects-on.html">
-          <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2021/82bf039ba3.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">Sunlight effects on the Oregon coast.
-Images uploaded using Mimi.
-</span>
-          
-        </a>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/04/26/oregon-coast-delivers.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/7864a54a-9e6e-44b6-a8ad-7f7065e2ce41.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2020/03/21/a-day-off.html">
-          <span class="rg-photo"><img src="https://live.staticflickr.com/65535/54580494426_149954b99b_h.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text excerpt">A day off from work was a good idea. We went for a hike at Coyote …</span>
-          
-        </a>
+  
+
+      <span class="rg-text excerpt">Oregon coast delivers as per usual…</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/05/03/shore-acres-state.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/0b086e83-6677-4d1c-aa2e-73203bedd2fb.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2019/08/12/camping-at-south.html">
-          <span class="rg-photo"><img src="https://live.staticflickr.com/65535/54563616598_4161f9cb97_h.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text">Camping at South Beach State Park</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Shore Acres State Park, Oregon</span>
+  
+
       
-        <a class="rg-card" href="/2009/09/14/of-flying-boats.html">
-          <span class="rg-photo"><img src="https://farm4.static.flickr.com/3445/3920922773_b731541df5.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text">Of Flying Boats and Wineries</span>
-          
-        </a>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2024/05/06/coquille-point-bandon.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2024/014fea51-c84d-4914-a60d-825b57788b54.jpg" alt="" loading="lazy" decoding="async"></span>
       
-        <a class="rg-card" href="/2008/06/19/whats-going-on.html">
-          <span class="rg-photo"><img src="https://farm4.static.flickr.com/3106/2550493912_5e92c8b006_m.jpg" alt="" loading="lazy" decoding="async"></span>
-          
-            <span class="rg-text">What&#39;s going on?</span>
-          
-        </a>
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Coquille Point, Bandon, Oregon</span>
+  
+
+      
+    </a>
+  
+
+          </div>
+        </section>
+      
+        
+        
+        <section class="rg-year" id="y2023">
+          <h2>2023 <small>1 post</small></h2>
+          <div class="rg-cards">
+            
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-story" href="/2023/10/21/hike-at-latourell.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2023/f468d6cb-5e18-47c0-abe2-43347f4a23c3.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2023/a89e6071-a19a-49ff-a3be-3213913e3b49.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2023/f48087b3-6326-48d8-aa9c-c6fee794ca18.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">9 photos</span>
+  </span>
+
+      <span class="rg-report">
+        <span class="rg-kicker">Trip report · 1 min read</span>
+        <span class="rg-story-title">📷 Hike at Latourell Falls</span>
+        
+  
+
+        <span class="rg-text">A couple weekends ago we went hiking at Latourell Falls. It’s a lovely hike that has immediate view of the lower falls from the trailhead. There’s a short hike to the base of the lower falls. There’s also a separate loop hike that goes up and around those falls and comes across the higher falls. …</span>
+        <span class="rg-read">Read the trip report →</span>
+      </span>
+    </a>
+  
+
+          </div>
+        </section>
+      
+        
+        
+        <section class="rg-year" id="y2022">
+          <h2>2022 <small>2 posts</small></h2>
+          <div class="rg-cards">
+            
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-story" href="/2022/06/29/hiking-up-steamboat.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2022/b4ee634e37.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2022/9274cf0c96.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2022/1145837d48.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">13 photos</span>
+  </span>
+
+      <span class="rg-report">
+        <span class="rg-kicker">Trip report · 3 min read</span>
+        <span class="rg-story-title">Hiking up Steamboat Rock</span>
+        
+  
+
+        <span class="rg-text">Steamboat Rock is the main feature of Steamboat Rock State Park, located by Banks Lake in central Washington. It has been an annual camping destination for Jenni’s family for decades. This month was my first time there. We spent three nights at the campground there and had a wonderful time exploring …</span>
+        <span class="rg-read">Read the trip report →</span>
+      </span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2022/06/05/sunset-at-steamboat.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2022/bdce3b546f.jpg" alt="" loading="lazy" decoding="async"></span>
+      
+  
+
+      <span class="rg-text excerpt">Sunset at Steamboat Rock</span>
+    </a>
+  
+
+          </div>
+        </section>
+      
+        
+        
+        <section class="rg-year" id="y2021">
+          <h2>2021 <small>8 posts</small></h2>
+          <div class="rg-cards">
+            
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-set" href="/2021/10/22/a-late-summer.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2021/7c9272afc5.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2021/2d0aa4a34b.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2021/7eba8365cb.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">10 photos</span>
+  </span>
+
+      
+  
+
+      <span class="rg-text excerpt">📷 A Late Summer Hike Around Trillium Lake</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2021/09/17/smoky-valleys-in.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2021/6df4e02ce8.jpg" alt="" loading="lazy" decoding="async"></span>
+      
+  
+
+      <span class="rg-text excerpt">Smoky valleys in the Mt. Hood area this morning.</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2021/09/15/mt-hood-looking.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2021/6b79c67c86.jpg" alt="" loading="lazy" decoding="async"></span>
+      
+  
+
+      <span class="rg-text excerpt">Mt. Hood looking super dry and bare at the end of summer. Trillium …</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-set" href="/2021/07/03/neskowin-ghost-forest.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2021/02c2b0abf9.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2021/a2e177908d.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2021/fab2675d91.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">8 photos</span>
+  </span>
+
+      
+  
+
+      <span class="rg-text">Neskowin Ghost Forest 📷</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-note" href="/2021/06/28/the-winds-changed.html">
+      <span class="rg-kicker">Field note</span>
+      <span class="rg-text">The winds changed on the coast here last night. It got cooler suddenly. This is the cool air coming to Portland by tonight. We drive back in a few hours …</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-set" href="/2021/06/27/a-walk-on.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2021/8bab9e5189.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2021/dd2c1b1299.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://samgrover.micro.blog/uploads/2021/ec80cf2d29.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">11 photos</span>
+  </span>
+
+      
+  
+    <span class="rg-place"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Lincoln City, Oregon</span>
+  
+
+      <span class="rg-text">A Walk on the Beach 📷</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-note" href="/2021/06/27/hope-friends-in.html">
+      <span class="rg-kicker">Field note</span>
+      <span class="rg-text">Hope friends in Portland are staying cool. As luck would have it, we picked this weekend to be on the coast for a family getaway a couple months ago. Returning …</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2021/06/26/light-effects-on.html">
+      <span class="rg-photo"><img src="https://samgrover.micro.blog/uploads/2021/82bf039ba3.jpg" alt="" loading="lazy" decoding="async"></span>
+      
+  
+
+      <span class="rg-text excerpt">Sunlight effects on the Oregon coast.</span>
+    </a>
+  
+
+          </div>
+        </section>
+      
+        
+        
+        <section class="rg-year" id="y2020">
+          <h2>2020 <small>1 post</small></h2>
+          <div class="rg-cards">
+            
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-set" href="/2020/03/21/a-day-off.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://live.staticflickr.com/65535/54580494426_149954b99b_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54580711948_d8da5d32b4_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54580667734_394edac979_h.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">4 photos</span>
+  </span>
+
+      
+  
+
+      <span class="rg-text excerpt">A day off from work was a good idea. We went for a hike at Coyote Wall.
+The trails have a …</span>
+    </a>
+  
+
+          </div>
+        </section>
+      
+        
+        
+        <section class="rg-year" id="y2019">
+          <h2>2019 <small>5 posts</small></h2>
+          <div class="rg-cards">
+            
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-set" href="/2019/08/12/camping-at-south.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://live.staticflickr.com/65535/54563616598_4161f9cb97_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54563564254_e4c16fea9c_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54563712165_5b56ed8fc0_h.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">14 photos</span>
+  </span>
+
+      
+  
+
+      <span class="rg-text">Camping at South Beach State Park</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-story" href="/2019/06/09/from-couch-to.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://live.staticflickr.com/65535/54558490398_d9531bb3f7_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54558247426_f7dd367a76_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54558491168_018e8dc21c_h.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">16 photos</span>
+  </span>
+
+      <span class="rg-report">
+        <span class="rg-kicker">Trip report · 3 min read</span>
+        <span class="rg-story-title">From Couch to Dog Mountain</span>
+        
+  
+
+        <span class="rg-text">Two and a half years ago, my lower back had gotten so bad that I couldn’t walk for more than a few minutes at a time without having to stop to sit or squat. Then came surgery, recovery, return of ability, and progression from there on. Yesterday I hiked up Dog Mountain. It was the most strenuous …</span>
+        <span class="rg-read">Read the trip report →</span>
+      </span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2019/06/08/did-my-biggest.html">
+      <span class="rg-photo"><img src="https://live.staticflickr.com/65535/54558490398_d9531bb3f7_h.jpg" alt="" loading="lazy" decoding="async"></span>
+      
+  
+
+      <span class="rg-text excerpt">Did my biggest hike today. 3.5 miles, 2800 ft elevation, and back. …</span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-story" href="/2019/04/30/hiking-at-coyote.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://live.staticflickr.com/65535/54552219754_79d2085e3a_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54552038476_52c6e66786_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54552038946_1354a314fb_h.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">15 photos</span>
+  </span>
+
+      <span class="rg-report">
+        <span class="rg-kicker">Trip report · 2 min read</span>
+        <span class="rg-story-title">Hiking at Coyote Wall</span>
+        
+  
+
+        <span class="rg-text">Last weekend we went hiking at Coyote Wall. Jenni and I had never been to this hike before but our friends were familiar with it.
+There are multiple trails that meet each other at various points. Some are gentle slopes, while others are steeper. One can pick and choose paths based on how much of a …</span>
+        <span class="rg-read">Read the trip report →</span>
+      </span>
+    </a>
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-story" href="/2019/04/09/hiking-at-angels.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://live.staticflickr.com/65535/54550541609_a9623912ae_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54550538389_409d0884d2_h.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://live.staticflickr.com/65535/54550594498_17f177d131_h.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">13 photos</span>
+  </span>
+
+      <span class="rg-report">
+        <span class="rg-kicker">Trip report · 1 min read</span>
+        <span class="rg-story-title">Hiking at Angel&#39;s Rest</span>
+        
+  
+
+        <span class="rg-text">Last Saturday we went hiking at Angel’s Rest in the gorge. I’ve been on this hike several times and always enjoy it. It is only a thirty minute drive from home, and offers great views and a good workout.
+This trail, along with many others had been closed for over a year since the Eagle Creek Fire, …</span>
+        <span class="rg-read">Read the trip report →</span>
+      </span>
+    </a>
+  
+
+          </div>
+        </section>
+      
+        
+        
+        <section class="rg-year" id="y2009">
+          <h2>2009 <small>1 post</small></h2>
+          <div class="rg-cards">
+            
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card rg-story" href="/2009/09/14/of-flying-boats.html">
+      
+  <span class="rg-mosaic n3">
+    <span class="rg-m"><img src="https://farm4.static.flickr.com/3445/3920922773_b731541df5.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://farm3.static.flickr.com/2621/3918838670_87b241f19e.jpg" alt="" loading="lazy" decoding="async"></span><span class="rg-m"><img src="https://farm4.static.flickr.com/3531/3918842350_cf19d7463e.jpg" alt="" loading="lazy" decoding="async"></span>
+    <span class="rg-count">4 photos</span>
+  </span>
+
+      <span class="rg-report">
+        <span class="rg-kicker">Trip report · 3 min read</span>
+        <span class="rg-story-title">Of Flying Boats and Wineries</span>
+        
+  
+
+        <span class="rg-text">Sometime last week, Liz and I saw Martin Scorsese’s The Aviator, a biographical film about Howard Hughes. At the end of the movie I remarked that the Hercules flying boat, designed by Hughes, and shown in the film is on permanent display in our Oregon neighborhood. A few minutes of online searching …</span>
+        <span class="rg-read">Read the trip report →</span>
+      </span>
+    </a>
+  
+
+          </div>
+        </section>
+      
+        
+        
+        <section class="rg-year" id="y2008">
+          <h2>2008 <small>1 post</small></h2>
+          <div class="rg-cards">
+            
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+    <a class="rg-card" href="/2008/06/19/whats-going-on.html">
+      <span class="rg-photo"><img src="https://farm4.static.flickr.com/3106/2550493912_5e92c8b006_m.jpg" alt="" loading="lazy" decoding="async"></span>
+      
+  
+
+      <span class="rg-text">What&#39;s going on?</span>
+    </a>
+  
+
+          </div>
+        </section>
       
     </div>
   
