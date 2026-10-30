@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,185 +205,178 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p>We’re taking care of each other in this neighborhood.</p>
-<p><img src="https://live.staticflickr.com/65535/54579621327_2dbc309c32_h.jpg" alt=""></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>We’re taking care of each other in this neighborhood.</p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54579621327_2dbc309c32_h.jpg" alt=""></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/04/06/were-taking-care.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-04-06T15:41:18-07:00"
-      >Apr 6, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/04/06/were-taking-care.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-04-06T15:41:18-07:00"
+          >Apr 6, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>My most used emoji seems to be transitioning from 😂 to 🤞</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>My most used emoji seems to be transitioning from 😂 to 🤞</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/03/24/my-most-used.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-03-24T12:11:22-07:00"
-      >Mar 24, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/03/24/my-most-used.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-03-24T12:11:22-07:00"
+          >Mar 24, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>A day off from work was a good idea. We went for a hike at Coyote Wall.</p>
-<p><img src="https://live.staticflickr.com/65535/54580494426_149954b99b_h.jpg" alt=""></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>A day off from work was a good idea. We went for a hike at Coyote Wall.</p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54580494426_149954b99b_h.jpg" alt=""></p>
 <p>The trails have a gentle grade and there’s plenty of room to distance ourselves when we come across other people.</p>
-<p><img src="https://live.staticflickr.com/65535/54580711948_d8da5d32b4_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/54580667734_394edac979_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54580711948_d8da5d32b4_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54580667734_394edac979_h.jpg" alt=""></p>
 <p>Lovely views. Small streams and falls. Birds and flowers.</p>
-<p><img src="https://live.staticflickr.com/65535/54579621542_d6ab54c8f4_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54579621542_d6ab54c8f4_h.jpg" alt=""></p>
 <p>We’d gone there <a href="https://samgrover.com/2019/04/30/hiking-at-coyote.html">last April</a> as well. This time around we just did a four mile loop.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/03/21/a-day-off.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-03-21T08:17:00-07:00"
-      >Mar 21, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/03/21/a-day-off.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-03-21T08:17:00-07:00"
+          >Mar 21, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>If you subscribe to Adobe Creative Cloud, here&rsquo;s how you can get two months free at this time:<br>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>If you subscribe to Adobe Creative Cloud, here&rsquo;s how you can get two months free at this time:<br>
 <a href="https://petapixel.com/2020/03/18/adobe-is-giving-everyone-2-months-of-free-creative-cloud-heres-how-to-get-it/">petapixel.com/2020/03/1&hellip;</a></p>
 <p>It worked for me.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/03/18/if-you-subscribe.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-03-18T08:51:28-07:00"
-      >Mar 18, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/03/18/if-you-subscribe.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-03-18T08:51:28-07:00"
+          >Mar 18, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>It was pretty lovely outside today.</p>
-<p><img src="https://live.staticflickr.com/65535/54580667689_2c14bb3a59_h.jpg" alt=""></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>It was pretty lovely outside today.</p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54580667689_2c14bb3a59_h.jpg" alt=""></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/03/17/it-was-pretty.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-03-17T19:17:40-07:00"
-      >Mar 17, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/03/17/it-was-pretty.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-03-17T19:17:40-07:00"
+          >Mar 17, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>As many of us practice social distancing, or self-quarantine, I am feeling very grateful to the folks on the front lines of health care, and also those that are making sure my power, water/sewer, gas, internet, and disposal services continue to function. Thank you! ❤️</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>As many of us practice social distancing, or self-quarantine, I am feeling very grateful to the folks on the front lines of health care, and also those that are making sure my power, water/sewer, gas, internet, and disposal services continue to function. Thank you! ❤️</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/03/16/as-many-of.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-03-16T11:42:35-07:00"
-      >Mar 16, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/03/16/as-many-of.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-03-16T11:42:35-07:00"
+          >Mar 16, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://www.indiebound.org/book/9780525436140">There There by Tommy Orange</a><br>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p><a href="https://www.indiebound.org/book/9780525436140">There There by Tommy Orange</a><br>
 ★★★★☆</p>
 <p>Added to <a href="/books">/books</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/03/15/there-there-by.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-03-15T13:53:31-07:00"
-      >Mar 15, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/03/15/there-there-by.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-03-15T13:53:31-07:00"
+          >Mar 15, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>This is a very nice explanation of need for social distancing at this time: <a href="https://www.washingtonpost.com/graphics/2020/world/corona-simulator/">www.washingtonpost.com/graphics/&hellip;</a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>This is a very nice explanation of need for social distancing at this time: <a href="https://www.washingtonpost.com/graphics/2020/world/corona-simulator/">www.washingtonpost.com/graphics/&hellip;</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/03/14/this-is-a.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-03-14T19:53:45-07:00"
-      >Mar 14, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/03/14/this-is-a.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-03-14T19:53:45-07:00"
+          >Mar 14, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><video controls="controls" playsinline="playsinline" src="https://f001.backblazeb2.com/file/com-samgrover-dropshare/march-snow-slo-mo.mov" poster="https://live.staticflickr.com/65535/54579640537_bedddcf650_h.jpg" preload="none" width="622" height="350" alt="Slo-mo video of snowfall in backyard"></video></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p><video controls="controls" playsinline="playsinline" src="https://f001.backblazeb2.com/file/com-samgrover-dropshare/march-snow-slo-mo.mov" poster="https://live.staticflickr.com/65535/54579640537_bedddcf650_h.jpg" preload="none" width="622" height="350" alt="Slo-mo video of snowfall in backyard"></video></p>
 <p>We got some rare snow today. Apparently haven&rsquo;t seen snow like this in March since 1968.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/03/14/we-got-some.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-03-14T19:32:11-07:00"
-      >Mar 14, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/03/14/we-got-some.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-03-14T19:32:11-07:00"
+          >Mar 14, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>This cherry blossomed yard in the neighborhood 😍</p>
-<p><img src="https://live.staticflickr.com/65535/54580819275_3ff643215e_h.jpg" alt=""></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>This cherry blossomed yard in the neighborhood 😍</p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54580819275_3ff643215e_h.jpg" alt=""></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/03/10/this-cherry-blossomed.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-03-10T17:41:45-07:00"
-      >Mar 10, 2020</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/66/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/03/10/this-cherry-blossomed.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-03-10T17:41:45-07:00"
+          >Mar 10, 2020</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/66/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/68/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

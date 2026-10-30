@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,81 +205,51 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p>Silent Disco at the <a href="https://pdxwlf.com">Portland Winter Light Festival</a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Silent Disco at the <a href="https://pdxwlf.com">Portland Winter Light Festival</a></p>
 <p>I took a couple of photos of these guys and visualized them morphing into one another so I asked <a href="https://jennijelsing.com">Jenni</a> and she made this animation 😍</p>
 <p><video controls="controls" playsinline="playsinline" src="https://f001.backblazeb2.com/file/com-samgrover-dropshare/2023-02-04-silent-disco-photo-morph.mp4" poster="https://f001.backblazeb2.com/file/com-samgrover-dropshare/2023-02-04-silent-disco-photo-morph.jpg" preload="none" width="1250" height="833" alt="Photo morphing from blur to focus and back"></video></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/5f388bfc0a.jpg"><img src="https://samgrover.micro.blog/uploads/2023/5f388bfc0a.jpg" alt="People dancing at a silent disco in a dimly lit space with bright pops of colorful lights."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/940447f234.jpg"><img src="https://samgrover.micro.blog/uploads/2023/940447f234.jpg" alt="An out of focus image of blurry blobs of color and bokeh on a black background."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/c5943cffa7.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c5943cffa7.jpg" alt="DJs at a silent disco in a dimly lit space with bright pops of colorful lights and a background wall of graffiti."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/cbaa374c7f.jpg"><img src="https://samgrover.micro.blog/uploads/2023/cbaa374c7f.jpg" alt="An out of focus image of blurry blobs of color and bokeh on a black background."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/5f388bfc0a.jpg"><img src="https://samgrover.micro.blog/uploads/2023/5f388bfc0a.jpg" alt="People dancing at a silent disco in a dimly lit space with bright pops of colorful lights."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/940447f234.jpg"><img src="https://samgrover.micro.blog/uploads/2023/940447f234.jpg" alt="An out of focus image of blurry blobs of color and bokeh on a black background."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/c5943cffa7.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c5943cffa7.jpg" alt="DJs at a silent disco in a dimly lit space with bright pops of colorful lights and a background wall of graffiti."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/cbaa374c7f.jpg"><img src="https://samgrover.micro.blog/uploads/2023/cbaa374c7f.jpg" alt="An out of focus image of blurry blobs of color and bokeh on a black background."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/19/silent-disco-at.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-19T10:09:09-07:00"
-      >Feb 19, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/19/silent-disco-at.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-19T10:09:09-07:00"
+          >Feb 19, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>A couple of sunrises over the last week.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/0685dda36b.jpg"><img src="https://samgrover.micro.blog/uploads/2023/0685dda36b.jpg" alt="Sky with clouds having orange, red, and yellow hues with a hint of blue. Lower half of images has silhouettes of trees without leaves."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/a07687861b.jpg"><img src="https://samgrover.micro.blog/uploads/2023/a07687861b.jpg" alt="Sky with clouds having orange, red, and yellow hues with a hint of blue. Lower half of images has silhouettes of trees without leaves."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>A couple of sunrises over the last week.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/0685dda36b.jpg"><img src="https://samgrover.micro.blog/uploads/2023/0685dda36b.jpg" alt="Sky with clouds having orange, red, and yellow hues with a hint of blue. Lower half of images has silhouettes of trees without leaves."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/a07687861b.jpg"><img src="https://samgrover.micro.blog/uploads/2023/a07687861b.jpg" alt="Sky with clouds having orange, red, and yellow hues with a hint of blue. Lower half of images has silhouettes of trees without leaves."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/19/a-couple-of.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-19T08:29:30-07:00"
-      >Feb 19, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/19/a-couple-of.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-19T08:29:30-07:00"
+          >Feb 19, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">The Origin Story of Walmart Labs in Portland</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/02/14/the-origin-story.html"
-    >The Origin Story of Walmart Labs in Portland</a
-  >
-</section><section><p>Today I came across this <a href="https://siliconflorist.com/2023/02/14/walmart-is-shuttering-walmart-labs-office-in-portland/">Silicon Florist article</a> about the closing of the Walmart office in Portland. It&rsquo;s definitely the end of an era.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2023/02/14/the-origin-story.html">The Origin Story of Walmart Labs in Portland</a></h2>
+    </div><section class="post-body"><p>Today I came across this <a href="https://siliconflorist.com/2023/02/14/walmart-is-shuttering-walmart-labs-office-in-portland/">Silicon Florist article</a> about the closing of the Walmart office in Portland. It&rsquo;s definitely the end of an era.</p>
 <p>After reading it, I couldn&rsquo;t help but clarify a few things about the origin story 😬</p>
 <p>Quoting from the article,</p>
 <blockquote>
@@ -329,112 +267,132 @@
 <p>Edited to clarify: During recent years Walmart Labs did move into a coworking space but that was long after all the original people had moved on.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/14/the-origin-story.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-14T17:11:44-07:00"
-      >Feb 14, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/14/the-origin-story.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-14T17:11:44-07:00"
+          >Feb 14, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>macOS app that can never remember what I was doing last time I used it even though I really wish it did: Music.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>macOS app that can never remember what I was doing last time I used it even though I really wish it did: Music.</p>
 <p>macOS app that always remembers what I was doing last time I used it even though I don&rsquo;t give a damn: Contacts.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/13/macos-app-that.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-13T18:09:34-07:00"
-      >Feb 13, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/13/macos-app-that.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-13T18:09:34-07:00"
+          >Feb 13, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Mechan 42: Space Explorer.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/8b1f8c9ab6.jpg"><img src="https://samgrover.micro.blog/uploads/2023/8b1f8c9ab6.jpg" alt="Black and white photo of a public art installation of a 17’ tall robot on a 4’ platform holding a star in its raised hands. Foggy morning scene with a bridge behind and the Sun above."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Mechan 42: Space Explorer.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/8b1f8c9ab6.jpg"><img src="https://samgrover.micro.blog/uploads/2023/8b1f8c9ab6.jpg" alt="Black and white photo of a public art installation of a 17’ tall robot on a 4’ platform holding a star in its raised hands. Foggy morning scene with a bridge behind and the Sun above."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/12/mechan-space-explorer.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-12T13:34:17-07:00"
-      >Feb 12, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/12/mechan-space-explorer.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-12T13:34:17-07:00"
+          >Feb 12, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2023/a3ae2eb7a1.jpg"><img src="https://samgrover.micro.blog/uploads/2023/a3ae2eb7a1.jpg" alt="An out of focus image of blurry blobs of color and bokeh on a black background. A couple of the blobs resemble heart shapes."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/a3ae2eb7a1.jpg"><img src="https://samgrover.micro.blog/uploads/2023/a3ae2eb7a1.jpg" alt="An out of focus image of blurry blobs of color and bokeh on a black background. A couple of the blobs resemble heart shapes."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/05/115417.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-05T12:54:17-07:00"
-      >Feb 5, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/05/115417.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-05T12:54:17-07:00"
+          >Feb 5, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Hey folks, another <a href="https://testflight.apple.com/join/AbjtGWge">beta cycle for Mimi Uploader</a> is now commencing. I expect this to be mostly bug fixes. First fix is for that annoying issue in the alt text editor where the text you&rsquo;re editing goes under the keyboard 😬</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Hey folks, another <a href="https://testflight.apple.com/join/AbjtGWge">beta cycle for Mimi Uploader</a> is now commencing. I expect this to be mostly bug fixes. First fix is for that annoying issue in the alt text editor where the text you&rsquo;re editing goes under the keyboard 😬</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/05/hey-folks-another.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-05T12:43:31-07:00"
-      >Feb 5, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/05/hey-folks-another.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-05T12:43:31-07:00"
+          >Feb 5, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Just how much Mastodon has taken off and continues to grow is quite evident by the fact that I felt compelled to import my mute list from Twitter today.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Just how much Mastodon has taken off and continues to grow is quite evident by the fact that I felt compelled to import my mute list from Twitter today.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/02/just-how-much.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-02T21:33:18-07:00"
-      >Feb 2, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/02/just-how-much.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-02T21:33:18-07:00"
+          >Feb 2, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Went out for some jazz last night 😊</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/6a37cc2724.jpg"><img src="https://samgrover.micro.blog/uploads/2023/6a37cc2724.jpg" alt="Jenni skimping and looking at me with a cocktail in front of her on the table. In the background are people and musical instruments and mellow lighting of a jazz club."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Went out for some jazz last night 😊</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/6a37cc2724.jpg"><img src="https://samgrover.micro.blog/uploads/2023/6a37cc2724.jpg" alt="Jenni skimping and looking at me with a cocktail in front of her on the table. In the background are people and musical instruments and mellow lighting of a jazz club."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/02/went-out-for.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-02T21:21:02-07:00"
-      >Feb 2, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/02/went-out-for.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-02T21:21:02-07:00"
+          >Feb 2, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>An afternoon walk at Oaks Bottom on a freezing cold (but sunny!) day last weekend.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/c05b3d2683.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c05b3d2683.jpg" alt="A woman stands on a rock on the edge of a pond. She’s dressed for a freezing cold day. There’s green grass in parts of the pond and trees behind which are reflected in the pond. Everything is lit with sunlight and shadows."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/ac87056e1b.jpg"><img src="https://samgrover.micro.blog/uploads/2023/ac87056e1b.jpg" alt="A fallen tree on the bank of a river, with its top submerged in the water and it’s base in the foreground showing roots. Lit by the low afternoon winter sunlight."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/ddf880a2af.jpg"><img src="https://samgrover.micro.blog/uploads/2023/ddf880a2af.jpg" alt="A sailboat in the middle of a river lit by the warm glow of winter sunlight. There’s a US flag on the boat. Fore ground and background river banks have trees without leaves."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/f4d9f3ecf7.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f4d9f3ecf7.jpg" alt="A bush without leaves with white berries of some kind on it  scattered sparsely. Trees in the blurred background."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>An afternoon walk at Oaks Bottom on a freezing cold (but sunny!) day last weekend.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/c05b3d2683.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c05b3d2683.jpg" alt="A woman stands on a rock on the edge of a pond. She’s dressed for a freezing cold day. There’s green grass in parts of the pond and trees behind which are reflected in the pond. Everything is lit with sunlight and shadows."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/ac87056e1b.jpg"><img src="https://samgrover.micro.blog/uploads/2023/ac87056e1b.jpg" alt="A fallen tree on the bank of a river, with its top submerged in the water and it’s base in the foreground showing roots. Lit by the low afternoon winter sunlight."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/ddf880a2af.jpg"><img src="https://samgrover.micro.blog/uploads/2023/ddf880a2af.jpg" alt="A sailboat in the middle of a river lit by the warm glow of winter sunlight. There’s a US flag on the boat. Fore ground and background river banks have trees without leaves."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/f4d9f3ecf7.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f4d9f3ecf7.jpg" alt="A bush without leaves with white berries of some kind on it  scattered sparsely. Trees in the blurred background."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/01/31/an-afternoon-walk.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-01-31T12:51:29-07:00"
-      >Jan 31, 2023</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/32/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/01/31/an-afternoon-walk.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-01-31T12:51:29-07:00"
+          >Jan 31, 2023</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/32/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/34/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

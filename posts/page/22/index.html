@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,174 +205,159 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p>Found myself in the map room at the newly renovated central library. Opened a random unlabeled drawer and found this Mario themed map of TriMet on the top in there.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/81176635-6bb8-47ce-b703-f5485bb98b03.jpg"><img src="https://samgrover.micro.blog/uploads/2024/81176635-6bb8-47ce-b703-f5485bb98b03.jpg" alt="A stylized transit map with a retro video game theme laid out on a table next to a globe. The design mimics an 8-bit graphic style, featuring icons for stations, transit centers, and a pixelated flower logo."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Found myself in the map room at the newly renovated central library. Opened a random unlabeled drawer and found this Mario themed map of TriMet on the top in there.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/81176635-6bb8-47ce-b703-f5485bb98b03.jpg"><img src="https://samgrover.micro.blog/uploads/2024/81176635-6bb8-47ce-b703-f5485bb98b03.jpg" alt="A stylized transit map with a retro video game theme laid out on a table next to a globe. The design mimics an 8-bit graphic style, featuring icons for stations, transit centers, and a pixelated flower logo."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/04/15/found-myself-in.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-04-15T21:10:08-07:00"
-      >Apr 15, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/04/15/found-myself-in.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-04-15T21:10:08-07:00"
+          >Apr 15, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Last year, on 28th March, I finished my first book for the year. By the end I had read a total of five books.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Last year, on 28th March, I finished my first book for the year. By the end I had read a total of five books.</p>
 <p>This year, on 28th March, I finished my fifth book.</p>
 <p>I say this from a place of gratitude that I&rsquo;m intentionally putting time into activities I enjoy.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/04/10/last-year-on.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-04-10T14:56:17-07:00"
-      >Apr 10, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/04/10/last-year-on.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-04-10T14:56:17-07:00"
+          >Apr 10, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Mt. Tabor Park is a treasure ❤️</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/837b46b1-714a-474e-bb6a-1dfe975c64fb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/837b46b1-714a-474e-bb6a-1dfe975c64fb.jpg" alt="A reservoir with a reflection of clouds and trees under a blue sky with scattered clouds. A small structure with a flat roof is visible on the far side of the water."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/3918b46a-972a-46d1-ae7c-3c6295d2d310.jpg"><img src="https://samgrover.micro.blog/uploads/2024/3918b46a-972a-46d1-ae7c-3c6295d2d310.jpg" alt="A vibrant green hill with a blossoming white tree and scattered yellow wildflowers, under a blue sky dotted with fluffy clouds. There is a black fence at the hill&rsquo;s crest."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/f6f8428a-bf6d-4ac6-883c-78611057fca6.jpg"><img src="https://samgrover.micro.blog/uploads/2024/f6f8428a-bf6d-4ac6-883c-78611057fca6.jpg" alt="A tranquil landscape with a calm body of water reflecting a partly cloudy sky, a tree line, and a vibrant green grassy hill."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/7d27a449-6a93-45d7-9e3f-8de6c89fa9d7.jpg"><img src="https://samgrover.micro.blog/uploads/2024/7d27a449-6a93-45d7-9e3f-8de6c89fa9d7.jpg" alt="Landscape view with cumulus clouds in the sky over a city area with trees and blossoming trees in the foreground, residential buildings in the mid-ground, and a forested horizon in the background."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/53409b89-0336-474c-826f-c1bb20f0c386.jpg"><img src="https://samgrover.micro.blog/uploads/2024/53409b89-0336-474c-826f-c1bb20f0c386.jpg" alt="A duck swimming on a body of rippled water."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Mt. Tabor Park is a treasure ❤️</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/837b46b1-714a-474e-bb6a-1dfe975c64fb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/837b46b1-714a-474e-bb6a-1dfe975c64fb.jpg" alt="A reservoir with a reflection of clouds and trees under a blue sky with scattered clouds. A small structure with a flat roof is visible on the far side of the water."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/3918b46a-972a-46d1-ae7c-3c6295d2d310.jpg"><img src="https://samgrover.micro.blog/uploads/2024/3918b46a-972a-46d1-ae7c-3c6295d2d310.jpg" alt="A vibrant green hill with a blossoming white tree and scattered yellow wildflowers, under a blue sky dotted with fluffy clouds. There is a black fence at the hill&rsquo;s crest."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/f6f8428a-bf6d-4ac6-883c-78611057fca6.jpg"><img src="https://samgrover.micro.blog/uploads/2024/f6f8428a-bf6d-4ac6-883c-78611057fca6.jpg" alt="A tranquil landscape with a calm body of water reflecting a partly cloudy sky, a tree line, and a vibrant green grassy hill."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/7d27a449-6a93-45d7-9e3f-8de6c89fa9d7.jpg"><img src="https://samgrover.micro.blog/uploads/2024/7d27a449-6a93-45d7-9e3f-8de6c89fa9d7.jpg" alt="Landscape view with cumulus clouds in the sky over a city area with trees and blossoming trees in the foreground, residential buildings in the mid-ground, and a forested horizon in the background."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/53409b89-0336-474c-826f-c1bb20f0c386.jpg"><img src="https://samgrover.micro.blog/uploads/2024/53409b89-0336-474c-826f-c1bb20f0c386.jpg" alt="A duck swimming on a body of rippled water."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/04/10/mt-tabor-park.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-04-10T12:38:25-07:00"
-      >Apr 10, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/04/10/mt-tabor-park.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-04-10T12:38:25-07:00"
+          >Apr 10, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Waiting for service…</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/4501003b-386f-4efb-a85d-619f6ae7df5a.jpg"><img src="https://samgrover.micro.blog/uploads/2024/4501003b-386f-4efb-a85d-619f6ae7df5a.jpg" alt="Outdoor seating area of a taqueria with red and blue umbrellas, picnicking tables, and a dog sitting by a table on a sunny day."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Waiting for service…</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/4501003b-386f-4efb-a85d-619f6ae7df5a.jpg"><img src="https://samgrover.micro.blog/uploads/2024/4501003b-386f-4efb-a85d-619f6ae7df5a.jpg" alt="Outdoor seating area of a taqueria with red and blue umbrellas, picnicking tables, and a dog sitting by a table on a sunny day."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/04/06/waiting-for-service.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-04-06T13:14:30-07:00"
-      >Apr 6, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/04/06/waiting-for-service.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-04-06T13:14:30-07:00"
+          >Apr 6, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Portland, Oregon. 2nd March, 2024.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/4638ed6c-2838-432a-9665-323260280ddb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/4638ed6c-2838-432a-9665-323260280ddb.jpg" alt="A rain-speckled window with a sheer white curtain partially revealing a view of a green exterior. A small white stool sits by the window bearing a cactus and another potted plant."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Portland, Oregon. 2nd March, 2024.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/4638ed6c-2838-432a-9665-323260280ddb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/4638ed6c-2838-432a-9665-323260280ddb.jpg" alt="A rain-speckled window with a sheer white curtain partially revealing a view of a green exterior. A small white stool sits by the window bearing a cactus and another potted plant."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/04/01/163618.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-04-01T16:36:18-07:00"
-      >Apr 1, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/04/01/163618.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-04-01T16:36:18-07:00"
+          >Apr 1, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/31ef9ce3-05c6-4558-981b-13f2b4866606.jpg"><img src="https://samgrover.micro.blog/uploads/2024/31ef9ce3-05c6-4558-981b-13f2b4866606.jpg" alt="Black and white diptych of a single bird perched on a wire against a cloudy sky; the composition is split into two sections showing the bird on different wires."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/31ef9ce3-05c6-4558-981b-13f2b4866606.jpg"><img src="https://samgrover.micro.blog/uploads/2024/31ef9ce3-05c6-4558-981b-13f2b4866606.jpg" alt="Black and white diptych of a single bird perched on a wire against a cloudy sky; the composition is split into two sections showing the bird on different wires."></a></p>
 <p>I noticed this bird from my kitchen window, took out my iPhone, zoomed in to 8x (digital) and took a few photos, and a few more when it flew over to another point. These two were picked from those, and even though they were monochromatic to begin, I converted to B&amp;W as it was distracting.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/03/27/105807.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-03-27T10:58:07-07:00"
-      >Mar 27, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/03/27/105807.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-03-27T10:58:07-07:00"
+          >Mar 27, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Spent about an hour messing with this simple patch last night.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/c7b04a3c-2550-4815-96d5-86833fc1b9eb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c7b04a3c-2550-4815-96d5-86833fc1b9eb.jpg" alt="An array of electronic music equipment, including a Moog Mother-32 semi-modular analog synthesizer, a Moog Mavis synthesizer, and an Elektron Analog Rytm drum machine, connected by patch cables on a table."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Spent about an hour messing with this simple patch last night.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/c7b04a3c-2550-4815-96d5-86833fc1b9eb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c7b04a3c-2550-4815-96d5-86833fc1b9eb.jpg" alt="An array of electronic music equipment, including a Moog Mother-32 semi-modular analog synthesizer, a Moog Mavis synthesizer, and an Elektron Analog Rytm drum machine, connected by patch cables on a table."></a></p>
 <p>I started wanting to make some beats using the Elektron but I ended up just having fun with drones using the Moogs.</p>
 <p>I am new to beats, and those seem very hard in comparison. Good procrastination 😂</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/03/26/spent-about-an.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-03-26T07:39:23-07:00"
-      >Mar 26, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/03/26/spent-about-an.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-03-26T07:39:23-07:00"
+          >Mar 26, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">🥰 Jenni and I got married</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2024/03/22/jenni-and-i.html"
-    >🥰 Jenni and I got married</a
-  >
-</section><section><p>Jenni and I got married on the equinox with a short and sweet courthouse ceremony 😊</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/926da1c5-d61a-4aa7-a601-95dd11b6f9b0.jpg"><img src="https://samgrover.micro.blog/uploads/2024/926da1c5-d61a-4aa7-a601-95dd11b6f9b0.jpg" alt="A couple dressed in wedding attire stands under cherry blossom trees, with the woman holding a bouquet. The background shows a park with people and buildings."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2024/03/22/jenni-and-i.html">🥰 Jenni and I got married</a></h2>
+    </div><section class="post-body"><p>Jenni and I got married on the equinox with a short and sweet courthouse ceremony 😊</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/926da1c5-d61a-4aa7-a601-95dd11b6f9b0.jpg"><img src="https://samgrover.micro.blog/uploads/2024/926da1c5-d61a-4aa7-a601-95dd11b6f9b0.jpg" alt="A couple dressed in wedding attire stands under cherry blossom trees, with the woman holding a bouquet. The background shows a park with people and buildings."></a></p>
 <p>We were joined by two good friends who served as witnesses. The view from the courthouse was really nice.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/ef530189-d115-408b-8dab-d7a96cdf67e1.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ef530189-d115-408b-8dab-d7a96cdf67e1.jpg" alt="Four people smiling for a selfie indoors with a scenic view of a river and bridges in the background. A man and woman in wedding attire are in the foreground, while two women in dresses stand behind them. The landscape suggests a sunny day."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/ef530189-d115-408b-8dab-d7a96cdf67e1.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ef530189-d115-408b-8dab-d7a96cdf67e1.jpg" alt="Four people smiling for a selfie indoors with a scenic view of a river and bridges in the background. A man and woman in wedding attire are in the foreground, while two women in dresses stand behind them. The landscape suggests a sunny day."></a></p>
 <p>It was a lovely day so we had an opportunity to get some pictures at the cherry blossoms by the river.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/d8fb5e56-37fc-450e-b136-443a6c2b35cd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/d8fb5e56-37fc-450e-b136-443a6c2b35cd.jpg" alt="A happy couple dressed in wedding attire, the individual on the left in a suit and the individual on the right in a lace dress, smiling and posing for a photo under blooming cherry blossom trees."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/d8fb5e56-37fc-450e-b136-443a6c2b35cd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/d8fb5e56-37fc-450e-b136-443a6c2b35cd.jpg" alt="A happy couple dressed in wedding attire, the individual on the left in a suit and the individual on the right in a lace dress, smiling and posing for a photo under blooming cherry blossom trees."></a></p>
 <p>Following that we got some drinks and snacks and that was that. It was all we had hoped for.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/6b6b330f-e2ad-4e36-80c7-0713bfe20920.jpg"><img src="https://samgrover.micro.blog/uploads/2024/6b6b330f-e2ad-4e36-80c7-0713bfe20920.jpg" alt="Two people dressed in formal attire sharing an affectionate kiss at a bar, surrounded by shelves stocked with bottles and green potted plants. The walls are made of emerald green tiles."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/6b6b330f-e2ad-4e36-80c7-0713bfe20920.jpg"><img src="https://samgrover.micro.blog/uploads/2024/6b6b330f-e2ad-4e36-80c7-0713bfe20920.jpg" alt="Two people dressed in formal attire sharing an affectionate kiss at a bar, surrounded by shelves stocked with bottles and green potted plants. The walls are made of emerald green tiles."></a></p>
 <p>19th March, 2024 ❤️</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/03/22/jenni-and-i.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-03-22T16:39:00-07:00"
-      >Mar 22, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/03/22/jenni-and-i.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-03-22T16:39:00-07:00"
+          >Mar 22, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">📷 Stride Walk at Shamrock Run in Portland</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2024/03/18/stride-walk-at.html"
-    >📷 Stride Walk at Shamrock Run in Portland</a
-  >
-</section><section><p>Yesterday, I participated in the <a href="https://www.shamrockrunportland.com/stride">Stride Walk</a>. Jenni ran the 8K and had a different start time and route. It was a lovely, cool, and sunny day.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/26c8fe8a-6b81-4c0f-b503-6bf61b21b5d3.jpg"><img src="https://samgrover.micro.blog/uploads/2024/26c8fe8a-6b81-4c0f-b503-6bf61b21b5d3.jpg" alt="A person takes a selfie amidst a large crowd wearing green shirts, some with festive accessories, at a starting line for a Shamrock Run event in Portland."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/fc4b7dfd-382c-4c96-bf84-705fcc396b68.jpg"><img src="https://samgrover.micro.blog/uploads/2024/fc4b7dfd-382c-4c96-bf84-705fcc396b68.jpg" alt="A park scene with cherry blossoms in partial bloom. People are walking along a path, some wearing green shirts, with a person seated on a bench. In the background, a steel bridge spans a river."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/ede1eb4a-10aa-4262-8b0a-7d7f44689ad5.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ede1eb4a-10aa-4262-8b0a-7d7f44689ad5.jpg" alt="A person standing in a park on a sunny day, wearing a green shirt with the &ldquo;FoPo Running Club&rdquo; logo, a numbered bib, a finisher&rsquo;s medal, a cap, and glasses."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2024/03/18/stride-walk-at.html">📷 Stride Walk at Shamrock Run in Portland</a></h2>
+    </div><section class="post-body"><p>Yesterday, I participated in the <a href="https://www.shamrockrunportland.com/stride">Stride Walk</a>. Jenni ran the 8K and had a different start time and route. It was a lovely, cool, and sunny day.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/26c8fe8a-6b81-4c0f-b503-6bf61b21b5d3.jpg"><img src="https://samgrover.micro.blog/uploads/2024/26c8fe8a-6b81-4c0f-b503-6bf61b21b5d3.jpg" alt="A person takes a selfie amidst a large crowd wearing green shirts, some with festive accessories, at a starting line for a Shamrock Run event in Portland."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/fc4b7dfd-382c-4c96-bf84-705fcc396b68.jpg"><img src="https://samgrover.micro.blog/uploads/2024/fc4b7dfd-382c-4c96-bf84-705fcc396b68.jpg" alt="A park scene with cherry blossoms in partial bloom. People are walking along a path, some wearing green shirts, with a person seated on a bench. In the background, a steel bridge spans a river."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/ede1eb4a-10aa-4262-8b0a-7d7f44689ad5.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ede1eb4a-10aa-4262-8b0a-7d7f44689ad5.jpg" alt="A person standing in a park on a sunny day, wearing a green shirt with the &ldquo;FoPo Running Club&rdquo; logo, a numbered bib, a finisher&rsquo;s medal, a cap, and glasses."></a></p>
 <h2 id="activity-stats">Activity Stats</h2>
 <p>Distance: 3.77 miles<br>
 Elevation Gain: 105 ft<br>
@@ -412,34 +365,36 @@ Time: 1h 02m</p>
 <p>P.S. The route was a loop from Naito Parkway, to Steel bridge, to Tilikum bridge, and back to Naito. It was supposed to be 4 miles but the turn after Tilikum was changed for some reason to Bond Ave. instead of Moody Ave. I was puzzled and wanted to ask the volunteer there but they were on a phone call, and I didn&rsquo;t want to stop.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/03/18/stride-walk-at.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-03-18T12:03:16-07:00"
-      >Mar 18, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/03/18/stride-walk-at.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-03-18T12:03:16-07:00"
+          >Mar 18, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Sharing thoughts with my morning reading buddy.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/1d5f6bb8-797d-44b9-b245-e5d487a01add.jpg"><img src="https://samgrover.micro.blog/uploads/2024/1d5f6bb8-797d-44b9-b245-e5d487a01add.jpg" alt="A cat lying on a green textured couch looks at a book held by a person, with bright sunlight coming through a window draped with sheer curtains."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Sharing thoughts with my morning reading buddy.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/1d5f6bb8-797d-44b9-b245-e5d487a01add.jpg"><img src="https://samgrover.micro.blog/uploads/2024/1d5f6bb8-797d-44b9-b245-e5d487a01add.jpg" alt="A cat lying on a green textured couch looks at a book held by a person, with bright sunlight coming through a window draped with sheer curtains."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/03/18/sharing-thoughts-with.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-03-18T08:32:47-07:00"
-      >Mar 18, 2024</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/21/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/03/18/sharing-thoughts-with.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-03-18T08:32:47-07:00"
+          >Mar 18, 2024</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/21/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/23/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,45 +205,12 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/55003743304_e81d76e0f2_h.jpg"><img src="https://live.staticflickr.com/65535/55003743304_e81d76e0f2_h.jpg" alt="A serene landscape with a calm body of water reflecting clouds, surrounded by gently sloping hills under a partly cloudy sky at sunset."></a>
   
 </figure>
@@ -285,16 +220,19 @@
 🎞️ Kodak Portra 160</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/12/24/gorge.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-12-24T12:04:41-08:00"
-      >Dec 24, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/12/24/gorge.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-12-24T12:04:41-08:00"
+          >Dec 24, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/55000707954_60e4aeff2b_h.jpg"><img src="https://live.staticflickr.com/65535/55000707954_60e4aeff2b_h.jpg" alt="A wooden utility pole with multiple wires and cables attached, viewed from below against a cloudy sky. A bird is perched on one of the wires."></a>
   
 </figure>
@@ -304,16 +242,19 @@
 🎞️ Kodak Kodacolor 200</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/12/22/bird.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-12-22T18:15:49-08:00"
-      >Dec 22, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/12/22/bird.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-12-22T18:15:49-08:00"
+          >Dec 22, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54998090753_225daf333a_h.jpg"><img src="https://live.staticflickr.com/65535/54998090753_225daf333a_h.jpg" alt="A vintage white, red and black car with noticeable wear and patina, featuring tailfins, twin antennas, and red tail lights that resemble the nozzle and fire of a rocket engine. In the background is a tall leafy hedge."></a>
   
 </figure>
@@ -324,16 +265,19 @@
 🎞️ Kodak Kodacolor 200</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/12/21/car.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-12-21T12:59:37-08:00"
-      >Dec 21, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/12/21/car.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-12-21T12:59:37-08:00"
+          >Dec 21, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54992736040_a64a769c38_h.jpg"><img src="https://live.staticflickr.com/65535/54992736040_a64a769c38_h.jpg" alt="A rural landscape with fields marked by lines of the harvesting machines, electricity pylons, under a clear blue sky. A lone overhead cable crosses the image diagonally."></a>
   
 </figure>
@@ -343,16 +287,19 @@
 🎞️ Kodak Portra 160</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/12/18/oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-12-18T12:08:29-08:00"
-      >Dec 18, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/12/18/oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-12-18T12:08:29-08:00"
+          >Dec 18, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54966069939_1edd9876d3_h.jpg"><img src="https://live.staticflickr.com/65535/54966069939_1edd9876d3_h.jpg" alt="Left image: Tall tree on a suburban street with parked cars and a sidewalk. Right image: Close-up of a porch with balusters and a lattice below, surrounded by plants."></a>
   
 </figure>
@@ -362,16 +309,19 @@
 🎞️ Kodak C-41 B&amp;W (Expired)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/12/05/late-summer.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-12-05T12:09:20-08:00"
-      >Dec 5, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/12/05/late-summer.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-12-05T12:09:20-08:00"
+          >Dec 5, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Had the day off yesterday and decided to go on a drive to explore new-to-me places. Saw some bald eagles. I swear two of them separately looked at me directly and then flew away, with what I assumed was a, &ldquo;city boy with camera 🙄&rdquo; vibes…</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Had the day off yesterday and decided to go on a drive to explore new-to-me places. Saw some bald eagles. I swear two of them separately looked at me directly and then flew away, with what I assumed was a, &ldquo;city boy with camera 🙄&rdquo; vibes…</p>
 <figure>
   <a href="https://live.staticflickr.com/65535/54945221826_2a3ba1bca6_h.jpg"><img src="https://live.staticflickr.com/65535/54945221826_2a3ba1bca6_h.jpg" alt="A bald eagle perched on a bare branch of a tree, with a cloudy sky in the background."></a>
   
@@ -426,16 +376,19 @@
 <p>…yes, it was a good day. Love you Oregon ❤️</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/11/25/love-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-11-25T08:29:25-08:00"
-      >Nov 25, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/11/25/love-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-11-25T08:29:25-08:00"
+          >Nov 25, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54934849661_0be778ca58_h.jpg"><img src="https://live.staticflickr.com/65535/54934849661_0be778ca58_h.jpg" alt="Collage of three images: Top shows a heron on a rocky riverbank with some foliage. Middle captures a cityscape at dusk with a high-rise building and a flock of birds in the sky. Bottom depicts a calm water reflection of buildings and a bird perched on a log coming vertically out of the water."></a>
   
 </figure>
@@ -443,16 +396,19 @@
 <p>Fall birds. Portland, Oregon. 11th November, 2025.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/11/10/fall-birds.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-11-19T13:38:08-08:00"
-      >Nov 19, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/11/10/fall-birds.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-11-19T13:38:08-08:00"
+          >Nov 19, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54850380668_2b647b14b0_h.jpg"><img src="https://live.staticflickr.com/65535/54850380668_2b647b14b0_h.jpg" alt="A monochrome view of a tall communication tower extending into fog, surrounded by the silhouettes of tree branches."></a>
   
 </figure>
@@ -465,20 +421,20 @@
 <p>Council Crest. Portland, Oregon. 11th October, 2025.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/10/12/council-crest.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-10-12T13:51:17-07:00"
-      >Oct 12, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/10/12/council-crest.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-10-12T13:51:17-07:00"
+          >Oct 12, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">A Walk on Powell Butte</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2025/10/09/obscura-powell-butte.html"
-    >A Walk on Powell Butte</a
-  >
-</section><section><p>Walking on Powell Butte often brings me into a black and white state-of-mind. That&rsquo;s what happened when I <a href="https://samgrover.com/2024/12/25/walk-at-powell-butte-nature.html">wrote a post</a> about a photo walk there in December.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2025/10/09/obscura-powell-butte.html">A Walk on Powell Butte</a></h2>
+    </div><section class="post-body"><p>Walking on Powell Butte often brings me into a black and white state-of-mind. That&rsquo;s what happened when I <a href="https://samgrover.com/2024/12/25/walk-at-powell-butte-nature.html">wrote a post</a> about a photo walk there in December.</p>
 <p>Last weekend I found myself there again. This time I constrained myself to &ldquo;<em>black and white photos with the iPhone using Obscura, mostly with the new 4x lens</em>&rdquo;. I find contraints to be helpful for creativity.</p>
 <p><a href="https://apps.apple.com/us/app/obscura-pro-camera/id1579306989">Obscura</a> has become my go-to app for a manual UI for iPhone photography. Like any sophiticated interface with a purpose, it takes some getting used to, but that&rsquo;s worth it. I thought I would make edits in post-processing, but in the end I didn&rsquo;t touch the files at all, except one crop.</p>
 <figure>
@@ -514,16 +470,19 @@
 <p>I&rsquo;m pretty happy with how this experience turned out, and look forward to similar explorations with Obscura in the future.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/10/09/obscura-powell-butte.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-10-09T11:10:22-07:00"
-      >Oct 9, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/10/09/obscura-powell-butte.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-10-09T11:10:22-07:00"
+          >Oct 9, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54841300433_8926d02150_h.jpg"><img src="https://live.staticflickr.com/65535/54841300433_8926d02150_h.jpg" alt="A person standing on a pathway in a garden with lush greenery, a bamboo fence, and an arched entrance in the background."></a>
   
 </figure>
@@ -538,21 +497,20 @@
 🎞️ Kodak Gold 200</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/10/08/caleb-japanese-garden.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-10-08T08:58:25-07:00"
-      >Oct 8, 2025</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/4/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/10/08/caleb-japanese-garden.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-10-08T08:58:25-07:00"
+          >Oct 8, 2025</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/4/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/6/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

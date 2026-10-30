@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,60 +205,30 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>Don’t cede your right to photograph in public. Don’t propagate the terrorist photographer story. Remind them that prohibiting photography was something we used to ridicule about the USSR.</p>
 </blockquote>
 <p>— <a href="http://www.guardian.co.uk/technology/2008/jun/05/news.terrorism">Bruce Schneier: Are photographers really a threat?</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/06/05/dont-cede-your.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-06-05T11:19:00-07:00"
-      >Jun 5, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/06/05/dont-cede-your.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-06-05T11:19:00-07:00"
+          >Jun 5, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/37058236.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/37058236.jpg" alt="The front page of The New York Times from June 3, 2008, featuring a headline about Barack Obama and superdelegates."></a>
   
 </figure>
@@ -298,148 +236,165 @@
 <p>“Obama Looks to Recruit Clinton’s Top Fun-Raisers”</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/06/03/obama-looks-to.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-06-03T13:50:00-07:00"
-      >Jun 3, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/06/03/obama-looks-to.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-06-03T13:50:00-07:00"
+          >Jun 3, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>To recap: They don’t know how to allocate their seating categories, they aren’t going to let people spread out across a half-empty plane as a courtesy, and they turn down the chance to upsell on the spot, even though they do commerce in the aisles all the time. What a stupid industry.</p>
 </blockquote>
 <p>— <a href="http://edcone.typepad.com/wordup/2008/05/service-industr.html">EdCone.com: Service industry</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/05/17/to-recap-they.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-05-17T12:36:00-07:00"
-      >May 17, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/05/17/to-recap-they.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-05-17T12:36:00-07:00"
+          >May 17, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">New version of LazyEngine</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2008/05/06/new-version-of.html"
-    >New version of LazyEngine</a
-  >
-</section><section><p>About three months after its <a href="https://blog.samgrover.com/2008/02/16/announcing-lazyengine/">initial launch</a>, I&rsquo;m happy to announce a new version of <a href="https://lazyengine.appspot.com/">LazyEngine</a>. I have moved it off my domain and onto the recently launched <a href="https://code.google.com/appengine/">Google App Engine</a>. This involved a rewrite of the code from the original PHP into the new Python version. This does not mean that it is any less lazy ;-)</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2008/05/06/new-version-of.html">New version of LazyEngine</a></h2>
+    </div><section class="post-body"><p>About three months after its <a href="https://blog.samgrover.com/2008/02/16/announcing-lazyengine/">initial launch</a>, I&rsquo;m happy to announce a new version of <a href="https://lazyengine.appspot.com/">LazyEngine</a>. I have moved it off my domain and onto the recently launched <a href="https://code.google.com/appengine/">Google App Engine</a>. This involved a rewrite of the code from the original PHP into the new Python version. This does not mean that it is any less lazy ;-)</p>
 <p>I had wanted to add a feature to remember a user&rsquo;s past searches but was too lazy to implement that in PHP. With the new version, I get user logins automatically. You can use your Google accounts to log into LazyEngine and have it remember your searches from visit to visit. Give it a shot right now at <a href="https://lazyengine.appspot.com/">https://lazyengine.appspot.com/</a>. Enjoy!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/05/06/new-version-of.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-05-06T20:10:59-07:00"
-      >May 6, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/05/06/new-version-of.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-05-06T20:10:59-07:00"
+          >May 6, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>If we had put a price on it like the University of Minnesota had done with Gopher then it would not have expanded into what it is now. We would have had some sort of market share alongside services like AOL and Compuserve, but we would not have flattened the world.</p>
 </blockquote>
 <p>— Robert Cailliau, CERN on the decision to release the source code for the Web. (<a href="http://tech.slashdot.org/article.pl?sid=08/04/30/1515229&amp;from=rss">via</a>)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/04/30/if-we-had.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-04-30T16:23:00-07:00"
-      >Apr 30, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/04/30/if-we-had.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-04-30T16:23:00-07:00"
+          >Apr 30, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>Uncle Sam is Commercial Art, the American Flag is graphic design. Commercial Art makes you BUY things, graphic Design GIVES you ideas.</p>
 </blockquote>
 <p>— Chip Kidd’s The Cheese Monkeys (via <a href="http://www.typotheque.com/articles/how_good_is_good/">Typotheque: How Good is Good? by Stefan Sagmeister</a>)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/04/28/uncle-sam-is.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-04-28T16:35:00-07:00"
-      >Apr 28, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/04/28/uncle-sam-is.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-04-28T16:35:00-07:00"
+          >Apr 28, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/LFE2CCfAP1o?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
 		</div>
 
 <p>“‘Charlie Rose’ by Samuel Beckett” (<a href="http://blog.pmarca.com/2008/04/charlie-rose-in.html">via</a>)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/04/28/charlie-rose-by.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-04-28T13:43:00-07:00"
-      >Apr 28, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/04/28/charlie-rose-by.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-04-28T13:43:00-07:00"
+          >Apr 28, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>I mean, the Democrats have two candidates running but the Republicans have only one. How do they expect to win with only one candidate?</p>
 </blockquote>
 <p>— <a href="http://overheardinpdx.blogspot.com/2008/04/ugh.html">Ugh!</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/04/27/i-mean-the.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-04-27T17:10:00-07:00"
-      >Apr 27, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/04/27/i-mean-the.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-04-27T17:10:00-07:00"
+          >Apr 27, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>Honda’s humanoid robot is slated to conduct the Detroit Symphony Orchestra on May 13.</p>
 </blockquote>
 <p>— <a href="http://www.dailywireless.org/2008/04/24/7695/">ASIMO Conducts Symphony Orchestra</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/04/24/hondas-humanoid-robot.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-04-24T11:42:00-07:00"
-      >Apr 24, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/04/24/hondas-humanoid-robot.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-04-24T11:42:00-07:00"
+          >Apr 24, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Zakir Hussain and the Masters of Percussion</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2008/04/16/zakir-hussain-and.html"
-    >Zakir Hussain and the Masters of Percussion</a
-  >
-</section><section><div style="text-align:center;"><a title="Liz, Zakir, Sam by samgrover, on Flickr" href="https://www.flickr.com/photos/samgrover/2417542939/">![](https://farm3.static.flickr.com/2187/2417542939_67d1388f7b_m.jpg)</a></div>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2008/04/16/zakir-hussain-and.html">Zakir Hussain and the Masters of Percussion</a></h2>
+    </div><section class="post-body"><div style="text-align:center;"><a title="Liz, Zakir, Sam by samgrover, on Flickr" href="https://www.flickr.com/photos/samgrover/2417542939/">![](https://farm3.static.flickr.com/2187/2417542939_67d1388f7b_m.jpg)</a></div>
 When I was a kid, I enjoyed tapping on tables in the style of a [Tabla](https://en.wikipedia.org/wiki/Tabla) player. The sounds were fun. My mom used to say that I should learn the instrument. I never did. I think that was for the best since I don't seem to have any talent in playing a musical instrument.
 <p>Even in those young days I had heard of the music of <a href="https://en.wikipedia.org/wiki/Zakir_Hussain_%28musician%29">Ustad Zakir Hussain</a>. Zakir is regarded as the foremost player of the Tabla in the world. He has achieved unparalleled recognition and mastery with the Tabla and is a household name in India. Last night, Liz and I went to the <a href="https://en.wikipedia.org/wiki/Arlene_Schnitzer_Concert_Hall">Schnitz</a> for a concert by Zakir Hussain and the Masters of Percussion. It is an annual event hosted by <a href="https://www.kalakendra.org/">Kalakendra</a>. The group does a tour each year and the musicians change regularly. It was such beautiful and wide ranging music from a dozen different instruments of various Indian Classical schools. I was enthralled by the solo and group performances, especially the Tabla, the <a href="https://en.wikipedia.org/wiki/Sarangi">Sarangi</a> and the <a href="https://en.wikipedia.org/wiki/Sitar">Sitar</a>.</p>
 <p>Afterwards, we got to meet and chat with Zakir. He had such a jovial and warm demeanor. This was my first time at the event and I hope to go again.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/04/16/zakir-hussain-and.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-04-16T20:46:52-07:00"
-      >Apr 16, 2008</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/170/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/04/16/zakir-hussain-and.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-04-16T20:46:52-07:00"
+          >Apr 16, 2008</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/170/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/172/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,101 +205,71 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">A New App, Maybe</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/05/25/a-new-app.html"
-    >A New App, Maybe</a
-  >
-</section><section><p>Some time ago I wrote about a simple app I made to export routes for workouts so that I can embed them in <a href="https://samgrover.com/2023/05/11/hike-at-lacamas.html">blog posts</a>, or <a href="https://samgrover.com/2023/03/12/an-app-for.html">Google Maps</a>.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2023/05/25/a-new-app.html">A New App, Maybe</a></h2>
+    </div><section class="post-body"><p>Some time ago I wrote about a simple app I made to export routes for workouts so that I can embed them in <a href="https://samgrover.com/2023/05/11/hike-at-lacamas.html">blog posts</a>, or <a href="https://samgrover.com/2023/03/12/an-app-for.html">Google Maps</a>.</p>
 <p>Well, I kept making improvements to it to the point that now it looks like an interface to my workouts that I prefer over the standard one from Apple (like supporting light and dark modes 🙄).</p>
 <p>What do you think? Would you be interested in using it? Should I start a beta so you can share how you <em>really feel</em>?</p>
 <p>P.S. Many of the map tiles are blurred because one of the features of the app is to enable blurring them out if they contain any user-defined private locations, e.g. for sharing such a video, or a screenshot.</p>
 <div style="padding:216.7% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/830369690?h=03d7b02a75&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Workouts App Demo"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/05/25/a-new-app.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-05-25T15:14:24-07:00"
-      >May 25, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/05/25/a-new-app.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-05-25T15:14:24-07:00"
+          >May 25, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>This time around I was unexpectedly busy around Micro.camp so I missed out on pretty much the entire camp, except for tuning in for a brief moment on Friday. Hoping to catch up on all the videos this week.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>This time around I was unexpectedly busy around Micro.camp so I missed out on pretty much the entire camp, except for tuning in for a brief moment on Friday. Hoping to catch up on all the videos this week.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/05/22/this-time-around.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-05-22T14:52:16-07:00"
-      >May 22, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/05/22/this-time-around.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-05-22T14:52:16-07:00"
+          >May 22, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Sights from a walk in the neighborhood.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/1a5be8c793.jpg"><img src="https://samgrover.micro.blog/uploads/2023/1a5be8c793.jpg" alt="A street view of a house and its backyard with a partly cloudy blue sky above. In the backyard is a metal tower taller than the house with a bicycle mounted on top of it."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/0e4fd78eb9.jpg"><img src="https://samgrover.micro.blog/uploads/2023/0e4fd78eb9.jpg" alt="A view from the street of a meadow with a few trees with a skate park beyond. A skater can be seen approaching a ramp."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Sights from a walk in the neighborhood.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/1a5be8c793.jpg"><img src="https://samgrover.micro.blog/uploads/2023/1a5be8c793.jpg" alt="A street view of a house and its backyard with a partly cloudy blue sky above. In the backyard is a metal tower taller than the house with a bicycle mounted on top of it."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/0e4fd78eb9.jpg"><img src="https://samgrover.micro.blog/uploads/2023/0e4fd78eb9.jpg" alt="A view from the street of a meadow with a few trees with a skate park beyond. A skater can be seen approaching a ramp."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/05/17/sights-from-the.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-05-17T15:50:48-07:00"
-      >May 17, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/05/17/sights-from-the.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-05-17T15:50:48-07:00"
+          >May 17, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">📷 Hike at Lacamas Park</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/05/11/hike-at-lacamas.html"
-    >📷 Hike at Lacamas Park</a
-  >
-</section><section><p>A couple of weeks ago we went hiking at Lacamas Park in the city of Camas, about 20 minutes drive from Portland. This was our first time there and it was a lovely hike in a park that is well maintained and has lots of crisscrossing trails.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/f53d507531.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f53d507531.jpg" alt="A waterfall and rapids visible from the trail."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2023/05/11/hike-at-lacamas.html">📷 Hike at Lacamas Park</a></h2>
+    </div><section class="post-body"><p>A couple of weeks ago we went hiking at Lacamas Park in the city of Camas, about 20 minutes drive from Portland. This was our first time there and it was a lovely hike in a park that is well maintained and has lots of crisscrossing trails.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/f53d507531.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f53d507531.jpg" alt="A waterfall and rapids visible from the trail."></a></p>
 <p>A few times I got the feeling of being farther from the city than we actually were, like when the trail drops down to the base of a waterfall.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/35558305db.jpg"><img src="https://samgrover.micro.blog/uploads/2023/35558305db.jpg" alt="Jenni in front of a waterfall."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/35558305db.jpg"><img src="https://samgrover.micro.blog/uploads/2023/35558305db.jpg" alt="Jenni in front of a waterfall."></a></p>
 <p>We even spotted some trilliums!</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/082f639299.jpg"><img src="https://samgrover.micro.blog/uploads/2023/082f639299.jpg" alt="Purple trillium flower amongst other plants."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/09c3cb0d59.jpg"><img src="https://samgrover.micro.blog/uploads/2023/09c3cb0d59.jpg" alt="Jenni stands next to some rapids viewed from a bridge above."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/082f639299.jpg"><img src="https://samgrover.micro.blog/uploads/2023/082f639299.jpg" alt="Purple trillium flower amongst other plants."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/09c3cb0d59.jpg"><img src="https://samgrover.micro.blog/uploads/2023/09c3cb0d59.jpg" alt="Jenni stands next to some rapids viewed from a bridge above."></a></p>
 <p>You can get right next to the water, so this one might be worth revisiting on those hot summer days.</p>
 <h2 id="activity-stats-and-map">Activity Stats and Map</h2>
 <p>Distance: 3.38 miles<br>
@@ -340,85 +278,100 @@ Time (including breaks): 1h 56m</p>
 <iframe width="100%" height="300px" frameborder="0" allowfullscreen src="//umap.openstreetmap.fr/en/map/lacamas-park-2023-04-28-hiking_906898?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe><p>[See full screen](https://umap.openstreetmap.fr/en/map/lacamas-park-2023-04-28-hiking_906898)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/05/11/hike-at-lacamas.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-05-11T12:16:01-07:00"
-      >May 11, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/05/11/hike-at-lacamas.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-05-11T12:16:01-07:00"
+          >May 11, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>It&rsquo;s the colorful season.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/13e69c8244.jpg"><img src="https://samgrover.micro.blog/uploads/2023/13e69c8244.jpg" alt="Blue and yellow plants in a small cluster potted in a barrel."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>It&rsquo;s the colorful season.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/13e69c8244.jpg"><img src="https://samgrover.micro.blog/uploads/2023/13e69c8244.jpg" alt="Blue and yellow plants in a small cluster potted in a barrel."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/05/09/its-the-colorful.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-05-09T15:51:46-07:00"
-      >May 9, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/05/09/its-the-colorful.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-05-09T15:51:46-07:00"
+          >May 9, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Jenni’s tiny air plant has a super tiny flower. Fountain pen nib for scale.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/6456dc3050.jpg"><img src="https://samgrover.micro.blog/uploads/2023/6456dc3050.jpg" alt="A very small fuzzy white flower in the middle of a small red air plant."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Jenni’s tiny air plant has a super tiny flower. Fountain pen nib for scale.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/6456dc3050.jpg"><img src="https://samgrover.micro.blog/uploads/2023/6456dc3050.jpg" alt="A very small fuzzy white flower in the middle of a small red air plant."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/04/29/jennis-tiny-air.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-04-29T13:48:47-07:00"
-      >Apr 29, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/04/29/jennis-tiny-air.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-04-29T13:48:47-07:00"
+          >Apr 29, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2023/712f946cac.jpg"><img src="https://samgrover.micro.blog/uploads/2023/712f946cac.jpg" alt="Sidewalk view of a bright orange house with the shadow of tree branches. On a window sit two cats looking at the camera. Two signs on the lawn in front say “Love”."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/712f946cac.jpg"><img src="https://samgrover.micro.blog/uploads/2023/712f946cac.jpg" alt="Sidewalk view of a bright orange house with the shadow of tree branches. On a window sit two cats looking at the camera. Two signs on the lawn in front say “Love”."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/04/29/111208.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-04-29T11:12:08-07:00"
-      >Apr 29, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/04/29/111208.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-04-29T11:12:08-07:00"
+          >Apr 29, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Our poofs have arrived.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/4a5ad0d5c7.jpg"><img src="https://samgrover.micro.blog/uploads/2023/4a5ad0d5c7.jpg" alt="A hand holds a cluster of pink cherry blossoms basked in the warmth of late morning sun."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Our poofs have arrived.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/4a5ad0d5c7.jpg"><img src="https://samgrover.micro.blog/uploads/2023/4a5ad0d5c7.jpg" alt="A hand holds a cluster of pink cherry blossoms basked in the warmth of late morning sun."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/04/29/our-poofs-have.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-04-29T10:59:24-07:00"
-      >Apr 29, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/04/29/our-poofs-have.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-04-29T10:59:24-07:00"
+          >Apr 29, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>In the last week I used ChatGPT to replace three text manipulation scripts I used on and off. And yes, I spent hours writing/maintaining those over the years.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>In the last week I used ChatGPT to replace three text manipulation scripts I used on and off. And yes, I spent hours writing/maintaining those over the years.</p>
 <p>I also used it to aid in creating a new shell script.</p>
 <p>It was disgusting/wonderful how straightforward all that was.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/04/26/in-the-last.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-04-26T12:26:51-07:00"
-      >Apr 26, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/04/26/in-the-last.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-04-26T12:26:51-07:00"
+          >Apr 26, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">New version of Mimi Uploader is out 🎉</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/04/20/new-version-of.html"
-    >New version of Mimi Uploader is out 🎉</a
-  >
-</section><section><p>The latest version of Mimi Uploader is out. This one was a long time coming as the beta cycle started over two months ago. I just had several other things taking my time. Thank you for your patience.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2023/04/20/new-version-of.html">New version of Mimi Uploader is out 🎉</a></h2>
+    </div><section class="post-body"><p>The latest version of Mimi Uploader is out. This one was a long time coming as the beta cycle started over two months ago. I just had several other things taking my time. Thank you for your patience.</p>
 <p>Here&rsquo;s what&rsquo;s new:</p>
 <ul>
 <li>Fix for alt text editor issue that caused editing text to go under the keyboard. Very annoying!</li>
@@ -428,21 +381,20 @@ Time (including breaks): 1h 56m</p>
 <p>Get it from the <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">App Store</a>!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/04/20/new-version-of.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-04-20T15:19:27-07:00"
-      >Apr 20, 2023</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/29/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/04/20/new-version-of.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-04-20T15:19:27-07:00"
+          >Apr 20, 2023</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/29/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/31/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

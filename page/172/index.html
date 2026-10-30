@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,210 +205,191 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p>Telecasts 5 - Only A pawn In Their Game - Bob Dylan</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Telecasts 5 - Only A pawn In Their Game - Bob Dylan</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/04/14/telecasts-5-only.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-04-14T21:35:00-07:00"
-      >Apr 14, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/04/14/telecasts-5-only.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-04-14T21:35:00-07:00"
+          >Apr 14, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>He complained that customers paid the cheaper price all day without saying a word.</p>
 </blockquote>
 <p>— <a href="http://news.yahoo.com/s/ap/20080411/ap_on_fe_st/odd_cheap_gas">Drivers flood station for 35 cent gas - Yahoo! News</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/04/12/he-complained-that.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-04-12T14:29:00-07:00"
-      >Apr 12, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/04/12/he-complained-that.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-04-12T14:29:00-07:00"
+          >Apr 12, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Engaged</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2008/04/02/engaged.html"
-    >Engaged</a
-  >
-</section><section><div style="text-align:center;"><a href="https://www.flickr.com/photos/samgrover/2361035615/" title="Engaged by samgrover, on Flickr">![](https://farm3.static.flickr.com/2364/2361035615_955c486437_m.jpg)</a></div>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2008/04/02/engaged.html">Engaged</a></h2>
+    </div><section class="post-body"><div style="text-align:center;"><a href="https://www.flickr.com/photos/samgrover/2361035615/" title="Engaged by samgrover, on Flickr">![](https://farm3.static.flickr.com/2364/2361035615_955c486437_m.jpg)</a></div>
 <p>On March 21st, I asked Liz to marry me and she said yes. She was elated that I asked her on a full-moon vernal equinox ;-)</p>
 <p>We are both very happy and excited. I don&rsquo;t know who all read my blog, so probably you&rsquo;ve already seen me mention this on <a href="https://flickr.com/photos/samgrover/2361035615/">Flickr</a> or <a href="https://twitter.com/samgrover/statuses/776347132">Twitter</a> or in an email. The wedding will be on December 10th, in New Delhi, India. We&rsquo;re really looking forward to it.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/04/02/engaged.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-04-02T22:27:36-07:00"
-      >Apr 2, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/04/02/engaged.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-04-02T22:27:36-07:00"
+          >Apr 2, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Pennies saved</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2008/03/26/pennies-saved.html"
-    >Pennies saved</a
-  >
-</section><section><p><a href="http://daringfireball.net/linked/2008/march#tue-25-owen">This Daring Fireball story</a> reminded me of the recent <a href="http://marketplace.publicradio.org/display/web/2008/03/18/hoarding_pennies/">story on Marketplace</a> about penny hoarders. Some hoarders stand to make a lot on their investment.<a href="http://daringfireball.net/linked/2008/march#tue-25-owen">http://daringfireball.net/linked/2008/march#tue-25-owen</a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2008/03/26/pennies-saved.html">Pennies saved</a></h2>
+    </div><section class="post-body"><p><a href="http://daringfireball.net/linked/2008/march#tue-25-owen">This Daring Fireball story</a> reminded me of the recent <a href="http://marketplace.publicradio.org/display/web/2008/03/18/hoarding_pennies/">story on Marketplace</a> about penny hoarders. Some hoarders stand to make a lot on their investment.<a href="http://daringfireball.net/linked/2008/march#tue-25-owen">http://daringfireball.net/linked/2008/march#tue-25-owen</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/03/26/pennies-saved.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-03-26T10:22:00-07:00"
-      >Mar 26, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/03/26/pennies-saved.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-03-26T10:22:00-07:00"
+          >Mar 26, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>You can’t have art without resistance in the materials.</p>
 </blockquote>
 <p>— William Morris (via <a href="http://abriefmessage.com/2008/03/24/ford/">A Brief Message: No Resistance Is Futile</a>) - I’ve known this intuitively as I added constraints to my photography. Current constraints: 50mm prime lens, B&amp;W film, rangefinder camera.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/03/24/you-cant-have.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-03-24T13:44:00-07:00"
-      >Mar 24, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/03/24/you-cant-have.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-03-24T13:44:00-07:00"
+          >Mar 24, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/W1czBcnX1Ww?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
 		</div>
 
 <p>When the man kicked it, I thought of “robot cruelty”. We’re so screwed! (via <a href="http://www.37signals.com/svn/posts/912-incredible-big-dog-robot-from-boston-dynamics">SvN</a>)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/03/18/when-the-man.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-03-18T11:12:00-07:00"
-      >Mar 18, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/03/18/when-the-man.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-03-18T11:12:00-07:00"
+          >Mar 18, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Time to play again</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2008/03/16/time-to-play.html"
-    >Time to play again</a
-  >
-</section><section><p>The last time I bought a gaming console was in November, 2001. It was an Xbox. For the last six years, I&rsquo;ve used it exclusively as a DVD player.<img src="https://farm3.static.flickr.com/2342/2338648273_62e9c8d0b2_m.jpg" alt=""></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2008/03/16/time-to-play.html">Time to play again</a></h2>
+    </div><section class="post-body"><p>The last time I bought a gaming console was in November, 2001. It was an Xbox. For the last six years, I&rsquo;ve used it exclusively as a DVD player.<img src="https://farm3.static.flickr.com/2342/2338648273_62e9c8d0b2_m.jpg" alt=""></p>
 <p>I bought a <a href="https://en.wikipedia.org/wiki/Nintendo_wii">Nintendo Wii</a> today. They are still in short supply. The local <a href="https://fredmeyer.com/">Fred Meyer</a> does a raffle when they get some stock. Last night they got twelve units. The raffle was scheduled for 6:45am today, fifteen minutes before opening time. I was first in line. Eleven people showed up. Everyone got a Wii.</p>
 <p>I also got <a href="https://en.wikipedia.org/wiki/Super_Mario_Galaxy">Super Mario Galaxy</a> and played it a bit today. It is so much fun.</p>
 <p>If you like playing games, you should get a Wii.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/03/16/time-to-play.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-03-16T18:59:44-07:00"
-      >Mar 16, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/03/16/time-to-play.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-03-16T18:59:44-07:00"
+          >Mar 16, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>JPMorgan’s acquisition of Bear Stearns represents roughly 1 percent of what the investment bank was worth just 16 days ago.</p>
 </blockquote>
 <p>— <a href="http://news.yahoo.com/s/ap/jpmorgan_bear_stearns">JPMorgan to buy Bear for $2 a share - Yahoo! News</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/03/16/jpmorgans-acquisition-of.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-03-16T17:22:00-07:00"
-      >Mar 16, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/03/16/jpmorgans-acquisition-of.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-03-16T17:22:00-07:00"
+          >Mar 16, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">[Snacks] Left Hook Lager, counting votes, another smoothie recipe</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2008/03/09/snacks-left-hook.html"
-    >[Snacks] Left Hook Lager, counting votes, another smoothie recipe</a
-  >
-</section><section><p>Steve Novick is running a really cool campaign for U.S. Senate here in Oreon and it&rsquo;s great that Liz is part of it. They just released a <em>campaign beer</em> called &ldquo;Left Hook Lager&rdquo;. Liz made the label for that and <a href="https://galacticstillness.blogspot.com/2008/03/left-hook-lager.html">wrote about it here</a>. You can <a href="https://www.c-esystems.com/novick/lefthooklager.aspx">buy some for yourself</a>. Also, check out this <a href="https://www.youtube.com/watch?v=N2UesvrH-cs">beer themed ad</a> they came out with earlier this year.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2008/03/09/snacks-left-hook.html">[Snacks] Left Hook Lager, counting votes, another smoothie recipe</a></h2>
+    </div><section class="post-body"><p>Steve Novick is running a really cool campaign for U.S. Senate here in Oreon and it&rsquo;s great that Liz is part of it. They just released a <em>campaign beer</em> called &ldquo;Left Hook Lager&rdquo;. Liz made the label for that and <a href="https://galacticstillness.blogspot.com/2008/03/left-hook-lager.html">wrote about it here</a>. You can <a href="https://www.c-esystems.com/novick/lefthooklager.aspx">buy some for yourself</a>. Also, check out this <a href="https://www.youtube.com/watch?v=N2UesvrH-cs">beer themed ad</a> they came out with earlier this year.</p>
 <p>On the subject of voting in general, I get the impression that people are so casual about <a href="https://samgrover.tumblr.com/post/27449669">counting the votes</a>. It&rsquo;s great to see The Onion impart its inimitable style to <a href="https://www.theonion.com/content/node/74800">the issue</a>. Attacks on voting machines can range from the sophisticated to the <a href="https://it.slashdot.org/article.pl?sid=07/01/25/217240&amp;tid=172">cleverly simple</a>. Check out <a href="https://en.wikipedia.org/wiki/Black_Box_Voting">Black Box Voting</a> for more info.</p>
 <p>Oh, and here&rsquo;s another yummy smoothie recipe:
 Some Blueberries, some raspberries (little more than the blueberries), one banana, vanilla extract (to taste), two glasses of rice milk. Blend. Serves two. It&rsquo;s really nice. In fact I&rsquo;m going to make it right now.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/03/09/snacks-left-hook.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-03-09T13:45:07-07:00"
-      >Mar 9, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/03/09/snacks-left-hook.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-03-09T13:45:07-07:00"
+          >Mar 9, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully.</p>
 </blockquote>
 <p>— Steve Jobs on focus (via <a href="http://daringfireball.net/linked/2008/march#wed-05-fortune_jobs">Daring Fireball</a>)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/03/05/people-think-focus.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-03-05T14:05:00-08:00"
-      >Mar 5, 2008</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/171/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/03/05/people-think-focus.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-03-05T14:05:00-08:00"
+          >Mar 5, 2008</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/171/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/173/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

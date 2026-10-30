@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,157 +205,145 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p>Happy Leap Day! <a href="https://codeofmatt.com/list-of-2024-leap-day-bugs/">Be safe out there!</a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Happy Leap Day! <a href="https://codeofmatt.com/list-of-2024-leap-day-bugs/">Be safe out there!</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/02/29/happy-leap-day.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-02-29T12:22:46-07:00"
-      >Feb 29, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/02/29/happy-leap-day.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-02-29T12:22:46-07:00"
+          >Feb 29, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/89acb209-7a83-489b-b4e1-de8cbb03cfcd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/89acb209-7a83-489b-b4e1-de8cbb03cfcd.jpg" alt="A hanging potted plant with small green leaves and a green glass ornament is in focus with sunlight on it. Large green leaves from a different plant are in the foreground, and a cast iron skillet in the background on a kitchen rack."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/89acb209-7a83-489b-b4e1-de8cbb03cfcd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/89acb209-7a83-489b-b4e1-de8cbb03cfcd.jpg" alt="A hanging potted plant with small green leaves and a green glass ornament is in focus with sunlight on it. Large green leaves from a different plant are in the foreground, and a cast iron skillet in the background on a kitchen rack."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/02/20/131114.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-02-20T14:11:14-07:00"
-      >Feb 20, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/02/20/131114.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-02-20T14:11:14-07:00"
+          >Feb 20, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Hold on, I gotta go rearrange my entire schedule for the day for that 1pm sunshine…</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/cleanshot-2024-02-19-at-07.34.022x.png"><img src="https://samgrover.micro.blog/uploads/2024/cleanshot-2024-02-19-at-07.34.022x.png" alt="A screenshot showing weather conditions for the day. Every hour has a &ldquo;cloud&rdquo; icon, except for a &ldquo;sun&rdquo; icon at 1pm."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Hold on, I gotta go rearrange my entire schedule for the day for that 1pm sunshine…</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/cleanshot-2024-02-19-at-07.34.022x.png"><img src="https://samgrover.micro.blog/uploads/2024/cleanshot-2024-02-19-at-07.34.022x.png" alt="A screenshot showing weather conditions for the day. Every hour has a &ldquo;cloud&rdquo; icon, except for a &ldquo;sun&rdquo; icon at 1pm."></a></p>
 <p>Important Update:</p>
 <p>I’ll take it!</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/e94feaec-5aaa-43fe-8015-da47bbf65e82.jpg"><img src="https://samgrover.micro.blog/uploads/2024/e94feaec-5aaa-43fe-8015-da47bbf65e82.jpg" alt="A backyard with a well-maintained lawn, leafless trees, a trellis, shrubs, and a solitary pink chair under a blue sky with scattered clouds."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/e94feaec-5aaa-43fe-8015-da47bbf65e82.jpg"><img src="https://samgrover.micro.blog/uploads/2024/e94feaec-5aaa-43fe-8015-da47bbf65e82.jpg" alt="A backyard with a well-maintained lawn, leafless trees, a trellis, shrubs, and a solitary pink chair under a blue sky with scattered clouds."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/02/19/hold-on-i.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-02-19T08:39:02-07:00"
-      >Feb 19, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/02/19/hold-on-i.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-02-19T08:39:02-07:00"
+          >Feb 19, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Downtown grit</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/76621794-9390-48fc-9661-3aa7b048ebe6.jpg"><img src="https://samgrover.micro.blog/uploads/2024/76621794-9390-48fc-9661-3aa7b048ebe6.jpg" alt="A textured metal sculpture in the foreground with a modern building featuring reflective pink and purple windows in the background, and bare tree branches overlaying the scene."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/c53eafa2-e6e2-4ce9-a972-e3dadb901595.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c53eafa2-e6e2-4ce9-a972-e3dadb901595.jpg" alt="A downwards tilting street sign reading &ldquo;SW 5th AV&rdquo; and a sticker on its surface with a hand drawn penis and the words, “suck dick”."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/38841ec1-d68a-44d8-afea-b870ac1e5e7e.jpg"><img src="https://samgrover.micro.blog/uploads/2024/38841ec1-d68a-44d8-afea-b870ac1e5e7e.jpg" alt="Two potted plants placed on a makeshift windshield ledge of a truck with faded blue paint on the glass, and yellow lower section, with a sign above that reads, “Mexican food”."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/ec522471-b9af-4730-afaa-ac1d74facac6.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ec522471-b9af-4730-afaa-ac1d74facac6.jpg" alt="A person taking a selfie in a window reflecting an urban street scene with parked cars. The window has a grid of white dots."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/33619ea0-db83-49d1-a695-fa66bae9f211.jpg"><img src="https://samgrover.micro.blog/uploads/2024/33619ea0-db83-49d1-a695-fa66bae9f211.jpg" alt="A low-angle view of a tall modern skyscraper with a glass facade against a cloudy sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/101e2b5e-5537-42fc-b278-799a0ccd16cb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/101e2b5e-5537-42fc-b278-799a0ccd16cb.jpg" alt="A vertical stack of weathered spherical stones of varying sizes, seemingly carved or sculpted, mounted outdoors on a pedestal with an urban background comprising trees and buildings. The stones have hand written numbers from 1 to 19, top to bottom."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Downtown grit</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/76621794-9390-48fc-9661-3aa7b048ebe6.jpg"><img src="https://samgrover.micro.blog/uploads/2024/76621794-9390-48fc-9661-3aa7b048ebe6.jpg" alt="A textured metal sculpture in the foreground with a modern building featuring reflective pink and purple windows in the background, and bare tree branches overlaying the scene."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/c53eafa2-e6e2-4ce9-a972-e3dadb901595.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c53eafa2-e6e2-4ce9-a972-e3dadb901595.jpg" alt="A downwards tilting street sign reading &ldquo;SW 5th AV&rdquo; and a sticker on its surface with a hand drawn penis and the words, “suck dick”."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/38841ec1-d68a-44d8-afea-b870ac1e5e7e.jpg"><img src="https://samgrover.micro.blog/uploads/2024/38841ec1-d68a-44d8-afea-b870ac1e5e7e.jpg" alt="Two potted plants placed on a makeshift windshield ledge of a truck with faded blue paint on the glass, and yellow lower section, with a sign above that reads, “Mexican food”."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/ec522471-b9af-4730-afaa-ac1d74facac6.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ec522471-b9af-4730-afaa-ac1d74facac6.jpg" alt="A person taking a selfie in a window reflecting an urban street scene with parked cars. The window has a grid of white dots."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/33619ea0-db83-49d1-a695-fa66bae9f211.jpg"><img src="https://samgrover.micro.blog/uploads/2024/33619ea0-db83-49d1-a695-fa66bae9f211.jpg" alt="A low-angle view of a tall modern skyscraper with a glass facade against a cloudy sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/101e2b5e-5537-42fc-b278-799a0ccd16cb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/101e2b5e-5537-42fc-b278-799a0ccd16cb.jpg" alt="A vertical stack of weathered spherical stones of varying sizes, seemingly carved or sculpted, mounted outdoors on a pedestal with an urban background comprising trees and buildings. The stones have hand written numbers from 1 to 19, top to bottom."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/02/18/downtown-grit.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-02-18T18:04:34-07:00"
-      >Feb 18, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/02/18/downtown-grit.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-02-18T18:04:34-07:00"
+          >Feb 18, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>It&rsquo;s fascinating that currently the most popular show on a top streaming service in the US, <a href="https://en.wikipedia.org/wiki/Mr._%26_Mrs._Smith_(2024_TV_series)">Mr. &amp; Mrs. Smith</a>, has the protagonists in an arranged marriage.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>It&rsquo;s fascinating that currently the most popular show on a top streaming service in the US, <a href="https://en.wikipedia.org/wiki/Mr._%26_Mrs._Smith_(2024_TV_series)">Mr. &amp; Mrs. Smith</a>, has the protagonists in an arranged marriage.</p>
 <p>P.S. It&rsquo;s a fun show.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/02/15/its-fascinating-that.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-02-15T14:31:33-07:00"
-      >Feb 15, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/02/15/its-fascinating-that.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-02-15T14:31:33-07:00"
+          >Feb 15, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/254a8ece-edfb-4241-ae79-7f6e696528b0.jpg"><img src="https://samgrover.micro.blog/uploads/2024/254a8ece-edfb-4241-ae79-7f6e696528b0.jpg" alt="A tabby cat resting on a patterned blanket with patches of light filtering through an object with circular cut-outs, casting a pattern of shadows over the scene."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/254a8ece-edfb-4241-ae79-7f6e696528b0.jpg"><img src="https://samgrover.micro.blog/uploads/2024/254a8ece-edfb-4241-ae79-7f6e696528b0.jpg" alt="A tabby cat resting on a patterned blanket with patches of light filtering through an object with circular cut-outs, casting a pattern of shadows over the scene."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/02/12/110432.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-02-12T12:04:32-07:00"
-      >Feb 12, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/02/12/110432.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-02-12T12:04:32-07:00"
+          >Feb 12, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Portland, Oregon. 3rd February, 2024.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/c23230a0-047c-4baf-8de1-231c682bbe6c.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c23230a0-047c-4baf-8de1-231c682bbe6c.jpg" alt="A walkway with a mesh fence on either side leading towards a cityscape, with a cable car system overhead and people walking along the path."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Portland, Oregon. 3rd February, 2024.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/c23230a0-047c-4baf-8de1-231c682bbe6c.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c23230a0-047c-4baf-8de1-231c682bbe6c.jpg" alt="A walkway with a mesh fence on either side leading towards a cityscape, with a cable car system overhead and people walking along the path."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/02/11/115638.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-02-11T12:56:38-07:00"
-      >Feb 11, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/02/11/115638.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-02-11T12:56:38-07:00"
+          >Feb 11, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>About 75% of the time I write a reply to anything on any social media platform, after I&rsquo;m done writing and editing, I (intentionally) hit &ldquo;Cancel&rdquo; instead of &ldquo;Submit&rdquo;. Works really well!</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>About 75% of the time I write a reply to anything on any social media platform, after I&rsquo;m done writing and editing, I (intentionally) hit &ldquo;Cancel&rdquo; instead of &ldquo;Submit&rdquo;. Works really well!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/02/07/about-of-the.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-02-07T11:53:05-07:00"
-      >Feb 7, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/02/07/about-of-the.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-02-07T11:53:05-07:00"
+          >Feb 7, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">70 Flights on Mars</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2024/02/07/flights-on-mars.html"
-    >70 Flights on Mars</a
-  >
-</section><section><p>When Perseverance rover landed on Mars, it brought along a little helicopter in its belly. The helicopter, named Ingenuity, was a 30-day technology demonstration sent to see if we could fly an aircraft in the very thin Martian atmosphere.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2024/02/07/flights-on-mars.html">70 Flights on Mars</a></h2>
+    </div><section class="post-body"><p>When Perseverance rover landed on Mars, it brought along a little helicopter in its belly. The helicopter, named Ingenuity, was a 30-day technology demonstration sent to see if we could fly an aircraft in the very thin Martian atmosphere.</p>
 <p>As is often with NASA&rsquo;s robotic missions to Mars in recent times, it did that, and exceeded all expectations. It became a companion to the rover and performed about 70 flights over the nearly three years that it flew on Mars. Then last month it encountered an accident that left one of its propeller damaged. That <a href="https://mars.nasa.gov/news/9540/after-three-years-on-mars-nasas-ingenuity-helicopter-mission-ends/">ended the mission</a>.</p>
 <p>I&rsquo;ve been fascinated by this little flying helicopter and have often looked at the photos it was sending back. So much so that I have now compiled a video of all the photos taken by the navigation camera on Ingenuity. This downward pointing camera photographs the ground below it, and so the helicopter is always seen by its shadow, scuttling about the Martian landscape for a cumulative 17 km (10.5 miles) over its mission timeline.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VS265lmy_8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -396,38 +352,40 @@
 <p><a href="https://f001.backblazeb2.com/file/com-samgrover-dropshare/70-Flights-on-Mars-YouTube.mp4">Direct link to video file</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/02/07/flights-on-mars.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-02-07T08:26:31-07:00"
-      >Feb 7, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/02/07/flights-on-mars.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-02-07T08:26:31-07:00"
+          >Feb 7, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Went out to take some photos this afternoon…</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/d3eead6c-7c9b-480b-849f-d02605c767e1.jpg"><img src="https://samgrover.micro.blog/uploads/2024/d3eead6c-7c9b-480b-849f-d02605c767e1.jpg" alt="Urban park scene with a walkway, dried vegetation, two children playing on a grassy hill, and modern buildings in the background."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Went out to take some photos this afternoon…</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/d3eead6c-7c9b-480b-849f-d02605c767e1.jpg"><img src="https://samgrover.micro.blog/uploads/2024/d3eead6c-7c9b-480b-849f-d02605c767e1.jpg" alt="Urban park scene with a walkway, dried vegetation, two children playing on a grassy hill, and modern buildings in the background."></a></p>
 <p>Ran into my friend <a href="https://www.timtrautmann.com">Tim</a>…</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/ea363f63-d6cd-44fb-9c1b-a238f1d56fbe.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ea363f63-d6cd-44fb-9c1b-a238f1d56fbe.jpg" alt="A man with a beard holding a camera, standing on a wooden walkway in a park with bare trees and a modern building in the background."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/8748791d-a2e8-41f5-9955-a7f121183d5e.jpg"><img src="https://samgrover.micro.blog/uploads/2024/8748791d-a2e8-41f5-9955-a7f121183d5e.jpg" alt="Black and white photograph of a modern building with vertical lines on the façade, trees, and a unique-looking tower in the background. There are people walking and a person with two dogs on a grassy area."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/c5dd9cb4-db97-4a2c-b0ec-7a3d3b44cde4.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c5dd9cb4-db97-4a2c-b0ec-7a3d3b44cde4.jpg" alt="A panoramic view of a clear blue sky between two modern high-rise buildings with a visible helicopter appearing to fly in between."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/ea363f63-d6cd-44fb-9c1b-a238f1d56fbe.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ea363f63-d6cd-44fb-9c1b-a238f1d56fbe.jpg" alt="A man with a beard holding a camera, standing on a wooden walkway in a park with bare trees and a modern building in the background."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/8748791d-a2e8-41f5-9955-a7f121183d5e.jpg"><img src="https://samgrover.micro.blog/uploads/2024/8748791d-a2e8-41f5-9955-a7f121183d5e.jpg" alt="Black and white photograph of a modern building with vertical lines on the façade, trees, and a unique-looking tower in the background. There are people walking and a person with two dogs on a grassy area."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/c5dd9cb4-db97-4a2c-b0ec-7a3d3b44cde4.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c5dd9cb4-db97-4a2c-b0ec-7a3d3b44cde4.jpg" alt="A panoramic view of a clear blue sky between two modern high-rise buildings with a visible helicopter appearing to fly in between."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/02/03/went-out-to.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-02-03T20:34:56-07:00"
-      >Feb 3, 2024</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/22/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/02/03/went-out-to.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-02-03T20:34:56-07:00"
+          >Feb 3, 2024</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/22/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/24/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

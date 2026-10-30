@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,186 +205,179 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p>Last night, just before I slept, a thought occurred to me and I visualized a photograph in my head. I woke up at 4:30am, and as the pre-dawn light started to illuminate the room, that photo popped back into my head. I couldn&rsquo;t get back to sleep and finally got out of bed at 5 AM.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Last night, just before I slept, a thought occurred to me and I visualized a photograph in my head. I woke up at 4:30am, and as the pre-dawn light started to illuminate the room, that photo popped back into my head. I couldn&rsquo;t get back to sleep and finally got out of bed at 5 AM.</p>
 <p>I had some coffee and as the sun rose in a mostly cloudy sky, I decided I was gonna go and try to take that photo. I drove to the location, walked around to see the perspectives, and finally took the photo, and a couple more for good measure.</p>
 <p>I took them on film so it remains to be seen how they turn out, but I&rsquo;m glad I went.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/05/25/last-night-just.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-05-25T17:58:12-07:00"
-      >May 25, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/05/25/last-night-just.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-05-25T17:58:12-07:00"
+          >May 25, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/007ce26a-af92-4e0c-a31a-92c8e39a0139.jpg"><img src="https://samgrover.micro.blog/uploads/2024/007ce26a-af92-4e0c-a31a-92c8e39a0139.jpg" alt="A blue building with a decorative pattern and potted trees outside each window, surrounded by lush green trees and dense foliage. The sky is cloudy and grey, adding a dramatic backdrop to the scene."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/007ce26a-af92-4e0c-a31a-92c8e39a0139.jpg"><img src="https://samgrover.micro.blog/uploads/2024/007ce26a-af92-4e0c-a31a-92c8e39a0139.jpg" alt="A blue building with a decorative pattern and potted trees outside each window, surrounded by lush green trees and dense foliage. The sky is cloudy and grey, adding a dramatic backdrop to the scene."></a></p>
 <p>Portland, Oregon. 25th May, 2024.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/05/25/portland-oregon-th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-05-25T16:38:30-07:00"
-      >May 25, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/05/25/portland-oregon-th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-05-25T16:38:30-07:00"
+          >May 25, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/ca35600d-866a-407c-857f-243a6a14a2cf.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ca35600d-866a-407c-857f-243a6a14a2cf.jpg" alt="A black-and-white photograph shows the exterior entrance of a house with a prominent gabled roof. Above the doors, on a vertical support beam, there is a pinned cover of a Fleetwood Mac vinyl album, Rumors."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/ca35600d-866a-407c-857f-243a6a14a2cf.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ca35600d-866a-407c-857f-243a6a14a2cf.jpg" alt="A black-and-white photograph shows the exterior entrance of a house with a prominent gabled roof. Above the doors, on a vertical support beam, there is a pinned cover of a Fleetwood Mac vinyl album, Rumors."></a></p>
 <p>Portland, Oregon. 19th May, 2024.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/05/23/portland-oregon-th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-05-23T15:09:41-07:00"
-      >May 23, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/05/23/portland-oregon-th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-05-23T15:09:41-07:00"
+          >May 23, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/93a19860-ba67-41e1-aaa4-dc967a154aa0.jpg"><img src="https://samgrover.micro.blog/uploads/2024/93a19860-ba67-41e1-aaa4-dc967a154aa0.jpg" alt="A serene view of a forested hillside with tall evergreen trees under a partly cloudy sky. In the foreground, there&rsquo;s a calm body of water bordered by a paved pathway with evenly spaced lampposts."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/93a19860-ba67-41e1-aaa4-dc967a154aa0.jpg"><img src="https://samgrover.micro.blog/uploads/2024/93a19860-ba67-41e1-aaa4-dc967a154aa0.jpg" alt="A serene view of a forested hillside with tall evergreen trees under a partly cloudy sky. In the foreground, there&rsquo;s a calm body of water bordered by a paved pathway with evenly spaced lampposts."></a></p>
 <p>Mt. Tabor Park, Portland, Oregon. 6th May, 2024.</p>
 <p>📷 Hasselblad 500C/M<br>
 🎞️ Kodak Portra 160 (Expired)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/05/21/mt-tabor-park.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-05-21T08:20:43-07:00"
-      >May 21, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/05/21/mt-tabor-park.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-05-21T08:20:43-07:00"
+          >May 21, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/133e5c20-6312-4dc6-b27e-5238d19d85d5.jpg"><img src="https://samgrover.micro.blog/uploads/2024/133e5c20-6312-4dc6-b27e-5238d19d85d5.jpg" alt="A brick house with a sloped roof is visible in the background, with a tall evergreen tree and blue sky on the horizon. In the foreground, there is a bush with pink and red roses blooming behind a chain-link fence."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/133e5c20-6312-4dc6-b27e-5238d19d85d5.jpg"><img src="https://samgrover.micro.blog/uploads/2024/133e5c20-6312-4dc6-b27e-5238d19d85d5.jpg" alt="A brick house with a sloped roof is visible in the background, with a tall evergreen tree and blue sky on the horizon. In the foreground, there is a bush with pink and red roses blooming behind a chain-link fence."></a></p>
 <p>Portland, Oregon. 19th May, 2024.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/05/20/portland-oregon-th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-05-20T08:21:50-07:00"
-      >May 20, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/05/20/portland-oregon-th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-05-20T08:21:50-07:00"
+          >May 20, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/3ea8a35b-4902-41ca-a951-225f7c7939cb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/3ea8a35b-4902-41ca-a951-225f7c7939cb.jpg" alt="A diptych showcasing two coastal scenes. The left image features a green moss-covered log on a sandy beach with a calm body of water in the background. The right image displays a grassy shoreline with dense trees and a serene coastal inlet, highlighting the greenery."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/3ea8a35b-4902-41ca-a951-225f7c7939cb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/3ea8a35b-4902-41ca-a951-225f7c7939cb.jpg" alt="A diptych showcasing two coastal scenes. The left image features a green moss-covered log on a sandy beach with a calm body of water in the background. The right image displays a grassy shoreline with dense trees and a serene coastal inlet, highlighting the greenery."></a></p>
 <p>Coos Bay, Oregon. 28th April, 2024.</p>
 <p>📷 Hasselblad 500C/M<br>
 🎞️ Kodak Portra 160 (Expired)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/05/18/coos-bay-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-05-18T09:35:31-07:00"
-      >May 18, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/05/18/coos-bay-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-05-18T09:35:31-07:00"
+          >May 18, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Portland, Oregon. 9th May, 2024.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/5e737493-5d73-4896-b543-366f2d7a2283.jpg"><img src="https://samgrover.micro.blog/uploads/2024/5e737493-5d73-4896-b543-366f2d7a2283.jpg" alt="Urban street scene with a graffiti-covered wall and traffic in the background. In the foreground, two people are engaged in a photography session near a building with large columns. One is sitting and posing, while the other is crouched, taking photos."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Portland, Oregon. 9th May, 2024.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/5e737493-5d73-4896-b543-366f2d7a2283.jpg"><img src="https://samgrover.micro.blog/uploads/2024/5e737493-5d73-4896-b543-366f2d7a2283.jpg" alt="Urban street scene with a graffiti-covered wall and traffic in the background. In the foreground, two people are engaged in a photography session near a building with large columns. One is sitting and posing, while the other is crouched, taking photos."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/05/17/portland-oregon-th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-05-17T16:12:46-07:00"
-      >May 17, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/05/17/portland-oregon-th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-05-17T16:12:46-07:00"
+          >May 17, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Portland, Oregon. 13th May, 2024.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/d190e872-d7d7-404d-bc4c-b5044f044e99.jpg"><img src="https://samgrover.micro.blog/uploads/2024/d190e872-d7d7-404d-bc4c-b5044f044e99.jpg" alt="A bird in flight against a clear blue sky, with green tree leaves and utility wires in the background."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Portland, Oregon. 13th May, 2024.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/d190e872-d7d7-404d-bc4c-b5044f044e99.jpg"><img src="https://samgrover.micro.blog/uploads/2024/d190e872-d7d7-404d-bc4c-b5044f044e99.jpg" alt="A bird in flight against a clear blue sky, with green tree leaves and utility wires in the background."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/05/14/portland-oregon-th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-05-14T16:44:24-07:00"
-      >May 14, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/05/14/portland-oregon-th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-05-14T16:44:24-07:00"
+          >May 14, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>A new beta of Mimi Uploader is out with a small but significant update. The alt text generation feature now uses the latest Open AI model (GPT-4o) announced yesterday.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>A new beta of Mimi Uploader is out with a small but significant update. The alt text generation feature now uses the latest Open AI model (GPT-4o) announced yesterday.</p>
 <p>If you&rsquo;re not in the beta, <a href="https://testflight.apple.com/join/AbjtGWge">you can opt-in</a>.</p>
 <p>I look forward to your feedback. Thank you!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/05/14/a-new-beta.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-05-14T07:21:07-07:00"
-      >May 14, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/05/14/a-new-beta.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-05-14T07:21:07-07:00"
+          >May 14, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Lloyd Center, Portland, Oregon. 12th May, 2024.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/f17d8574-21cf-48b5-9e58-5552f423fb92.jpg"><img src="https://samgrover.micro.blog/uploads/2024/f17d8574-21cf-48b5-9e58-5552f423fb92.jpg" alt="A black and white photograph of an indoor ice-skating rink with a few people skating. Large windows cast a grid-like shadow across the ice surface. The rink is bordered by a railing, and the scene gives an impression of movement and stillness combined."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Lloyd Center, Portland, Oregon. 12th May, 2024.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/f17d8574-21cf-48b5-9e58-5552f423fb92.jpg"><img src="https://samgrover.micro.blog/uploads/2024/f17d8574-21cf-48b5-9e58-5552f423fb92.jpg" alt="A black and white photograph of an indoor ice-skating rink with a few people skating. Large windows cast a grid-like shadow across the ice surface. The rink is bordered by a railing, and the scene gives an impression of movement and stillness combined."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/05/13/lloyd-center-portland.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-05-13T13:23:28-07:00"
-      >May 13, 2024</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/19/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/05/13/lloyd-center-portland.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-05-13T13:23:28-07:00"
+          >May 13, 2024</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/19/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/21/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,154 +205,133 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p>Jenni under a heritage tree.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/8685564d30.jpg"><img src="https://samgrover.micro.blog/uploads/2021/8685564d30.jpg" alt=""></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Jenni under a heritage tree.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/8685564d30.jpg"><img src="https://samgrover.micro.blog/uploads/2021/8685564d30.jpg" alt=""></a></p>
 <hr>
 <p>Images uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2021/06/09/jenni-under-a.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2021-06-09T11:30:52-07:00"
-      >Jun 9, 2021</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2021/06/09/jenni-under-a.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2021-06-09T11:30:52-07:00"
+          >Jun 9, 2021</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Bathroom Rack</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2021/06/04/bathroom-rack.html"
-    >Bathroom Rack</a
-  >
-</section><section><p>I built a wall-mounted rack for a bathroom and am quite happy with how it turned out.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/8b8ad3aee8.jpg"><img src="https://samgrover.micro.blog/uploads/2021/8b8ad3aee8.jpg" alt=""></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2021/06/04/bathroom-rack.html">Bathroom Rack</a></h2>
+    </div><section class="post-body"><p>I built a wall-mounted rack for a bathroom and am quite happy with how it turned out.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/8b8ad3aee8.jpg"><img src="https://samgrover.micro.blog/uploads/2021/8b8ad3aee8.jpg" alt=""></a></p>
 <p>The bathroom on the main level in our house is used occasionally by us. It is also the one that is used by visitors. It has never had a good place to put stuff. The sink doesn&rsquo;t have enough room on it for anything besides the soap, and there is no vanity cabinet in which to put things. We decided a long time ago that there needed to be something.</p>
 <p>It is a small room, so the only real option was a wall, and this was pretty much the only place to mount something like this on the wall in a manner that it wasn&rsquo;t in the way, or in an awkward spot.</p>
 <p>At some point I came across <a href="https://www.youtube.com/watch?v=h69ZB-P8W8w">this video</a> and realized that this design could work well. The main constraint as shown in the video was depth. This was also the case in our bathroom so as to not interfere with the shower door next to it. A secondary constraint was the light switches but that was straightforward to design around. Also, unlike that video, I couldn&rsquo;t drill the sides into a wall because there is just trim board on one side and stone tiles on the other. So I made some adjustments to adapt that design to our needs.</p>
 <p>And so many months ago I got the materials. Then something or the other delayed the project but a couple months ago I finally started on it. And in small increments I built it up. A few weeks ago and after some mistakes and corrections, I finally applied paint and finish, and mounted it.</p>
 <p>Here&rsquo;s how it looks in perspective with a wide angle lens.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/7fa7f36ee2.jpg"><img src="https://samgrover.micro.blog/uploads/2021/7fa7f36ee2.jpg" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/7fa7f36ee2.jpg"><img src="https://samgrover.micro.blog/uploads/2021/7fa7f36ee2.jpg" alt=""></a></p>
 <p>P.S. The video I linked is from the <a href="https://www.youtube.com/channel/UCIrtu3uSwehD0pfmfMsHhUA">Darbin Orvar</a> channel, of which I&rsquo;m a fan, and have followed for many years. Highly recommended!</p>
 <hr>
 <p>Images uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2021/06/04/bathroom-rack.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2021-06-04T10:47:00-07:00"
-      >Jun 4, 2021</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2021/06/04/bathroom-rack.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2021-06-04T10:47:00-07:00"
+          >Jun 4, 2021</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>The latest in wireless purr charging.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/fb751c737c.jpg"><img src="https://samgrover.micro.blog/uploads/2021/fb751c737c.jpg" alt=""></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>The latest in wireless purr charging.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/fb751c737c.jpg"><img src="https://samgrover.micro.blog/uploads/2021/fb751c737c.jpg" alt=""></a></p>
 <hr>
 <p>Images uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2021/05/31/the-latest-in.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2021-05-31T09:19:31-07:00"
-      >May 31, 2021</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2021/05/31/the-latest-in.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2021-05-31T09:19:31-07:00"
+          >May 31, 2021</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>A new beta of Mimi Uploader will be coming your way shortly. This includes layout updates for the main screen for all screen sizes and orientations.</p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>A new beta of Mimi Uploader will be coming your way shortly. This includes layout updates for the main screen for all screen sizes and orientations.</p>
 <p>It also includes a new button to toggle viewing images in their entirety. Here&rsquo;s an example.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/2e3a58cc07.png"><img src="https://samgrover.micro.blog/uploads/2021/2e3a58cc07.png" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/2e3a58cc07.png"><img src="https://samgrover.micro.blog/uploads/2021/2e3a58cc07.png" alt=""></a></p>
 <p>On the left is the way images will show by default, but tapping the new button in the bottom toolbar scales the images so they fit in their available space, as shown on the right.</p>
 <p>Try it out and let me know what you think 😊</p>
 <hr>
 <p>Images uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2021/05/30/a-new-beta.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2021-05-30T11:34:50-07:00"
-      >May 30, 2021</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2021/05/30/a-new-beta.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2021-05-30T11:34:50-07:00"
+          >May 30, 2021</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>I&rsquo;m trying out a new image layout algorithm for the main screen on Mimi Uploader. The idea is to utilize more of the screen real estate and to adjust the size of each photo based on the total number.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>I&rsquo;m trying out a new image layout algorithm for the main screen on Mimi Uploader. The idea is to utilize more of the screen real estate and to adjust the size of each photo based on the total number.</p>
 <p>Here&rsquo;s a before/after in the portrait orientation.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/92b6a70727.jpg"><img src="https://samgrover.micro.blog/uploads/2021/92b6a70727.jpg" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/92b6a70727.jpg"><img src="https://samgrover.micro.blog/uploads/2021/92b6a70727.jpg" alt=""></a></p>
 <p>And here&rsquo;s one in the landscape orientation.
 <a href="https://samgrover.micro.blog/uploads/2021/67e4cc00f6.jpg"><img src="https://samgrover.micro.blog/uploads/2021/67e4cc00f6.jpg" alt=""></a></p>
 <p>I&rsquo;m quite encouraged by this and already finding it useful in development.</p>
 <p>What do you think?</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2021/05/22/im-trying-out.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2021-05-22T14:46:52-07:00"
-      >May 22, 2021</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2021/05/22/im-trying-out.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2021-05-22T14:46:52-07:00"
+          >May 22, 2021</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Aannnnd now it&rsquo;s been two weeks since my second shot of Moderna. Full effectiveness! So, who&rsquo;s up for hanging out?! 🎉</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Aannnnd now it&rsquo;s been two weeks since my second shot of Moderna. Full effectiveness! So, who&rsquo;s up for hanging out?! 🎉</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2021/05/17/aannnnd-now-its.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2021-05-17T11:45:00-07:00"
-      >May 17, 2021</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2021/05/17/aannnnd-now-its.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2021-05-17T11:45:00-07:00"
+          >May 17, 2021</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Recent Uploads on Mimi Uploader</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2021/05/16/recent-uploads-on.html"
-    >Recent Uploads on Mimi Uploader</a
-  >
-</section><section><p>A new version of <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi Uploader</a> is now out with my favorite new feature in a while. <strong>You can now access your Recent Uploads for reference or export!</strong> 🎉</p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/5627108d83.png"><img src="https://samgrover.micro.blog/uploads/2021/5627108d83.png" alt=""></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2021/05/16/recent-uploads-on.html">Recent Uploads on Mimi Uploader</a></h2>
+    </div><section class="post-body"><p>A new version of <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi Uploader</a> is now out with my favorite new feature in a while. <strong>You can now access your Recent Uploads for reference or export!</strong> 🎉</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/5627108d83.png"><img src="https://samgrover.micro.blog/uploads/2021/5627108d83.png" alt=""></a></p>
 <p>Recent Uploads can be accessed by the icon on the top left of the main screen. Once in there, you can see a list of your ten most recent uploads sessions. Each of those can be independently exported to get the URLs in Markdown or HTML. Now if you miss exporting right after an upload, or somehow lose the exported text, you can still get to it later. I hope you enjoy this feature and find it useful like I do.</p>
 <p>This release has been a long time coming. Working on this app is another one of those things that&rsquo;s slowed down in the pandemic. I&rsquo;m hoping to give it more attention in the future and have a list of features and improvements that I would like to bring to you.</p>
 <p>If you find Mimi useful, please let others know, and <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">leave a rating and/or review</a>. It is very much appreciated.</p>
@@ -393,74 +340,76 @@
 <p>Images uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2021/05/16/recent-uploads-on.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2021-05-16T11:05:00-07:00"
-      >May 16, 2021</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2021/05/16/recent-uploads-on.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2021-05-16T11:05:00-07:00"
+          >May 16, 2021</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">New Fence and Pergola</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2021/05/13/new-fence-and.html"
-    >New Fence and Pergola</a
-  >
-</section><section><p>We recently replaced an old failing fence with a new one, and also got a pergola built. I took before and after pictures, and it&rsquo;s really nice to see the improvement.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/5287181f4f.jpg"><img src="https://samgrover.micro.blog/uploads/2021/5287181f4f.jpg" alt=""></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/98b8c52421.jpg"><img src="https://samgrover.micro.blog/uploads/2021/98b8c52421.jpg" alt=""></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/9abb53629b.jpg"><img src="https://samgrover.micro.blog/uploads/2021/9abb53629b.jpg" alt=""></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2021/05/13/new-fence-and.html">New Fence and Pergola</a></h2>
+    </div><section class="post-body"><p>We recently replaced an old failing fence with a new one, and also got a pergola built. I took before and after pictures, and it&rsquo;s really nice to see the improvement.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/5287181f4f.jpg"><img src="https://samgrover.micro.blog/uploads/2021/5287181f4f.jpg" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/98b8c52421.jpg"><img src="https://samgrover.micro.blog/uploads/2021/98b8c52421.jpg" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/9abb53629b.jpg"><img src="https://samgrover.micro.blog/uploads/2021/9abb53629b.jpg" alt=""></a></p>
 <p>And here is a photo of the pergola that is in the garden, adjacent to the fence. It is a really nice space and we&rsquo;ve been enjoying using it, and look forward to spending more time there, even with friends!</p>
-<p><a href="https://samgrover.micro.blog/uploads/2021/99ee591e85.jpg"><img src="https://samgrover.micro.blog/uploads/2021/99ee591e85.jpg" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2021/99ee591e85.jpg"><img src="https://samgrover.micro.blog/uploads/2021/99ee591e85.jpg" alt=""></a></p>
 <p>If you&rsquo;re local to Portland, these projects were done by <a href="https://builderbybike.com/">Chris Sanderson</a>, and I gladly recommend him for your projects.</p>
 <p>Images uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2021/05/13/new-fence-and.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2021-05-13T09:40:00-07:00"
-      >May 13, 2021</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2021/05/13/new-fence-and.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2021-05-13T09:40:00-07:00"
+          >May 13, 2021</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>A new build of Mimi Uploader beta is out. In case you&rsquo;ve been using this recently, let me know if you have any feedback, especially on the new Recent Uploads feature. Thanks!</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>A new build of Mimi Uploader beta is out. In case you&rsquo;ve been using this recently, let me know if you have any feedback, especially on the new Recent Uploads feature. Thanks!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2021/05/11/a-new-build.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2021-05-11T18:06:36-07:00"
-      >May 11, 2021</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2021/05/11/a-new-build.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2021-05-11T18:06:36-07:00"
+          >May 11, 2021</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Extract URL From Apple News URL</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2021/05/11/extract-url-from.html"
-    >Extract URL From Apple News URL</a
-  >
-</section><section><p>I wrote a small script to convert an Apple News URL into a regular URL. Here it is.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2021/05/11/extract-url-from.html">Extract URL From Apple News URL</a></h2>
+    </div><section class="post-body"><p>I wrote a small script to convert an Apple News URL into a regular URL. Here it is.</p>
 <script src="https://gist.github.com/samgrover/acb966142f1bc7e182ba56ecf9979850.js"></script>
 <p>I usually need this on macOS and have a terminal handy so a Python script works well for me. You could extract the logic and make a different automation out of it, e.g. an iOS Shortcut. Do share if you do :-)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2021/05/11/extract-url-from.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2021-05-11T18:02:00-07:00"
-      >May 11, 2021</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/51/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2021/05/11/extract-url-from.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2021-05-11T18:02:00-07:00"
+          >May 11, 2021</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/51/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/53/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,45 +205,12 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1657/26576094872_9226eb090f_h.jpg"><img src="https://live.staticflickr.com/1657/26576094872_9226eb090f_h.jpg" alt="A white cat peers through a window screen."></a>
   
 </figure>
@@ -283,16 +218,19 @@
 <p>SE Portland, Oregon. 26th March, 2016.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2016/04/26/se-portland-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2016-04-26T20:22:00-07:00"
-      >Apr 26, 2016</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2016/04/26/se-portland-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2016-04-26T20:22:00-07:00"
+          >Apr 26, 2016</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1570/26508766445_96b8657821_h.jpg"><img src="https://live.staticflickr.com/1570/26508766445_96b8657821_h.jpg" alt="A man stands with two dogs, one wearing a medical cone, overlooking a fenced-in dog park."></a>
   
 </figure>
@@ -300,20 +238,20 @@
 <p>NW Portland, Oregon. 27th March, 2016.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2016/04/18/nw-portland-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2016-04-18T10:17:00-07:00"
-      >Apr 18, 2016</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2016/04/18/nw-portland-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2016-04-18T10:17:00-07:00"
+          >Apr 18, 2016</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">On buying a house</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2016/04/16/on-buying-a.html"
-    >On buying a house</a
-  >
-</section><section><p>On 11th February in 2015, I decided to buy a house in Portland.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2016/04/16/on-buying-a.html">On buying a house</a></h2>
+    </div><section class="post-body"><p>On 11th February in 2015, I decided to buy a house in Portland.</p>
 <p>At the time I was working on my laptop at Hivolt, a coffee shop in New Orleans. I ordered a cup of pourover coffee named Burundi Buziraguhindwa. The menu described it as “natural sundried, juicy, strawberry, raspberry”. Turned out to be one of the best coffees I’ve ever had. It was the catalyst, because a few minutes later I had made the decision. When I told Jenni about it, she started calling it “magic coffee”. I love her.</p>
 <p>Fast forward to August. My cross country road trip has ended, and I’m back in Portland. I’ve been talking to friends about buying a house, and looking for an agent. Amber recommends Laurie Gilmer. I meet Laurie and the house search begins. Two weeks later I make my first offer. She suggests I write a “love letter”, so I do. It doesn’t work out.</p>
 <p>About two months pass. I see a bunch of houses. I make an offer. It doesn’t work out. Four days later I make one more offer. It doesn’t work out. The love letter is getting better all the time, I think.</p>
@@ -330,16 +268,19 @@
 <p>P.P.S. If you’re in a similar boat, I wish you the best, and I highly recommend Laurie Gilmer, Laura Wood, and team at <a href="https://www.think-portland.com/%22">Think Real Estate</a>. And also, Anne Viola at <a href="https://rosecitymtg.com/">Rose City Mortgage</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2016/04/16/on-buying-a.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2016-04-16T14:49:02-07:00"
-      >Apr 16, 2016</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2016/04/16/on-buying-a.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2016-04-16T14:49:02-07:00"
+          >Apr 16, 2016</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1658/26023977112_b12eef192e_h.jpg"><img src="https://live.staticflickr.com/1658/26023977112_b12eef192e_h.jpg" alt="A man in athletic wear gestures while a woman looks on and smiles on a city sidewalk."></a>
   
 </figure>
@@ -347,16 +288,19 @@
 <p>Downtown Portland, Oregon. 5th March, 2016.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2016/03/29/downtown-portland-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2016-03-29T09:04:00-07:00"
-      >Mar 29, 2016</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2016/03/29/downtown-portland-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2016-03-29T09:04:00-07:00"
+          >Mar 29, 2016</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1540/26014946811_fda7eba6ad_h.jpg"><img src="https://live.staticflickr.com/1540/26014946811_fda7eba6ad_h.jpg" alt="Black and white profile portrait of a woman with one arm raised."></a>
   
 </figure>
@@ -364,16 +308,19 @@
 <p>Jenni at home. 20th February, 2016.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2016/03/27/jenni-at-home.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2016-03-27T18:29:00-07:00"
-      >Mar 27, 2016</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2016/03/27/jenni-at-home.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2016-03-27T18:29:00-07:00"
+          >Mar 27, 2016</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1669/25947850981_4b730c7e09_h.jpg"><img src="https://live.staticflickr.com/1669/25947850981_4b730c7e09_h.jpg" alt="Yellow construction cranes tower against an overcast sky."></a>
   
 </figure>
@@ -381,16 +328,19 @@
 <p>NW Portland, Oregon. 5th March, 2016.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2016/03/24/nw-portland-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2016-03-24T15:24:00-07:00"
-      >Mar 24, 2016</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2016/03/24/nw-portland-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2016-03-24T15:24:00-07:00"
+          >Mar 24, 2016</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1495/25972109535_02e4122511_h.jpg"><img src="https://live.staticflickr.com/1495/25972109535_02e4122511_h.jpg" alt="A woman wearing a yellow dress and a dark brown coat walks beneath a tree with white blossoms."></a>
   
 </figure>
@@ -398,16 +348,19 @@
 <p>SE Portland, Oregon. 5th March, 2016.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2016/03/21/se-portland-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2016-03-21T16:23:00-07:00"
-      >Mar 21, 2016</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2016/03/21/se-portland-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2016-03-21T16:23:00-07:00"
+          >Mar 21, 2016</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1641/25450739751_5a9627ade2_h.jpg"><img src="https://live.staticflickr.com/1641/25450739751_5a9627ade2_h.jpg" alt="A woman in a white jacket sits cross-legged on a stone ledge and rubs her forehead."></a>
   
 </figure>
@@ -415,16 +368,19 @@
 <p>Downtown Portland, Oregon. 23rd February, 2016.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2016/03/05/downtown-portland-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2016-03-05T19:13:00-08:00"
-      >Mar 5, 2016</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2016/03/05/downtown-portland-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2016-03-05T19:13:00-08:00"
+          >Mar 5, 2016</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1485/25410295091_2fd1a45d25_h.jpg"><img src="https://live.staticflickr.com/1485/25410295091_2fd1a45d25_h.jpg" alt="A black and white street scene featuring a toddler and a pigeon on a city sidewalk."></a>
   
 </figure>
@@ -432,16 +388,19 @@
 <p>Downtown Portland, Oregon. 8th February, 2016.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2016/03/04/downtown-portland-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2016-03-04T09:03:00-08:00"
-      >Mar 4, 2016</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2016/03/04/downtown-portland-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2016-03-04T09:03:00-08:00"
+          >Mar 4, 2016</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1685/24836185559_a4139a6269_h.jpg"><img src="https://live.staticflickr.com/1685/24836185559_a4139a6269_h.jpg" alt="A couple takes a selfie on a leather couch next to a &#34;Quiet Please&#34; sign."></a>
   
 </figure>
@@ -449,21 +408,20 @@
 <p>Portland Art Museum. 4th February, 2016.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2016/02/22/portland-art-museum.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2016-02-22T17:08:00-08:00"
-      >Feb 22, 2016</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/90/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2016/02/22/portland-art-museum.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2016-02-22T17:08:00-08:00"
+          >Feb 22, 2016</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/90/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/92/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

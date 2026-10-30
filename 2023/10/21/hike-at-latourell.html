@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -38,7 +38,7 @@
 A couple weekends ago we went hiking at Latourell Falls. It&rsquo;s a lovely hike that has immediate view of the lower falls from the trailhead. There&rsquo;s a short hike to the base of the lower falls. There&rsquo;s also a separate loop hike that goes up and around those falls and comes across the higher falls. That&rsquo;s the one we did.
 Along the way we saw a number of mushrooms, some huge Devil&rsquo;s Clubs (identified by the phone), and a whole lot of moss and trees. It&rsquo;s a popular hike. There were people all along the way." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -63,30 +63,16 @@ Along the way we saw a number of mushrooms, some huge Devil&rsquo;s Clubs (ident
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="📷 Hike at Latourell Falls">
@@ -127,8 +113,8 @@ Along the way we saw a number of mushrooms, some huge Devil’s Clubs (identifie
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -143,16 +129,13 @@ Along the way we saw a number of mushrooms, some huge Devil’s Clubs (identifie
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -162,10 +145,11 @@ Along the way we saw a number of mushrooms, some huge Devil’s Clubs (identifie
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -177,27 +161,17 @@ Along the way we saw a number of mushrooms, some huge Devil’s Clubs (identifie
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -207,15 +181,9 @@ Along the way we saw a number of mushrooms, some huge Devil’s Clubs (identifie
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -245,56 +213,22 @@ Along the way we saw a number of mushrooms, some huge Devil’s Clubs (identifie
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article><header class="mb-10">
-    <h1 class="my-0!">📷 Hike at Latourell Falls</h1>
-  </header><section><p><video autoplay="autoplay" controls="controls" playsinline="playsinline" src="https://f001.backblazeb2.com/file/com-samgrover-dropshare/2023-10-08-latourell-falls-hike.mov" alt="3D view of hike route."></video></p>
+<main class="site-main prose prose-neutral dark:prose-invert relative"><article class="post post--flow">
+  <div class="post-sheet"><div class="post-heading">
+    <h1 class="post-title">📷 Hike at Latourell Falls</h1>
+  </div><section class="post-body"><p><video autoplay="autoplay" controls="controls" playsinline="playsinline" src="https://f001.backblazeb2.com/file/com-samgrover-dropshare/2023-10-08-latourell-falls-hike.mov" alt="3D view of hike route."></video></p>
 <p>A couple weekends ago we went hiking at <a href="https://en.wikipedia.org/wiki/Latourell_Falls">Latourell Falls</a>. It&rsquo;s a lovely hike that has immediate view of the lower falls from the trailhead. There&rsquo;s a short hike to the base of the lower falls. There&rsquo;s also a separate loop hike that goes up and around those falls and comes across the higher falls. That&rsquo;s the one we did.</p>
 <p>Along the way we saw a number of mushrooms, some huge Devil&rsquo;s Clubs (identified by the phone), and a whole lot of moss and trees. It&rsquo;s a popular hike. There were people all along the way.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/f468d6cb-5e18-47c0-abe2-43347f4a23c3.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f468d6cb-5e18-47c0-abe2-43347f4a23c3.jpg" alt="A tall thin waterfall backed by a large gray rock wall. Trees with fall colors in the foreground."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/a89e6071-a19a-49ff-a3be-3213913e3b49.jpg"><img src="https://samgrover.micro.blog/uploads/2023/a89e6071-a19a-49ff-a3be-3213913e3b49.jpg" alt="Dark orange mushrooms with even darker spots on them, growing out of the face of a fallen tree trunk."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/f48087b3-6326-48d8-aa9c-c6fee794ca18.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f48087b3-6326-48d8-aa9c-c6fee794ca18.jpg" alt="Leaves in varying fall colors with spikes in their surface. A blurry backdrop of a small bridge and waterfall behind."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/1ea79568-046d-4f63-b555-2f184901bd6a.jpg"><img src="https://samgrover.micro.blog/uploads/2023/1ea79568-046d-4f63-b555-2f184901bd6a.jpg" alt="A waterfall coming downs a rock wall in a twist. Hikers walking towards it on the trail in the foreground."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/d7814e88-a102-4930-aebc-dc4ea3882705.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d7814e88-a102-4930-aebc-dc4ea3882705.jpg" alt="A close view of a waterfall and the water below. A woman stands on the trail to the side of and in between the waterfall and a rock wall."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/4f23e1ba-5b3e-4102-ab25-82e38999b23b.jpg"><img src="https://samgrover.micro.blog/uploads/2023/4f23e1ba-5b3e-4102-ab25-82e38999b23b.jpg" alt="A woman hangs from a tree branch that goes over a hiking trail. Her knees are bent."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/80fa5bf1-2672-4d8c-8326-9beb808fd15d.jpg"><img src="https://samgrover.micro.blog/uploads/2023/80fa5bf1-2672-4d8c-8326-9beb808fd15d.jpg" alt="Flat yellowish mushrooms grow out the face of a fallen tree trunk. They are surrounded by green germs and leaves."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/bb59ca98-3d09-4bba-9bed-b5ca0894a30a.jpg"><img src="https://samgrover.micro.blog/uploads/2023/bb59ca98-3d09-4bba-9bed-b5ca0894a30a.jpg" alt="A woman on a hiking trail takes a picture of a bridge that goes over the trail."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/c572703a-694e-4417-85f1-43975cc97adc.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c572703a-694e-4417-85f1-43975cc97adc.jpg" alt="Selfie of a man and a woman. The man in the foreground is blurry. The woman in the background is in sharp focus."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/f468d6cb-5e18-47c0-abe2-43347f4a23c3.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f468d6cb-5e18-47c0-abe2-43347f4a23c3.jpg" alt="A tall thin waterfall backed by a large gray rock wall. Trees with fall colors in the foreground."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/a89e6071-a19a-49ff-a3be-3213913e3b49.jpg"><img src="https://samgrover.micro.blog/uploads/2023/a89e6071-a19a-49ff-a3be-3213913e3b49.jpg" alt="Dark orange mushrooms with even darker spots on them, growing out of the face of a fallen tree trunk."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/f48087b3-6326-48d8-aa9c-c6fee794ca18.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f48087b3-6326-48d8-aa9c-c6fee794ca18.jpg" alt="Leaves in varying fall colors with spikes in their surface. A blurry backdrop of a small bridge and waterfall behind."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/1ea79568-046d-4f63-b555-2f184901bd6a.jpg"><img src="https://samgrover.micro.blog/uploads/2023/1ea79568-046d-4f63-b555-2f184901bd6a.jpg" alt="A waterfall coming downs a rock wall in a twist. Hikers walking towards it on the trail in the foreground."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/d7814e88-a102-4930-aebc-dc4ea3882705.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d7814e88-a102-4930-aebc-dc4ea3882705.jpg" alt="A close view of a waterfall and the water below. A woman stands on the trail to the side of and in between the waterfall and a rock wall."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/4f23e1ba-5b3e-4102-ab25-82e38999b23b.jpg"><img src="https://samgrover.micro.blog/uploads/2023/4f23e1ba-5b3e-4102-ab25-82e38999b23b.jpg" alt="A woman hangs from a tree branch that goes over a hiking trail. Her knees are bent."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/80fa5bf1-2672-4d8c-8326-9beb808fd15d.jpg"><img src="https://samgrover.micro.blog/uploads/2023/80fa5bf1-2672-4d8c-8326-9beb808fd15d.jpg" alt="Flat yellowish mushrooms grow out the face of a fallen tree trunk. They are surrounded by green germs and leaves."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/bb59ca98-3d09-4bba-9bed-b5ca0894a30a.jpg"><img src="https://samgrover.micro.blog/uploads/2023/bb59ca98-3d09-4bba-9bed-b5ca0894a30a.jpg" alt="A woman on a hiking trail takes a picture of a bridge that goes over the trail."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/c572703a-694e-4417-85f1-43975cc97adc.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c572703a-694e-4417-85f1-43975cc97adc.jpg" alt="Selfie of a man and a woman. The man in the foreground is blurry. The woman in the background is in sharp focus."></a></p>
 <p>On a side note, I&rsquo;m really enjoying the new iOS 17 feature that lets you choose the point of focus after taking the photo. I used that in the photo above.</p>
 <h2 id="activity-stats-and-map">Activity Stats and Map</h2>
 <p>Distance: 2.54 miles<br>
@@ -309,18 +243,18 @@ Time (including breaks): 1h 34m</p>
       <time class="post-meta-date" datetime="2023-10-21T10:56:26-07:00"
         >Oct 21, 2023</time
       ></div>
-  </footer><nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  </footer></div>
+
+  <nav
+    class="post-nav flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   ><a class="ltr:pr-3 rtl:pl-3" href="https://samgrover.com/2023/10/30/a-new-beta.html"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Oct 30, 2023</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
       href="https://samgrover.com/2023/10/19/the-story-of.html"
       ><span>The Story of Mimi Uploader So Far</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+    ></nav></article></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,65 +205,32 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">You can now become a Mimi Uploader Supporter via an ongoing in-app subscription 🙏</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/12/21/you-can-now.html"
-    >You can now become a Mimi Uploader Supporter via an ongoing in-app subscription 🙏</a
-  >
-</section><section><p>The latest version of Mimi Uploader is now out in the App Store. It has an option to subscribe on an ongoing basis to become a Supporter.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2023/12/21/you-can-now.html">You can now become a Mimi Uploader Supporter via an ongoing in-app subscription 🙏</a></h2>
+    </div><section class="post-body"><p>The latest version of Mimi Uploader is now out in the App Store. It has an option to subscribe on an ongoing basis to become a Supporter.</p>
 <p>By becoming a Supporter, you are providing for the development and maintenance of the app on an ongoing basis.</p>
 <p>In the future, this will also provide access to features that have ongoing costs. You may have heard that the newest beta of the app has a feature for <a href="https://samgrover.com/2023/12/15/mimi-uploader-enters.html">generating image description for alt text</a>. This is powered by a third-party API and will be the first of such features.</p>
 <p>You can sign up to support on the Settings screen by selecting the option labeled, &ldquo;Become a Supporter&rdquo;. There are three levels of payment. Pick the level that works for you. Whatever level you pick, you get the same access. And for all levels, you have my gratitude.</p>
 <p>Get Mimi Uploader from the <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">App Store</a>!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/12/21/you-can-now.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-12-21T14:43:16-07:00"
-      >Dec 21, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/12/21/you-can-now.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-12-21T14:43:16-07:00"
+          >Dec 21, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Guess who thought, &ldquo;I&rsquo;ve heard all the stories about the complications of submitting subscriptions for review for the first time in an iOS app, so I&rsquo;m sure I will have no issues.&rdquo;</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Guess who thought, &ldquo;I&rsquo;ve heard all the stories about the complications of submitting subscriptions for review for the first time in an iOS app, so I&rsquo;m sure I will have no issues.&rdquo;</p>
 <p>This guy.</p>
 <p>Guess who was wrong.</p>
 <p>This guy.</p>
@@ -303,31 +238,31 @@
 <p>(But it&rsquo;s also App Store Connect)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/12/21/guess-who-thought.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-12-21T10:37:41-07:00"
-      >Dec 21, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/12/21/guess-who-thought.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-12-21T10:37:41-07:00"
+          >Dec 21, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">📷 Hike at Brown Mountain</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/12/19/hike-at-brown.html"
-    >📷 Hike at Brown Mountain</a
-  >
-</section><section><p>Last weekend we went on a hike at Brown Mountain in <a href="https://en.wikipedia.org/wiki/Tucson_Mountains">Tucson Mountains</a>. It was recommended as a sunset hike so we went later than usual.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2023/12/19/hike-at-brown.html">📷 Hike at Brown Mountain</a></h2>
+    </div><section class="post-body"><p>Last weekend we went on a hike at Brown Mountain in <a href="https://en.wikipedia.org/wiki/Tucson_Mountains">Tucson Mountains</a>. It was recommended as a sunset hike so we went later than usual.</p>
 <p>The hike is a loop and has a quick ascent going clockwise, then some ups and downs with the last mile or so pretty much flat. It was a very enjoyable hike that had wonderful views, and provided a nice workout with the variations.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/b1369d57-0c6f-4c3e-a024-3b84bd4d0aff.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b1369d57-0c6f-4c3e-a024-3b84bd4d0aff.jpg" alt="A desert landscape with a range of mountains in the background and a vast expanse covered with saguaro cacti under a clear blue sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/132ab141-10cb-4be3-8a2b-117e16fc6e62.jpg"><img src="https://samgrover.micro.blog/uploads/2023/132ab141-10cb-4be3-8a2b-117e16fc6e62.jpg" alt="Two hikers ascending a rocky trail with sparse desert vegetation under a bright sun with visible lens flare."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/d6a78f6f-7923-46f3-abd6-bb04561079dc.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d6a78f6f-7923-46f3-abd6-bb04561079dc.jpg" alt="A desert landscape with numerous saguaro cacti and a clear blue sky. In the background, there are rugged mountains."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/eefae5d3-ccc5-4204-a006-c9892f8f83b5.jpg"><img src="https://samgrover.micro.blog/uploads/2023/eefae5d3-ccc5-4204-a006-c9892f8f83b5.jpg" alt="A hiker waving in the distance among tall cacti on a desert trail with mountains in the background under a clear blue sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/b2e527f6-2fd7-4f96-8ada-a7592240f39f.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b2e527f6-2fd7-4f96-8ada-a7592240f39f.jpg" alt="Rocky terrain with vibrant lichen, a single tall saguaro cactus, and a crescent moon in the blue sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/79c16f32-55d6-4aad-bb32-088898da5b94.jpg"><img src="https://samgrover.micro.blog/uploads/2023/79c16f32-55d6-4aad-bb32-088898da5b94.jpg" alt="A desert landscape covered with numerous saguaro cacti and other desert vegetation with a blue sky above and mountains in the background. The shadow of a waving person is cast on the saguaro cactus in the foreground."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/ac83cb24-cf57-4cf6-9990-3706c4cf3506.jpg"><img src="https://samgrover.micro.blog/uploads/2023/ac83cb24-cf57-4cf6-9990-3706c4cf3506.jpg" alt="A desert landscape with clear skies, featuring a variety of cacti including tall saguaros and scattered vegetation, with rolling hills in the background."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/c05b6105-2d3a-473d-8e91-cd5908adc92b.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c05b6105-2d3a-473d-8e91-cd5908adc92b.jpg" alt="Desert hillside covered in numerous saguaro cacti lit by the light of the setting Sun, with clear blue sky above."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/d03aad6b-26ac-47b2-803e-d61574fe6a85.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d03aad6b-26ac-47b2-803e-d61574fe6a85.jpg" alt="Two hikers trekking through a desert landscape with saguaro cacti, brush, and a mountain range in the background bathed in the warm sunlight of the setting Sun."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/6e3660e3-11dc-40f0-98e7-ef5dc6cf28af.jpg"><img src="https://samgrover.micro.blog/uploads/2023/6e3660e3-11dc-40f0-98e7-ef5dc6cf28af.jpg" alt="A dry desert wash landscape with rocky terrain and various desert plants including cacti and shrubs. The rocks display a range of colors, including red, purple, and white."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/b1369d57-0c6f-4c3e-a024-3b84bd4d0aff.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b1369d57-0c6f-4c3e-a024-3b84bd4d0aff.jpg" alt="A desert landscape with a range of mountains in the background and a vast expanse covered with saguaro cacti under a clear blue sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/132ab141-10cb-4be3-8a2b-117e16fc6e62.jpg"><img src="https://samgrover.micro.blog/uploads/2023/132ab141-10cb-4be3-8a2b-117e16fc6e62.jpg" alt="Two hikers ascending a rocky trail with sparse desert vegetation under a bright sun with visible lens flare."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/d6a78f6f-7923-46f3-abd6-bb04561079dc.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d6a78f6f-7923-46f3-abd6-bb04561079dc.jpg" alt="A desert landscape with numerous saguaro cacti and a clear blue sky. In the background, there are rugged mountains."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/eefae5d3-ccc5-4204-a006-c9892f8f83b5.jpg"><img src="https://samgrover.micro.blog/uploads/2023/eefae5d3-ccc5-4204-a006-c9892f8f83b5.jpg" alt="A hiker waving in the distance among tall cacti on a desert trail with mountains in the background under a clear blue sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/b2e527f6-2fd7-4f96-8ada-a7592240f39f.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b2e527f6-2fd7-4f96-8ada-a7592240f39f.jpg" alt="Rocky terrain with vibrant lichen, a single tall saguaro cactus, and a crescent moon in the blue sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/79c16f32-55d6-4aad-bb32-088898da5b94.jpg"><img src="https://samgrover.micro.blog/uploads/2023/79c16f32-55d6-4aad-bb32-088898da5b94.jpg" alt="A desert landscape covered with numerous saguaro cacti and other desert vegetation with a blue sky above and mountains in the background. The shadow of a waving person is cast on the saguaro cactus in the foreground."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/ac83cb24-cf57-4cf6-9990-3706c4cf3506.jpg"><img src="https://samgrover.micro.blog/uploads/2023/ac83cb24-cf57-4cf6-9990-3706c4cf3506.jpg" alt="A desert landscape with clear skies, featuring a variety of cacti including tall saguaros and scattered vegetation, with rolling hills in the background."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/c05b6105-2d3a-473d-8e91-cd5908adc92b.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c05b6105-2d3a-473d-8e91-cd5908adc92b.jpg" alt="Desert hillside covered in numerous saguaro cacti lit by the light of the setting Sun, with clear blue sky above."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/d03aad6b-26ac-47b2-803e-d61574fe6a85.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d03aad6b-26ac-47b2-803e-d61574fe6a85.jpg" alt="Two hikers trekking through a desert landscape with saguaro cacti, brush, and a mountain range in the background bathed in the warm sunlight of the setting Sun."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/6e3660e3-11dc-40f0-98e7-ef5dc6cf28af.jpg"><img src="https://samgrover.micro.blog/uploads/2023/6e3660e3-11dc-40f0-98e7-ef5dc6cf28af.jpg" alt="A dry desert wash landscape with rocky terrain and various desert plants including cacti and shrubs. The rocks display a range of colors, including red, purple, and white."></a></p>
 <h2 id="activity-stats-and-map">Activity Stats and Map</h2>
 <p>Distance: 4.4 miles<br>
 Elevation Gain: 753 ft<br>
@@ -335,28 +270,34 @@ Time (including breaks): 2h 24m</p>
 <iframe src="https://www.google.com/maps/d/embed?mid=1SUbFt7HAQBQWmTmTqH_MqDol-tSr5_o&ehbc=2E312F" width="640" height="480"></iframe>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/12/19/hike-at-brown.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-12-19T11:42:19-07:00"
-      >Dec 19, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/12/19/hike-at-brown.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-12-19T11:42:19-07:00"
+          >Dec 19, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>I&rsquo;ve been working on getting a subscription option set up in Mimi so folks can provide support for ongoing development with a sliding scale. Until that is live in the app store, I can&rsquo;t launch the <a href="https://samgrover.com/2023/12/15/mimi-uploader-enters.html">alt text generation feature</a>, but it will remain available in the beta.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>I&rsquo;ve been working on getting a subscription option set up in Mimi so folks can provide support for ongoing development with a sliding scale. Until that is live in the app store, I can&rsquo;t launch the <a href="https://samgrover.com/2023/12/15/mimi-uploader-enters.html">alt text generation feature</a>, but it will remain available in the beta.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/12/19/ive-been-working.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-12-19T08:54:55-07:00"
-      >Dec 19, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/12/19/ive-been-working.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-12-19T08:54:55-07:00"
+          >Dec 19, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Gradually, then suddenly coming to the conclusion that the only way forward for Mimi Uploader is via a subscription model to support development and ongoing costs. And to offer that via various tiers to emulate a sliding scale for supporters.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Gradually, then suddenly coming to the conclusion that the only way forward for Mimi Uploader is via a subscription model to support development and ongoing costs. And to offer that via various tiers to emulate a sliding scale for supporters.</p>
 <p>It is tricky to make a subscription service or otherwise charge specifically for the AI image description feature even though it has ongoing cost. That&rsquo;s because in many scenarios you don&rsquo;t get the service you pay for, and it is out of my control. For example:</p>
 <ul>
 <li>This API is in preview. It may be turned off and never become a regular API.</li>
@@ -367,41 +308,44 @@ Time (including breaks): 2h 24m</p>
 <p>How do you feel about that?</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/12/16/gradually-then-suddenly.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-12-16T10:38:40-07:00"
-      >Dec 16, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/12/16/gradually-then-suddenly.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-12-16T10:38:40-07:00"
+          >Dec 16, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>📷 Sunrise and Sunset</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/62a3dcad-3d2b-4e88-96dc-b05f4bfb2d0d.jpg"><img src="https://samgrover.micro.blog/uploads/2023/62a3dcad-3d2b-4e88-96dc-b05f4bfb2d0d.jpg" alt="Sunrise over a desert landscape with silhouettes of various cacti and trees against a backdrop of mountains and a clear sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/887cd265-4ce7-411b-ab20-1d114d683ce2.jpg"><img src="https://samgrover.micro.blog/uploads/2023/887cd265-4ce7-411b-ab20-1d114d683ce2.jpg" alt="Sunset over mountain range with trees and cacti in the foreground."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>📷 Sunrise and Sunset</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/62a3dcad-3d2b-4e88-96dc-b05f4bfb2d0d.jpg"><img src="https://samgrover.micro.blog/uploads/2023/62a3dcad-3d2b-4e88-96dc-b05f4bfb2d0d.jpg" alt="Sunrise over a desert landscape with silhouettes of various cacti and trees against a backdrop of mountains and a clear sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/887cd265-4ce7-411b-ab20-1d114d683ce2.jpg"><img src="https://samgrover.micro.blog/uploads/2023/887cd265-4ce7-411b-ab20-1d114d683ce2.jpg" alt="Sunset over mountain range with trees and cacti in the foreground."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/12/16/sunrise-and-sunset.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-12-16T07:39:51-07:00"
-      >Dec 16, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/12/16/sunrise-and-sunset.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-12-16T07:39:51-07:00"
+          >Dec 16, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Mimi Uploader Enters the Future</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/12/15/mimi-uploader-enters.html"
-    >Mimi Uploader Enters the Future</a
-  >
-</section><section><p>A new beta of Mimi Uploader is now out. It adds a new feature to generate a draft of an image description for use as alt text. An example is at the end of this post. This feature is opt-in. You have to ask for an image description to be generated each time. If you don&rsquo;t then the app behaves as before.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2023/12/15/mimi-uploader-enters.html">Mimi Uploader Enters the Future</a></h2>
+    </div><section class="post-body"><p>A new beta of Mimi Uploader is now out. It adds a new feature to generate a draft of an image description for use as alt text. An example is at the end of this post. This feature is opt-in. You have to ask for an image description to be generated each time. If you don&rsquo;t then the app behaves as before.</p>
 <p>Thank you for trying this out in the beta, which <a href="https://testflight.apple.com/join/AbjtGWge">you can join at this link</a>.</p>
 <p>The way it works is that you tap the &ldquo;Generate&rdquo; button in the alt text editor. This sends a link to your previously uploaded photo to the service, which responds with the description. At the current time this feature only generates a description in English. Would you like to see an additional feature to translate the description into a different language? If so, please let me know the name of the language(s).</p>
 <p>The API used for this feature is a paid service from a third-party. Each tap on &ldquo;Generate&rdquo; incurs a cost. If you would like to support this feature, in beta and afterwards, <a href="https://ko-fi.com/samgrover">please give a donation directly</a>, or drop a tip using the Settings page in the app. Many thanks to those of you who have already done so. All donations and tips are greatly appreciated.</p>
 <p>As I prepare to launch this, I want to add that ever since I added the alt text feature, it&rsquo;s sometimes been a barrier to me posting batches of photos because I wasn&rsquo;t always ready to write all the descriptions. It felt like a chore sometimes. This feature greatly removes that friction. I see it as a positive step in my blogging (which often has batches of photos), as well as a more accessible web.</p>
 <h3 id="and-now-for-an-example-illustrating-this-feature">And now for an example illustrating this feature</h3>
 <p>Some weeks ago <a href="https://samgrover.com/2023/11/26/a-different-sunrise.html">I shared</a> the following photo:</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/351c4995-a75c-4818-8bb2-c00d38d9f912.jpg"><img src="https://samgrover.micro.blog/uploads/2023/351c4995-a75c-4818-8bb2-c00d38d9f912.jpg" alt="Colorful morning sunrise in the background and silhouetted porch in the foreground. In between there is a silhouette of a Joshua Tree."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/351c4995-a75c-4818-8bb2-c00d38d9f912.jpg"><img src="https://samgrover.micro.blog/uploads/2023/351c4995-a75c-4818-8bb2-c00d38d9f912.jpg" alt="Colorful morning sunrise in the background and silhouetted porch in the foreground. In between there is a silhouette of a Joshua Tree."></a></p>
 <p>The alt text I wrote at the time was:</p>
 <blockquote>
 <p>Colorful morning sunrise in the background and silhouetted porch in the foreground. In between there is a silhouette of a Joshua Tree.</p>
@@ -415,71 +359,76 @@ Time (including breaks): 2h 24m</p>
 <p>I hope you find this feature useful in your blogging as well. I look forward to your feedback.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/12/15/mimi-uploader-enters.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-12-15T09:56:51-07:00"
-      >Dec 15, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/12/15/mimi-uploader-enters.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-12-15T09:56:51-07:00"
+          >Dec 15, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>A new round of beta for Mimi Uploader is about to start. This one adds a feature to generate alt text for a photo based on OpenAI&rsquo;s GPT 4 Vision model, which is a paid service. So any cash you can throw in the tip-jar in the app store version of the app would be appreciated.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>A new round of beta for Mimi Uploader is about to start. This one adds a feature to generate alt text for a photo based on OpenAI&rsquo;s GPT 4 Vision model, which is a paid service. So any cash you can throw in the tip-jar in the app store version of the app would be appreciated.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/12/13/a-new-round.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-12-13T17:42:43-07:00"
-      >Dec 13, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/12/13/a-new-round.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-12-13T17:42:43-07:00"
+          >Dec 13, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">📷 Photos from some hikes around southern Arizona</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/12/12/photos-from-some.html"
-    >📷 Photos from some hikes around southern Arizona</a
-  >
-</section><section><p><a href="https://samgrover.micro.blog/uploads/2023/9ae84bb4-574c-4ccc-8b4a-df687ac6a97f.jpg"><img src="https://samgrover.micro.blog/uploads/2023/9ae84bb4-574c-4ccc-8b4a-df687ac6a97f.jpg" alt="A person hiking on a desert trail surrounded by various cacti, including tall saguaros and bushy cholla, with a mountain in the background under a clear sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/0dabdf00-96f8-419e-905c-8962896b5992.jpg"><img src="https://samgrover.micro.blog/uploads/2023/0dabdf00-96f8-419e-905c-8962896b5992.jpg" alt="Desert landscape with several tall saguaro cacti, smaller cholla cacti, and prickly pear shrubs in the foreground, against a backdrop of a mountain range under a clear blue sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/6481f324-dd55-4395-b84f-c5ef310df4e1.jpg"><img src="https://samgrover.micro.blog/uploads/2023/6481f324-dd55-4395-b84f-c5ef310df4e1.jpg" alt="Rocky desert terrain with sparse vegetation and several tall saguaro cacti against a clear blue sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/51f4c0b1-809f-4dcd-b417-ee3a6300eff3.jpg"><img src="https://samgrover.micro.blog/uploads/2023/51f4c0b1-809f-4dcd-b417-ee3a6300eff3.jpg" alt="Desert trail with saguaro cacti and stone ruins under a blue sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/afa7c2b8-0663-448f-8272-212d690ab750.jpg"><img src="https://samgrover.micro.blog/uploads/2023/afa7c2b8-0663-448f-8272-212d690ab750.jpg" alt="Large rock formation with petroglyphs, surrounded by desert vegetation including saguaro cacti, under a bright blue sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/62b5434e-9bec-45c4-8776-91bc187ec5b1.jpg"><img src="https://samgrover.micro.blog/uploads/2023/62b5434e-9bec-45c4-8776-91bc187ec5b1.jpg" alt="Person walking on a trail through a desert landscape with cacti in the foreground and mountains in the background, under a clear blue sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/fecdec66-6b15-4f3a-ba0d-801569d16cef.jpg"><img src="https://samgrover.micro.blog/uploads/2023/fecdec66-6b15-4f3a-ba0d-801569d16cef.jpg" alt="Three people walking on a dry path surrounded by large trees with yellowing leaves under a clear blue sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/62c1bee8-c827-4bb9-9cfe-3f2d09a1fa8c.jpg"><img src="https://samgrover.micro.blog/uploads/2023/62c1bee8-c827-4bb9-9cfe-3f2d09a1fa8c.jpg" alt="Pond with floating green water plants and scattered autumn leaves, with visible waterbed and stones on the edge."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/8a148468-1450-4bb4-922b-8408534f3208.jpg"><img src="https://samgrover.micro.blog/uploads/2023/8a148468-1450-4bb4-922b-8408534f3208.jpg" alt="Autumn foliage with yellow leaves stands out among green shrubs against a backdrop of distant mountains and a clear blue sky, with saguaro cacti dotting the foreground."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/9c6017c2-b8ac-41b2-a3b8-b873c80bf336.jpg"><img src="https://samgrover.micro.blog/uploads/2023/9c6017c2-b8ac-41b2-a3b8-b873c80bf336.jpg" alt="A panoramic view of a mountainous landscape with green vegetation and a winding road."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2023/12/12/photos-from-some.html">📷 Photos from some hikes around southern Arizona</a></h2>
+    </div><section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/9ae84bb4-574c-4ccc-8b4a-df687ac6a97f.jpg"><img src="https://samgrover.micro.blog/uploads/2023/9ae84bb4-574c-4ccc-8b4a-df687ac6a97f.jpg" alt="A person hiking on a desert trail surrounded by various cacti, including tall saguaros and bushy cholla, with a mountain in the background under a clear sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/0dabdf00-96f8-419e-905c-8962896b5992.jpg"><img src="https://samgrover.micro.blog/uploads/2023/0dabdf00-96f8-419e-905c-8962896b5992.jpg" alt="Desert landscape with several tall saguaro cacti, smaller cholla cacti, and prickly pear shrubs in the foreground, against a backdrop of a mountain range under a clear blue sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/6481f324-dd55-4395-b84f-c5ef310df4e1.jpg"><img src="https://samgrover.micro.blog/uploads/2023/6481f324-dd55-4395-b84f-c5ef310df4e1.jpg" alt="Rocky desert terrain with sparse vegetation and several tall saguaro cacti against a clear blue sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/51f4c0b1-809f-4dcd-b417-ee3a6300eff3.jpg"><img src="https://samgrover.micro.blog/uploads/2023/51f4c0b1-809f-4dcd-b417-ee3a6300eff3.jpg" alt="Desert trail with saguaro cacti and stone ruins under a blue sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/afa7c2b8-0663-448f-8272-212d690ab750.jpg"><img src="https://samgrover.micro.blog/uploads/2023/afa7c2b8-0663-448f-8272-212d690ab750.jpg" alt="Large rock formation with petroglyphs, surrounded by desert vegetation including saguaro cacti, under a bright blue sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/62b5434e-9bec-45c4-8776-91bc187ec5b1.jpg"><img src="https://samgrover.micro.blog/uploads/2023/62b5434e-9bec-45c4-8776-91bc187ec5b1.jpg" alt="Person walking on a trail through a desert landscape with cacti in the foreground and mountains in the background, under a clear blue sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/fecdec66-6b15-4f3a-ba0d-801569d16cef.jpg"><img src="https://samgrover.micro.blog/uploads/2023/fecdec66-6b15-4f3a-ba0d-801569d16cef.jpg" alt="Three people walking on a dry path surrounded by large trees with yellowing leaves under a clear blue sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/62c1bee8-c827-4bb9-9cfe-3f2d09a1fa8c.jpg"><img src="https://samgrover.micro.blog/uploads/2023/62c1bee8-c827-4bb9-9cfe-3f2d09a1fa8c.jpg" alt="Pond with floating green water plants and scattered autumn leaves, with visible waterbed and stones on the edge."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/8a148468-1450-4bb4-922b-8408534f3208.jpg"><img src="https://samgrover.micro.blog/uploads/2023/8a148468-1450-4bb4-922b-8408534f3208.jpg" alt="Autumn foliage with yellow leaves stands out among green shrubs against a backdrop of distant mountains and a clear blue sky, with saguaro cacti dotting the foreground."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/9c6017c2-b8ac-41b2-a3b8-b873c80bf336.jpg"><img src="https://samgrover.micro.blog/uploads/2023/9c6017c2-b8ac-41b2-a3b8-b873c80bf336.jpg" alt="A panoramic view of a mountainous landscape with green vegetation and a winding road."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/12/12/photos-from-some.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-12-12T08:50:18-07:00"
-      >Dec 12, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/12/12/photos-from-some.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-12-12T08:50:18-07:00"
+          >Dec 12, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>A different sunrise view today 😍</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/351c4995-a75c-4818-8bb2-c00d38d9f912.jpg"><img src="https://samgrover.micro.blog/uploads/2023/351c4995-a75c-4818-8bb2-c00d38d9f912.jpg" alt="Colorful morning sunrise in the background and silhouetted porch in the foreground. In between there is a silhouette of a Joshua Tree."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>A different sunrise view today 😍</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/351c4995-a75c-4818-8bb2-c00d38d9f912.jpg"><img src="https://samgrover.micro.blog/uploads/2023/351c4995-a75c-4818-8bb2-c00d38d9f912.jpg" alt="Colorful morning sunrise in the background and silhouetted porch in the foreground. In between there is a silhouette of a Joshua Tree."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/11/26/a-different-sunrise.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-11-26T14:21:11-07:00"
-      >Nov 26, 2023</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/24/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/11/26/a-different-sunrise.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-11-26T14:21:11-07:00"
+          >Nov 26, 2023</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/24/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/26/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

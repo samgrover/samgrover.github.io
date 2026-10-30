@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,49 +205,13 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Mimi Uploader now offers more options for image processing and exporting 🎉</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2022/09/08/mimi-uploader-now.html"
-    >Mimi Uploader now offers more options for image processing and exporting 🎉</a
-  >
-</section><section><p><a href="https://samgrover.micro.blog/uploads/2022/6e4beabb88.png"><img src="https://samgrover.micro.blog/uploads/2022/6e4beabb88.png" alt="Two side by side screenshots of the new features."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2022/09/08/mimi-uploader-now.html">Mimi Uploader now offers more options for image processing and exporting 🎉</a></h2>
+    </div><section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/6e4beabb88.png"><img src="https://samgrover.micro.blog/uploads/2022/6e4beabb88.png" alt="Two side by side screenshots of the new features."></a></p>
 <ul>
 <li>You can now change the size of images you upload to any size you like. You can also change the JPG compression quality. These features can be found in the redesigned Image preferences screen in Settings -&gt; Image.</li>
 <li>Export preferences have a new option to wrap exported images in links to themselves. Find it in Settings -&gt; Export.</li>
@@ -289,162 +221,188 @@
 <p>P.S. Note that this release does not contain the <a href="https://samgrover.com/2022/08/19/sneak-peek-at.html">support for Alt Text</a> that I talked about a few weeks ago. I&rsquo;m still working on that and should have that ready in the coming weeks.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2022/09/08/mimi-uploader-now.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2022-09-08T09:22:46-07:00"
-      >Sep 8, 2022</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2022/09/08/mimi-uploader-now.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2022-09-08T09:22:46-07:00"
+          >Sep 8, 2022</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>😐</p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/29adb61652.jpg"><img src="https://samgrover.micro.blog/uploads/2022/29adb61652.jpg" alt="A wordle in which I narrowed down to four in the second guess but I’m not able to get the word until the sixth and final guess."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>😐</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/29adb61652.jpg"><img src="https://samgrover.micro.blog/uploads/2022/29adb61652.jpg" alt="A wordle in which I narrowed down to four in the second guess but I’m not able to get the word until the sixth and final guess."></a></p>
 <hr>
 <p>Upload images using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2022/08/31/upload-images-using.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2022-08-31T11:15:14-07:00"
-      >Aug 31, 2022</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2022/08/31/upload-images-using.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2022-08-31T11:15:14-07:00"
+          >Aug 31, 2022</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>What&rsquo;s going on outside?</p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/21cb04fbe2.jpg"><img src="https://samgrover.micro.blog/uploads/2022/21cb04fbe2.jpg" alt="Jenni holds Mr. Momo (cat) up to the window in the dining room."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>What&rsquo;s going on outside?</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/21cb04fbe2.jpg"><img src="https://samgrover.micro.blog/uploads/2022/21cb04fbe2.jpg" alt="Jenni holds Mr. Momo (cat) up to the window in the dining room."></a></p>
 <hr>
 <p>Upload images using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2022/08/27/whats-going-on.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2022-08-27T16:46:31-07:00"
-      >Aug 27, 2022</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2022/08/27/whats-going-on.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2022-08-27T16:46:31-07:00"
+          >Aug 27, 2022</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>👀 Another sneak peek of a new feature for Mimi Uploader. You will soon be able to change the upload image size and quality!</p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/01f2bc209e.png"><img src="https://samgrover.micro.blog/uploads/2022/ae3b715fc6.png" alt="Screenshot of new feature in the app"></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>👀 Another sneak peek of a new feature for Mimi Uploader. You will soon be able to change the upload image size and quality!</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/01f2bc209e.png"><img src="https://samgrover.micro.blog/uploads/2022/ae3b715fc6.png" alt="Screenshot of new feature in the app"></a></p>
 <p><a href="https://twitter.com/samgrover/status/1562859718892474368">Tweet with video of this in action</a></p>
 <hr>
 <p>Upload images using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2022/08/25/another-sneak-peek.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2022-08-25T10:21:15-07:00"
-      >Aug 25, 2022</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2022/08/25/another-sneak-peek.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2022-08-25T10:21:15-07:00"
+          >Aug 25, 2022</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Sweet summer Sun sights</p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/8c8ea00a6e.jpg"><img src="https://samgrover.micro.blog/uploads/2022/8c8ea00a6e.jpg" alt="Sunrise with patchy clouds and gradients of red, orange, yellow, gold, blue with silhouetted trees and houses in the lower foreground."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/504398ca85.jpg"><img src="https://samgrover.micro.blog/uploads/2022/504398ca85.jpg" alt="Sunset with patchy clouds and gradients of red, gray, blue, gold with silhouetted trees and houses in the lower foreground."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/45a86cbe3e.jpg"><img src="https://samgrover.micro.blog/uploads/2022/45a86cbe3e.jpg" alt="Sunset with patchy clouds and gradients of yellow, orange, gold, blue with silhouetted trees and houses in the lower foreground."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/1059ec2795.jpg"><img src="https://samgrover.micro.blog/uploads/2022/1059ec2795.jpg" alt="Sunset with clouds and gradients of red, orange, yellow, gold, blue with silhouetted trees and houses in the lower foreground."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Sweet summer Sun sights</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/8c8ea00a6e.jpg"><img src="https://samgrover.micro.blog/uploads/2022/8c8ea00a6e.jpg" alt="Sunrise with patchy clouds and gradients of red, orange, yellow, gold, blue with silhouetted trees and houses in the lower foreground."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/504398ca85.jpg"><img src="https://samgrover.micro.blog/uploads/2022/504398ca85.jpg" alt="Sunset with patchy clouds and gradients of red, gray, blue, gold with silhouetted trees and houses in the lower foreground."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/45a86cbe3e.jpg"><img src="https://samgrover.micro.blog/uploads/2022/45a86cbe3e.jpg" alt="Sunset with patchy clouds and gradients of yellow, orange, gold, blue with silhouetted trees and houses in the lower foreground."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/1059ec2795.jpg"><img src="https://samgrover.micro.blog/uploads/2022/1059ec2795.jpg" alt="Sunset with clouds and gradients of red, orange, yellow, gold, blue with silhouetted trees and houses in the lower foreground."></a></p>
 <hr>
 <p>Upload images using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2022/08/25/sweet-summer-sun.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2022-08-25T09:54:02-07:00"
-      >Aug 25, 2022</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2022/08/25/sweet-summer-sun.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2022-08-25T09:54:02-07:00"
+          >Aug 25, 2022</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Five days ago was the day that marked 50% of my life in the US, I realized today.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Five days ago was the day that marked 50% of my life in the US, I realized today.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2022/08/20/five-days-ago.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2022-08-20T11:07:14-07:00"
-      >Aug 20, 2022</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2022/08/20/five-days-ago.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2022-08-20T11:07:14-07:00"
+          >Aug 20, 2022</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Sneak peek at upcoming support for Alt Text in Mimi Uploader 👀</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Sneak peek at upcoming support for Alt Text in Mimi Uploader 👀</p>
 <p><video controls="controls" playsinline="playsinline" src="https://f001.backblazeb2.com/file/com-samgrover-dropshare/2022-08-19-recent-uploads-alt-text.mp4" poster="https://f001.backblazeb2.com/file/com-samgrover-dropshare/2022-08-19-recent-uploads-alt-text.jpg" preload="none" width="583" height="1266" alt="A short screen recording of the new recent uploads screen that shows support for alt text and slightly redesigned interface."></video></p>
 <p>As you can see, this also necessitated a redesign on the Recent Uploads screen to make it a lot more dynamic.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2022/08/19/sneak-peek-at.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2022-08-19T12:07:53-07:00"
-      >Aug 19, 2022</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2022/08/19/sneak-peek-at.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2022-08-19T12:07:53-07:00"
+          >Aug 19, 2022</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Momo moments.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Momo moments.</p>
 <p>Film: Kodak Ultramax (ISO 400)<br>
 Camera: Voigtländer Bessa R2a</p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/058c93799a.jpg"><img src="https://samgrover.micro.blog/uploads/2022/058c93799a.jpg" alt=""></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/4ccc36a933.jpg"><img src="https://samgrover.micro.blog/uploads/2022/4ccc36a933.jpg" alt=""></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/127799e6ff.jpg"><img src="https://samgrover.micro.blog/uploads/2022/127799e6ff.jpg" alt=""></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/271b7362a0.jpg"><img src="https://samgrover.micro.blog/uploads/2022/271b7362a0.jpg" alt=""></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/c7ae3ad792.jpg"><img src="https://samgrover.micro.blog/uploads/2022/c7ae3ad792.jpg" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/058c93799a.jpg"><img src="https://samgrover.micro.blog/uploads/2022/058c93799a.jpg" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/4ccc36a933.jpg"><img src="https://samgrover.micro.blog/uploads/2022/4ccc36a933.jpg" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/127799e6ff.jpg"><img src="https://samgrover.micro.blog/uploads/2022/127799e6ff.jpg" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/271b7362a0.jpg"><img src="https://samgrover.micro.blog/uploads/2022/271b7362a0.jpg" alt=""></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/c7ae3ad792.jpg"><img src="https://samgrover.micro.blog/uploads/2022/c7ae3ad792.jpg" alt=""></a></p>
 <hr>
 <p>Upload images using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2022/08/07/momo-moments-on.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2022-08-07T17:20:43-07:00"
-      >Aug 7, 2022</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2022/08/07/momo-moments-on.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2022-08-07T17:20:43-07:00"
+          >Aug 7, 2022</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Grapevine 🤝 Tomato</p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/ae2601381d.jpg"><img src="https://samgrover.micro.blog/uploads/2022/ae2601381d.jpg" alt=""></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Grapevine 🤝 Tomato</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/ae2601381d.jpg"><img src="https://samgrover.micro.blog/uploads/2022/ae2601381d.jpg" alt=""></a></p>
 <hr>
 <p>Upload images using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2022/08/06/grapevine-tomato-upload.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2022-08-06T11:24:15-07:00"
-      >Aug 6, 2022</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2022/08/06/grapevine-tomato-upload.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2022-08-06T11:24:15-07:00"
+          >Aug 6, 2022</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Overhead.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2022/48bf04f93a.jpg"><img src="https://samgrover.micro.blog/uploads/2022/48bf04f93a.jpg" alt=""></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Overhead.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2022/48bf04f93a.jpg"><img src="https://samgrover.micro.blog/uploads/2022/48bf04f93a.jpg" alt=""></a></p>
 <hr>
 <p>Upload images using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2022/08/05/overhead-upload-images.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2022-08-05T21:47:10-07:00"
-      >Aug 5, 2022</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/38/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2022/08/05/overhead-upload-images.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2022-08-05T21:47:10-07:00"
+          >Aug 5, 2022</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/38/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/40/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

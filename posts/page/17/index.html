@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,138 +205,123 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/8043ddd2-3f25-48c4-b761-af8fddb29ea5.jpg"><img src="https://samgrover.micro.blog/uploads/2024/8043ddd2-3f25-48c4-b761-af8fddb29ea5.jpg" alt="Close-up shot of a sunflower with vibrant yellow petals and a detailed green and yellow center. There&rsquo;s a small dew drop visible on the center, and a tiny black ant crawling on one of the petals."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/8043ddd2-3f25-48c4-b761-af8fddb29ea5.jpg"><img src="https://samgrover.micro.blog/uploads/2024/8043ddd2-3f25-48c4-b761-af8fddb29ea5.jpg" alt="Close-up shot of a sunflower with vibrant yellow petals and a detailed green and yellow center. There&rsquo;s a small dew drop visible on the center, and a tiny black ant crawling on one of the petals."></a></p>
 <p>Portland, Oregon. 23rd July, 2024.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/07/31/portland-oregon-rd.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-07-31T10:52:16-07:00"
-      >Jul 31, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/07/31/portland-oregon-rd.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-07-31T10:52:16-07:00"
+          >Jul 31, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/473d75ac-4dbe-46f5-9982-6473769c6f7c.jpg"><img src="https://samgrover.micro.blog/uploads/2024/473d75ac-4dbe-46f5-9982-6473769c6f7c.jpg" alt="A military ship docked in a city harbor, with decorated flags adorning its deck. Urban buildings and a distinctive tall skyscraper are visible in the background. The water reflects the ship and buildings. The sky is partly cloudy."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/473d75ac-4dbe-46f5-9982-6473769c6f7c.jpg"><img src="https://samgrover.micro.blog/uploads/2024/473d75ac-4dbe-46f5-9982-6473769c6f7c.jpg" alt="A military ship docked in a city harbor, with decorated flags adorning its deck. Urban buildings and a distinctive tall skyscraper are visible in the background. The water reflects the ship and buildings. The sky is partly cloudy."></a></p>
 <p>⬆️</p>
 <p>📷 Voigtländer Bessa R2A + Leica Summicron 50mm f/2<br>
 🎞️ Lomography Color 800 (Expired)</p>
 <p>and</p>
 <p>📷 iPhone 15 Pro</p>
 <p>⬇️</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/601553c9-00e3-4ced-bdb8-8f8f43179a95.jpg"><img src="https://samgrover.micro.blog/uploads/2024/601553c9-00e3-4ced-bdb8-8f8f43179a95.jpg" alt="A military ship docked in a city harbor, with decorated flags adorning its deck. Urban buildings and a distinctive tall skyscraper are visible in the background. The water reflects the ship and buildings. The sky is partly cloudy."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/601553c9-00e3-4ced-bdb8-8f8f43179a95.jpg"><img src="https://samgrover.micro.blog/uploads/2024/601553c9-00e3-4ced-bdb8-8f8f43179a95.jpg" alt="A military ship docked in a city harbor, with decorated flags adorning its deck. Urban buildings and a distinctive tall skyscraper are visible in the background. The water reflects the ship and buildings. The sky is partly cloudy."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/07/30/voigtlnder-bessa-ra.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-07-30T17:30:33-07:00"
-      >Jul 30, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/07/30/voigtlnder-bessa-ra.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-07-30T17:30:33-07:00"
+          >Jul 30, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/731955be-e691-4c35-b05e-e52a0b56e454.jpg"><img src="https://samgrover.micro.blog/uploads/2024/731955be-e691-4c35-b05e-e52a0b56e454.jpg" alt="A serene park scene with tall trees and a walking path. Two people are riding electric unicycles down a grassy hill, while two others walk with their dogs along the path. In the background, there are more walkers enjoying the park."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/731955be-e691-4c35-b05e-e52a0b56e454.jpg"><img src="https://samgrover.micro.blog/uploads/2024/731955be-e691-4c35-b05e-e52a0b56e454.jpg" alt="A serene park scene with tall trees and a walking path. Two people are riding electric unicycles down a grassy hill, while two others walk with their dogs along the path. In the background, there are more walkers enjoying the park."></a></p>
 <p>Mt Tabor Park, Portland, Oregon. 7th July, 2024.</p>
 <p>📷 Voigtländer Bessa R2A + Leica Summicron 50mm f/2<br>
 🎞️ Lomography Color 800 (Expired)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/07/29/mt-tabor-park.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-07-29T10:47:13-07:00"
-      >Jul 29, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/07/29/mt-tabor-park.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-07-29T10:47:13-07:00"
+          >Jul 29, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/9855e168-de7e-436b-b951-631cd7ff4cf5.jpg"><img src="https://samgrover.micro.blog/uploads/2024/9855e168-de7e-436b-b951-631cd7ff4cf5.jpg" alt="A scenic view overlooking the Astoria-Megler Bridge crossing the Columbia River, surrounded by lush green trees. Fog drapes the distant hills under a clear blue sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/f6a3141b-6fa9-4f45-8f09-5a5458539f1f.jpg"><img src="https://samgrover.micro.blog/uploads/2024/f6a3141b-6fa9-4f45-8f09-5a5458539f1f.jpg" alt="Nighttime cityscape of Astoria, Oregon with illuminated buildings in the foreground and the prominent Astoria-Megler Bridge spanning the Columbia River in the background, against a twilight sky."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/9855e168-de7e-436b-b951-631cd7ff4cf5.jpg"><img src="https://samgrover.micro.blog/uploads/2024/9855e168-de7e-436b-b951-631cd7ff4cf5.jpg" alt="A scenic view overlooking the Astoria-Megler Bridge crossing the Columbia River, surrounded by lush green trees. Fog drapes the distant hills under a clear blue sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/f6a3141b-6fa9-4f45-8f09-5a5458539f1f.jpg"><img src="https://samgrover.micro.blog/uploads/2024/f6a3141b-6fa9-4f45-8f09-5a5458539f1f.jpg" alt="Nighttime cityscape of Astoria, Oregon with illuminated buildings in the foreground and the prominent Astoria-Megler Bridge spanning the Columbia River in the background, against a twilight sky."></a></p>
 <p>Astoria-Megler bridge at early morning, and just past sunset. Astoria, Oregon. June, 2024.</p>
 <p>📷 Hasselblad 500C/M<br>
 🎞️ Kodak Gold 200</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/07/26/astoriamegler-bridge-at.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-07-26T16:21:01-07:00"
-      >Jul 26, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/07/26/astoriamegler-bridge-at.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-07-26T16:21:01-07:00"
+          >Jul 26, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/06f13dc5-7253-4715-8349-ac670fae0f83.jpg"><img src="https://samgrover.micro.blog/uploads/2024/06f13dc5-7253-4715-8349-ac670fae0f83.jpg" alt="Two people walk on a sandy beach, looking at a large ship passing by on the water. Logs are scattered on the beach."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/06f13dc5-7253-4715-8349-ac670fae0f83.jpg"><img src="https://samgrover.micro.blog/uploads/2024/06f13dc5-7253-4715-8349-ac670fae0f83.jpg" alt="Two people walk on a sandy beach, looking at a large ship passing by on the water. Logs are scattered on the beach."></a></p>
 <p>Portland, Oregon. 13th July, 2024.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/07/24/portland-oregon-th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-07-24T08:32:43-07:00"
-      >Jul 24, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/07/24/portland-oregon-th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-07-24T08:32:43-07:00"
+          >Jul 24, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/6a41b610-d565-4ee8-b95a-dcb3987395f3.jpg"><img src="https://samgrover.micro.blog/uploads/2024/6a41b610-d565-4ee8-b95a-dcb3987395f3.jpg" alt="This image shows a serene marina during sunset, with sailboats and their masts prominently featured. The boats are docked, some covered with tarps. A nearly full moon is visible in the sky. Trees and a building in the background complete the picturesque scene."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/47df521a-b687-45c1-aaf0-13ab03db5ccd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/47df521a-b687-45c1-aaf0-13ab03db5ccd.jpg" alt="The image depicts a tranquil waterside scene at sunset with floating houseboats and reflective water. There are three birds swimming in the foreground: two geese and a white duck. The houseboats and water are bathed in warm, golden light."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/60d63bd8-7aa4-4f57-a200-bb338a8b3793.jpg"><img src="https://samgrover.micro.blog/uploads/2024/60d63bd8-7aa4-4f57-a200-bb338a8b3793.jpg" alt="A sailboat on a body of water during sunset with the sun near the horizon. The sky is a mix of orange and yellow hues, with the sunlight reflecting off the water. There is a bridge and industrial structures visible in the background."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/88f94fc4-5893-45bf-8109-39a09ef45988.jpg"><img src="https://samgrover.micro.blog/uploads/2024/88f94fc4-5893-45bf-8109-39a09ef45988.jpg" alt="A person is crouched near a waterfront, taking a photo of the photographer. The background features a calm body of water, several geese, and a house with a tin roof. The sky is clear with a gradient from blue to orange during sunset."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/6a41b610-d565-4ee8-b95a-dcb3987395f3.jpg"><img src="https://samgrover.micro.blog/uploads/2024/6a41b610-d565-4ee8-b95a-dcb3987395f3.jpg" alt="This image shows a serene marina during sunset, with sailboats and their masts prominently featured. The boats are docked, some covered with tarps. A nearly full moon is visible in the sky. Trees and a building in the background complete the picturesque scene."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/47df521a-b687-45c1-aaf0-13ab03db5ccd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/47df521a-b687-45c1-aaf0-13ab03db5ccd.jpg" alt="The image depicts a tranquil waterside scene at sunset with floating houseboats and reflective water. There are three birds swimming in the foreground: two geese and a white duck. The houseboats and water are bathed in warm, golden light."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/60d63bd8-7aa4-4f57-a200-bb338a8b3793.jpg"><img src="https://samgrover.micro.blog/uploads/2024/60d63bd8-7aa4-4f57-a200-bb338a8b3793.jpg" alt="A sailboat on a body of water during sunset with the sun near the horizon. The sky is a mix of orange and yellow hues, with the sunlight reflecting off the water. There is a bridge and industrial structures visible in the background."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/88f94fc4-5893-45bf-8109-39a09ef45988.jpg"><img src="https://samgrover.micro.blog/uploads/2024/88f94fc4-5893-45bf-8109-39a09ef45988.jpg" alt="A person is crouched near a waterfront, taking a photo of the photographer. The background features a calm body of water, several geese, and a house with a tin roof. The sky is clear with a gradient from blue to orange during sunset."></a></p>
 <p>Met up with my friend <a href="https://www.timtrautmann.com">Tim</a> for dinner last night, and then we took some photos by the Columbia.</p>
 <p>📷 iPhone</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/07/19/met-my-friend.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-07-19T12:28:41-07:00"
-      >Jul 19, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/07/19/met-my-friend.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-07-19T12:28:41-07:00"
+          >Jul 19, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/578d489f-b138-4382-afea-1651d83c67f5.jpg"><img src="https://samgrover.micro.blog/uploads/2024/578d489f-b138-4382-afea-1651d83c67f5.jpg" alt="A rooftop deck with wooden flooring, metal chairs, and tables, surrounded by potted plants. The deck overlooks a body of water with a visible cargo ship in the distance. A mural depicting a similar scene is painted on a wall."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/578d489f-b138-4382-afea-1651d83c67f5.jpg"><img src="https://samgrover.micro.blog/uploads/2024/578d489f-b138-4382-afea-1651d83c67f5.jpg" alt="A rooftop deck with wooden flooring, metal chairs, and tables, surrounded by potted plants. The deck overlooks a body of water with a visible cargo ship in the distance. A mural depicting a similar scene is painted on a wall."></a></p>
 <p>This was taken at about the same time and location as <a href="https://samgrover.com/2024/07/03/astoria-oregon-th.html">another photo I shared last week</a>, but I only saw it recently when I received film scans.</p>
 <p>I like this composition a lot more. The shadows balance the mural wall, there are fewer rooftops in the frame and they are below the railing, the colors better reflect the feeling of that morning on the rooftop.</p>
 <p>The square format and the film properties work together pretty well in this case.</p>
@@ -377,63 +330,71 @@
 🎞️ Kodak Gold 200</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/07/10/this-was-taken.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-07-10T09:10:19-07:00"
-      >Jul 10, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/07/10/this-was-taken.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-07-10T09:10:19-07:00"
+          >Jul 10, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/a3b851b9-866b-4a16-a85f-31231fbe50db.jpg"><img src="https://samgrover.micro.blog/uploads/2024/a3b851b9-866b-4a16-a85f-31231fbe50db.jpg" alt="A wooden sculpture featuring a traditional canoe design, supported by four intricately carved vertical posts, is set on a grassy hilltop. It overlooks a scenic landscape with a forested area, a river, and distant terrain under a clear sky. A rock under the canoe has carved text that reads, “Comcomly”."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/a3b851b9-866b-4a16-a85f-31231fbe50db.jpg"><img src="https://samgrover.micro.blog/uploads/2024/a3b851b9-866b-4a16-a85f-31231fbe50db.jpg" alt="A wooden sculpture featuring a traditional canoe design, supported by four intricately carved vertical posts, is set on a grassy hilltop. It overlooks a scenic landscape with a forested area, a river, and distant terrain under a clear sky. A rock under the canoe has carved text that reads, “Comcomly”."></a></p>
 <p>Replica of <a href="https://en.wikipedia.org/wiki/Comcomly">Chief Comcomly&rsquo;s</a> burial canoe. Astoria, Oregon. 18th June, 2024.</p>
 <p>📷 Hasselblad 500C/M<br>
 🎞️ Kodak Gold 200</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/07/09/replica-of-chief.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-07-09T12:52:23-07:00"
-      >Jul 9, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/07/09/replica-of-chief.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-07-09T12:52:23-07:00"
+          >Jul 9, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/47084dee-8907-4c54-acb6-75db57e09098.jpg"><img src="https://samgrover.micro.blog/uploads/2024/47084dee-8907-4c54-acb6-75db57e09098.jpg" alt="A collage of five photos. The first features green maple leaves against a blue sky. The second shows a close-up of a tree trunk with branches. The third depicts shaded steps with a zigzagging shadow pattern. The fourth shows shadow patterns on trees. The fifth shows a green grass near a water reservoir."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/47084dee-8907-4c54-acb6-75db57e09098.jpg"><img src="https://samgrover.micro.blog/uploads/2024/47084dee-8907-4c54-acb6-75db57e09098.jpg" alt="A collage of five photos. The first features green maple leaves against a blue sky. The second shows a close-up of a tree trunk with branches. The third depicts shaded steps with a zigzagging shadow pattern. The fourth shows shadow patterns on trees. The fifth shows a green grass near a water reservoir."></a></p>
 <p>Mt. Tabor Park. Portland, Oregon. 7th July, 2024.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/07/07/mt-tabor-park.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-07-07T13:50:22-07:00"
-      >Jul 7, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/07/07/mt-tabor-park.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-07-07T13:50:22-07:00"
+          >Jul 7, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><div style="padding:69.4% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/977036298?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Astoria"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><div style="padding:69.4% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/977036298?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Astoria"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p>I like that SwiftUI and I are at the point that I can build a small app with a UI on macOS for things that I would previously write a script.</p>
 <p>(<a href="https://vimeo.com/977036298">Link</a> to the video embedded above).</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/07/04/i-like-that.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-07-04T13:48:25-07:00"
-      >Jul 4, 2024</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/16/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/07/04/i-like-that.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-07-04T13:48:25-07:00"
+          >Jul 4, 2024</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/16/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/18/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

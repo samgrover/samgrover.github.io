@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,50 +205,14 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Adding API Accessible Devices to the Home Climate Monitoring Setup</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/03/06/adding-api-accessible.html"
-    >Adding API Accessible Devices to the Home Climate Monitoring Setup</a
-  >
-</section><section><p>I was thinking about getting more of those AcuRite sensors for expanding my <a href="https://samgrover.com/2023/03/01/home-climate-monitoring.html">home climate monitoring</a> when I realized that I already have a couple of devices recording this and other data.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/346875b7ca.png"><img src="https://samgrover.micro.blog/uploads/2023/346875b7ca.png" alt="Screenshot showing charts of temperature, humidity, and air quality time series."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2023/03/06/adding-api-accessible.html">Adding API Accessible Devices to the Home Climate Monitoring Setup</a></h2>
+    </div><section class="post-body"><p>I was thinking about getting more of those AcuRite sensors for expanding my <a href="https://samgrover.com/2023/03/01/home-climate-monitoring.html">home climate monitoring</a> when I realized that I already have a couple of devices recording this and other data.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/346875b7ca.png"><img src="https://samgrover.micro.blog/uploads/2023/346875b7ca.png" alt="Screenshot showing charts of temperature, humidity, and air quality time series."></a></p>
 <p>These include my <a href="https://amzn.to/3ZnOfFX">Ecobee Thermostat and Remote Sensor</a> and my <a href="https://amzn.to/41MeiIK">IQAir AirVisual Pro</a>. Both of these have means of getting the data off of them using an API. This <a href="https://den.dev/blog/air/">blog post</a> by Den Delimarsky really helped with the IQAir API. <a href="https://www.ecobee.com/en-us/developers/">Ecobee API</a> was straightforward. And after some coding and testing, I had a couple of scripts running that could pull metrics from them and send them to <code>influxdb</code>. So now I have a few more data points for existing metrics, and have added air quality to it.</p>
 <p>In the previous blog post , I wrote:</p>
 <blockquote>
@@ -295,48 +227,54 @@
 </ul>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/03/06/adding-api-accessible.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-03-06T11:47:34-07:00"
-      >Mar 6, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/03/06/adding-api-accessible.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-03-06T11:47:34-07:00"
+          >Mar 6, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>The Unfocused iOS Developer Life</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/934713ee13.jpg"><img src="https://samgrover.micro.blog/uploads/2023/934713ee13.jpg" alt="A screenshot of four identical squircle icons containing a geometrical pattern."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>The Unfocused iOS Developer Life</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/934713ee13.jpg"><img src="https://samgrover.micro.blog/uploads/2023/934713ee13.jpg" alt="A screenshot of four identical squircle icons containing a geometrical pattern."></a></p>
 <p>#iosdev</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/03/02/the-unfocused-ios.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-03-02T19:35:40-07:00"
-      >Mar 2, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/03/02/the-unfocused-ios.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-03-02T19:35:40-07:00"
+          >Mar 2, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>PSA: Thirty days left on the <a href="https://darksky.net/dev">DarkSky API</a>. Port your apps, port your scripts!</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>PSA: Thirty days left on the <a href="https://darksky.net/dev">DarkSky API</a>. Port your apps, port your scripts!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/03/01/psa-thirty-days.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-03-01T12:05:50-07:00"
-      >Mar 1, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/03/01/psa-thirty-days.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-03-01T12:05:50-07:00"
+          >Mar 1, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Home Climate Monitoring</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2023/03/01/home-climate-monitoring.html"
-    >Home Climate Monitoring</a
-  >
-</section><section><p>Sometime last year my friend Andrew made me aware of the sensors and software he was using to monitor temperature and humidity in his home. I thought that was cool and it introduced me to several hardware and software tools that I had not known about. I wanted to set this up at my home so I filed a project for a later date.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2023/03/01/home-climate-monitoring.html">Home Climate Monitoring</a></h2>
+    </div><section class="post-body"><p>Sometime last year my friend Andrew made me aware of the sensors and software he was using to monitor temperature and humidity in his home. I thought that was cool and it introduced me to several hardware and software tools that I had not known about. I wanted to set this up at my home so I filed a project for a later date.</p>
 <p>Well, that day arrived a few weeks ago and here&rsquo;s what it looks like today:</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/7387c64251.png"><img src="https://samgrover.micro.blog/uploads/2023/7387c64251.png" alt="Screenshot showing charts of temperature and humidity time series."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/7387c64251.png"><img src="https://samgrover.micro.blog/uploads/2023/7387c64251.png" alt="Screenshot showing charts of temperature and humidity time series."></a></p>
 <p>To get started exploring this I purchased an <a href="https://amzn.to/3ky05hO">AcuRite bundle</a> of three sensor towers and one display. I set up the towers around my home and put the display in my home office. It was neat to see the display showing the measurements at any given time. Soon I wanted to go to the next level and record and see the data over time.</p>
 <p>These sensors broadcast the data over <a href="https://en.wikipedia.org/wiki/LPD433">433 MHz</a> and there are consumer level antennas and software available to read this data. I bought a <a href="https://amzn.to/3Y6Ew5x">NooElec bundle</a> which gave me all the hardware I needed to receive this data on my computer. Setting it up was straightforward. I used <a href="https://github.com/merbanan/rtl_433">rtl_433</a> and was able to start seeing the wireless data immediately in the terminal on my Mac.</p>
 <p>The next step was storing all this data. That&rsquo;s where <a href="https://github.com/influxdata/influxdb">influxdb</a> came in. And the glue to get it from <code>rtl_433</code> to <code>influxdb</code> involved <a href="https://mqtt.org">MQTT</a> and <a href="https://github.com/influxdata/telegraf">telegraf</a>.</p>
@@ -345,113 +283,130 @@
 <p><strong>Update (6th March, 2023):</strong> <a href="https://samgrover.com/2023/03/06/adding-api-accessible.html">Follow up post</a> about expanding on this effort.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/03/01/home-climate-monitoring.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-03-01T10:16:43-07:00"
-      >Mar 1, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/03/01/home-climate-monitoring.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-03-01T10:16:43-07:00"
+          >Mar 1, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>I had no idea that that name had such an association and am glad that they are making this change.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>I had no idea that that name had such an association and am glad that they are making this change.</p>
 <blockquote>
 <p>What has been dismissed, ignored, or overlooked until the last few years by both Portland Audubon and the larger Audubon community is the fact that John James Audubon enslaved and sold Black people, opposed the abolition of slavery, and dug up and stole the human remains of Native Americans from their graves.</p>
 </blockquote>
 <p>🔗 <a href="https://audubonportland.org/blog/portland-audubon-commits-to-dropping-the-name-audubon/">Portland Audubon Commits to Dropping the Name Audubon - Portland Audubon</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/28/i-had-no.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-28T12:08:19-07:00"
-      >Feb 28, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/28/i-had-no.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-28T12:08:19-07:00"
+          >Feb 28, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2023/e9fa689924.jpg"><img src="https://samgrover.micro.blog/uploads/2023/e9fa689924.jpg" alt="Momo (a buff tabby cat) sleeps on a colorful blanket on a greenish blue sofa."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/e9fa689924.jpg"><img src="https://samgrover.micro.blog/uploads/2023/e9fa689924.jpg" alt="Momo (a buff tabby cat) sleeps on a colorful blanket on a greenish blue sofa."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/28/081300.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-28T09:13:00-07:00"
-      >Feb 28, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/28/081300.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-28T09:13:00-07:00"
+          >Feb 28, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>📽️ Over the weekend we saw the <a href="https://shorts.tv/theoscarshorts/">2023 Oscar Animated Shorts</a> at a local theater. That was the first time I had gone to see something like that and it was quite enjoyable. Most of the films are a delight. The theater had cozy seats and serves brunch so that made it a little extra fun.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/c49bf12f90.png"><img src="https://samgrover.micro.blog/uploads/2023/c49bf12f90.png" alt="Screenshot showing the names and images of the short films: An Ostrich Told Me the World Is Fake and I Think I Believe it. Ice Merchants. My Year of Dicks. The Boy, the Mole, the Fox, and the Horse. The Flying Sailor."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>📽️ Over the weekend we saw the <a href="https://shorts.tv/theoscarshorts/">2023 Oscar Animated Shorts</a> at a local theater. That was the first time I had gone to see something like that and it was quite enjoyable. Most of the films are a delight. The theater had cozy seats and serves brunch so that made it a little extra fun.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/c49bf12f90.png"><img src="https://samgrover.micro.blog/uploads/2023/c49bf12f90.png" alt="Screenshot showing the names and images of the short films: An Ostrich Told Me the World Is Fake and I Think I Believe it. Ice Merchants. My Year of Dicks. The Boy, the Mole, the Fox, and the Horse. The Flying Sailor."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/27/over-the-weekend.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-27T18:17:00-07:00"
-      >Feb 27, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/27/over-the-weekend.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-27T18:17:00-07:00"
+          >Feb 27, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>It&rsquo;s been a bummer to notice that Amazon Smile doesn&rsquo;t exist anymore when I try to browse to it. This post however has a different and optimistic take on it.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>It&rsquo;s been a bummer to notice that Amazon Smile doesn&rsquo;t exist anymore when I try to browse to it. This post however has a different and optimistic take on it.</p>
 <blockquote>
 <p>But this complaint only starts to address the problems with AmazonSmile, and the reasons I’m not sorry to see it go.</p>
 </blockquote>
 <p>🔗 <a href="https://www.philanthropy.com/article/the-end-of-amazon-smile-is-an-opportunity-for-nonprofits-to-revisit-their-values">The End of AmazonSmile Is an Opportunity for Nonprofits to Revisit Their Values</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/27/its-been-a.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-27T10:22:49-07:00"
-      >Feb 27, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/27/its-been-a.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-27T10:22:49-07:00"
+          >Feb 27, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Snow Day Walk in the Neighborhood</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/edb9c3dcb4.jpg"><img src="https://samgrover.micro.blog/uploads/2023/edb9c3dcb4.jpg" alt="Jenni stands on the sidewalk with one foot deep into the snow on the ground. There’s snow on everything, lit by the sunset."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/c956afc58a.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c956afc58a.jpg" alt="A house lit by the sunset. There’s snow on everything."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/95b0493e05.jpg"><img src="https://samgrover.micro.blog/uploads/2023/95b0493e05.jpg" alt="A house lit by the sunset. There’s snow on everything."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/d3737feda6.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d3737feda6.jpg" alt="Jenni stands in front of a house lit by sunset light. There’s snow on everything."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/f6ec863117.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f6ec863117.jpg" alt="A parked van is backlit by the sunset light. There’s snow on it clumped on its features. There’s snow on everything else around as well."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/d44e80f871.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d44e80f871.jpg" alt="Two teenagers run across the snow packed street and sidewalks with shovels in their hands. Behind them are houses and the sky is lit by the sunset."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/2afe9886c7.jpg"><img src="https://samgrover.micro.blog/uploads/2023/2afe9886c7.jpg" alt="A street with snow all over the ground and the houses nearby. A breeze spins up some snow which glows in the light of the sunset."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/1dd01354ca.jpg"><img src="https://samgrover.micro.blog/uploads/2023/1dd01354ca.jpg" alt="Looking down at my boots in the snow with the sharp light and shadows of the setting sun."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Snow Day Walk in the Neighborhood</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/edb9c3dcb4.jpg"><img src="https://samgrover.micro.blog/uploads/2023/edb9c3dcb4.jpg" alt="Jenni stands on the sidewalk with one foot deep into the snow on the ground. There’s snow on everything, lit by the sunset."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/c956afc58a.jpg"><img src="https://samgrover.micro.blog/uploads/2023/c956afc58a.jpg" alt="A house lit by the sunset. There’s snow on everything."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/95b0493e05.jpg"><img src="https://samgrover.micro.blog/uploads/2023/95b0493e05.jpg" alt="A house lit by the sunset. There’s snow on everything."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/d3737feda6.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d3737feda6.jpg" alt="Jenni stands in front of a house lit by sunset light. There’s snow on everything."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/f6ec863117.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f6ec863117.jpg" alt="A parked van is backlit by the sunset light. There’s snow on it clumped on its features. There’s snow on everything else around as well."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/d44e80f871.jpg"><img src="https://samgrover.micro.blog/uploads/2023/d44e80f871.jpg" alt="Two teenagers run across the snow packed street and sidewalks with shovels in their hands. Behind them are houses and the sky is lit by the sunset."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/2afe9886c7.jpg"><img src="https://samgrover.micro.blog/uploads/2023/2afe9886c7.jpg" alt="A street with snow all over the ground and the houses nearby. A breeze spins up some snow which glows in the light of the sunset."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/1dd01354ca.jpg"><img src="https://samgrover.micro.blog/uploads/2023/1dd01354ca.jpg" alt="Looking down at my boots in the snow with the sharp light and shadows of the setting sun."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/26/snow-day-walk.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-26T19:56:47-07:00"
-      >Feb 26, 2023</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/26/snow-day-walk.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-26T19:56:47-07:00"
+          >Feb 26, 2023</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Snowy sunrise views, and the backyard in late morning.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/9b7a76001e.jpg"><img src="https://samgrover.micro.blog/uploads/2023/9b7a76001e.jpg" alt=" Melting snow on the window refracting the golden light of sunrise. Blurry view of roofs and trees behind."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/b9acce44a4.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b9acce44a4.jpg" alt="View of snow capped roofs and trees in the foreground. A rising golden sun on the horizon and cloudy sky above."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/0b27a7bf55.jpg"><img src="https://samgrover.micro.blog/uploads/2023/0b27a7bf55.jpg" alt="A backyard with snow everywhere. Partly cloudy sky."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Snowy sunrise views, and the backyard in late morning.</p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/9b7a76001e.jpg"><img src="https://samgrover.micro.blog/uploads/2023/9b7a76001e.jpg" alt=" Melting snow on the window refracting the golden light of sunrise. Blurry view of roofs and trees behind."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/b9acce44a4.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b9acce44a4.jpg" alt="View of snow capped roofs and trees in the foreground. A rising golden sun on the horizon and cloudy sky above."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/0b27a7bf55.jpg"><img src="https://samgrover.micro.blog/uploads/2023/0b27a7bf55.jpg" alt="A backyard with snow everywhere. Partly cloudy sky."></a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2023/02/23/snowy-sunrise-views.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2023-02-23T20:02:00-07:00"
-      >Feb 23, 2023</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/31/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2023/02/23/snowy-sunrise-views.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2023-02-23T20:02:00-07:00"
+          >Feb 23, 2023</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/31/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/33/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

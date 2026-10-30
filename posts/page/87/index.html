@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,57 +205,27 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p>OH: &ldquo;Smashing garlic using a knife blade and got a SOS message from my Watch that it had detected a fall.  Was I okay?  😂&rdquo;</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>OH: &ldquo;Smashing garlic using a knife blade and got a SOS message from my Watch that it had detected a fall.  Was I okay?  😂&rdquo;</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/02/18/oh-smashing-garlic.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-02-18T18:33:51-07:00"
-      >Feb 18, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/02/18/oh-smashing-garlic.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-02-18T18:33:51-07:00"
+          >Feb 18, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54552746208_2c4617ea19_c.jpg"><img src="https://live.staticflickr.com/65535/54552746208_2c4617ea19_c.jpg" alt=""></a>
   
 </figure>
@@ -295,16 +233,19 @@
 <p>Dear Apple, I fixed this for you.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/02/13/dear-apple-i.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-02-13T15:47:07-07:00"
-      >Feb 13, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/02/13/dear-apple-i.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-02-13T15:47:07-07:00"
+          >Feb 13, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/7856/47054541991_a2bb07f082_h.jpg"><img src="https://live.staticflickr.com/7856/47054541991_a2bb07f082_h.jpg" alt=""></a>
   
 </figure>
@@ -312,16 +253,19 @@
 <p>Woodstock, Portland, Oregon. 10th February, 2019.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/02/13/woodstock-portland-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-02-13T12:32:36-07:00"
-      >Feb 13, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/02/13/woodstock-portland-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-02-13T12:32:36-07:00"
+          >Feb 13, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/7904/47002613212_923eea98f9_h.jpg"><img src="https://live.staticflickr.com/7904/47002613212_923eea98f9_h.jpg" alt=""></a>
   
 </figure>
@@ -329,40 +273,49 @@
 <p>South Tabor, Portland, Oregon. 6th February, 2019.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/02/10/south-tabor-portland.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-02-10T17:07:02-07:00"
-      >Feb 10, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/02/10/south-tabor-portland.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-02-10T17:07:02-07:00"
+          >Feb 10, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Wholeheartedly agree with this article that this feature is utter trash for so many reasons: <a href="https://tidbits.com/2019/02/06/deathtoautoplay-no-more-audio-and-video-that-plays-automatically/">tidbits.com/2019/02/0&hellip;</a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Wholeheartedly agree with this article that this feature is utter trash for so many reasons: <a href="https://tidbits.com/2019/02/06/deathtoautoplay-no-more-audio-and-video-that-plays-automatically/">tidbits.com/2019/02/0&hellip;</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/02/07/wholeheartedly-agree-with.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-02-07T08:29:28-07:00"
-      >Feb 7, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/02/07/wholeheartedly-agree-with.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-02-07T08:29:28-07:00"
+          >Feb 7, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>iOS lets you clear a notification on a locked device. That not right. Dear <a href="https://micro.blog/Apple">@Apple</a>, please fix. kthxbye.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>iOS lets you clear a notification on a locked device. That not right. Dear <a href="https://micro.blog/Apple">@Apple</a>, please fix. kthxbye.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/02/05/ios-lets-you.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-02-05T11:03:34-07:00"
-      >Feb 5, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/02/05/ios-lets-you.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-02-05T11:03:34-07:00"
+          >Feb 5, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54551646092_f93995a614_h.jpg"><img src="https://live.staticflickr.com/65535/54551646092_f93995a614_h.jpg" alt=""></a>
   
 </figure>
@@ -370,16 +323,19 @@
 <p>I’m glad I made this crosscut sled. Just spent about an hour making 232 cuts for box joints on four such pieces 😅</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/02/01/im-glad-i.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-02-01T15:55:18-07:00"
-      >Feb 1, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/02/01/im-glad-i.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-02-01T15:55:18-07:00"
+          >Feb 1, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54558242254_8f4227aeb2_h.jpg"><img src="https://live.staticflickr.com/65535/54558242254_8f4227aeb2_h.jpg" alt=""></a>
   
 </figure>
@@ -387,16 +343,19 @@
 <p>Olive wants to help.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/01/31/olive-wants-to.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-01-31T14:45:05-07:00"
-      >Jan 31, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/01/31/olive-wants-to.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-01-31T14:45:05-07:00"
+          >Jan 31, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Incredibly foolhardy of Apple’s team to make the request. It is akin to reporting a leak in a bathroom at a cafe and being informed that one should write it in the notebook on the counter, for examination by someone at a later date. <a href="https://nyti.ms/2SgXWqG?smid=nytcore-ios-share">nyti.ms/2SgXWqG</a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Incredibly foolhardy of Apple’s team to make the request. It is akin to reporting a leak in a bathroom at a cafe and being informed that one should write it in the notebook on the counter, for examination by someone at a later date. <a href="https://nyti.ms/2SgXWqG?smid=nytcore-ios-share">nyti.ms/2SgXWqG</a></p>
 <figure>
   <a href="https://live.staticflickr.com/65535/54558240329_eab6ab25f9_h.jpg"><img src="https://live.staticflickr.com/65535/54558240329_eab6ab25f9_h.jpg" alt=""></a>
   
@@ -404,33 +363,35 @@
 
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/01/30/incredibly-foolhardy-of.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-01-30T11:31:49-07:00"
-      >Jan 30, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/01/30/incredibly-foolhardy-of.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-01-30T11:31:49-07:00"
+          >Jan 30, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Here comes the polar vortex. Stay warm midwest! (And thank goodness for the Rocky Mountains that keep this away from our side 😂) <a href="https://www.usatoday.com/story/news/nation/2019/01/29/cold-weather-polar-vortex-drive-record-smashing-cold-across-nation/2708083002/">www.usatoday.com/story/new&hellip;</a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Here comes the polar vortex. Stay warm midwest! (And thank goodness for the Rocky Mountains that keep this away from our side 😂) <a href="https://www.usatoday.com/story/news/nation/2019/01/29/cold-weather-polar-vortex-drive-record-smashing-cold-across-nation/2708083002/">www.usatoday.com/story/new&hellip;</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/01/29/here-comes-the.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-01-29T11:51:47-07:00"
-      >Jan 29, 2019</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/86/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/01/29/here-comes-the.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-01-29T11:51:47-07:00"
+          >Jan 29, 2019</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/86/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/88/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

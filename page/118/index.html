@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,45 +205,12 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/8662/16374646677_76a7b54549_h.jpg"><img src="https://live.staticflickr.com/8662/16374646677_76a7b54549_h.jpg" alt="Three women stand side-by-side, one holding a small chihuahua."></a>
   
 </figure>
@@ -283,16 +218,19 @@
 <p>Generations. Savannah, Georgia. 26th December, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2015/01/05/generations-savannah-georgia.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2015-01-05T16:41:00-08:00"
-      >Jan 5, 2015</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2015/01/05/generations-savannah-georgia.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2015-01-05T16:41:00-08:00"
+          >Jan 5, 2015</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/107231829592.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/107231829592.jpg" alt="Two women standing on a city sidewalk with their arms crossed."></a>
   
 </figure>
@@ -300,20 +238,20 @@
 <p>Women on Broughton street in Savannah, Georgia. 28th December, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2015/01/05/women-on-broughton.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2015-01-05T10:19:00-08:00"
-      >Jan 5, 2015</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2015/01/05/women-on-broughton.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2015-01-05T10:19:00-08:00"
+          >Jan 5, 2015</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Street Photography in Savannah or: How I Overcame the Feeling of Being in a Slump</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2015/01/04/street-photography-in.html"
-    >Street Photography in Savannah or: How I Overcame the Feeling of Being in a Slump</a
-  >
-</section><section><p>I practice photography regularly. I wander with my camera and take photos of whatever I find interesting, but particularly I love street photography, most of which I do on actual city streets. I’ve been taking plenty of photos since I started traveling mid-September but looking back there are hardly any street photos that appeal to me. When I got to <a href="http://en.wikipedia.org/wiki/Savannah,_Georgia">Savannah</a> about a month ago, I felt like I was in a slump with those.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2015/01/04/street-photography-in.html">Street Photography in Savannah or: How I Overcame the Feeling of Being in a Slump</a></h2>
+    </div><section class="post-body"><p>I practice photography regularly. I wander with my camera and take photos of whatever I find interesting, but particularly I love street photography, most of which I do on actual city streets. I’ve been taking plenty of photos since I started traveling mid-September but looking back there are hardly any street photos that appeal to me. When I got to <a href="http://en.wikipedia.org/wiki/Savannah,_Georgia">Savannah</a> about a month ago, I felt like I was in a slump with those.</p>
 <p>As I explored the city, I realized that the main downtown area, known as the historic district, is <a href="https://www.google.com/maps/@32.0738246,-81.0953293,16z">laid out pretty neatly in a flat grid, with a number of squares all over</a>. The area is eminently walkable and walker friendly. I quickly settled into a routine. On workdays, I work at a coffee shop, then on my lunch break I walk for an hour or so stopping for lunch somewhere along the way. On the weekends I’ve spent most days walking around the historic district for several hours, meandering all over the grid wherever my eye directed me. I stop to get a bite or a drink and then go at it again. As a result I have been practicing everyday, to the tune of twelve to fifteen hours every week. This is the primary reason that I’m no longer feeling the slump. In other words, practice, then practice some more, and keep at it. This is probably the oldest advice for creativity but it’s good to remind oneself of it.</p>
 <p>As I was thinking about this I started to examine what else contributed to my experience. One thing I noticed is the variety in areas I frequented. Variety usually works well. On this grid there are distinct neighborhoods with activity in each and easy access from one to another. The ones I traversed the most were Bull street, Broughton street, River street, City market and Ellis square. Each has its own personality. Bull street has a number of historic landmarks and is the central north-south road that passes through several squares. Light can be tricky as there’s lots of shade from oak trees, but at the same time that gives interesting highlights and shadows. Broughton street has tons of businesses and people out shopping and dining. Light is good as most of the buildings are no more than three floors high. River street is the main touristy area and runs along the river. There’s also a parallel riverfront plaza. At this time of the year, the street is mostly in the shade as the day gets going, however the plaza gets good light until the afternoon. The City market and Ellis square area is touristy as well, but Ellis square is a newer square without the oaks and with no highrises blocking the sunlight so the light there is pretty good until evening.</p>
 <p>And then there are the people. Savannah is quite touristy in this part so there are a variety of people everywhere. In fact most of the people I’ve seen and interacted with have been visitors. I don’t know the ebb and flow of visitors here but there are definitely a bunch here with the holiday season. On the day after Christmas I noticed especially that people had new clothes and accessories on them and were feeling good.</p>
@@ -321,16 +259,19 @@
 <p>Happy New Year!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2015/01/04/street-photography-in.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2015-01-04T18:28:00-08:00"
-      >Jan 4, 2015</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2015/01/04/street-photography-in.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2015-01-04T18:28:00-08:00"
+          >Jan 4, 2015</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1541/24133355986_ca659d06fc_h.jpg"><img src="https://live.staticflickr.com/1541/24133355986_ca659d06fc_h.jpg" alt="A family of four poses on a staircase in a black and white photograph."></a>
   
 </figure>
@@ -338,16 +279,19 @@
 <p>Prepping for a show at the Civic Center in Savannah, Georgia. 21st December, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2015/01/04/prepping-for-a.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2015-01-04T09:37:00-08:00"
-      >Jan 4, 2015</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2015/01/04/prepping-for-a.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2015-01-04T09:37:00-08:00"
+          >Jan 4, 2015</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/107064755757.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/107064755757.jpg" alt="Three women walking together along a city sidewalk."></a>
   
 </figure>
@@ -355,16 +299,19 @@
 <p>Bull Street, Savannah, Georgia. 14th December, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2015/01/03/bull-street-savannah.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2015-01-03T18:22:00-08:00"
-      >Jan 3, 2015</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2015/01/03/bull-street-savannah.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2015-01-03T18:22:00-08:00"
+          >Jan 3, 2015</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/106832071067.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/106832071067.jpg" alt="A yellow excavator and skid steer loader on a dirt construction site."></a>
   
 </figure>
@@ -372,16 +319,19 @@
 <p>A changing neighborhood in West Asheville, North Carolina. 27th November, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2015/01/01/a-changing-neighborhood.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2015-01-01T14:07:00-08:00"
-      >Jan 1, 2015</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2015/01/01/a-changing-neighborhood.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2015-01-01T14:07:00-08:00"
+          >Jan 1, 2015</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/8648/15973278257_eb66133792_h.jpg"><img src="https://live.staticflickr.com/8648/15973278257_eb66133792_h.jpg" alt="A man in a hat and suit stands inside a newsstand."></a>
   
 </figure>
@@ -389,16 +339,19 @@
 <p>Man in booth at River Street Market Place in Savannah, Georgia. 14th December, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/12/31/man-in-booth.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-12-31T13:18:00-08:00"
-      >Dec 31, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/12/31/man-in-booth.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-12-31T13:18:00-08:00"
+          >Dec 31, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/106720931672.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/106720931672.jpg" alt="A man in a purple star-patterned shirt and a woman in a long magenta dress stand together on a sidewalk."></a>
   
 </figure>
@@ -406,16 +359,19 @@
 <p>A couple on River Street in Savannah, Georgia. 14th December, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/12/31/a-couple-on.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-12-31T09:01:00-08:00"
-      >Dec 31, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/12/31/a-couple-on.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-12-31T09:01:00-08:00"
+          >Dec 31, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/106679731252.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/106679731252.jpg" alt="Stacked wooden wine crates seen through black decorative railings."></a>
   
 </figure>
@@ -423,16 +379,19 @@
 <p>Downtown Portland, Oregon. 13th April, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/12/30/downtown-portland-oregon.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-12-30T20:52:00-08:00"
-      >Dec 30, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/12/30/downtown-portland-oregon.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-12-30T20:52:00-08:00"
+          >Dec 30, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/1557/23634862474_3250408e90_h.jpg"><img src="https://live.staticflickr.com/1557/23634862474_3250408e90_h.jpg" alt="A man with a goatee and tattoos has a tabby cat perched on his shoulder."></a>
   
 </figure>
@@ -440,21 +399,20 @@
 <p>A man and his cat in Savannah, Georgia. 26th December, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/12/30/a-man-and.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-12-30T14:13:00-08:00"
-      >Dec 30, 2014</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/117/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/12/30/a-man-and.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-12-30T14:13:00-08:00"
+          >Dec 30, 2014</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/117/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/119/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

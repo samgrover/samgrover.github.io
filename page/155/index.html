@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,45 +205,12 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/5081/5347609985_321f0f40c7_z.jpg"><img src="https://live.staticflickr.com/5081/5347609985_321f0f40c7_z.jpg" alt="The Empire State Building illuminated in red and green lights at night."></a>
   
 </figure>
@@ -283,16 +218,19 @@
 <p>Night at the Empire</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2011/01/04/night-at-the.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2011-01-04T22:52:00-08:00"
-      >Jan 4, 2011</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2011/01/04/night-at-the.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2011-01-04T22:52:00-08:00"
+          >Jan 4, 2011</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/5090/5347609475_4d00871d93_z.jpg"><img src="https://live.staticflickr.com/5090/5347609475_4d00871d93_z.jpg" alt="Bright neon billboards illuminate Times Square at night."></a>
   
 </figure>
@@ -300,16 +238,19 @@
 <p>Near Times Square 1/1/11</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2011/01/04/near-times-square.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2011-01-04T22:49:00-08:00"
-      >Jan 4, 2011</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2011/01/04/near-times-square.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2011-01-04T22:49:00-08:00"
+          >Jan 4, 2011</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/5041/5348220720_e10da350a3_z.jpg"><img src="https://live.staticflickr.com/5041/5348220720_e10da350a3_z.jpg" alt="A dense crowd of people in Times Square surrounded by towering digital billboards."></a>
   
 </figure>
@@ -317,16 +258,19 @@
 <p>Times Square 1/1/11</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2011/01/04/times-square-1.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2011-01-04T22:48:00-08:00"
-      >Jan 4, 2011</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2011/01/04/times-square-1.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2011-01-04T22:48:00-08:00"
+          >Jan 4, 2011</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/5247/5348219708_667491332c_z.jpg"><img src="https://live.staticflickr.com/5247/5348219708_667491332c_z.jpg" alt="A group of musicians playing instruments, including a vibraphone and saxophone, at a birthday celebration."></a>
   
 </figure>
@@ -334,16 +278,19 @@
 <p>New Year’s at Smalls</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2011/01/04/new-years-at.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2011-01-04T18:28:00-08:00"
-      >Jan 4, 2011</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2011/01/04/new-years-at.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2011-01-04T18:28:00-08:00"
+          >Jan 4, 2011</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/5001/5347608265_ccb830e533_z.jpg"><img src="https://live.staticflickr.com/5001/5347608265_ccb830e533_z.jpg" alt="A man wearing glasses and a brown Colorado hoodie with a large, sparkling heart-shaped necklace."></a>
   
 </figure>
@@ -351,16 +298,19 @@
 <p>My new Buckyball bling</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2011/01/04/my-new-buckyball.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2011-01-04T11:30:00-08:00"
-      >Jan 4, 2011</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2011/01/04/my-new-buckyball.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2011-01-04T11:30:00-08:00"
+          >Jan 4, 2011</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/5049/5348218662_36bf4db230_z.jpg"><img src="https://live.staticflickr.com/5049/5348218662_36bf4db230_z.jpg" alt="A white bust of a man with a stern expression positioned in front of a window."></a>
   
 </figure>
@@ -368,16 +318,19 @@
 <p>Heads, I win.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2011/01/02/heads-i-win.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2011-01-02T14:42:00-08:00"
-      >Jan 2, 2011</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2011/01/02/heads-i-win.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2011-01-02T14:42:00-08:00"
+          >Jan 2, 2011</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/5288/5348211550_859b91847c_z.jpg"><img src="https://live.staticflickr.com/5288/5348211550_859b91847c_z.jpg" alt="A golden statue of an archer aiming a bow and arrow."></a>
   
 </figure>
@@ -385,16 +338,19 @@
 <p>American Wing at the Met.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2011/01/01/american-wing-at.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2011-01-01T14:59:00-08:00"
-      >Jan 1, 2011</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2011/01/01/american-wing-at.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2011-01-01T14:59:00-08:00"
+          >Jan 1, 2011</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/5004/5348218220_2353abe558_z.jpg"><img src="https://live.staticflickr.com/5004/5348218220_2353abe558_z.jpg" alt="A grand multi-story building stands behind bare trees and a snow-covered path."></a>
   
 </figure>
@@ -402,16 +358,19 @@
 <p>Thru the Park.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2011/01/01/thru-the-park.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2011-01-01T14:18:00-08:00"
-      >Jan 1, 2011</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2011/01/01/thru-the-park.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2011-01-01T14:18:00-08:00"
+          >Jan 1, 2011</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/5049/5347607501_5f9998111f_z.jpg"><img src="https://live.staticflickr.com/5049/5347607501_5f9998111f_z.jpg" alt="Two people wearing festive New Year&#39;s Eve headwear."></a>
   
 </figure>
@@ -419,16 +378,19 @@
 <p>Happy New Year!!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2010/12/31/happy-new-year.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2010-12-31T20:54:00-08:00"
-      >Dec 31, 2010</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2010/12/31/happy-new-year.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2010-12-31T20:54:00-08:00"
+          >Dec 31, 2010</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/5290/5347606045_3175137af3_z.jpg"><img src="https://live.staticflickr.com/5290/5347606045_3175137af3_z.jpg" alt="An illuminated white triumphal arch and a decorated Christmas tree at night."></a>
   
 </figure>
@@ -436,21 +398,20 @@
 <p>Washington Square Arch.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2010/12/31/washington-square-arch.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2010-12-31T13:11:00-08:00"
-      >Dec 31, 2010</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/154/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2010/12/31/washington-square-arch.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2010-12-31T13:11:00-08:00"
+          >Dec 31, 2010</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/154/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/156/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

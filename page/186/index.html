@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,217 +205,180 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">20Q.net</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2004/07/04/qnet.html"
-    >20Q.net</a
-  >
-</section><section><p>According to the website, &ldquo;<i><a href="https://www.20q.net/index.html">20Q.net</a> is an experiment in artificial intelligence.</i>&rdquo; I found it <a href="https://radio.weblogs.com/0121664/2004/07/04.html#a455">here</a> on Dina&rsquo;s blog. It really is quite good.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/07/04/qnet.html">20Q.net</a></h2>
+    </div><section class="post-body"><p>According to the website, &ldquo;<i><a href="https://www.20q.net/index.html">20Q.net</a> is an experiment in artificial intelligence.</i>&rdquo; I found it <a href="https://radio.weblogs.com/0121664/2004/07/04.html#a455">here</a> on Dina&rsquo;s blog. It really is quite good.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2004/07/04/qnet.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2004-07-04T00:45:00-07:00"
-      >Jul 4, 2004</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/07/04/qnet.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-07-04T00:45:00-07:00"
+          >Jul 4, 2004</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Saturn by Cassini</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2004/07/01/saturn-by-cassini.html"
-    >Saturn by Cassini</a
-  >
-</section><section><p>Last weekend I started reading about the imminent arrival of Cassini at Saturn. I&rsquo;m the casual space enthusiast who doesn&rsquo;t go to space.com everyday but gets quite excited when something is happening up/out there. Even more when the event is influenced by humans. Last night Cassini made it and is now in orbit around the planet. Woohoo! Congratulations to everyone involved.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/07/01/saturn-by-cassini.html">Saturn by Cassini</a></h2>
+    </div><section class="post-body"><p>Last weekend I started reading about the imminent arrival of Cassini at Saturn. I&rsquo;m the casual space enthusiast who doesn&rsquo;t go to space.com everyday but gets quite excited when something is happening up/out there. Even more when the event is influenced by humans. Last night Cassini made it and is now in orbit around the planet. Woohoo! Congratulations to everyone involved.</p>
 <p><a href="https://www.metafilter.com/mefi/34072">Saturn Orbit Insertion | Metafilter</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2004/07/01/saturn-by-cassini.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2004-07-01T17:06:00-07:00"
-      >Jul 1, 2004</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/07/01/saturn-by-cassini.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-07-01T17:06:00-07:00"
+          >Jul 1, 2004</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Digital Library of India</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2004/06/23/digital-library-of.html"
-    >Digital Library of India</a
-  >
-</section><section><p>Just noticed <a href="https://www.worldchanging.com/archives/000866.html">this entry</a> on WorldChanging about the <a href="https://www.dli.ernet.in/">Digital Library of India</a>. Quote from the site &ldquo;<i>The mission is to create a portal for the Digital Library of India which will foster creativity and free access to all human knowledge. As a first step in realizing this mission, it is proposed to create the Digital Library with a free-to-read, searchable collection of one million books, predominantly in Indian languages, available to everyone over the Internet</i>&rdquo;. Cool!</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/06/23/digital-library-of.html">Digital Library of India</a></h2>
+    </div><section class="post-body"><p>Just noticed <a href="https://www.worldchanging.com/archives/000866.html">this entry</a> on WorldChanging about the <a href="https://www.dli.ernet.in/">Digital Library of India</a>. Quote from the site &ldquo;<i>The mission is to create a portal for the Digital Library of India which will foster creativity and free access to all human knowledge. As a first step in realizing this mission, it is proposed to create the Digital Library with a free-to-read, searchable collection of one million books, predominantly in Indian languages, available to everyone over the Internet</i>&rdquo;. Cool!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2004/06/23/digital-library-of.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2004-06-23T21:28:00-07:00"
-      >Jun 23, 2004</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/06/23/digital-library-of.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-06-23T21:28:00-07:00"
+          >Jun 23, 2004</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Space travel account</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2004/06/21/space-travel-account.html"
-    >Space travel account</a
-  >
-</section><section><p>The most awesome thing happened today and it&rsquo;s all over the place. SpaceShipOne successfully landed after a brief visit to space. Congratulations to the Scaled Composites people! Commercial space travel is looking closer than ever.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/06/21/space-travel-account.html">Space travel account</a></h2>
+    </div><section class="post-body"><p>The most awesome thing happened today and it&rsquo;s all over the place. SpaceShipOne successfully landed after a brief visit to space. Congratulations to the Scaled Composites people! Commercial space travel is looking closer than ever.</p>
 <p>Time to start a savings account for the ticket :-)</p>
 <p><a href="https://www.cnn.com/2004/TECH/space/06/21/suborbital.test/index.html">CNN.com - Private craft soars into space, history - Jun 21, 2004</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2004/06/21/space-travel-account.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2004-06-21T22:48:00-07:00"
-      >Jun 21, 2004</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/06/21/space-travel-account.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-06-21T22:48:00-07:00"
+          >Jun 21, 2004</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Back to blogging</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2004/06/16/back-to-blogging.html"
-    >Back to blogging</a
-  >
-</section><section><p>I haven&rsquo;t blogged for a while and now I&rsquo;m back. I traveled to Seattle and to Chicago over the last two weeks to visit family and friends. Logged back into blogger today and was surprised to find an invitation to join <a href="https://www.gmail.com/">Gmail</a>. So, now I have a 1 GB Gmail account. Cool! Dunno how much I will use it. Let&rsquo;s see.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/06/16/back-to-blogging.html">Back to blogging</a></h2>
+    </div><section class="post-body"><p>I haven&rsquo;t blogged for a while and now I&rsquo;m back. I traveled to Seattle and to Chicago over the last two weeks to visit family and friends. Logged back into blogger today and was surprised to find an invitation to join <a href="https://www.gmail.com/">Gmail</a>. So, now I have a 1 GB Gmail account. Cool! Dunno how much I will use it. Let&rsquo;s see.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2004/06/16/back-to-blogging.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2004-06-16T14:28:00-07:00"
-      >Jun 16, 2004</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/06/16/back-to-blogging.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-06-16T14:28:00-07:00"
+          >Jun 16, 2004</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">I&#39;m glad I mostly type it</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2004/05/25/im-glad-i.html"
-    >I&#39;m glad I mostly type it</a
-  >
-</section><section><p>Here&rsquo;s a pronumciation guide to the characters and expressions used in Unix. It&rsquo;s a few years old (dated 29th April, 1997) but Unix is much older. (Seen on <a href="https://www.metafilter.com/mefi/33292">Metafilter</a>).</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/05/25/im-glad-i.html">I&#39;m glad I mostly type it</a></h2>
+    </div><section class="post-body"><p>Here&rsquo;s a pronumciation guide to the characters and expressions used in Unix. It&rsquo;s a few years old (dated 29th April, 1997) but Unix is much older. (Seen on <a href="https://www.metafilter.com/mefi/33292">Metafilter</a>).</p>
 <p><a href="https://www.eeng.brad.ac.uk/help/.faq/.unix/.pronun.html">pronunciation guide for unix</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2004/05/25/im-glad-i.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2004-05-25T09:42:00-07:00"
-      >May 25, 2004</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/05/25/im-glad-i.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-05-25T09:42:00-07:00"
+          >May 25, 2004</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">UnbelievablePerson? RemarkableChap? Superman!</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2004/05/21/unbelievableperson-remarkablechap-superman.html"
-    >UnbelievablePerson? RemarkableChap? Superman!</a
-  >
-</section><section><p>A new episode of <a href="https://www.jerry.digisle.tv/room.html">The Adventures of Seinfeld &amp; Superman</a> is available now. These are so cool. The new one is called &ldquo;Hindsight&rdquo;. Thanks Jerry!</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/05/21/unbelievableperson-remarkablechap-superman.html">UnbelievablePerson? RemarkableChap? Superman!</a></h2>
+    </div><section class="post-body"><p>A new episode of <a href="https://www.jerry.digisle.tv/room.html">The Adventures of Seinfeld &amp; Superman</a> is available now. These are so cool. The new one is called &ldquo;Hindsight&rdquo;. Thanks Jerry!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2004/05/21/unbelievableperson-remarkablechap-superman.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2004-05-21T14:13:00-07:00"
-      >May 21, 2004</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/05/21/unbelievableperson-remarkablechap-superman.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-05-21T14:13:00-07:00"
+          >May 21, 2004</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Speculation on Apple Computer&#39;s future</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2004/05/21/speculation-on-apple.html"
-    >Speculation on Apple Computer&#39;s future</a
-  >
-</section><section><p>Ever since I switched recently and for a little while before that too I have been following news about Apple. There is an interesting article on Robert X. Cringley&rsquo;s &ldquo;I, Cringley&rdquo; page about the future of Apple following the creation of a separate iPod division. Mr. Cringley evaluates it in relation to a 20 year old quote from Steve Jobs. Interesting items include <i>&ldquo;What most people don’t know is that Apple, with the assistance of Intel, a few years ago ported all its software to run on Intel’s Pentium processors.&quot;</i></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/05/21/speculation-on-apple.html">Speculation on Apple Computer&#39;s future</a></h2>
+    </div><section class="post-body"><p>Ever since I switched recently and for a little while before that too I have been following news about Apple. There is an interesting article on Robert X. Cringley&rsquo;s &ldquo;I, Cringley&rdquo; page about the future of Apple following the creation of a separate iPod division. Mr. Cringley evaluates it in relation to a 20 year old quote from Steve Jobs. Interesting items include <i>&ldquo;What most people don’t know is that Apple, with the assistance of Intel, a few years ago ported all its software to run on Intel’s Pentium processors.&quot;</i></p>
 <p><a href="https://www.pbs.org/cringely/pulpit/pulpit20040520.html">Divide and Conquer: Why Apple Has an iPod Division</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2004/05/21/speculation-on-apple.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2004-05-21T12:25:00-07:00"
-      >May 21, 2004</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/05/21/speculation-on-apple.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-05-21T12:25:00-07:00"
+          >May 21, 2004</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">What do you listen to?</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2004/05/20/what-do-you.html"
-    >What do you listen to?</a
-  >
-</section><section><p>Today I registered on <a href="https://www.audioscrobbler.com/">Audioscrobbler</a>. It is a community of people sharing information and stats on what everyone is listening to. Generated data is available under a <a href="https://www.creativecommons.org/">Creative Commons License</a>. The client is great. Once installed it quietly works in the background, gathering data from the media player (in my case, iTunes) and transmitting it to the server. My account is <a href="https://www.audioscrobbler.com/user/samgrover/">here</a>.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/05/20/what-do-you.html">What do you listen to?</a></h2>
+    </div><section class="post-body"><p>Today I registered on <a href="https://www.audioscrobbler.com/">Audioscrobbler</a>. It is a community of people sharing information and stats on what everyone is listening to. Generated data is available under a <a href="https://www.creativecommons.org/">Creative Commons License</a>. The client is great. Once installed it quietly works in the background, gathering data from the media player (in my case, iTunes) and transmitting it to the server. My account is <a href="https://www.audioscrobbler.com/user/samgrover/">here</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2004/05/20/what-do-you.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2004-05-20T20:39:00-07:00"
-      >May 20, 2004</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/05/20/what-do-you.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-05-20T20:39:00-07:00"
+          >May 20, 2004</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Funny Commencement Addresses</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2004/05/19/funny-commencement-addresses.html"
-    >Funny Commencement Addresses</a
-  >
-</section><section><p>There was recently a post on Metafilter about Jon Stewart&rsquo;s commencement address to William and Mary college. The speech is quite funny. Here are links to that one and other funny commencement addresses:</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/05/19/funny-commencement-addresses.html">Funny Commencement Addresses</a></h2>
+    </div><section class="post-body"><p>There was recently a post on Metafilter about Jon Stewart&rsquo;s commencement address to William and Mary college. The speech is quite funny. Here are links to that one and other funny commencement addresses:</p>
 <p><a href="https://web.wm.edu/news/index.php?id=3650">Jon Stewart&rsquo;s (&lsquo;84) Commencement Address</a></p>
 <p><a href="https://www.february-7.com/features/conan.htm">Conan O&rsquo;Brien&rsquo;s Commencement Speech to the Havard Class of 2000</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2004/05/19/funny-commencement-addresses.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2004-05-19T11:55:00-07:00"
-      >May 19, 2004</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/185/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/05/19/funny-commencement-addresses.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-05-19T11:55:00-07:00"
+          >May 19, 2004</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/185/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/187/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

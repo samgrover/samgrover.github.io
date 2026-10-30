@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,104 +205,74 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">A new Mimi Uploader beta is out; Generate alt texts for all photos in a batch!</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2024/09/03/a-new-mimi.html"
-    >A new Mimi Uploader beta is out; Generate alt texts for all photos in a batch!</a
-  >
-</section><section><div style="padding:216.7% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1005242188?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Generate alt texts for all photos in a batch"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2024/09/03/a-new-mimi.html">A new Mimi Uploader beta is out; Generate alt texts for all photos in a batch!</a></h2>
+    </div><section class="post-body"><div style="padding:216.7% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1005242188?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Generate alt texts for all photos in a batch"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 <p>This was something I&rsquo;d considered but dismissed as I was working on the earlier versions of this feature. However a <a href="https://micro.blog/maique/44515709">recent discussion</a> has changed my mind.</p>
 <p>Sometimes the stars align and eager feedback from 90% of users (i.e. 4 people) comes at just the right time when I have availability, and also the architecture of the app supports adding it quickly, so I built it!</p>
 <p>A new beta with this feature is out now. Please try it and let me know what you think 😊</p>
 <p>(<a href="https://vimeo.com/1005242188">Link</a> to the video embedded above).</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/09/03/a-new-mimi.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-09-03T07:24:47-07:00"
-      >Sep 3, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/09/03/a-new-mimi.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-09-03T07:24:47-07:00"
+          >Sep 3, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/b8dcd913-021b-44f1-9e07-cc04b449f20f.jpg"><img src="https://samgrover.micro.blog/uploads/2024/b8dcd913-021b-44f1-9e07-cc04b449f20f.jpg" alt="Black and white photo of daisies in a garden. The flowers are illuminated by sunlight, with some tall and upright while others are bending towards the ground. The background includes foliage in partial shadow."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/b8dcd913-021b-44f1-9e07-cc04b449f20f.jpg"><img src="https://samgrover.micro.blog/uploads/2024/b8dcd913-021b-44f1-9e07-cc04b449f20f.jpg" alt="Black and white photo of daisies in a garden. The flowers are illuminated by sunlight, with some tall and upright while others are bending towards the ground. The background includes foliage in partial shadow."></a></p>
 <p>Portland, Oregon. 4th July, 2024.</p>
 <p>📷 Hasselblad 500C/M<br>
 🎞️ Fujifilm Acros 100 (Expired)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/08/30/portland-oregon-th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-08-30T14:03:50-07:00"
-      >Aug 30, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/08/30/portland-oregon-th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-08-30T14:03:50-07:00"
+          >Aug 30, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/c1546e1e-ab52-41f7-a478-8e026fa9d7c6.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c1546e1e-ab52-41f7-a478-8e026fa9d7c6.jpg" alt="A distorted reflection of a street scene on a shiny, red metallic surface, adorned with rivets, creating a wavy and abstract visual effect."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/c3aff420-f237-48c1-b5d9-b5a81e200077.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c3aff420-f237-48c1-b5d9-b5a81e200077.jpg" alt="Four orange pumpkins with bumpy textures, striped delicata squash, two red tomatoes, and several other fruits on a white wooden table outdoors."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/c1546e1e-ab52-41f7-a478-8e026fa9d7c6.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c1546e1e-ab52-41f7-a478-8e026fa9d7c6.jpg" alt="A distorted reflection of a street scene on a shiny, red metallic surface, adorned with rivets, creating a wavy and abstract visual effect."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/c3aff420-f237-48c1-b5d9-b5a81e200077.jpg"><img src="https://samgrover.micro.blog/uploads/2024/c3aff420-f237-48c1-b5d9-b5a81e200077.jpg" alt="Four orange pumpkins with bumpy textures, striped delicata squash, two red tomatoes, and several other fruits on a white wooden table outdoors."></a></p>
 <p>An abstract reflection and some produce of home garden. August, 2024.</p>
 <p>Halide <a href="https://www.lux.camera/introducing-process-zero-for-iphone/">Process Zero</a> + some Apple Photos adjustment.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/08/27/an-abstract-reflection.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-08-27T07:52:18-07:00"
-      >Aug 27, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/08/27/an-abstract-reflection.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-08-27T07:52:18-07:00"
+          >Aug 27, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Rejection of Computational Photography as the Sole Creative Path Forward for iPhone Photography</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2024/08/21/rejection-of-computational.html"
-    >Rejection of Computational Photography as the Sole Creative Path Forward for iPhone Photography</a
-  >
-</section><section><p>Over the last week I&rsquo;ve explored <a href="https://www.lux.camera/introducing-process-zero-for-iphone/">Halide app&rsquo;s new Process Zero</a> (PZ) feature.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2024/08/21/rejection-of-computational.html">Rejection of Computational Photography as the Sole Creative Path Forward for iPhone Photography</a></h2>
+    </div><section class="post-body"><p>Over the last week I&rsquo;ve explored <a href="https://www.lux.camera/introducing-process-zero-for-iphone/">Halide app&rsquo;s new Process Zero</a> (PZ) feature.</p>
 <p>For the first couple of days I misunderstood what the PZ image was and how to get it. I even <a href="https://xoxo.zone/@sam/112974328939642307">tooted</a> a comparison of a RAW image processed by me along with an &ldquo;Apple Processed&rdquo; image, both captured in Halide. Apparently I wasn&rsquo;t the only one confused, as per the discussions in the <a href="https://www.reddit.com/r/ShotWithHalide/">official subreddit</a>.</p>
 <p>I thought that the PZ adjustments were in the RAW file but they are actually only in the HEIC / JPG file, that is &ldquo;developed&rdquo;, and essentially redeveloped every time one makes adjustments in the app&rsquo;s Image Lab interface.</p>
 <p>Once I had this clarity I tried it in various scenarios, and finally appreciated the result instead of just the theory and examples presented in the announcement.</p>
 <p>So far my favorite PZ images have been a couple of black and white photos I shared <a href="https://samgrover.com/2024/08/18/evening-at-home.html">in this post</a> a few days ago.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/2c6e803f-c29f-4126-a486-5b04348552cd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/2c6e803f-c29f-4126-a486-5b04348552cd.jpg" alt="A black-and-white photograph of a room with a tufted ottoman in the foreground. A cat is lying and sleeping on top of the ottoman, partially illuminated by sunlight. Behind the ottoman is a wooden bookshelf filled with books and board games."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/2c6e803f-c29f-4126-a486-5b04348552cd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/2c6e803f-c29f-4126-a486-5b04348552cd.jpg" alt="A black-and-white photograph of a room with a tufted ottoman in the foreground. A cat is lying and sleeping on top of the ottoman, partially illuminated by sunlight. Behind the ottoman is a wooden bookshelf filled with books and board games."></a></p>
 <p>I also shared the one above on Glass and had <a href="https://glass.photo/samgrover/13Jswnl1msIsq1cwfcaCLu#a8994ca5-64d9-4f9d-b05a-88141781d32d">a small conversation with Tom</a> that started to crystallize my thoughts on it:</p>
 <blockquote>
 <p>It&rsquo;s a nice option to have in the toolkit but of limited use for someone like me. If I was a phone-only photographer I might be more excited. Also, I like the lack of computational photography but I have no nostalgia for older digital cameras.</p>
@@ -343,66 +281,75 @@
 <p>While a photographer&rsquo;s admonishment of computational photography is usually commentary, Halide&rsquo;s admonishment comes in the form of Process Zero. It is a breath of fresh air in the current environment of computational photography. It embraces constraints, which is a powerful force for creativity.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/08/21/rejection-of-computational.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-08-21T16:14:15-07:00"
-      >Aug 21, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/08/21/rejection-of-computational.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-08-21T16:14:15-07:00"
+          >Aug 21, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/2c6e803f-c29f-4126-a486-5b04348552cd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/2c6e803f-c29f-4126-a486-5b04348552cd.jpg" alt="A black-and-white photograph of a room with a tufted ottoman in the foreground. A cat is lying and sleeping on top of the ottoman, partially illuminated by sunlight. Behind the ottoman is a wooden bookshelf filled with books and board games."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/ba19ddb8-6d8f-4d9c-9d98-4828c4aaaa04.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ba19ddb8-6d8f-4d9c-9d98-4828c4aaaa04.jpg" alt="A black and white photo of a room with a modern table lamp on the left, a vinyl cover on the wall above a white textured cabinet, and a vinyl record player and small diffuser on top of the cabinet. Sunlight casts shadows on the wall."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/2c6e803f-c29f-4126-a486-5b04348552cd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/2c6e803f-c29f-4126-a486-5b04348552cd.jpg" alt="A black-and-white photograph of a room with a tufted ottoman in the foreground. A cat is lying and sleeping on top of the ottoman, partially illuminated by sunlight. Behind the ottoman is a wooden bookshelf filled with books and board games."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/ba19ddb8-6d8f-4d9c-9d98-4828c4aaaa04.jpg"><img src="https://samgrover.micro.blog/uploads/2024/ba19ddb8-6d8f-4d9c-9d98-4828c4aaaa04.jpg" alt="A black and white photo of a room with a modern table lamp on the left, a vinyl cover on the wall above a white textured cabinet, and a vinyl record player and small diffuser on top of the cabinet. Sunlight casts shadows on the wall."></a></p>
 <p>Evening at home. 18th August, 2024.</p>
 <p>Halide <a href="https://www.lux.camera/introducing-process-zero-for-iphone/">Process Zero (and Image Lab)</a> + Desaturated. No other adjustments.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/08/18/evening-at-home.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-08-18T19:57:02-07:00"
-      >Aug 18, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/08/18/evening-at-home.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-08-18T19:57:02-07:00"
+          >Aug 18, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/75165ce9-6597-4d65-a852-a40ec6c083a3.jpg"><img src="https://samgrover.micro.blog/uploads/2024/75165ce9-6597-4d65-a852-a40ec6c083a3.jpg" alt="A serene black-and-white image depicts a person walking with a dog along a calm reservoir surrounded by tall coniferous trees casting long shadows on the water."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/75165ce9-6597-4d65-a852-a40ec6c083a3.jpg"><img src="https://samgrover.micro.blog/uploads/2024/75165ce9-6597-4d65-a852-a40ec6c083a3.jpg" alt="A serene black-and-white image depicts a person walking with a dog along a calm reservoir surrounded by tall coniferous trees casting long shadows on the water."></a></p>
 <p>Mt. Tabor Park, Portland, Oregon. 8th July, 2024.</p>
 <p>📷 Hasselblad 500C/M<br>
 🎞️ Fujifilm Acros 100 (Expired)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/08/13/hasselblad-cm-fujifilm.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-08-13T11:21:42-07:00"
-      >Aug 13, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/08/13/hasselblad-cm-fujifilm.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-08-13T11:21:42-07:00"
+          >Aug 13, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/dc591f1f-120a-4778-b7ed-86f614f200c7.jpg"><img src="https://samgrover.micro.blog/uploads/2024/dc591f1f-120a-4778-b7ed-86f614f200c7.jpg" alt="Cyclists are participating in the Providence Bridge Pedal event. They are riding along a closed-off city street under a large banner that reads “Providence Bridge Pedal: You Belong at Providence.” Event staff and spectators line the route."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/bc63b426-7160-4a59-9d92-cbd1178519bb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/bc63b426-7160-4a59-9d92-cbd1178519bb.jpg" alt="Cyclists ride on a bridge under a partially cloudy blue sky. The bridge has traffic barriers and structures typical of an urban setting, with a distinctive arched, white bridge seen in the background. Buildings, including a notable orange and gray one, are visible near the bridge."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/3781a806-dda4-4656-8a10-c80571ce78eb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/3781a806-dda4-4656-8a10-c80571ce78eb.jpg" alt="A large group of cyclists riding on a highway, with a cityscape and green hills in the background. There are also scattered walkers and a few other types of vehicles. The sky is cloudy with some patches of blue."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2024/ec056863-fbe6-407d-b6e8-cfa19fedad54.png"><img src="https://samgrover.micro.blog/uploads/2024/ec056863-fbe6-407d-b6e8-cfa19fedad54.png" alt="Biking workout summary with a duration of 2 hours, 27 minutes, and 12 seconds, starting at 7:31 AM. Distance covered is 22.35 miles (35.97 km). The user burned 781 active calories."></a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/dc591f1f-120a-4778-b7ed-86f614f200c7.jpg"><img src="https://samgrover.micro.blog/uploads/2024/dc591f1f-120a-4778-b7ed-86f614f200c7.jpg" alt="Cyclists are participating in the Providence Bridge Pedal event. They are riding along a closed-off city street under a large banner that reads “Providence Bridge Pedal: You Belong at Providence.” Event staff and spectators line the route."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/bc63b426-7160-4a59-9d92-cbd1178519bb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/bc63b426-7160-4a59-9d92-cbd1178519bb.jpg" alt="Cyclists ride on a bridge under a partially cloudy blue sky. The bridge has traffic barriers and structures typical of an urban setting, with a distinctive arched, white bridge seen in the background. Buildings, including a notable orange and gray one, are visible near the bridge."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/3781a806-dda4-4656-8a10-c80571ce78eb.jpg"><img src="https://samgrover.micro.blog/uploads/2024/3781a806-dda4-4656-8a10-c80571ce78eb.jpg" alt="A large group of cyclists riding on a highway, with a cityscape and green hills in the background. There are also scattered walkers and a few other types of vehicles. The sky is cloudy with some patches of blue."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/ec056863-fbe6-407d-b6e8-cfa19fedad54.png"><img src="https://samgrover.micro.blog/uploads/2024/ec056863-fbe6-407d-b6e8-cfa19fedad54.png" alt="Biking workout summary with a duration of 2 hours, 27 minutes, and 12 seconds, starting at 7:31 AM. Distance covered is 22.35 miles (35.97 km). The user burned 781 active calories."></a></p>
 <p>Another great <a href="https://en.wikipedia.org/wiki/Providence_Bridge_Pedal">bridge pedal</a> ride today! We look forward to it every year.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/08/11/another-great-bridge.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-08-11T13:36:45-07:00"
-      >Aug 11, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/08/11/another-great-bridge.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-08-11T13:36:45-07:00"
+          >Aug 11, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">New version of Mimi Uploader with a redesigned upload flow is out 🎉</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2024/08/11/new-version-of.html"
-    >New version of Mimi Uploader with a redesigned upload flow is out 🎉</a
-  >
-</section><section><p>This version introduces a modernized, intuitive, and faster upload flow which takes you from uploads to recent uploads with zero taps!</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2024/08/11/new-version-of.html">New version of Mimi Uploader with a redesigned upload flow is out 🎉</a></h2>
+    </div><section class="post-body"><p>This version introduces a modernized, intuitive, and faster upload flow which takes you from uploads to recent uploads with zero taps!</p>
 <p>The new flow unifies the uploads screen and the recent uploads screen into the main app screen. This provides immediate access to your uploads right after uploading for so you can move on to exporting or adding alt text right away!</p>
 <p>I&rsquo;m loving this new design very much and I hope you like it too.</p>
 <p>This has probably been the longest beta cycle for any release as I ironed out the design and updated other parts of the app to match. So, thank you for your patience.</p>
@@ -410,50 +357,55 @@
 <p>Get it from the <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">App Store</a>!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/08/11/new-version-of.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-08-11T06:37:50-07:00"
-      >Aug 11, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/08/11/new-version-of.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-08-11T06:37:50-07:00"
+          >Aug 11, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/9d9ac537-b57c-4e8d-95e7-d61c584f1d4e.jpg"><img src="https://samgrover.micro.blog/uploads/2024/9d9ac537-b57c-4e8d-95e7-d61c584f1d4e.jpg" alt="A mural on the side of a building depicting a person wearing a hat and looking at the viewer while holding a vintage camera. The background features a grayscale cityscape with vehicles, while the person is partially colored with vibrant, multi-colored stripes."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/9d9ac537-b57c-4e8d-95e7-d61c584f1d4e.jpg"><img src="https://samgrover.micro.blog/uploads/2024/9d9ac537-b57c-4e8d-95e7-d61c584f1d4e.jpg" alt="A mural on the side of a building depicting a person wearing a hat and looking at the viewer while holding a vintage camera. The background features a grayscale cityscape with vehicles, while the person is partially colored with vibrant, multi-colored stripes."></a></p>
 <p>Stumbled upon this <a href="https://www.dnainfo.com/chicago/20170619/wicker-park/eduardo-kobra-vivian-maier-mural-north-avenue-wicker-park-june-2017/">lovely mural</a> of <a href="https://en.wikipedia.org/wiki/Vivian_Maier">Vivian Maier</a> while riding in a car a few days ago.</p>
 <p><a href="https://maps.app.goo.gl/ZuAtaKtbEtM4TaQM6">📍</a> Chicago, Illinois. 7th August, 2024.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/08/10/stumbled-upon-this.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-08-10T09:50:30-07:00"
-      >Aug 10, 2024</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/08/10/stumbled-upon-this.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-08-10T09:50:30-07:00"
+          >Aug 10, 2024</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p><a href="https://samgrover.micro.blog/uploads/2024/a42746d3-d0b0-46c3-a2cd-73390950f6bd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/a42746d3-d0b0-46c3-a2cd-73390950f6bd.jpg" alt="A person tending to a garden, surrounded by large green leaves, with a watering hose spraying water in the foreground. The individual is partially obscured by the plants, which appear healthy and thriving under the sunlight. The garden includes various types of foliage."></a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2024/a42746d3-d0b0-46c3-a2cd-73390950f6bd.jpg"><img src="https://samgrover.micro.blog/uploads/2024/a42746d3-d0b0-46c3-a2cd-73390950f6bd.jpg" alt="A person tending to a garden, surrounded by large green leaves, with a watering hose spraying water in the foreground. The individual is partially obscured by the plants, which appear healthy and thriving under the sunlight. The garden includes various types of foliage."></a></p>
 <p>Portland, Oregon. 30th June, 2024.</p>
 <p>📷 Voigtländer Bessa R2A + Leica Summicron 50mm f/2<br>
 🎞️ Lomography Color 800 (Expired)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2024/08/09/portland-oregon-th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2024-08-09T08:14:29-07:00"
-      >Aug 9, 2024</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/15/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2024/08/09/portland-oregon-th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2024-08-09T08:14:29-07:00"
+          >Aug 9, 2024</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/15/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/17/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

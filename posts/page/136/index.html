@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,45 +205,12 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/83649341086.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/83649341086.jpg" alt="A black and white photograph of a vintage camera sitting on a wooden stand."></a>
   
 </figure>
@@ -283,16 +218,19 @@
 <p>Powell’s Books (@powells). Portland, OR. 29th March, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/04/23/powells-books-powells.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-04-23T13:56:00-07:00"
-      >Apr 23, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/04/23/powells-books-powells.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-04-23T13:56:00-07:00"
+          >Apr 23, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/83560852596.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/83560852596.jpg" alt="A group of people take photographs beneath a cherry blossom tree in full bloom."></a>
   
 </figure>
@@ -300,16 +238,19 @@
 <p>Waterfront Park. Portland, OR. 23rd March, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/04/22/waterfront-park-portland.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-04-22T16:08:00-07:00"
-      >Apr 22, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/04/22/waterfront-park-portland.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-04-22T16:08:00-07:00"
+          >Apr 22, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/83431178865.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/83431178865.jpg" alt="A red and green car partially covered in snow with white drawings on its side."></a>
   
 </figure>
@@ -317,16 +258,19 @@
 <p>Portland, OR. 8th February, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/04/21/portland-or-8th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-04-21T11:29:00-07:00"
-      >Apr 21, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/04/21/portland-or-8th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-04-21T11:29:00-07:00"
+          >Apr 21, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/3769/13928802794_4d924f4fec_h.jpg"><img src="https://live.staticflickr.com/3769/13928802794_4d924f4fec_h.jpg" alt="Men in red uniforms stand on a railway platform next to a red passenger train."></a>
   
 </figure>
@@ -334,16 +278,19 @@
 <p>Railway station. New Delhi, India. 29th October, 2013.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/04/18/railway-station-new.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-04-18T15:12:00-07:00"
-      >Apr 18, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/04/18/railway-station-new.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-04-18T15:12:00-07:00"
+          >Apr 18, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/82841031538.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/82841031538.jpg" alt="A person shovels snow from a brick walkway, viewed through glass doors."></a>
   
 </figure>
@@ -351,16 +298,19 @@
 <p>Downtown Portland, OR. 7th February, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/04/15/downtown-portland-or.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-04-15T17:14:00-07:00"
-      >Apr 15, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/04/15/downtown-portland-or.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-04-15T17:14:00-07:00"
+          >Apr 15, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/82799452563.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/82799452563.jpg" alt="Several mannequin torsos with price tags are displayed in a storefront window."></a>
   
 </figure>
@@ -368,16 +318,19 @@
 <p>Portland, OR. 12th March, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/04/15/portland-or-12th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-04-15T09:17:00-07:00"
-      >Apr 15, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/04/15/portland-or-12th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-04-15T09:17:00-07:00"
+          >Apr 15, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/82735683710.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/82735683710.jpg" alt="Pink and white flowering trees frame a brick building with an American flag flying on top."></a>
   
 </figure>
@@ -385,16 +338,19 @@
 <p>Portland, OR. 22nd March, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/04/14/portland-or-22nd.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-04-14T16:45:00-07:00"
-      >Apr 14, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/04/14/portland-or-22nd.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-04-14T16:45:00-07:00"
+          >Apr 14, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/3723/9366541445_cc63394b04_h.jpg"><img src="https://live.staticflickr.com/3723/9366541445_cc63394b04_h.jpg" alt="A soccer match takes place on a lighted artificial turf field at twilight."></a>
   
 </figure>
@@ -413,16 +369,19 @@
 <p><strong>Update:</strong> The event was fun and it was great seeing all the photos there. Here are my three photos that were selected. You can click through to see them in full size on Flickr.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/04/14/three-of-my.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-04-14T11:47:00-07:00"
-      >Apr 14, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/04/14/three-of-my.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-04-14T11:47:00-07:00"
+          >Apr 14, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/3687/13851811213_267387768a_h.jpg"><img src="https://live.staticflickr.com/3687/13851811213_267387768a_h.jpg" alt="A bearded man in a dark coat reads a book resting on a chair."></a>
   
 </figure>
@@ -430,16 +389,19 @@
 <p>Tiny’s Coffee. Portland, OR. 8th February, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/04/14/tinys-coffee-portland.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-04-14T10:11:00-07:00"
-      >Apr 14, 2014</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/04/14/tinys-coffee-portland.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-04-14T10:11:00-07:00"
+          >Apr 14, 2014</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/82422179558.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/82422179558.jpg" alt="People push a tan car through the snow."></a>
   
 </figure>
@@ -447,21 +409,20 @@
 <p>Portland, OR. 8th February, 2014.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2014/04/11/portland-or-8th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2014-04-11T15:37:00-07:00"
-      >Apr 11, 2014</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/135/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2014/04/11/portland-or-8th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2014-04-11T15:37:00-07:00"
+          >Apr 11, 2014</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/135/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/137/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

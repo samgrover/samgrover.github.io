@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,7 +39,7 @@ Last week I went to Cupertino for Apple&rsquo;s Special Event at Apple Park.
 The Main Event
 The announcements at the event and the hot takes around it have gone around the internet, and the world, perhaps a dozen times by now. This is not a post about that, but about my personal experience." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -64,30 +64,16 @@ The announcements at the event and the hot takes around it have gone around the 
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="📷 WWDC at Apple Park">
@@ -128,8 +114,8 @@ The Main Event The announcements at the event and the hot takes around it have g
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -144,16 +130,13 @@ The Main Event The announcements at the event and the hot takes around it have g
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -163,10 +146,11 @@ The Main Event The announcements at the event and the hot takes around it have g
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -178,27 +162,17 @@ The Main Event The announcements at the event and the hot takes around it have g
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -208,15 +182,9 @@ The Main Event The announcements at the event and the hot takes around it have g
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -246,65 +214,31 @@ The Main Event The announcements at the event and the hot takes around it have g
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    ><article><header class="mb-10">
-    <h1 class="my-0!">📷 WWDC at Apple Park</h1>
-  </header><section><p><a href="https://samgrover.micro.blog/uploads/2023/912dcff903.jpg"><img src="https://samgrover.micro.blog/uploads/2023/912dcff903.jpg" alt="A set of rainbow colored arches are visible in the background with some trees and flowers in the foreground."></a></p>
+<main class="site-main prose prose-neutral dark:prose-invert relative"><article class="post post--flow">
+  <div class="post-sheet"><div class="post-heading">
+    <h1 class="post-title">📷 WWDC at Apple Park</h1>
+  </div><section class="post-body"><p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/912dcff903.jpg"><img src="https://samgrover.micro.blog/uploads/2023/912dcff903.jpg" alt="A set of rainbow colored arches are visible in the background with some trees and flowers in the foreground."></a></p>
 <p>Last week I went to Cupertino for Apple&rsquo;s Special Event at Apple Park.</p>
 <h3 id="the-main-event">The Main Event</h3>
 <p>The announcements at the event and the hot takes around it have gone around the internet, and the world, perhaps a dozen times by now. This is not a post about that, but about my personal experience.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/6981b709e9.jpg"><img src="https://samgrover.micro.blog/uploads/2023/6981b709e9.jpg" alt="View of conference area from back and above. A large screen with the Apple logo is visible in the distance. There a number of rows of chairs in between. Tall steel grey pillars dominate the vertical space."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/6981b709e9.jpg"><img src="https://samgrover.micro.blog/uploads/2023/6981b709e9.jpg" alt="View of conference area from back and above. A large screen with the Apple logo is visible in the distance. There a number of rows of chairs in between. Tall steel grey pillars dominate the vertical space."></a></p>
 <p>I arrived about an hour before the keynote. After going through the security check, I made my way to Caffé Macs where the event was set up. There was food and beverages. I picked up some coffee, some overnight oats with blueberry compote, and a savory pastry. Once I was done with that I found spot amongst some Apple engineers just in time for the keynote to start.</p>
 <p>After the keynote was lunchtime. I walked round for a bit looking at all the food options before settling on the grilled chicken with salad. I took this over to the inner meadow where there were a number of tables set up.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/b2c188c364.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b2c188c364.jpg" alt="A number of tables are set up in rows in a meadow with people seated at them. Rainbow arches are visible in the distance. A cloudy hazy sky above."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/b2c188c364.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b2c188c364.jpg" alt="A number of tables are set up in rows in a meadow with people seated at them. Rainbow arches are visible in the distance. A cloudy hazy sky above."></a></p>
 <p>I sat down randomly and started to eat and chat with others. Turned out I was sitting right next to an industrial designer on the Vision Pro, so the conversation was mostly about that.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/10e7b90534.jpg"><img src="https://samgrover.micro.blog/uploads/2023/10e7b90534.jpg" alt="Curved glass windows separate the outside from the inside. People walking around and seated on tables outside. Everything is reflected in glassy ceilings and awnings."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/10e7b90534.jpg"><img src="https://samgrover.micro.blog/uploads/2023/10e7b90534.jpg" alt="Curved glass windows separate the outside from the inside. People walking around and seated on tables outside. Everything is reflected in glassy ceilings and awnings."></a></p>
 <p>Then it was time for the Platforms State of the Union. At first I went to the outside area by the main stage and sat on the fabric lounge chairs, but that was bothering my back so I came back inside to sit on a sturdier chair.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/e8c0b943ee.jpg"><img src="https://samgrover.micro.blog/uploads/2023/e8c0b943ee.jpg" alt="A number of people in blue T-shirts with WWDC23 written on their backs are watching a screen with a video playing."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/e8c0b943ee.jpg"><img src="https://samgrover.micro.blog/uploads/2023/e8c0b943ee.jpg" alt="A number of people in blue T-shirts with WWDC23 written on their backs are watching a screen with a video playing."></a></p>
 <p>As I watched the video, I also noticed the space, how it was full of sunlight, large indoor trees, and expansive and seamlessly transitioning from inside to outside. And every bit of it was curved. This was certainly a unique space.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/154449a030.jpg"><img src="https://samgrover.micro.blog/uploads/2023/154449a030.jpg" alt="Curved ceilings and windows let in sunlight high above the hall. The tops of steel pillars and indoor trees are also visible."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/4e4246649c.jpg"><img src="https://samgrover.micro.blog/uploads/2023/4e4246649c.jpg" alt="A view from above of people on the floor level. Curved glass wall from ground to ceiling in the left and an indoor terrace in the right."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/154449a030.jpg"><img src="https://samgrover.micro.blog/uploads/2023/154449a030.jpg" alt="Curved ceilings and windows let in sunlight high above the hall. The tops of steel pillars and indoor trees are also visible."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/4e4246649c.jpg"><img src="https://samgrover.micro.blog/uploads/2023/4e4246649c.jpg" alt="A view from above of people on the floor level. Curved glass wall from ground to ceiling in the left and an indoor terrace in the right."></a></p>
 <p>Once that video was done, it was time for other social events. I had previously signed up for walking tours of the inner meadow and of the ring building, but that system seemed to have not worked too well for Apple as they were now just organizing all that on a first come first served basis. I got in line for the inner meadow tour.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/81b8070fa5.jpg"><img src="https://samgrover.micro.blog/uploads/2023/81b8070fa5.jpg" alt="A young man is sitting at a table outdoors under a shade structure. He is using an Apple computer from thirty to forty years ago. He is surrounded by other similar tables which are all empty. In the background are a bunch of fruit trees."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/81b8070fa5.jpg"><img src="https://samgrover.micro.blog/uploads/2023/81b8070fa5.jpg" alt="A young man is sitting at a table outdoors under a shade structure. He is using an Apple computer from thirty to forty years ago. He is surrounded by other similar tables which are all empty. In the background are a bunch of fruit trees."></a></p>
 <p>The <a href="https://umap.openstreetmap.fr/en/map/the-inner-meadow-tour-at-wwdc-2023_927319?scaleControl=false&amp;miniMap=false&amp;scrollWheelZoom=false&amp;zoomControl=true&amp;allowEdit=false&amp;moreControl=true&amp;searchControl=null&amp;tilelayersControl=null&amp;embedControl=null&amp;datalayersControl=true&amp;onLoadPanel=undefined&amp;captionBar=false&amp;captionMenus=true">tour lasted about thirty minutes</a>. Our first stop was by some fruit trees where a docent talked about all the fruit they grow and how it is all set up.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/f61c9b2d68.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f61c9b2d68.jpg" alt="A curved concave building with large glass windows is visible in the distance. Fruit trees are in the foreground."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/f61c9b2d68.jpg"><img src="https://samgrover.micro.blog/uploads/2023/f61c9b2d68.jpg" alt="A curved concave building with large glass windows is visible in the distance. Fruit trees are in the foreground."></a></p>
 <p>The second stop was by a shallow pond. In the center of the pond was a round plate that goes up and down. This creates a gentle wave that is imperceptible unless one is looking closely, but makes a definite wave crashing sound as it reached the edge of the pond. that was pretty cool.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/9de7075f2e.jpg"><img src="https://samgrover.micro.blog/uploads/2023/9de7075f2e.jpg" alt="A large round pond with a couple of ducks near the center. Behind it is a small hill with trees. The top of a curved building is behind that. Over it is a cloudy sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/9de7075f2e.jpg"><img src="https://samgrover.micro.blog/uploads/2023/9de7075f2e.jpg" alt="A large round pond with a couple of ducks near the center. Behind it is a small hill with trees. The top of a curved building is behind that. Over it is a cloudy sky."></a></p>
 <p>The third and final stop was by the rainbow arches where a different docent talked about how it came to be as originally a temporary sculpture that was later made permanent. Then we made our way back on the same path.</p>
 <p>Right after that I got in line for the building tour. This was very popular and there was a lot of management going on to get people into small batches and move them along as tour guides returned from their previous tour and started a new one. At this point it definitely felt like I was in line for a theme park ride.</p>
 <p>The ring tour took us upstairs to the third level from one side of Caffé Macs. Then to the inner side of the building, across the terrace overlooking the main event area and back down.</p>
@@ -318,28 +252,28 @@ The Main Event The announcements at the event and the hot takes around it have g
 <li>The roof hosts the largest solar installation on a building.</li>
 <li>The building temperature is maintained at a comfortable level by passive mechanisms most of the time.</li>
 </ul>
-<p><a href="https://samgrover.micro.blog/uploads/2023/cc2fc5b487.jpg"><img src="https://samgrover.micro.blog/uploads/2023/cc2fc5b487.jpg" alt="A view through the convex side of a curved glass window. The curve extends far into the background showing four levels of such windows and awnings. In the right is a field with trees. Above is cloudy sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/250ac15a8f.jpg"><img src="https://samgrover.micro.blog/uploads/2023/250ac15a8f.jpg" alt="A view from above of a row of tables with white umbrellas extending halfway to the background where there is a meadow with rainbow arches in the distance. The other side of the curved building is beyond that with trees spotted all around. In the distance are some hills and a cloudy sky."></a></p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/8ece021f18.jpg"><img src="https://samgrover.micro.blog/uploads/2023/8ece021f18.jpg" alt="An interior view of a conference area as seen from above. There are a number of chairs, some people, a few style pillars and trees."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/cc2fc5b487.jpg"><img src="https://samgrover.micro.blog/uploads/2023/cc2fc5b487.jpg" alt="A view through the convex side of a curved glass window. The curve extends far into the background showing four levels of such windows and awnings. In the right is a field with trees. Above is cloudy sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/250ac15a8f.jpg"><img src="https://samgrover.micro.blog/uploads/2023/250ac15a8f.jpg" alt="A view from above of a row of tables with white umbrellas extending halfway to the background where there is a meadow with rainbow arches in the distance. The other side of the curved building is beyond that with trees spotted all around. In the distance are some hills and a cloudy sky."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/8ece021f18.jpg"><img src="https://samgrover.micro.blog/uploads/2023/8ece021f18.jpg" alt="An interior view of a conference area as seen from above. There are a number of chairs, some people, a few style pillars and trees."></a></p>
 <p>From there we walked over to an area by the campus transit center. There we descended to a lower level where a gallery space had been set up showing photos and videos from behind the scenes of a project called <a href="https://mirage.place"><em>Mirage</em></a>. There were even some samples of the cast glass made for the project.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/680384854f.jpg"><img src="https://samgrover.micro.blog/uploads/2023/680384854f.jpg" alt="Glass awnings and windows are visible on three consecutive levels as viewed from the ground. Blue sky with wispy clouds above."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/680384854f.jpg"><img src="https://samgrover.micro.blog/uploads/2023/680384854f.jpg" alt="Glass awnings and windows are visible on three consecutive levels as viewed from the ground. Blue sky with wispy clouds above."></a></p>
 <p>Next up was the Apple Design Awards event. While it is definitely a crowning achievement for the winners, it is always fun and inspiring to see <a href="https://developer.apple.com/design/awards/">all the apps that make it to the finals</a>, and this year was no exception. There was a lot of excitement and joy in the design awards.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/b1354c77b9.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b1354c77b9.jpg" alt="On the left is a cherry tree with ripe cherries. On the right are some chairs with people sitting on them as seen from behind. In the distance is a stage with three people and a screen that says “Apple Design Awards”."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/b1354c77b9.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b1354c77b9.jpg" alt="On the left is a cherry tree with ripe cherries. On the right are some chairs with people sitting on them as seen from behind. In the distance is a stage with three people and a screen that says “Apple Design Awards”."></a></p>
 <p>Following the awards ceremony, was the final event of the day. It was billed as &ldquo;Special Evening Activity&rdquo; in the days leading up to WWDC, but it was announced earlier that it would be a visit to the Steve Jobs Theater for something related to the Vision Pro hardware. It was unclear if people would get a chance to try it out so there was suddenly a surge of people towards that direction because of course no one wanted to miss that opportunity if it presented itself. The crowd was met by a line of Apple employees that stopped the flow, while whatever final preparations were made so that we could be led there in small batches. Apparently inside the cafe were preparations for beverages and dinner, but I&rsquo;m not sure if anyone made it to that.</p>
 <p>Thankfully I was near the front of the crowd, so my wait was only about thirty minutes. I walked over to the theater, which was hidden from view until the very last bend in the path.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/a02094e55c.jpg"><img src="https://samgrover.micro.blog/uploads/2023/a02094e55c.jpg" alt="A path leads to a circular building in the distance. There are people going to and coming from there. The building has floor to ceiling glass which is reflecting some light from the setting sun. The sky above is partly cloudy."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/a02094e55c.jpg"><img src="https://samgrover.micro.blog/uploads/2023/a02094e55c.jpg" alt="A path leads to a circular building in the distance. There are people going to and coming from there. The building has floor to ceiling glass which is reflecting some light from the setting sun. The sky above is partly cloudy."></a></p>
 <p>Inside the building was a display of all the new mac hardware but also a line to go downstairs. I made my way down there and into a hands-off area where a number of Vision Pro were on display to see, but not to handle.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/99f5c56796.jpg"><img src="https://samgrover.micro.blog/uploads/2023/99f5c56796.jpg" alt="An up-close photo of two Apple Vision Pro devices with people in the blurred background."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/99f5c56796.jpg"><img src="https://samgrover.micro.blog/uploads/2023/99f5c56796.jpg" alt="An up-close photo of two Apple Vision Pro devices with people in the blurred background."></a></p>
 <p>A few minutes later as I emerged from the theater building, I saw this lovely sunset view of the grass and the main building.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/afdcce21ff.jpg"><img src="https://samgrover.micro.blog/uploads/2023/afdcce21ff.jpg" alt="Golden grass in the foreground and Apple Park building in the distance, with a dramatic cloudy sky above. Everything is lit by the late evening sunlight."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/afdcce21ff.jpg"><img src="https://samgrover.micro.blog/uploads/2023/afdcce21ff.jpg" alt="Golden grass in the foreground and Apple Park building in the distance, with a dramatic cloudy sky above. Everything is lit by the late evening sunlight."></a></p>
 <p>From there I made my way out as that was it for the day.</p>
 <h3 id="the-evening-before-the-main-event">The Evening Before the Main Event</h3>
-<p><a href="https://samgrover.micro.blog/uploads/2023/e15e7ccb74.jpg"><img src="https://samgrover.micro.blog/uploads/2023/e15e7ccb74.jpg" alt="A selfie of me in front of the “1 Infinite Loop” sign."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/e15e7ccb74.jpg"><img src="https://samgrover.micro.blog/uploads/2023/e15e7ccb74.jpg" alt="A selfie of me in front of the “1 Infinite Loop” sign."></a></p>
 <p>The main event was on Monday, but an early check-in gathering was organized for the evening before at Apple&rsquo;s old headquarters at Infinite Loop. I arrived there at about 6pm. There were hundreds of Apple retail employees at various stations for facilitating check-ins and to greet people as they arrived and left. On check-in I received a badge and also a tote bag filled with goodies.</p>
-<p><a href="https://samgrover.micro.blog/uploads/2023/b75047e728.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b75047e728.jpg" alt="Event swag on a table: tote bag, black cap, small black insulated tumblr, various enamel pins."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/b75047e728.jpg"><img src="https://samgrover.micro.blog/uploads/2023/b75047e728.jpg" alt="Event swag on a table: tote bag, black cap, small black insulated tumblr, various enamel pins."></a></p>
 <p>The gathering was in a courtyard-like large open area surrounded by campus buildings. There were beverages, and seating. I got a beverage and mulled about the crowd. I met a couple of people I knew from online, and a few other people that I&rsquo;d not met before. I was there for less than an hour and left shortly before the event ended, to make my way to Miniboss Arcade in downtown San Jose for the <a href="https://www.revenuecat.com/blog/company/bay-area-jun23/">RevenueCat party</a>.</p>
 <h3 id="the-morning-after-the-main-event">The Morning After the Main Event</h3>
-<p><a href="https://samgrover.micro.blog/uploads/2023/4003a3622c.jpg"><img src="https://samgrover.micro.blog/uploads/2023/4003a3622c.jpg" alt="A dimly lit theater in blue and red light, with a screen showing the Apple logo. A number of seated people are viewed from behind."></a></p>
+<p class="post-photo"><a href="https://samgrover.micro.blog/uploads/2023/4003a3622c.jpg"><img src="https://samgrover.micro.blog/uploads/2023/4003a3622c.jpg" alt="A dimly lit theater in blue and red light, with a screen showing the Apple logo. A number of seated people are viewed from behind."></a></p>
 <p>On Tuesday morning I went to an event at the Apple Developer Center, across the street from Apple Park. We were led into their Big Sur theater that seats two hundred people. There we got a live presentation about the space and how it is relevant to developers. That was followed by second presentation about developing for visionOS using RealityKit, ARKit, Reality Composer Pro, and the new simulator. It looks like Apple has put a lot of thought into making this new platform approachable by developers who currently build apps for all their existing platforms, but perhaps have no experience with developing for headsets using 3D frameworks.</p>
 <p>After the presentation we were led to a space that had beverages and food for socializing and meeting people from relevant teams at Apple. This developer center event was unexpected and I was pleasantly surprised at the thought that went into it. It was a nice culmination of my time in person at WWDC.</p>
 <p><strong>My heartiest gratitude to the people of Apple for their hospitality ❤️</strong></p>
@@ -351,18 +285,18 @@ The Main Event The announcements at the event and the hot takes around it have g
       <time class="post-meta-date" datetime="2023-06-12T08:20:23-07:00"
         >Jun 12, 2023</time
       ></div>
-  </footer><nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  </footer></div>
+
+  <nav
+    class="post-nav flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   ><a class="ltr:pr-3 rtl:pl-3" href="https://samgrover.com/2023/06/13/went-to-a.html"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span></span></a
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Jun 13, 2023</span></a
     ><a
       class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
       href="https://samgrover.com/2023/06/10/saturday-morning-vibes.html"
-      ><span></span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
-    ></nav></article></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+      ><span>Jun 10, 2023</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

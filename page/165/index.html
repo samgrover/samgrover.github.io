@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,60 +205,30 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>I don’t know and nether do you. What we do know is the annual suicide rate per 100,000 people in China is about 13.5, with slightly more women than men taking their own lives (the only major country where that is the case, by the way). That means the Foxconn factory, with 300,000 workers, ought to be experiencing almost 40 suicides per year, while the reported numbers are a lot less than that.</p>
 </blockquote>
 <p>— <a href="http://www.cringely.com/2010/05/death-by-foxconn/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+ICringely+%28I%2C+Cringely%29">I, Cringely » Blog Archive » Death by Foxconn - Cringely on technology</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2010/05/27/i-dont-know.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2010-05-27T13:47:00-07:00"
-      >May 27, 2010</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2010/05/27/i-dont-know.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2010-05-27T13:47:00-07:00"
+          >May 27, 2010</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body">
 			<div
 					style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 				<iframe
@@ -302,16 +240,19 @@
 <p><a href="http://vimeo.com/11886557">iPad + Velcro</a> (by <a href="http://vimeo.com/user478713">Jesse Rosten</a>) (via @StevenWalling)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2010/05/25/ipad-velcro-by.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2010-05-25T21:28:00-07:00"
-      >May 25, 2010</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2010/05/25/ipad-velcro-by.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2010-05-25T21:28:00-07:00"
+          >May 25, 2010</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/632643095.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/632643095.jpg" alt="A screenshot of a social media feed featuring posts about a thunderstorm in Southeast Portland."></a>
   
 </figure>
@@ -319,32 +260,38 @@
 <p>The Portland thunder effect on Twitter</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2010/05/25/the-portland-thunder.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2010-05-25T16:51:00-07:00"
-      >May 25, 2010</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2010/05/25/the-portland-thunder.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2010-05-25T16:51:00-07:00"
+          >May 25, 2010</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 			<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/0PD_FoghF5Y?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
 		</div>
 
 <p>Video of some jellyfishes that I recorded at the Oregon Coast Aquarium.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2010/05/23/video-of-some.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2010-05-23T19:18:00-07:00"
-      >May 23, 2010</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2010/05/23/video-of-some.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2010-05-23T19:18:00-07:00"
+          >May 23, 2010</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>Microsoft—in a nutshell—is a company that had one successful product that we are all beholden to—that then used that capital to buy other people’s products and ruin them. They are not bad people, but they do stab their friends in the back. Also, they are a bunch of nerds, which is probably why they have never managed to produce a decent interface.</p>
 </blockquote>
 <blockquote>
@@ -356,16 +303,19 @@
 <p>— <a href="http://atomicwang.org/motherfucker/Index/Entries/2010/5/21__cough__bullshit__cough_.html">Mike Lee</a> (via <a href="http://tumblr.caseyliss.com/">caseyliss</a>) (via <a href="http://www.marco.org/">marco</a>, <a href="http://peroty.tumblr.com/post/621170890/microsoft-in-a-nutshell-is-a-company-that-had-one">peroty</a>)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2010/05/23/p-microsoft-in.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2010-05-23T18:01:00-07:00"
-      >May 23, 2010</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2010/05/23/p-microsoft-in.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2010-05-23T18:01:00-07:00"
+          >May 23, 2010</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/622954201.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/622954201.jpg" alt="A laptop displaying a video call with a smiling woman."></a>
   
 </figure>
@@ -373,39 +323,39 @@
 <p>Video chatting with @lilbutterfly. Thanks Google!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2010/05/22/video-chatting-with.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2010-05-22T13:44:00-07:00"
-      >May 22, 2010</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2010/05/22/video-chatting-with.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2010-05-22T13:44:00-07:00"
+          >May 22, 2010</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Hello Small Society</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2010/04/03/hello-small-society.html"
-    >Hello Small Society</a
-  >
-</section><section><p>This blog post is long overdue and if you&rsquo;ve been following me on Twitter of Facebook, this is old news for you and you can just go ahead and skip to the last paragraph.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2010/04/03/hello-small-society.html">Hello Small Society</a></h2>
+    </div><section class="post-body"><p>This blog post is long overdue and if you&rsquo;ve been following me on Twitter of Facebook, this is old news for you and you can just go ahead and skip to the last paragraph.</p>
 <p>In March I left Intel to start working at <a href="https://smallsociety.com/">Small Society</a>. This has been an interesting and welcome change in my life and career. I was working on really cool computer security research at Intel Labs. However, on the side, I was gaining strong interest in developing apps with Cocoa on the Mac and iPhone OS platform ever since I started working on that over a year ago.</p>
 <p>When I started to look around for a place to work on iPhone apps, Small Society was on the top of that list. Based in Portland, they have created apps for some of the leading brands in the world, including Starbucks, Whole Foods, Zipcar and Obama &lsquo;08. In fact the first draft of this post is being written on the iPad using the WordPress iPad app developed for Automattic by Small Society.</p>
 <p>It&rsquo;s been an interesting seven weeks since I joined and I&rsquo;m thoroughly enjoying the work that I&rsquo;m doing and the people I&rsquo;m working with. We&rsquo;ve just hired two new people this week and are looking to hire a senior Cocoa developer. Check out <a href="https://portland.craigslist.org/mlt/sof/1729464996.html">this job listing</a> on Craigslist for details.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2010/04/03/hello-small-society.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2010-04-03T13:47:42-07:00"
-      >Apr 3, 2010</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2010/04/03/hello-small-society.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2010-04-03T13:47:42-07:00"
+          >Apr 3, 2010</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Liz is making films</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2010/01/03/liz-is-making.html"
-    >Liz is making films</a
-  >
-</section><section><p>The last few months, Liz has invested her time into learning more about the skills of filmmaking. Here are a couple of short documentaries that she has created recently.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2010/01/03/liz-is-making.html">Liz is making films</a></h2>
+    </div><section class="post-body"><p>The last few months, Liz has invested her time into learning more about the skills of filmmaking. Here are a couple of short documentaries that she has created recently.</p>
 <p>This first film, about Ignite Portland, is her solo work.</p>
 <p><a href="https://vimeo.com/moogaloop.swf?clip_id=8410879%EF%BF%BDserver=vimeo.com%EF%BF%BDshow_title=1%EF%BF%BDshow_byline=1%EF%BF%BDshow_portrait=0%EF%BF%BDcolor=00ADEF%EF%BF%BDfullscreen=1">https://vimeo.com/moogaloop.swf?clip_id=8410879&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1</a><p><a href="https://vimeo.com/8410879">Ignite Portland, A Documentary Short</a> from <a href="https://vimeo.com/lizgrover">Liz Grover</a> on <a href="https://vimeo.com">Vimeo</a>.</p></p>
 <p>This second film, about sustainability, was done in collaboration with a few others.</p>
@@ -414,16 +364,19 @@
 <p>Oh, and Happy New Year!</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2010/01/03/liz-is-making.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2010-01-03T15:54:46-07:00"
-      >Jan 3, 2010</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2010/01/03/liz-is-making.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2010-01-03T15:54:46-07:00"
+          >Jan 3, 2010</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/299487944_0.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/299487944_0.jpg" alt="An illuminated sign reading &#34;Welcome to Peacock Lane Since 1929&#34; featuring a colorful peacock light display."></a>
   
 </figure>
@@ -456,16 +409,19 @@
 <p>Decorations at Peacock Lane in Portland</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2009/12/24/decorations-at-peacock.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2009-12-24T20:53:00-08:00"
-      >Dec 24, 2009</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2009/12/24/decorations-at-peacock.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2009-12-24T20:53:00-08:00"
+          >Dec 24, 2009</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/291353230.jpg"><img src="https://f001.backblazeb2.com/file/com-samgrover-imports/tumblr/291353230.jpg" alt="Three people sit on orange couches in a festively decorated room."></a>
   
 </figure>
@@ -473,21 +429,20 @@
 <p>Five minutes to go at @30hourday</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2009/12/19/five-minutes-to.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2009-12-19T22:06:00-08:00"
-      >Dec 19, 2009</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/164/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2009/12/19/five-minutes-to.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2009-12-19T22:06:00-08:00"
+          >Dec 19, 2009</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/164/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/166/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

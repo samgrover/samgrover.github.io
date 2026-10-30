@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="samgrover.com">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,45 +205,12 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54600857378_c7f05a5dea_h.jpg"><img src="https://live.staticflickr.com/65535/54600857378_c7f05a5dea_h.jpg" alt="Golden grass-covered hillside overlooking a reservoir flanked by tall evergreens, with a small structure, and city skyline under a blue sky with wispy clouds in the background."></a>
   
 </figure>
@@ -283,16 +218,19 @@
 <p>Went on a walk at Mt. Tabor Park after a long time. Had been missing it. It was a lovely day for it.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/06/19/mt-tabor-walk.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-06-19T13:26:48-07:00"
-      >Jun 19, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/06/19/mt-tabor-walk.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-06-19T13:26:48-07:00"
+          >Jun 19, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54574222332_52218cd0f3_h.jpg"><img src="https://live.staticflickr.com/65535/54574222332_52218cd0f3_h.jpg" alt="A pastel-toned stylized fox mural framed by geometric black lines on a wall, intersected by a diagonal lamp shadow."></a>
   
 </figure>
@@ -320,16 +258,19 @@
 <p>Morning walk in Central Eastside. Portland, Oregon. 7th June, 2025.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/06/08/central-eastside-walk.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-06-08T09:49:58-07:00"
-      >Jun 8, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/06/08/central-eastside-walk.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-06-08T09:49:58-07:00"
+          >Jun 8, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54573690478_b0b9d07ad4_h.jpg"><img src="https://live.staticflickr.com/65535/54573690478_b0b9d07ad4_h.jpg" alt="A grid of sixteen square photos of various flowers"></a>
   
 </figure>
@@ -338,29 +279,35 @@
 <p>All photos taken at the same distance from the lens.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/06/07/yard-flowers.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-06-07T12:56:37-07:00"
-      >Jun 7, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/06/07/yard-flowers.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-06-07T12:56:37-07:00"
+          >Jun 7, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Plex Privacy PSA: <a href="https://www.plex.tv/vendors-us/">plex.tv/vendors-us/</a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Plex Privacy PSA: <a href="https://www.plex.tv/vendors-us/">plex.tv/vendors-us/</a></p>
 <p>/via <a href="https://atp.fm/642">atp.fm/642</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/06/06/plex-privacy-psa.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-06-06T14:47:10-07:00"
-      >Jun 6, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/06/06/plex-privacy-psa.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-06-06T14:47:10-07:00"
+          >Jun 6, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54545133939_b374078caa_h.jpg"><img src="https://live.staticflickr.com/65535/54545133939_b374078caa_h.jpg" alt="Distorted reflection of me in a silvery tiled surface taking a photo with my iPhone."></a>
   
 </figure>
@@ -368,16 +315,19 @@
 <p>Noticed the shiny tile at the cafe.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/05/24/shiny-tile-cafe.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-05-25T14:48:09-07:00"
-      >May 25, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/05/24/shiny-tile-cafe.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-05-25T14:48:09-07:00"
+          >May 25, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54539059437_1053ef9fe3_h.jpg"><img src="https://live.staticflickr.com/65535/54539059437_1053ef9fe3_h.jpg" alt="A black and white photo of a silhouette of a fighter jet flying high above white clouds against a muted gray sky."></a>
   
 </figure>
@@ -385,42 +335,51 @@
 <p>Overhead. Portland, Oregon. 18th May, 2025.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/05/23/overhead.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-05-23T09:37:56-07:00"
-      >May 23, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/05/23/overhead.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-05-23T09:37:56-07:00"
+          >May 23, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>This blog has moved over to a <a href="https://gohugo.io">Hugo</a> based site that I generate manually. I did most of the prep work over last weekend and just completed the finishing touches. I&rsquo;ve started with a simple theme, and hope to build on it in the future. I&rsquo;ve wanted to do this for a very long time and I&rsquo;m glad to have gotten here.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>This blog has moved over to a <a href="https://gohugo.io">Hugo</a> based site that I generate manually. I did most of the prep work over last weekend and just completed the finishing touches. I&rsquo;ve started with a simple theme, and hope to build on it in the future. I&rsquo;ve wanted to do this for a very long time and I&rsquo;m glad to have gotten here.</p>
 <p>It is now hosted on <a href="https://pages.github.com">Github Pages</a> where the feature set easily accommodates my needs at this time. I was trying to recall the journey of this blog, and from memory it seems to have gone this route over the last 20-ish years: Blogger, Wordpress, Tumblr, Wordpress, and lastly Micro.blog.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/05/21/blog-moving-day.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-05-21T17:54:11-07:00"
-      >May 21, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/05/21/blog-moving-day.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-05-21T17:54:11-07:00"
+          >May 21, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>There&rsquo;s a person in my wife’s run club whose aunt went to school with the Pope, so my Pope number is 4.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>There&rsquo;s a person in my wife’s run club whose aunt went to school with the Pope, so my Pope number is 4.</p>
 <p>#PopeNumber</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/05/15/theres-a-person-in-my.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-05-15T18:08:37-07:00"
-      >May 15, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/05/15/theres-a-person-in-my.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-05-15T18:08:37-07:00"
+          >May 15, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54522371488_e66635d2c8_h.jpg"><img src="https://live.staticflickr.com/65535/54522371488_e66635d2c8_h.jpg" alt="A wooden garden bed with rich soil, bordered by a path of cedar chips mulch, surrounded by young green plants, and a California lilac in the background."></a>
   
 </figure>
@@ -428,16 +387,19 @@
 <p>Morning Garden. 1st May, 2025.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/05/15/morning-garden-st-may.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-05-15T16:25:54-07:00"
-      >May 15, 2025</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/05/15/morning-garden-st-may.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-05-15T16:25:54-07:00"
+          >May 15, 2025</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><figure>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54517422778_05d4fdb24f_h.jpg"><img src="https://live.staticflickr.com/65535/54517422778_05d4fdb24f_h.jpg" alt="A fast food restaurant named &amp;quot;Chicken Connection&amp;quot; is in a mall food court. The counter displays illuminated menu boards featuring various chicken dishes. In front, there are empty tables and chairs on a tiled floor."></a>
   
 </figure>
@@ -450,21 +412,20 @@
 <p>Lloyd Center, Portland, Oregon. 9th May, 2025.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2025/05/10/lloyd-center-portland-oregon-th.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2025-05-10T14:30:48-07:00"
-      >May 10, 2025</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/page/8/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2025/05/10/lloyd-center-portland-oregon-th.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2025-05-10T14:30:48-07:00"
+          >May 10, 2025</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/8/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/page/10/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

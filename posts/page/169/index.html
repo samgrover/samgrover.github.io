@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,49 +205,13 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Avatari now supports AddressBook, iChat, Shizzow and auto-updating!</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2009/04/18/avatari-now-supports.html"
-    >Avatari now supports AddressBook, iChat, Shizzow and auto-updating!</a
-  >
-</section><section><div style="text-align:center;">![](https://farm4.static.flickr.com/3311/3454418766_249edbc108.jpg)</div>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2009/04/18/avatari-now-supports.html">Avatari now supports AddressBook, iChat, Shizzow and auto-updating!</a></h2>
+    </div><section class="post-body"><div style="text-align:center;">![](https://farm4.static.flickr.com/3311/3454418766_249edbc108.jpg)</div>
 <p>You wanted AddressBook and iChat support. It is here!</p>
 <p>I wanted more web services to adopt an API for uploading avatars. <a href="https://shizzow.com/">Shizzow</a> responded with enthusiasm. That support is here too!</p>
 <p>By enabling AddressBook and/or iChat support, entries appear in the account list for each of those. When you are ready to update your avatar, just select them if you want to update those too.</p>
@@ -291,20 +223,20 @@
 <p>Requires Mac OS X 10.5 (Leopard). Runs on Intel and PowerPC based Mac computers. Supports multiple accounts on Twitter, FriendFeed, Shizzow and your Mac&rsquo;s AddressBook, iChat.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2009/04/18/avatari-now-supports.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2009-04-18T18:37:36-07:00"
-      >Apr 18, 2009</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2009/04/18/avatari-now-supports.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2009-04-18T18:37:36-07:00"
+          >Apr 18, 2009</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Announcing Avatari</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2009/04/01/announcing-avatari.html"
-    >Announcing Avatari</a
-  >
-</section><section><div style="text-align:center;">![](https://farm4.static.flickr.com/3569/3373892894_41bf3b3b21_o.png)</div>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2009/04/01/announcing-avatari.html">Announcing Avatari</a></h2>
+    </div><section class="post-body"><div style="text-align:center;">![](https://farm4.static.flickr.com/3569/3373892894_41bf3b3b21_o.png)</div>
 Avatari is an application to update your avatars across the Internet with one click.
 <p>I keep my avatar the same most of the time but every now and then I would replace it for a short period to represent a holiday or a cause or some event. When I would do that it would annoy me that I had to go to each individual location where I had uploaded my avatar for a brief replacement.</p>
 <p>Not anymore.</p>
@@ -317,20 +249,20 @@ Avatari is an application to update your avatars across the Internet with one cl
 <p>Requires Mac OS X Leopard 10.5.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2009/04/01/announcing-avatari.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2009-04-01T20:02:47-07:00"
-      >Apr 1, 2009</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2009/04/01/announcing-avatari.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2009-04-01T20:02:47-07:00"
+          >Apr 1, 2009</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Avatari Teaser</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2009/03/21/avatari-teaser.html"
-    >Avatari Teaser</a
-  >
-</section><section><div style="text-align:center;">![](https://farm4.static.flickr.com/3569/3373892894_41bf3b3b21_o.png)</div>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2009/03/21/avatari-teaser.html">Avatari Teaser</a></h2>
+    </div><section class="post-body"><div style="text-align:center;">![](https://farm4.static.flickr.com/3569/3373892894_41bf3b3b21_o.png)</div>
 <div style="text-align:center;"><strong>Avatar</strong>. noun. <em>Sanskrit</em>. An incarnation. An image of a user.
 <p><strong>Avatari</strong>. noun. <em>Sanskrit</em>. The source of avatars.</p>
 <p>Follow: <a href="https://twitter.com/AvatariApp">https://twitter.com/AvatariApp</a></p>
@@ -338,37 +270,37 @@ Avatari is an application to update your avatars across the Internet with one cl
 </div>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2009/03/21/avatari-teaser.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2009-03-21T14:13:08-07:00"
-      >Mar 21, 2009</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2009/03/21/avatari-teaser.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2009-03-21T14:13:08-07:00"
+          >Mar 21, 2009</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">My first job: web design</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2009/01/22/my-first-job.html"
-    >My first job: web design</a
-  >
-</section><section><p style="margin:0;padding:0 0 10px;">I earned my first paycheck in 1998 by creating a website for my uncle's business. The amount was Rs. 5000, which is about $100 at today's exchange rate.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2009/01/22/my-first-job.html">My first job: web design</a></h2>
+    </div><section class="post-body"><p style="margin:0;padding:0 0 10px;">I earned my first paycheck in 1998 by creating a website for my uncle's business. The amount was Rs. 5000, which is about $100 at today's exchange rate.</p>
 <p style="margin:0;padding:0 0 10px;"><em>Update (01/30/2009):</em> I made this post when trying out <a title="Plinky" href="https://www.plinky.com/">Plinky</a>. Probably won't be using the service anymore.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2009/01/22/my-first-job.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2009-01-22T18:58:02-07:00"
-      >Jan 22, 2009</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2009/01/22/my-first-job.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2009-01-22T18:58:02-07:00"
+          >Jan 22, 2009</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">My experience with the Wii</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2008/11/22/my-experience-with.html"
-    >My experience with the Wii</a
-  >
-</section><section><div style="text-align:center;">![](https://farm4.static.flickr.com/3141/3051210196_df7e418508_m.jpg)</div>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2008/11/22/my-experience-with.html">My experience with the Wii</a></h2>
+    </div><section class="post-body"><div style="text-align:center;">![](https://farm4.static.flickr.com/3141/3051210196_df7e418508_m.jpg)</div>
 It has been a little over eight months since I [bought the Wii](https://blog.samgrover.com/2008/03/16/time-to-play-again/). Even though my best video game experiences have been on a PC, the Wii holds its own and is a pleasure to play.
 <p>I started with the wonderful Super Mario Galaxy and it was the only Wii game I played until a couple of months ago. Then, for five days each, I rented Transformers, Super Smash Brothers Brawl, Star Wars: The Force Unleashed, one after another. And although I didn&rsquo;t really get in to Brawl, I thoroughly enjoyed the other two.</p>
 <p>Then came October, and my awesome mother-in-law completely surprised me with two Wii games for my birthday. Pirates of the Carribean: At World&rsquo;s End and The Mummy: Tomb of the Dragon Emperor. Both are based on movies that I haven&rsquo;t seen. I&rsquo;ve enjoyed The Mummy more than Pirates.</p>
@@ -376,35 +308,38 @@ It has been a little over eight months since I [bought the Wii](https://blog.sam
 <p>Next week Liz and I leave for a vacation to Asia, but when I&rsquo;m back in January, I&rsquo;ll sure have a bunch of Wii games to play :)</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/11/22/my-experience-with.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-11-22T14:03:52-07:00"
-      >Nov 22, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/11/22/my-experience-with.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-11-22T14:03:52-07:00"
+          >Nov 22, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>Schwarzenegger said his wife has been “gloating now for these last few days” and running around the house with a life-size cutout of Obama saying, “We won.”</p>
 </blockquote>
 <p>— <a href="http://politicalticker.blogs.cnn.com/2008/11/09/calif-governor-says-hes-allowed-back-in-bedroom/">CNN Political Ticker: All politics, all the time Blog Archive - Calif. governor says he’s allowed ‘back into the bedroom’ « - Blogs from CNN.com</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/11/09/schwarzenegger-said-his.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-11-09T14:25:00-08:00"
-      >Nov 9, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/11/09/schwarzenegger-said-his.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-11-09T14:25:00-08:00"
+          >Nov 9, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Happy Obama Day!</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2008/11/05/happy-obama-day.html"
-    >Happy Obama Day!</a
-  >
-</section><section><p>I sent the following out to my friends and family in the US and abroad, then decided to share it here too.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2008/11/05/happy-obama-day.html">Happy Obama Day!</a></h2>
+    </div><section class="post-body"><p>I sent the following out to my friends and family in the US and abroad, then decided to share it here too.</p>
 <blockquote>Dear friends,
 <div>Congratulations!</div>
 <div><p>Hope you are well. What an awesome night. Liz and I are elated and the mood in Portland is ecstatic, as it is in several parts of the US and the globe. Everyone I know is happy. With the state of things, there are probably tough times ahead but this makes it so much better. In whatever way you may have contributed to this day, I thank you.</p></div>
@@ -412,35 +347,38 @@ It has been a little over eight months since I [bought the Wii](https://blog.sam
 <div>Sam</div></blockquote>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/11/05/happy-obama-day.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-11-05T14:28:27-07:00"
-      >Nov 5, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/11/05/happy-obama-day.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-11-05T14:28:27-07:00"
+          >Nov 5, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><blockquote>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><blockquote>
 <p>From far away, this is how it looks: There is a country out there where tens of millions of white Christians, voting freely, select as their leader a black man of modest origin, the son of a Muslim. There is a place on Earth — call it America — where such a thing happens.</p>
 </blockquote>
 <p>— <a href="http://www.nytimes.com/2008/11/05/us/politics/05global.html">The Promise - For Many Abroad, an Ideal Renewed - NYTimes.com</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/11/05/from-far-away.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-11-05T10:17:00-08:00"
-      >Nov 5, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/11/05/from-far-away.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-11-05T10:17:00-08:00"
+          >Nov 5, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Thirty-two</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2008/10/11/thirtytwo.html"
-    >Thirty-two</a
-  >
-</section><section><p>I&rsquo;ve never blogged about my birthday before, which is strange because I&rsquo;ve had thirty-one of them. A few seconds ago I turned thirty-two.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2008/10/11/thirtytwo.html">Thirty-two</a></h2>
+    </div><section class="post-body"><p>I&rsquo;ve never blogged about my birthday before, which is strange because I&rsquo;ve had thirty-one of them. A few seconds ago I turned thirty-two.</p>
 <p>Here are some personally memorable events since my last birthday:</p>
 <ul>
 	<li>October - Made a trip to India for dad's 60th birthday celebration.</li>
@@ -458,40 +396,39 @@ It was a wonderful year and I'm looking forward to the next one.
 <p>And lastly, here&rsquo;s more about the number <a href="https://en.wikipedia.org/wiki/32_(number)">32</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/10/11/thirtytwo.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-10-11T02:40:22-07:00"
-      >Oct 11, 2008</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/10/11/thirtytwo.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-10-11T02:40:22-07:00"
+          >Oct 11, 2008</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">ff2tweet</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2008/09/28/fftweet.html"
-    >ff2tweet</a
-  >
-</section><section><p>I got sick of reposting to Twitter what I had just posted to FriendFeed. I was doing that to enable conversations in both networks. I tried twitterfeed and Yahoo! Pipes, before deciding to just write a tool to do exactly what I wanted.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2008/09/28/fftweet.html">ff2tweet</a></h2>
+    </div><section class="post-body"><p>I got sick of reposting to Twitter what I had just posted to FriendFeed. I was doing that to enable conversations in both networks. I tried twitterfeed and Yahoo! Pipes, before deciding to just write a tool to do exactly what I wanted.</p>
 <p>ff2tweet is a tool to convert a FriendFeed post into a tweet and post it to Twitter. It does so while ensuring that the tweet is within the character limit and incorporates any comment made by the user when posting on FriendFeed. It also inspects the link in the post to shorten and add to the tweet as necessary.</p>
 <p>ff2tweet is written in Python and I run it as a cron job on a server. It uses the FriendFeed and Twitter APIs to accomplish its task. It does what I wanted to do but it is a quick hack and there is definitely room for improvement. All feedback appreciated. The code is <a href="https://github.com/samgrover/ff2tweet/tree">available on github</a>. Join in!</p>
 <p>I&rsquo;m on FriendFeed at <a href="https://friendfeed.com/samgrover">https://friendfeed.com/samgrover</a> and on Twitter at <a href="https://twitter.com/samgrover">https://twitter.com/samgrover</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2008/09/28/fftweet.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2008-09-28T22:04:45-07:00"
-      >Sep 28, 2008</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/168/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2008/09/28/fftweet.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2008-09-28T22:04:45-07:00"
+          >Sep 28, 2008</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/168/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/170/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

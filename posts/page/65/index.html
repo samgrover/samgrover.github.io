@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,219 +205,209 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p>it’s a good time when wine and ink flow together <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
-<p><img src="https://live.staticflickr.com/65535/54595061912_7e646c47b2_h.jpg" alt=""></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>it’s a good time when wine and ink flow together <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54595061912_7e646c47b2_h.jpg" alt=""></p>
 <p>Uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/08/05/its-a-good.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-08-05T20:23:00-07:00"
-      >Aug 5, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/08/05/its-a-good.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-08-05T20:23:00-07:00"
+          >Aug 5, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>I&rsquo;ve started to put the <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">August Photoblogging Challenge</a> prompts into a public Google Calendar as I like to have it available for easy reference. I will update it as Jean adds more words.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>I&rsquo;ve started to put the <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">August Photoblogging Challenge</a> prompts into a public Google Calendar as I like to have it available for easy reference. I will update it as Jean adds more words.</p>
 <p>Here&rsquo;s the link if you would like to subscribe: <a href="https://calendar.google.com/calendar/ical/i1kvpbrlqje9n2gsiumbmpoets%40group.calendar.google.com/public/basic.ics">#mbaug calendar</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/08/05/ive-started-to.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-08-05T10:23:00-07:00"
-      >Aug 5, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/08/05/ive-started-to.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-08-05T10:23:00-07:00"
+          >Aug 5, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Tomatoes and peace. <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
-<p><img src="https://live.staticflickr.com/65535/54596151343_4ec3fbcc59_h.jpg" alt=""></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Tomatoes and peace. <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54596151343_4ec3fbcc59_h.jpg" alt=""></p>
 <p>Uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/08/04/tomatoes-and-peace.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-08-04T19:24:47-07:00"
-      >Aug 4, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/08/04/tomatoes-and-peace.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-08-04T19:24:47-07:00"
+          >Aug 4, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>A bug at work. <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
-<p><img src="https://live.staticflickr.com/65535/54596127399_dc89eeb250_h.jpg" alt=""></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>A bug at work. <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54596127399_dc89eeb250_h.jpg" alt=""></p>
 <p>Uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/08/03/a-bug-at.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-08-03T20:07:31-07:00"
-      >Aug 3, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/08/03/a-bug-at.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-08-03T20:07:31-07:00"
+          >Aug 3, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Floating in for a landing. <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
-<p><img src="https://live.staticflickr.com/65535/54596243600_0740cc1099_h.jpg" alt=""></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Floating in for a landing. <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54596243600_0740cc1099_h.jpg" alt=""></p>
 <p>Uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/08/02/floating-in-for.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-08-02T16:31:00-07:00"
-      >Aug 2, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/08/02/floating-in-for.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-08-02T16:31:00-07:00"
+          >Aug 2, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Things are looking up for this rose bush as the weather has gotten warmer. <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
-<p><img src="https://live.staticflickr.com/65535/54595054997_d451255108_h.jpg" alt=""></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Things are looking up for this rose bush as the weather has gotten warmer. <a href="https://micro.welltempered.net/2020/07/23/august-photoblogging-challenge.html">#mbaug</a></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54595054997_d451255108_h.jpg" alt=""></p>
 <p>Uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/08/01/things-are-looking.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-08-01T18:13:00-07:00"
-      >Aug 1, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/08/01/things-are-looking.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-08-01T18:13:00-07:00"
+          >Aug 1, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Thank you neighbors who put up cool art in the neighborhood 😊</p>
-<p><img src="https://live.staticflickr.com/65535/54586660542_bd6a5db9c5_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/54586660557_945ebf1b53_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/54587749248_7cb463e197_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/54587718994_53a90ee8bd_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/54587843140_f0053291e3_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/54586660522_876b33e910_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/54587843145_9ccb9ef1fa_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/54586660567_f0eda83567_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/54587529846_6facf785b7_h.jpg" alt=""></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Thank you neighbors who put up cool art in the neighborhood 😊</p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54586660542_bd6a5db9c5_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54586660557_945ebf1b53_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54587749248_7cb463e197_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54587718994_53a90ee8bd_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54587843140_f0053291e3_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54586660522_876b33e910_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54587843145_9ccb9ef1fa_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54586660567_f0eda83567_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54587529846_6facf785b7_h.jpg" alt=""></p>
 <p>Uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/07/28/thank-you-neighbors.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-07-28T09:26:00-07:00"
-      >Jul 28, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/07/28/thank-you-neighbors.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-07-28T09:26:00-07:00"
+          >Jul 28, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Last weekend Jenni got to go paddle boarding on a cute lake thanks to the generosity of friends and strangers.</p>
-<p><img src="https://live.staticflickr.com/65535/50150070052_6fd40de4f7_h.jpg" alt=""></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Last weekend Jenni got to go paddle boarding on a cute lake thanks to the generosity of friends and strangers.</p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50150070052_6fd40de4f7_h.jpg" alt=""></p>
 <p>Meanwhile, I hung out with Kona. She&rsquo;s the best.</p>
-<p><img src="https://live.staticflickr.com/65535/50149831821_f3615d23b0_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50149831821_f3615d23b0_h.jpg" alt=""></p>
 <p>Uploaded using <a href="https://apps.apple.com/us/app/mimi-uploader/id1484555696">Mimi</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/07/23/last-weekend-jenni.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-07-23T18:06:00-07:00"
-      >Jul 23, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/07/23/last-weekend-jenni.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-07-23T18:06:00-07:00"
+          >Jul 23, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Farewell, My Brother</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2020/07/19/farewell-my-brother.html"
-    >Farewell, My Brother</a
-  >
-</section><section><p><img src="https://live.staticflickr.com/65535/54587518201_c1140823a2_h.jpg" alt="Ashish. Seattle. 2014."></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2020/07/19/farewell-my-brother.html">Farewell, My Brother</a></h2>
+    </div><section class="post-body"><p class="post-photo"><img src="https://live.staticflickr.com/65535/54587518201_c1140823a2_h.jpg" alt="Ashish. Seattle. 2014."></p>
 <p>Ashish Grover, or Ashu, as we called him endearingly passed away on Monday, 6th July, 2020 in New York City. His passing was sudden and unexpected. It has shaken up our entire family across two vast countries. He was only 48. Now he will forever be 48.</p>
 <p>Technically he was my cousin, but we grew up under the same roof in New Delhi, our mothers cooked side by side in the same kitchen, we ate at the same table. I shared his room for a while in the 80s, as our growing joint family was on the verge of becoming a nuclear one. He was my brother.</p>
 <p>He was funny, full of life, and shared the joy of it at all occasions. He achieved tremendous success in his career, and would&rsquo;ve reached higher had he had the time. As we grew older, we grew apart, but only in distance, as we pursued our lives and dreams. I would only see him every few years. Those times were always wonderful. So it was a joy when he moved to the US in 2017 as I managed to see him more often then. I am grateful for that.</p>
-<p><img src="https://live.staticflickr.com/65535/54587831415_aa72a87da5_h.jpg" alt="With Ashish and Manisha. New York City. September, 2018."></p>
-<p><img src="https://live.staticflickr.com/65535/54587737783_d5dcd753b5_o.jpg" alt="Us. Columbia River Gorge. July, 2019."></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54587831415_aa72a87da5_h.jpg" alt="With Ashish and Manisha. New York City. September, 2018."></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54587737783_d5dcd753b5_o.jpg" alt="Us. Columbia River Gorge. July, 2019."></p>
 <p>His passing was not as a result of COVID-19, but that has certainly impacted all related events since then, including my inability to attend his funeral in person. I couldn&rsquo;t manage it. Others in our family managed it and showed up to support his grieving wife and daughter.</p>
 <p>I attended his funeral service via a video call. There were about 25 people present in person, masked and social distanced as best as could be managed. A few hundred people were on the call. If that number feels large, know that far more would have shown up in person if this vile event had happened in better times, and at the place he had called home for twenty years. Over the last couple of weeks I&rsquo;ve heard several stories of his friendships, generosities and kindnesses. He was beloved by many.</p>
 <p>Our family has set up <a href="https://ashish-grover.forevermissed.com">an online memorial site</a>. If you knew him, I encourage you to share something there if you like.</p>
-<p><img src="https://live.staticflickr.com/65535/54587736948_7709859a71_h.jpg" alt="Us, with our sisters. Circa 1980s."></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/54587736948_7709859a71_h.jpg" alt="Us, with our sisters. Circa 1980s."></p>
 <p>As someone said, he lives amongst the stars now. Rest in peace bhai ❤️</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/07/19/farewell-my-brother.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-07-19T15:46:20-07:00"
-      >Jul 19, 2020</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/07/19/farewell-my-brother.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-07-19T15:46:20-07:00"
+          >Jul 19, 2020</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Last weekend we visited the <a href="https://en.wikipedia.org/wiki/International_Rose_Test_Garden">International Rose Test Garden</a>, a Portland landmark. We try and go each year around this time when the roses are in full bloom. It never disappoints, even with an overcast sky. Of course it was a little different this year, as with everything else.</p>
-<p><img src="https://live.staticflickr.com/65535/50144937347_76b9dc74f4_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/50144937512_5b69438a91_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/50144936362_4b666cbd4a_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/50144699176_0c7ce05e04_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/50144158998_4ce396748e_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/50144936882_52276742ba_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/50144936522_9535451d7f_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/50144937087_6a01513b10_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/50144700151_eb2e816fc1_h.jpg" alt=""></p>
-<p><img src="https://live.staticflickr.com/65535/50144936622_ed33f0215e_h.jpg" alt=""></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Last weekend we visited the <a href="https://en.wikipedia.org/wiki/International_Rose_Test_Garden">International Rose Test Garden</a>, a Portland landmark. We try and go each year around this time when the roses are in full bloom. It never disappoints, even with an overcast sky. Of course it was a little different this year, as with everything else.</p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50144937347_76b9dc74f4_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50144937512_5b69438a91_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50144936362_4b666cbd4a_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50144699176_0c7ce05e04_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50144158998_4ce396748e_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50144936882_52276742ba_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50144936522_9535451d7f_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50144937087_6a01513b10_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50144700151_eb2e816fc1_h.jpg" alt=""></p>
+<p class="post-photo"><img src="https://live.staticflickr.com/65535/50144936622_ed33f0215e_h.jpg" alt=""></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2020/07/02/last-weekend-we.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2020-07-02T11:06:00-07:00"
-      >Jul 2, 2020</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/64/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2020/07/02/last-weekend-we.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2020-07-02T11:06:00-07:00"
+          >Jul 2, 2020</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/64/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/66/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>

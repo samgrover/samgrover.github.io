@@ -12,14 +12,14 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#f0ebe2; --bg-dark:#1a1410; --text-light:#1a1a1a; --text-dark:#f5f5dc; --accent:#8b7355; --accent-dark:#8b7355; --bg:#f0ebe2; --text:#1a1a1a"
+  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
   lang="en-us"
   dir="ltr"
 ><head>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.3bbb6bdae7588ce68e0491c4d7834d55d57b735d2aa16a8c6f14a6e56e7743b6.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.b74186eaf58f6370d76a5e9d8de655a792d58eb28e8440b8d4dc576ea7e15694.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -61,30 +61,16 @@
   <meta name="apple-mobile-web-app-title" content="samgrover.com">
 
   <meta name="generator" content="Hugo 0.168.0">
-  <style>
-    body,
-    body * {
-      font-family: 'PT Sans', sans-serif !important;
-    }
-
-    h1, h1 *,
-    h2, h2 *,
-    h3, h3 *,
-    h4, h4 *,
-    h5, h5 *,
-    h6, h6 * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .archive-year-section summary {
-      font-family: 'Nunito', sans-serif !important;
-    }
-
-    .post-title,
-    .post-title * {
-      font-family: 'Nunito', sans-serif !important;
-    }
-  </style>
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+    }, true);
+  </script>
 
   
 	<meta itemprop="name" content="Posts">
@@ -119,8 +105,8 @@
         color: var(--text-light) !important;
       }
        
-      header, header *, footer, footer * {
-        color: var(--accent) !important;
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
       }
       body::before {
         content: '';
@@ -135,16 +121,13 @@
         color: var(--text-dark) !important;
       }
        
-      html.dark header, html.dark header *, html.dark footer, html.dark footer * {
-        color: var(--accent-dark) !important;
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
       }
       html.dark body::before {
         background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
       }
        
-      article figure, section figure {
-        margin-bottom: 1.5em !important;
-      }
       article figure a, section figure a {
         display: block !important;
         line-height: 0 !important;
@@ -154,10 +137,11 @@
         margin-bottom: 0 !important;
       }
       article figure figcaption, section figure figcaption {
-        font-size: 0.75em !important;
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
         font-style: normal !important;
-        opacity: 0.75 !important;
-        margin-top: 0.3rem !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
         text-align: left !important;
       }
        
@@ -169,27 +153,17 @@
         background-color: var(--text-dark) !important;
         color: var(--bg-dark) !important;
       }
-    </style><header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="https://samgrover.com/"
-      >samgrover.com</a
-    >
-    <div
-      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
-      role="button"
-      aria-label="Dark"
-    ></div>
-  </div>
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
 
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
+  <div class="site-tools">
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
 
   <script>
     
@@ -199,15 +173,9 @@
     }, 10);
 
     
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-
-    
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#f0ebe2'.replace(/"/g, '');
-    const darkBg = '#1a1410'.replace(/"/g, '');
+    const lightBg = '#e6d8bb'.replace(/"/g, '');
+    const darkBg = '#1f0a05'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -237,57 +205,27 @@
       setDark(localStorage.getItem('dark') !== 'true');
     });
   </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  ><nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/about/"
-        >About</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/topics/"
-        >Topics</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/archive/"
-        >Archive</a
-      ><a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="/search/"
-        >Search</a
-      ></nav><nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./rss.svg)"
-        href="https://samgrover.com/index.xml"
-        target="_blank"
-        rel="alternate"
-      >rss</a>
-    </nav>
-  </div>
 </header>
-<main
-      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
-    >
+<main class="site-main prose prose-neutral dark:prose-invert relative">
 
-<section><p>When you get to the gym and realize you forgot your headphones at home 😞</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>When you get to the gym and realize you forgot your headphones at home 😞</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/05/10/when-you-get.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-05-10T12:48:46-07:00"
-      >May 10, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/05/10/when-you-get.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-05-10T12:48:46-07:00"
+          >May 10, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>This new composite photo of the Large Magellanic Cloud created by amateur astronomers is gorgeous! <a href="https://lowell.edu/astroalert-french-amateur-astronomers-take-a-1060-hour-image/">lowell.edu/astroaler&hellip;</a></p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>This new composite photo of the Large Magellanic Cloud created by amateur astronomers is gorgeous! <a href="https://lowell.edu/astroalert-french-amateur-astronomers-take-a-1060-hour-image/">lowell.edu/astroaler&hellip;</a></p>
 <figure>
   <a href="https://live.staticflickr.com/65535/54552452641_ffd7b64d74_o.jpg"><img src="https://live.staticflickr.com/65535/54552452641_ffd7b64d74_o.jpg" alt=""></a>
   
@@ -295,20 +233,20 @@
 
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/05/01/this-new-composite.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-05-01T15:39:57-07:00"
-      >May 1, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/05/01/this-new-composite.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-05-01T15:39:57-07:00"
+          >May 1, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Hiking at Coyote Wall</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/30/hiking-at-coyote.html"
-    >Hiking at Coyote Wall</a
-  >
-</section><section><figure>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2019/04/30/hiking-at-coyote.html">Hiking at Coyote Wall</a></h2>
+    </div><section class="post-body"><figure>
   <a href="https://live.staticflickr.com/65535/54552219754_79d2085e3a_h.jpg"><img src="https://live.staticflickr.com/65535/54552219754_79d2085e3a_h.jpg" alt="Kyla, Herbie, Jenni, and Kelly near the top"></a>
   
 </figure>
@@ -397,28 +335,34 @@ Elevation Gain: 1662 ft<br>
 Time (including breaks): 4h 45m</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/04/30/hiking-at-coyote.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-04-30T15:30:37-07:00"
-      >Apr 30, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/04/30/hiking-at-coyote.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-04-30T15:30:37-07:00"
+          >Apr 30, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Friends, especially those in Portland, this is great project by good people. Back them on Kickstarter and let&rsquo;s get them to the finish line! <a href="https://www.kickstarter.com/projects/kaidenbuilds/true-north-studios">www.kickstarter.com/projects/&hellip;</a></p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>Friends, especially those in Portland, this is great project by good people. Back them on Kickstarter and let&rsquo;s get them to the finish line! <a href="https://www.kickstarter.com/projects/kaidenbuilds/true-north-studios">www.kickstarter.com/projects/&hellip;</a></p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/04/26/friends-especially-those.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-04-26T17:33:19-07:00"
-      >Apr 26, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/04/26/friends-especially-those.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-04-26T17:33:19-07:00"
+          >Apr 26, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>It&rsquo;s that time of the year in the neighborhood.</p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>It&rsquo;s that time of the year in the neighborhood.</p>
 <figure>
   <a href="https://live.staticflickr.com/65535/32754107457_2077b0ce4e_h.jpg"><img src="https://live.staticflickr.com/65535/32754107457_2077b0ce4e_h.jpg" alt=""></a>
   
@@ -426,29 +370,35 @@ Time (including breaks): 4h 45m</p>
 
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/04/25/its-that-time.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-04-25T08:27:00-07:00"
-      >Apr 25, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/04/25/its-that-time.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-04-25T08:27:00-07:00"
+          >Apr 25, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>PSA: It&rsquo;s about time to cancel Apple News+ if you signed up for the free trial at launch and haven&rsquo;t used it enough.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <section class="post-body"><p>PSA: It&rsquo;s about time to cancel Apple News+ if you signed up for the free trial at launch and haven&rsquo;t used it enough.</p>
 <p>I just did.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/04/23/psa-its-about.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-04-23T10:13:54-07:00"
-      >Apr 23, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/04/23/psa-its-about.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-04-23T10:13:54-07:00"
+          >Apr 23, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>Got some yard work done on this lovely day.</p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>Got some yard work done on this lovely day.</p>
 <figure>
   <a href="https://live.staticflickr.com/65535/54550690155_cf559d508c_h.jpg"><img src="https://live.staticflickr.com/65535/54550690155_cf559d508c_h.jpg" alt=""></a>
   
@@ -456,16 +406,19 @@ Time (including breaks): 4h 45m</p>
 
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/04/20/got-some-yard.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-04-20T19:56:40-07:00"
-      >Apr 20, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/04/20/got-some-yard.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-04-20T19:56:40-07:00"
+          >Apr 20, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section><p>A short break on a muddy spot. From a few weeks ago.</p>
+<article class="post post--spread">
+  <div class="post-sheet">
+    <section class="post-body"><p>A short break on a muddy spot. From a few weeks ago.</p>
 <figure>
   <a href="https://live.staticflickr.com/65535/40725609973_f75cd00eee_h.jpg"><img src="https://live.staticflickr.com/65535/40725609973_f75cd00eee_h.jpg" alt=""></a>
   
@@ -473,20 +426,20 @@ Time (including breaks): 4h 45m</p>
 
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/04/17/a-short-break.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-04-17T08:40:13-07:00"
-      >Apr 17, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/04/17/a-short-break.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-04-17T08:40:13-07:00"
+          >Apr 17, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Importing Foursquare/Swarm history into Day One</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/16/importing-foursquareswarm-history.html"
-    >Importing Foursquare/Swarm history into Day One</a
-  >
-</section><section><p>I&rsquo;ve been journaling in <a href="https://dayoneapp.com">Day One</a> for some time now. I like it for a lot of reasons, and it&rsquo;s working out great. So far I&rsquo;ve been using it as a plain old journal, where you write what&rsquo;s on your mind. Recently, I decided that I wanted to get my digital history into it as well. One of the first things that came to mind was my <a href="https://foursquare.com">Foursquare/Swarm</a> checkin history which goes back to 2009. I decided to start there.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2019/04/16/importing-foursquareswarm-history.html">Importing Foursquare/Swarm history into Day One</a></h2>
+    </div><section class="post-body"><p>I&rsquo;ve been journaling in <a href="https://dayoneapp.com">Day One</a> for some time now. I like it for a lot of reasons, and it&rsquo;s working out great. So far I&rsquo;ve been using it as a plain old journal, where you write what&rsquo;s on your mind. Recently, I decided that I wanted to get my digital history into it as well. One of the first things that came to mind was my <a href="https://foursquare.com">Foursquare/Swarm</a> checkin history which goes back to 2009. I decided to start there.</p>
 <p>I exported all my data and wrote a script in Python to extract what I needed from it to make journal entries. The two relevant files were <code>checkins.json</code> and <code>photos.json</code>. You can <a href="https://gist.github.com/samgrover/26939e0b68a26b7fe03a7a4bd37bdcf6">get my script on Github by selecting here</a> if you&rsquo;d like to use it, or dig into it. It should also appear embedded at the end of this post. First the script pre-processes the data to get all the photos attached to checkins. Then it goes over the checkin history to extract most of what I want, but since the exported data doesn&rsquo;t include venue coordinates, it has to do a little more.</p>
 <p>It makes calls to the <a href="https://developer.foursquare.com/docs">Foursquare API</a> to fetch the venue coordinates for each checkin. Then it puts everything together and makes the actual entry using Day One&rsquo;s <a href="https://dayoneapp.com/support/CLI">command line utility</a>. I had several thousand entries but the free plan for the API has a daily limit of 500 calls, so I manually ran it a few times over the course of a couple of weeks until they&rsquo;d all been imported. I could&rsquo;ve automated that but I wasn&rsquo;t keen on spending the time on that.</p>
 <p>Day One does allow one to link it to <a href="https://help.dayoneapp.com/tips-and-tutorials/using-ifttt-with-day-one">IFTTT</a> so that all <em>new</em> checkins get logged automatically, and I enabled that a while back, but I&rsquo;ve not been happy with that integration. Now that I&rsquo;m familiar with the flow of data, I plan to create new entries every couple of months or so, perhaps with a new script that works entirely with the API.</p>
@@ -494,20 +447,20 @@ Time (including breaks): 4h 45m</p>
 <script src="https://gist.github.com/samgrover/26939e0b68a26b7fe03a7a4bd37bdcf6.js"></script>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/04/16/importing-foursquareswarm-history.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-04-16T19:38:57-07:00"
-      >Apr 16, 2019</time
-    >
-  </a>
-</footer>
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/04/16/importing-foursquareswarm-history.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-04-16T19:38:57-07:00"
+          >Apr 16, 2019</time
+        >
+      </a>
+    </footer></div>
+</article>
 
-<section class="relative mt-10 mb-6 first-of-type:mt-0"><h2 class="my-0!">Initial experience with Setapp</h2>
-  <a class="absolute inset-0 text-[0px]" href="https://samgrover.com/2019/04/14/initial-experience-with.html"
-    >Initial experience with Setapp</a
-  >
-</section><section><p>I signed up for <a href="https://go.setapp.com/invite/v6jr3hc8">Setapp</a> for a free trial week. Setapp is an app subscription service for macOS where you sign up for $10 a month to gain full access to a catalog of over 100 apps.</p>
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2019/04/14/initial-experience-with.html">Initial experience with Setapp</a></h2>
+    </div><section class="post-body"><p>I signed up for <a href="https://go.setapp.com/invite/v6jr3hc8">Setapp</a> for a free trial week. Setapp is an app subscription service for macOS where you sign up for $10 a month to gain full access to a catalog of over 100 apps.</p>
 <p>This is not a review of Setapp, but rather my initial experience with it after having heard about it a few times on the <a href="https://www.relay.fm/mpu/">Mac Power Users</a> podcast. Many of apps in the Setapp catalog are well known and as such I was already aware of them. But there are several that are new to me.</p>
 <p>Apps that I found myself using often during the trial:</p>
 <ul>
@@ -542,21 +495,20 @@ Time (including breaks): 4h 45m</p>
 <p>If you would like to try out Setapp, <a href="https://go.setapp.com/invite/v6jr3hc8">select here to use my referral code</a>.</p>
 </section>
 
-<footer class="post-meta post-meta-list">
-  <a class="post-meta-line" href="https://samgrover.com/2019/04/14/initial-experience-with.html">
-    <span class="post-meta-label">Published on</span>
-    <time class="post-meta-date" datetime="2019-04-14T12:16:31-07:00"
-      >Apr 14, 2019</time
-    >
-  </a>
-</footer><nav class="mt-14 flex"><a class="btn not-prose" href="/posts/page/82/"
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2019/04/14/initial-experience-with.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2019-04-14T12:16:31-07:00"
+          >Apr 14, 2019</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/posts/page/82/"
     >←Prev Page</a
   ><a class="btn not-prose ml-auto" href="/posts/page/84/"
     >Next Page→</a
-  ></nav></main><footer
-  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
->
-  <div class="mr-auto">© 2004-2026 samgrover.com</div>
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
 </html>
