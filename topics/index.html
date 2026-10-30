@@ -215,6 +215,8 @@
 
 
 
+
+
 <style>
   .pj-hub-header { margin-bottom: 2rem; }
   .pj-hub-header h1 {
@@ -282,16 +284,36 @@
   }
 
    
-  .pj-card h2 {
+  .pj-card :is(h2, h3) {
     font-family: var(--font-display); font-weight: 600; font-size: 1.25rem;
  margin: 0.9rem 0 0.25rem !important;
   }
-  .pj-card:hover h2 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  .pj-card:hover :is(h2, h3) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
   .pj-blurb { margin: 0 !important; font-size: 0.95rem; line-height: 1.5; opacity: 0.85; }
   .pj-meta {
     margin: 0.45rem 0 0 !important;
     font-family: var(--font-display);
     font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.55;
+  }
+
+   
+  .pj-finished { margin-top: clamp(2.5rem, 7vh, 4rem); }
+  .prose .pj-finished-title {
+    margin: 0 0 1.25rem; font-size: var(--text-h3); line-height: 1.15;
+  }
+  .pj-finished .pj-cards { grid-template-columns: 1fr; }
+  .pj-period {
+    margin: 0 0 0.35rem !important;
+    font-family: var(--font-display); font-size: 1.0625rem; font-weight: 600;
+  }
+  .pj-finished .pj-card :is(h2, h3) { font-size: var(--text-h4); }
+  @media (min-width: 640px) {
+    .pj-finished .pj-card { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.75rem; align-items: center; }
+    .pj-finished .pj-card :is(h2, h3) { margin-top: 0 !important; }
+  }
+  @media (min-width: 1100px) {
+    .pj-finished .pj-card { grid-template-columns: repeat(3, 1fr); }
+    .pj-finished-text { grid-column: span 2; }
   }
 </style>
 
@@ -304,214 +326,238 @@
 
   <ul class="pj-cards">
     
-      
-      
+  
+  
 
-      
-      
-      
-      
-      
-      
-        
-        
-          
-          
-        
-      
-
-      <li>
-        <a class="pj-card pj-motif-film" href="/topics/the-complete-roll/">
-          <div class="pj-cover">
-            <img src="https://i.ytimg.com/vi/3PvevCLw4fY/maxresdefault.jpg" alt="" loading="lazy" decoding="async">
-          </div>
-          <h2>The Complete Roll</h2>
-          <p class="pj-blurb">A video slideshow of every frame from a single roll of film — the keepers and the misses.</p>
-          <p class="pj-meta">
-            2 posts · latest Oct 2026
-          </p>
-        </a>
-      </li>
+  
+  
+  
+  
+  
+  
+    
     
       
       
+    
+  
 
+  <li>
+    <a class="pj-card pj-motif-film" href="/topics/the-complete-roll/">
+      <div class="pj-cover">
+        <img src="https://i.ytimg.com/vi/3PvevCLw4fY/maxresdefault.jpg" alt="" loading="lazy" decoding="async">
+      </div>
       
+        <h2>The Complete Roll</h2>
+        <p class="pj-blurb">A video slideshow of every frame from a single roll of film — the keepers and the misses.</p>
+        <p class="pj-meta">
+          2 posts · latest Oct 2026
+        </p>
       
-      
-      
-      
-      
-        
-        
-          
-          
-        
-      
+    </a>
+  </li>
 
-      <li>
-        <a class="pj-card pj-motif-plain" href="/topics/travel/">
-          <div class="pj-cover">
-            <img src="https://live.staticflickr.com/65535/55355638433_3034c84efa_h.jpg" alt="" loading="lazy" decoding="async">
-          </div>
-          <h2>Travel</h2>
-          <p class="pj-blurb">Blog posts grouped by travels to various places.</p>
-          <p class="pj-meta">
-            96 posts · latest Jun 2026
-          </p>
-        </a>
-      </li>
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
     
       
       
+    
+  
 
+  <li>
+    <a class="pj-card pj-motif-plain" href="/topics/travel/">
+      <div class="pj-cover">
+        <img src="https://live.staticflickr.com/65535/55355638433_3034c84efa_h.jpg" alt="" loading="lazy" decoding="async">
+      </div>
       
+        <h2>Travel</h2>
+        <p class="pj-blurb">Blog posts grouped by travels to various places.</p>
+        <p class="pj-meta">
+          96 posts · latest Jun 2026
+        </p>
       
-      
-      
-      
-      
-        
-        
-          
-          
-        
-      
+    </a>
+  </li>
 
-      <li>
-        <a class="pj-card pj-motif-plain" href="/topics/us-road-trip/">
-          <div class="pj-cover">
-            <img src="https://live.staticflickr.com/7495/15930972435_ded0b08d20_h.jpg" alt="" loading="lazy" decoding="async">
-          </div>
-          <h2>My Nine Month Road Trip Around the USA</h2>
-          <p class="pj-blurb">September 2014 to May 2015: living a few weeks at a time in cities across the country.</p>
-          <p class="pj-meta">
-            224 posts · latest Dec 2015
-          </p>
-        </a>
-      </li>
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
     
       
       
+    
+  
 
+  <li>
+    <a class="pj-card pj-motif-plain" href="/topics/regional-explorations/">
+      <div class="pj-cover">
+        <img src="https://live.staticflickr.com/65535/55054334498_12f0275730_h.jpg" alt="" loading="lazy" decoding="async">
+      </div>
       
+        <h2>Regional Explorations</h2>
+        <p class="pj-blurb">Day trips and weekends around Oregon and the Pacific Northwest.</p>
+        <p class="pj-meta">
+          59 posts · latest Jan 2026
+        </p>
       
-      
-      
-      
-      
-        
-        
-          
-          
-        
-      
+    </a>
+  </li>
 
-      <li>
-        <a class="pj-card pj-motif-plain" href="/topics/regional-explorations/">
-          <div class="pj-cover">
-            <img src="https://live.staticflickr.com/65535/55054334498_12f0275730_h.jpg" alt="" loading="lazy" decoding="async">
-          </div>
-          <h2>Regional Explorations</h2>
-          <p class="pj-blurb">Day trips and weekends around Oregon and the Pacific Northwest.</p>
-          <p class="pj-meta">
-            59 posts · latest Jan 2026
-          </p>
-        </a>
-      </li>
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
     
       
       
+    
+  
 
+  <li>
+    <a class="pj-card pj-motif-plain" href="/topics/yard-and-garden/">
+      <div class="pj-cover">
+        <img src="https://live.staticflickr.com/65535/55492340476_d09a5de9b1_h.jpg" alt="" loading="lazy" decoding="async">
+      </div>
       
+        <h2>Yard &amp; Garden</h2>
+        <p class="pj-blurb">Our yard through the seasons and the years.</p>
+        <p class="pj-meta">
+          41 posts · latest Aug 2026
+        </p>
       
-      
-      
-      
-      
-        
-        
-          
-          
-        
-      
+    </a>
+  </li>
 
-      <li>
-        <a class="pj-card pj-motif-plain" href="/topics/yard-and-garden/">
-          <div class="pj-cover">
-            <img src="https://live.staticflickr.com/65535/55492340476_d09a5de9b1_h.jpg" alt="" loading="lazy" decoding="async">
-          </div>
-          <h2>Yard &amp; Garden</h2>
-          <p class="pj-blurb">Our yard through the seasons and the years.</p>
-          <p class="pj-meta">
-            41 posts · latest Aug 2026
-          </p>
-        </a>
-      </li>
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
+    
+    
     
       
       
+    
+  
 
+  <li>
+    <a class="pj-card pj-motif-finder" href="/hasselblad/">
+      <div class="pj-cover">
+        <img src="https://live.staticflickr.com/65535/55508412150_4cf302df18_h.jpg" alt="" loading="lazy" decoding="async">
+      </div>
       
+        <h2>Hasselblad 500 C/M</h2>
+        <p class="pj-blurb">Medium-format squares from my Hasselblad 500 C/M, seen through its waist-level finder.</p>
+        <p class="pj-meta">
+          55 photos · latest Sep 2026
+        </p>
       
-      
-      
-      
-      
-        
-        
-        
-        
-          
-          
-        
-      
+    </a>
+  </li>
 
-      <li>
-        <a class="pj-card pj-motif-finder" href="/hasselblad/">
-          <div class="pj-cover">
-            <img src="https://live.staticflickr.com/65535/55508412150_4cf302df18_h.jpg" alt="" loading="lazy" decoding="async">
-          </div>
-          <h2>Hasselblad 500 C/M</h2>
-          <p class="pj-blurb">Medium-format squares from my Hasselblad 500 C/M, seen through its waist-level finder.</p>
-          <p class="pj-meta">
-            55 photos · latest Sep 2026
-          </p>
-        </a>
-      </li>
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
+    
+    
     
       
       
-
-      
-      
-      
-      
-      
-      
-        
-        
-        
-        
-          
-          
-        
-      
-
-      <li>
-        <a class="pj-card pj-motif-film" href="/bessa/">
-          <div class="pj-cover">
-            <img src="https://live.staticflickr.com/65535/55213862711_db8e02e2dc_h.jpg" alt="" loading="lazy" decoding="async">
-          </div>
-          <h2>Voigtländer Bessa R2a</h2>
-          <p class="pj-blurb">35mm frames from my Voigtländer Bessa R2a rangefinder.</p>
-          <p class="pj-meta">
-            40 photos · latest Apr 2026
-          </p>
-        </a>
-      </li>
     
+  
+
+  <li>
+    <a class="pj-card pj-motif-film" href="/bessa/">
+      <div class="pj-cover">
+        <img src="https://live.staticflickr.com/65535/55213862711_db8e02e2dc_h.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      
+        <h2>Voigtländer Bessa R2a</h2>
+        <p class="pj-blurb">35mm frames from my Voigtländer Bessa R2a rangefinder.</p>
+        <p class="pj-meta">
+          40 photos · latest Apr 2026
+        </p>
+      
+    </a>
+  </li>
+
   </ul>
+
+  
+    <section class="pj-finished">
+      <h2 class="pj-finished-title">Past Chapters</h2>
+      <ul class="pj-cards">
+        
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
+    
+      
+      
+    
+  
+
+  <li>
+    <a class="pj-card pj-motif-plain" href="/topics/us-road-trip/">
+      <div class="pj-cover">
+        <img src="https://live.staticflickr.com/7495/15930972435_ded0b08d20_h.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      
+        <div class="pj-finished-text">
+          <h3>My Nine Month Road Trip Around the USA</h3>
+          <p class="pj-period">September 2014 to May 2015</p>
+          <p class="pj-blurb">Living a few weeks at a time in cities across the country.</p>
+          <p class="pj-meta">224 posts</p>
+        </div>
+      
+    </a>
+  </li>
+
+      </ul>
+    </section>
+  
 </article>
 </main><footer class="site-footer">
   <div>© 2004-2026 samgrover.com</div>
