@@ -37,7 +37,7 @@
   <meta name="description" content="For various reasons, I&rsquo;ve not been able to give Mimi the time and attention I&rsquo;d hoped over the last several months, but I&rsquo;m actively trying to change that. I&rsquo;m working on an update that takes a fresh approach to the photo selection flow by utilizing new features coming in iOS 14.
 iOS 14 has a powerful new system provided photo picker that lets users pick photos from their library. The new picker has great features for browsing, searching, making multiple selections, etc. This is perfect for apps like Mimi where people can pick the photos they want to upload with minimum friction and with an experience that feels true to iOS. I&rsquo;m very conscious of privacy in apps, so it gives me great joy to note that with this new picker Mimi will no longer need to ask for Photos permission." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0b900b781c4aabee0a30cacaaac899b57c4acfdee32d693c398d0a108ac1861e.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -70,7 +70,48 @@ iOS 14 has a powerful new system provided photo picker that lets users pick phot
       if (!holder) return;
       holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
       holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+      schedulePhotoRowLimit();
     }, true);
+
+    
+    
+    
+    function limitPhotoRows() {
+      const limit = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--photos-per-row'), 10);
+      document.querySelectorAll('.photo-row-break').forEach((rowBreak) => rowBreak.remove());
+      document.querySelectorAll('.post-body').forEach((body) => {
+        let rowTop = null;
+        let photosInRow = 0;
+        body.querySelectorAll(':scope > :is(figure, .post-photo)').forEach((photo) => {
+          if (photo.offsetTop !== rowTop) {
+            rowTop = photo.offsetTop;
+            photosInRow = 0;
+          }
+          photosInRow += 1;
+          if (photosInRow > limit) {
+            const rowBreak = document.createElement('span');
+            rowBreak.className = 'photo-row-break';
+            photo.before(rowBreak);
+            rowTop = photo.offsetTop;
+            photosInRow = 1;
+          }
+        });
+      });
+    }
+
+    
+    let photoRowLimitPending = false;
+    function schedulePhotoRowLimit() {
+      if (photoRowLimitPending) return;
+      photoRowLimitPending = true;
+      requestAnimationFrame(() => {
+        photoRowLimitPending = false;
+        limitPhotoRows();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', schedulePhotoRowLimit);
+    window.addEventListener('resize', schedulePhotoRowLimit);
   </script>
 
   

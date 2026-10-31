@@ -38,7 +38,7 @@
 From time to time I look back at things I came across online and which I still find interesting.
 A few years ago Robin Sloan and Matt Thompson made a video based on their vision of the future of news and media. In it they named a fictitious company called “Googlezon”. The name stuck in my head and pops up every now and then. Here’s the fascinating video, released in January 2005, that holds up remarkably well with hindsight." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0b900b781c4aabee0a30cacaaac899b57c4acfdee32d693c398d0a108ac1861e.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -71,7 +71,48 @@ A few years ago Robin Sloan and Matt Thompson made a video based on their vision
       if (!holder) return;
       holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
       holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+      schedulePhotoRowLimit();
     }, true);
+
+    
+    
+    
+    function limitPhotoRows() {
+      const limit = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--photos-per-row'), 10);
+      document.querySelectorAll('.photo-row-break').forEach((rowBreak) => rowBreak.remove());
+      document.querySelectorAll('.post-body').forEach((body) => {
+        let rowTop = null;
+        let photosInRow = 0;
+        body.querySelectorAll(':scope > :is(figure, .post-photo)').forEach((photo) => {
+          if (photo.offsetTop !== rowTop) {
+            rowTop = photo.offsetTop;
+            photosInRow = 0;
+          }
+          photosInRow += 1;
+          if (photosInRow > limit) {
+            const rowBreak = document.createElement('span');
+            rowBreak.className = 'photo-row-break';
+            photo.before(rowBreak);
+            rowTop = photo.offsetTop;
+            photosInRow = 1;
+          }
+        });
+      });
+    }
+
+    
+    let photoRowLimitPending = false;
+    function schedulePhotoRowLimit() {
+      if (photoRowLimitPending) return;
+      photoRowLimitPending = true;
+      requestAnimationFrame(() => {
+        photoRowLimitPending = false;
+        limitPhotoRows();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', schedulePhotoRowLimit);
+    window.addEventListener('resize', schedulePhotoRowLimit);
   </script>
 
   

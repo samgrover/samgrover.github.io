@@ -42,7 +42,7 @@
 When I was a kid, I enjoyed tapping on tables in the style of a Tabla player. The sounds were fun. My mom used to say that I should learn the instrument. I never did. I think that was for the best since I don&rsquo;t seem to have any talent in playing a musical instrument.
 Even in those young days I had heard of the music of Ustad Zakir Hussain. Zakir is regarded as the foremost player of the Tabla in the world. He has achieved unparalleled recognition and mastery with the Tabla and is a household name in India. Last night, Liz and I went to the Schnitz for a concert by Zakir Hussain and the Masters of Percussion. It is an annual event hosted by Kalakendra. The group does a tour each year and the musicians change regularly. It was such beautiful and wide ranging music from a dozen different instruments of various Indian Classical schools. I was enthralled by the solo and group performances, especially the Tabla, the Sarangi and the Sitar." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0b900b781c4aabee0a30cacaaac899b57c4acfdee32d693c398d0a108ac1861e.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -75,7 +75,48 @@ Even in those young days I had heard of the music of Ustad Zakir Hussain. Zakir 
       if (!holder) return;
       holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
       holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+      schedulePhotoRowLimit();
     }, true);
+
+    
+    
+    
+    function limitPhotoRows() {
+      const limit = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--photos-per-row'), 10);
+      document.querySelectorAll('.photo-row-break').forEach((rowBreak) => rowBreak.remove());
+      document.querySelectorAll('.post-body').forEach((body) => {
+        let rowTop = null;
+        let photosInRow = 0;
+        body.querySelectorAll(':scope > :is(figure, .post-photo)').forEach((photo) => {
+          if (photo.offsetTop !== rowTop) {
+            rowTop = photo.offsetTop;
+            photosInRow = 0;
+          }
+          photosInRow += 1;
+          if (photosInRow > limit) {
+            const rowBreak = document.createElement('span');
+            rowBreak.className = 'photo-row-break';
+            photo.before(rowBreak);
+            rowTop = photo.offsetTop;
+            photosInRow = 1;
+          }
+        });
+      });
+    }
+
+    
+    let photoRowLimitPending = false;
+    function schedulePhotoRowLimit() {
+      if (photoRowLimitPending) return;
+      photoRowLimitPending = true;
+      requestAnimationFrame(() => {
+        photoRowLimitPending = false;
+        limitPhotoRows();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', schedulePhotoRowLimit);
+    window.addEventListener('resize', schedulePhotoRowLimit);
   </script>
 
   

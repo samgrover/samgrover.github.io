@@ -41,7 +41,7 @@
 
 It was breathtaking to see the bands of Jupiter’s gases which cannot be seen in this crop of a photo of the giant and its Galilean moons as observed through the eyepiece of my telescope on a moderately cold Christmas night from a light-polluted city by the 45th northern parallel, as I tracked the bodies through a narrow view of the sky, affording me a few seconds of photographic opportunity between manual adjustments of the scope, taken by shoving my iPhone’s camera flat onto the maximally zoomed eyepiece while trying to minimize the effect of the shaking of the raised patio caused by nearby road and railroad traffic." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0b900b781c4aabee0a30cacaaac899b57c4acfdee32d693c398d0a108ac1861e.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -74,7 +74,48 @@ It was breathtaking to see the bands of Jupiter’s gases which cannot be seen i
       if (!holder) return;
       holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
       holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+      schedulePhotoRowLimit();
     }, true);
+
+    
+    
+    
+    function limitPhotoRows() {
+      const limit = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--photos-per-row'), 10);
+      document.querySelectorAll('.photo-row-break').forEach((rowBreak) => rowBreak.remove());
+      document.querySelectorAll('.post-body').forEach((body) => {
+        let rowTop = null;
+        let photosInRow = 0;
+        body.querySelectorAll(':scope > :is(figure, .post-photo)').forEach((photo) => {
+          if (photo.offsetTop !== rowTop) {
+            rowTop = photo.offsetTop;
+            photosInRow = 0;
+          }
+          photosInRow += 1;
+          if (photosInRow > limit) {
+            const rowBreak = document.createElement('span');
+            rowBreak.className = 'photo-row-break';
+            photo.before(rowBreak);
+            rowTop = photo.offsetTop;
+            photosInRow = 1;
+          }
+        });
+      });
+    }
+
+    
+    let photoRowLimitPending = false;
+    function schedulePhotoRowLimit() {
+      if (photoRowLimitPending) return;
+      photoRowLimitPending = true;
+      requestAnimationFrame(() => {
+        photoRowLimitPending = false;
+        limitPhotoRows();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', schedulePhotoRowLimit);
+    window.addEventListener('resize', schedulePhotoRowLimit);
   </script>
 
   

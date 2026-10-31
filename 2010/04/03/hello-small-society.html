@@ -37,7 +37,7 @@
   <meta name="description" content="This blog post is long overdue and if you&rsquo;ve been following me on Twitter of Facebook, this is old news for you and you can just go ahead and skip to the last paragraph.
 In March I left Intel to start working at Small Society. This has been an interesting and welcome change in my life and career. I was working on really cool computer security research at Intel Labs. However, on the side, I was gaining strong interest in developing apps with Cocoa on the Mac and iPhone OS platform ever since I started working on that over a year ago." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0b900b781c4aabee0a30cacaaac899b57c4acfdee32d693c398d0a108ac1861e.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -70,7 +70,48 @@ In March I left Intel to start working at Small Society. This has been an intere
       if (!holder) return;
       holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
       holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+      schedulePhotoRowLimit();
     }, true);
+
+    
+    
+    
+    function limitPhotoRows() {
+      const limit = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--photos-per-row'), 10);
+      document.querySelectorAll('.photo-row-break').forEach((rowBreak) => rowBreak.remove());
+      document.querySelectorAll('.post-body').forEach((body) => {
+        let rowTop = null;
+        let photosInRow = 0;
+        body.querySelectorAll(':scope > :is(figure, .post-photo)').forEach((photo) => {
+          if (photo.offsetTop !== rowTop) {
+            rowTop = photo.offsetTop;
+            photosInRow = 0;
+          }
+          photosInRow += 1;
+          if (photosInRow > limit) {
+            const rowBreak = document.createElement('span');
+            rowBreak.className = 'photo-row-break';
+            photo.before(rowBreak);
+            rowTop = photo.offsetTop;
+            photosInRow = 1;
+          }
+        });
+      });
+    }
+
+    
+    let photoRowLimitPending = false;
+    function schedulePhotoRowLimit() {
+      if (photoRowLimitPending) return;
+      photoRowLimitPending = true;
+      requestAnimationFrame(() => {
+        photoRowLimitPending = false;
+        limitPhotoRows();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', schedulePhotoRowLimit);
+    window.addEventListener('resize', schedulePhotoRowLimit);
   </script>
 
   

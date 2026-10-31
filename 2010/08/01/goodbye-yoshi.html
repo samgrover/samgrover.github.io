@@ -37,7 +37,7 @@
   <meta name="description" content="It was less than a year ago that we said hello to Yoshi. Unfortunately and unexpectedly now it&rsquo;s time to say goodbye.
 Yoshi started to show symptoms of great discomfort yesterday morning and we noticed blood in his urine shortly before noon. We immediately called his regular vet but they were about to close and asked us to go to Laurelhurst Veterinary Hospital (LVH) instead. So off we went. After his examination the doctor informed us that he is having urinary tract issues. He&rsquo;s had other health issues earlier this year. The doctor informed us that since he is having these issues really early in his life, he will need constant medical attention and care in the future. Their best treatment recommendation greatly exceeded what we can afford right now. Combined with other unexpected financial events from this summer and the expected upcoming travels, it soon became apparent that we would have to make a hard decision. We informed the doctor of our predicament. She offered that they have a process in place to adopt a pet in such a circumstance, to nurse them back to health and put them up for adoption. With great sadness we decided to surrender Yoshi to their care. This way he gets the best, immediate, and adequate care and will find a new home with someone who can address his future needs as well. There are no words for our heartfelt gratitude to the folks at the LVH for adopting him into their care." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0b900b781c4aabee0a30cacaaac899b57c4acfdee32d693c398d0a108ac1861e.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -70,7 +70,48 @@ Yoshi started to show symptoms of great discomfort yesterday morning and we noti
       if (!holder) return;
       holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
       holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+      schedulePhotoRowLimit();
     }, true);
+
+    
+    
+    
+    function limitPhotoRows() {
+      const limit = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--photos-per-row'), 10);
+      document.querySelectorAll('.photo-row-break').forEach((rowBreak) => rowBreak.remove());
+      document.querySelectorAll('.post-body').forEach((body) => {
+        let rowTop = null;
+        let photosInRow = 0;
+        body.querySelectorAll(':scope > :is(figure, .post-photo)').forEach((photo) => {
+          if (photo.offsetTop !== rowTop) {
+            rowTop = photo.offsetTop;
+            photosInRow = 0;
+          }
+          photosInRow += 1;
+          if (photosInRow > limit) {
+            const rowBreak = document.createElement('span');
+            rowBreak.className = 'photo-row-break';
+            photo.before(rowBreak);
+            rowTop = photo.offsetTop;
+            photosInRow = 1;
+          }
+        });
+      });
+    }
+
+    
+    let photoRowLimitPending = false;
+    function schedulePhotoRowLimit() {
+      if (photoRowLimitPending) return;
+      photoRowLimitPending = true;
+      requestAnimationFrame(() => {
+        photoRowLimitPending = false;
+        limitPhotoRows();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', schedulePhotoRowLimit);
+    window.addEventListener('resize', schedulePhotoRowLimit);
   </script>
 
   
