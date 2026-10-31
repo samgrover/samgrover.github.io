@@ -12,7 +12,7 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#e6d8bb; --bg-dark:#1f0a05; --text-light:#2e2016; --text-dark:#f4e6cc; --accent:#9a3b16; --accent-dark:#eeaa45; --bg:#e6d8bb; --text:#2e2016;"
+  style="--bg-light:#fdd4b8; --bg-dark:#1f0807; --text-light:#681917; --text-dark:#fdd4b8; --accent:#e80310; --accent-dark:#f48188; --bg:#fdd4b8; --text:#681917;"
   lang="en-us"
   dir="ltr"
 ><head>
@@ -237,8 +237,8 @@ As someone who enjoys photography it’s really nice to have a place to just vie
 
     
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#e6d8bb'.replace(/"/g, '');
-    const darkBg = '#1f0a05'.replace(/"/g, '');
+    const lightBg = '#fdd4b8'.replace(/"/g, '');
+    const darkBg = '#1f0807'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
