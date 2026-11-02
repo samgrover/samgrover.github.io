@@ -12,7 +12,7 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#fdd4b8; --bg-dark:#1f0807; --text-light:#681917; --text-dark:#fdd4b8; --accent:#e80310; --accent-dark:#f48188; --bg:#fdd4b8; --text:#681917;"
+  style="--bg-light:#f8f9fa; --bg-dark:#1c1e21; --text-light:#212529; --text-dark:#e9ecef; --accent:#6c757d; --accent-dark:#6c757d; --bg:#f8f9fa; --text:#212529;"
   lang="en-us"
   dir="ltr"
 ><head>
@@ -40,7 +40,7 @@
     content="A personal blog"
   />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.4eca5800ef8dbe15b91bd280103fada2dd634603cb755fa263e68dc7967e7eac.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -199,9 +199,12 @@
         color: var(--bg-dark) !important;
       }
     </style><header class="site-header">
-  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/" aria-current="page">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/" aria-current="page">Topics</a><a href="/archive/">Archive</a></nav>
 
   <div class="site-tools">
+    <a class="site-search" href="https://samgrover.com/search/" aria-label="Search">
+      <img src="https://samgrover.com/search.svg" alt="" />
+    </a>
     <button
       class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
       type="button"
@@ -219,8 +222,8 @@
 
     
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fdd4b8'.replace(/"/g, '');
-    const darkBg = '#1f0807'.replace(/"/g, '');
+    const lightBg = '#f8f9fa'.replace(/"/g, '');
+    const darkBg = '#1c1e21'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
@@ -258,13 +261,10 @@
 
 
 
+
 <style>
   .pj-hub-header { margin-bottom: 2rem; }
-  .pj-hub-header h1 {
-    font-family: var(--font-display); font-weight: 600;
-    font-size: var(--text-h2); font-stretch: 88%; margin: 0;
-  }
-  .pj-hub-intro { margin-top: 0.6rem; opacity: 0.85; }
+  .pj-hub-intro { opacity: 0.85; }
   .pj-hub-intro p { margin: 0; }
 
   .pj-cards {
@@ -338,10 +338,17 @@
   }
 
    
-  .pj-finished { margin-top: clamp(2.5rem, 7vh, 4rem); }
-  .prose .pj-finished-title {
+  .pj-section { margin-top: clamp(2.5rem, 7vh, 4rem); }
+  .prose .pj-section-title {
     margin: 0 0 1.25rem; font-size: var(--text-h3); line-height: 1.15;
   }
+
+   
+  @media (min-width: 1100px) {
+    .pj-photography .pj-cards { grid-template-columns: repeat(4, 1fr); }
+  }
+
+   
   .pj-finished .pj-cards { grid-template-columns: 1fr; }
   .pj-period {
     margin: 0 0 0.35rem !important;
@@ -360,7 +367,6 @@
 
 <article class="post-single pj-hub">
   <header class="pj-hub-header">
-    <h1>Topics</h1>
     <div class="pj-hub-intro"><p>Ongoing series and recurring topics, each gathered on its own page. Everything here also appears in the regular stream of <a href="/posts/">posts</a>.</p>
 </div>
   </header>
@@ -384,42 +390,12 @@
   
 
   <li>
-    <a class="pj-card pj-motif-film" href="/topics/the-complete-roll/">
-      <div class="pj-cover">
-        <img src="https://i.ytimg.com/vi/3PvevCLw4fY/maxresdefault.jpg" alt="" loading="lazy" decoding="async">
-      </div>
-      
-        <h2>The Complete Roll</h2>
-        <p class="pj-blurb">A video slideshow of every frame from a single roll of film — the keepers and the misses.</p>
-        <p class="pj-meta">
-          2 posts · latest Oct 2026
-        </p>
-      
-    </a>
-  </li>
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-    
-    
-      
-      
-    
-  
-
-  <li>
     <a class="pj-card pj-motif-plain" href="/topics/travel/">
       <div class="pj-cover">
         <img src="https://live.staticflickr.com/65535/55355638433_3034c84efa_h.jpg" alt="" loading="lazy" decoding="async">
       </div>
       
+        
         <h2>Travel</h2>
         <p class="pj-blurb">Blog posts grouped by travels to various places.</p>
         <p class="pj-meta">
@@ -451,6 +427,7 @@
         <img src="https://live.staticflickr.com/65535/55054334498_12f0275730_h.jpg" alt="" loading="lazy" decoding="async">
       </div>
       
+        
         <h2>Regional Explorations</h2>
         <p class="pj-blurb">Day trips and weekends around Oregon and the Pacific Northwest.</p>
         <p class="pj-meta">
@@ -482,10 +459,50 @@
         <img src="https://live.staticflickr.com/65535/55492340476_d09a5de9b1_h.jpg" alt="" loading="lazy" decoding="async">
       </div>
       
+        
         <h2>Yard &amp; Garden</h2>
         <p class="pj-blurb">Our yard through the seasons and the years.</p>
         <p class="pj-meta">
           41 posts · latest Aug 2026
+        </p>
+      
+    </a>
+  </li>
+
+  </ul>
+
+  
+    <section class="pj-section pj-photography">
+      <h2 class="pj-section-title">Photography</h2>
+      <ul class="pj-cards">
+        
+  
+  
+
+  
+  
+  
+  
+  
+  
+    
+    
+      
+      
+    
+  
+
+  <li>
+    <a class="pj-card pj-motif-film" href="/topics/the-complete-roll/">
+      <div class="pj-cover">
+        <img src="https://i.ytimg.com/vi/3PvevCLw4fY/maxresdefault.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      
+        
+        <h3>The Complete Roll</h3>
+        <p class="pj-blurb">A video slideshow of every frame from a single roll of film — the keepers and the misses.</p>
+        <p class="pj-meta">
+          2 posts · latest Oct 2026
         </p>
       
     </a>
@@ -515,7 +532,8 @@
         <img src="https://live.staticflickr.com/65535/55508412150_4cf302df18_h.jpg" alt="" loading="lazy" decoding="async">
       </div>
       
-        <h2>Hasselblad 500 C/M</h2>
+        
+        <h3>Hasselblad 500 C/M</h3>
         <p class="pj-blurb">Medium-format squares from my Hasselblad 500 C/M, seen through its waist-level finder.</p>
         <p class="pj-meta">
           55 photos · latest Sep 2026
@@ -548,7 +566,8 @@
         <img src="https://live.staticflickr.com/65535/55213862711_db8e02e2dc_h.jpg" alt="" loading="lazy" decoding="async">
       </div>
       
-        <h2>Voigtländer Bessa R2a</h2>
+        
+        <h3>Voigtländer Bessa R2a</h3>
         <p class="pj-blurb">35mm frames from my Voigtländer Bessa R2a rangefinder.</p>
         <p class="pj-meta">
           47 photos · latest Apr 2026
@@ -557,11 +576,45 @@
     </a>
   </li>
 
-  </ul>
+  
+  
 
   
-    <section class="pj-finished">
-      <h2 class="pj-finished-title">Past Chapters</h2>
+  
+  
+  
+  
+  
+    
+    
+      
+      
+    
+  
+
+  <li>
+    <a class="pj-card pj-motif-plain" href="/topics/the-practice/">
+      <div class="pj-cover">
+        <img src="https://live.staticflickr.com/65535/54843714373_d341737813_h.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      
+        
+        <h3>The Practice</h3>
+        <p class="pj-blurb">How I make photographs: what I&#39;ve tried, what I&#39;ve learned, and how I think about it.</p>
+        <p class="pj-meta">
+          22 posts · latest Sep 2026
+        </p>
+      
+    </a>
+  </li>
+
+      </ul>
+    </section>
+  
+
+  
+    <section class="pj-section pj-finished">
+      <h2 class="pj-section-title">Past Chapters</h2>
       <ul class="pj-cards">
         
   

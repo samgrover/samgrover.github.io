@@ -1,0 +1,1022 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg-light:#f8f9fa; --bg-dark:#1c1e21; --text-light:#212529; --text-dark:#e9ecef; --accent:#6c757d; --accent-dark:#6c757d; --bg:#f8f9fa; --text:#212529;"
+  lang="en-us"
+  dir="ltr"
+><head>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>The Practice - samgrover.com</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
+  <meta name="author" content="samgrover.com" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.4eca5800ef8dbe15b91bd280103fada2dd634603cb755fa263e68dc7967e7eac.css" />
+
+  
+  <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
+
+  
+
+  <link rel="preload" as="image" href="https://samgrover.com/rss.svg" />
+
+  
+
+  
+  
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="samgrover.com">
+
+  <meta name="generator" content="Hugo 0.168.0">
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+      schedulePhotoRowLimit();
+    }, true);
+
+    
+    
+    
+    function limitPhotoRows() {
+      const limit = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--photos-per-row'), 10);
+      document.querySelectorAll('.photo-row-break').forEach((rowBreak) => rowBreak.remove());
+      document.querySelectorAll('.post-body').forEach((body) => {
+        let rowTop = null;
+        let photosInRow = 0;
+        body.querySelectorAll(':scope > :is(figure, .post-photo)').forEach((photo) => {
+          if (photo.offsetTop !== rowTop) {
+            rowTop = photo.offsetTop;
+            photosInRow = 0;
+          }
+          photosInRow += 1;
+          if (photosInRow > limit) {
+            const rowBreak = document.createElement('span');
+            rowBreak.className = 'photo-row-break';
+            photo.before(rowBreak);
+            rowTop = photo.offsetTop;
+            photosInRow = 1;
+          }
+        });
+      });
+    }
+
+    
+    let photoRowLimitPending = false;
+    function schedulePhotoRowLimit() {
+      if (photoRowLimitPending) return;
+      photoRowLimitPending = true;
+      requestAnimationFrame(() => {
+        photoRowLimitPending = false;
+        limitPhotoRows();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', schedulePhotoRowLimit);
+    window.addEventListener('resize', schedulePhotoRowLimit);
+  </script>
+
+  
+	<meta itemprop="name" content="The Practice">
+	<meta itemprop="description" content="Notes from two decades of practicing photography: learning a camera, working within constraints, getting through slumps, and looking back at the work.">
+	<meta itemprop="datePublished" content="2026-09-25T12:38:06-07:00">
+	<meta itemprop="dateModified" content="2026-09-25T12:38:06-07:00">
+	<meta itemprop="wordCount" content="22"><meta property="og:url" content="https://samgrover.com/topics/the-practice/">
+	<meta property="og:site_name" content="samgrover.com">
+	<meta property="og:title" content="The Practice">
+	<meta property="og:description" content="Notes from two decades of practicing photography: learning a camera, working within constraints, getting through slumps, and looking back at the work.">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="website">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="The Practice">
+	<meta name="twitter:description" content="Notes from two decades of practicing photography: learning a camera, working within constraints, getting through slumps, and looking back at the work.">
+<link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://samgrover.com/topics/the-practice/index.xml"
+    title="samgrover.com"
+  />
+  <link rel="me" href="https://xoxo.zone/@sam" />
+  <link rel="me" href="https://samgrover.studio" />
+  <link rel="me" href="https://bsky.app/profile/samgrover.bsky.social" />
+
+  
+  <link rel="canonical" href="https://samgrover.com/topics/the-practice/" />
+</head>
+<body
+    class="bg-(--bg) antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent]"
+  >
+    <style>
+       
+      article, article *, .prose, .prose *, main p, main p * {
+        color: var(--text-light) !important;
+      }
+       
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-color: transparent;
+        pointer-events: none;
+      }
+       
+      html.dark article, html.dark article *, html.dark .prose, html.dark .prose *, html.dark main p, html.dark main p * {
+        color: var(--text-dark) !important;
+      }
+       
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
+      }
+      html.dark body::before {
+        background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
+      }
+       
+      article figure a, section figure a {
+        display: block !important;
+        line-height: 0 !important;
+      }
+      article figure img, section figure img {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      article figure figcaption, section figure figcaption {
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
+        font-style: normal !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
+        text-align: left !important;
+      }
+       
+      .btn {
+        background-color: var(--text-light) !important;
+        color: var(--bg-light) !important;
+      }
+      html.dark .btn {
+        background-color: var(--text-dark) !important;
+        color: var(--bg-dark) !important;
+      }
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/" aria-current="page">Topics</a><a href="/archive/">Archive</a></nav>
+
+  <div class="site-tools">
+    <a class="site-search" href="https://samgrover.com/search/" aria-label="Search">
+      <img src="https://samgrover.com/search.svg" alt="" />
+    </a>
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#f8f9fa'.replace(/"/g, '');
+    const darkBg = '#1c1e21'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    let isDarkMode;
+    if (htmlClass.contains('dark')) {
+      isDarkMode = true;
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      isDarkMode = darkVal ? darkVal === 'true' : darkScheme.matches;
+    }
+    
+    setDark(isDarkMode);
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+</header>
+<main class="site-main prose prose-neutral dark:prose-invert relative">
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<style>
+   
+  .pj-practice {
+    --safelight: #a8281e;        
+    --rule: rgba(168, 40, 30, 0.28);
+  }
+  html.dark .pj-practice {
+    --safelight: #ff9a8a;
+    --rule: rgba(255, 154, 138, 0.25);
+  }
+
+  .pr-header { margin-bottom: clamp(1.75rem, 5vh, 3rem); }
+  .pr-header h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: var(--text-h2); font-stretch: 88%; margin: 0;
+  }
+  .pr-intro { margin-top: 0.6rem; max-width: var(--measure); opacity: 0.85; }
+  .pr-intro p { margin: 0; }
+
+   
+  .pr-year { padding: 1.25rem 0 1.75rem; border-top: 1px solid var(--rule); }
+  .prose .pj-practice .pr-year h2 {
+    margin: 0 0 1rem; font-family: var(--font-display); font-weight: 600;
+    font-size: var(--text-h3); line-height: 1.15; color: var(--safelight) !important;
+  }
+  .pr-entries {
+    display: grid; grid-template-columns: 1fr; gap: 1.5rem 2.25rem;
+    list-style: none; margin: 0; padding: 0;
+  }
+  .pr-entries > li { margin: 0; padding: 0; }
+  .pr-entries > li::before { display: none; }
+  @media (min-width: 900px) {
+    .pr-year { display: grid; grid-template-columns: 7rem 1fr; }
+    .pr-entries { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 1400px) {
+    .pr-entries { grid-template-columns: repeat(3, 1fr); }
+  }
+
+   
+  .pr-entry {
+    display: grid; grid-template-columns: 1fr; gap: 1rem; align-items: start;
+    text-decoration: none !important;
+  }
+  .pr-entry.has-thumb { grid-template-columns: 6rem 1fr; }
+  .pr-thumb {
+    position: relative; display: block; aspect-ratio: 1 / 1; overflow: hidden;
+    border-radius: 3px; background: rgba(100, 85, 65, 0.15);
+  }
+  .pr-thumb img {
+    position: absolute; inset: 0; width: 100% !important; height: 100% !important;
+    max-width: none !important; object-fit: cover; margin: 0 !important;
+    border: 0 !important; box-shadow: none !important; display: block;
+  }
+  .pr-text { display: block; min-width: 0; }
+  .prose .pj-practice .pr-date {
+    display: block; margin-bottom: 0.25rem;
+    font-family: var(--font-display); font-size: 0.74rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--safelight) !important;
+  }
+  .pr-title {
+    display: block; margin-bottom: 0.3rem;
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 1.1875rem; line-height: 1.2;
+  }
+  .pr-entry:hover .pr-title,
+  .pr-entry:hover .pr-excerpt.is-lead {
+    text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px;
+  }
+  .pr-excerpt { display: block; font-size: 0.95rem; line-height: 1.5; opacity: 0.85; }
+</style>
+
+<article class="post-single pj-practice">
+  <header class="pr-header">
+    <style>
+  .pj-crumb {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+    margin: 0 0 0.5rem; opacity: 0.65;
+  }
+  .pj-crumb a { text-decoration: none; color: var(--accent) !important; }
+  html.dark .pj-crumb a { color: var(--accent-dark) !important; }
+  .pj-crumb a:hover { text-decoration: underline; }
+  .pj-crumb .sep { margin: 0 0.5em; opacity: 0.5; }
+</style>
+<p class="pj-crumb">
+  <a href="/topics/">Topics</a><span class="sep">/</span><span>The Practice</span>
+</p>
+
+    <h1>The Practice</h1>
+    <div class="pr-intro"><p>Notes from two decades of practicing photography: learning a camera, working within constraints, getting through slumps, and looking back at the work.</p>
+</div>
+  </header>
+
+  
+    <section class="pr-year" id="y2026">
+      <h2>2026</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2026/09/25/iphone-camera-film.html">
+              <span class="pr-thumb"><img src="https://live.staticflickr.com/65535/55551068660_ac8efae04b_h.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Sep</span>
+                
+                <span class="pr-excerpt is-lead">iPhone camera film grain can be really terrible I suppose. Those leaves in the back look like they have some kind of infestation. Gives me a nauseated feeling just looking at it. The next photo taken right after looks quite …</span>
+              </span>
+            </a>
+          </li>
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2026/07/18/disposable-walks.html">
+              <span class="pr-thumb"><img src="https://live.staticflickr.com/65535/55401606742_6b54a93f1c_h.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Jul</span>
+                <span class="pr-title">Saturday Morning Disposable Photo Walk</span>
+                <span class="pr-excerpt">Photos taken this morning with a cheap disposable-camera lens mounted in a lens cap. Uncropped, and minimally processed in Adobe Lightroom Classic.</span>
+              </span>
+            </a>
+          </li>
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2026/03/14/spring.html">
+              <span class="pr-thumb"><img src="https://live.staticflickr.com/65535/55148059844_5d43b24431_h.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Mar</span>
+                <span class="pr-title">A Totally Silly Comparison of Photos</span>
+                <span class="pr-excerpt">Spring is here, and along with all the blossoms, I’m also enjoying the No Fusion app. So much so that I wanted to try and do some side-by-side …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2025">
+      <h2>2025</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2025/10/09/obscura-powell-butte.html">
+              <span class="pr-thumb"><img src="https://live.staticflickr.com/65535/54843714373_d341737813_h.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Oct</span>
+                <span class="pr-title">A Walk on Powell Butte</span>
+                <span class="pr-excerpt">Walking on Powell Butte often brings me into a black and white state-of-mind. That’s what happened when I wrote a post about a photo walk there in …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2024">
+      <h2>2024</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2024/08/21/rejection-of-computational.html">
+              <span class="pr-thumb"><img src="https://samgrover.micro.blog/uploads/2024/2c6e803f-c29f-4126-a486-5b04348552cd.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Aug</span>
+                <span class="pr-title">Rejection of Computational Photography as the Sole Creative Path Forward for iPhone Photography</span>
+                <span class="pr-excerpt">Over the last week I’ve explored Halide app’s new Process Zero (PZ) feature. For the first couple of days I misunderstood what the PZ image was and …</span>
+              </span>
+            </a>
+          </li>
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2024/07/10/this-was-taken.html">
+              <span class="pr-thumb"><img src="https://samgrover.micro.blog/uploads/2024/578d489f-b138-4382-afea-1651d83c67f5.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Jul</span>
+                
+                <span class="pr-excerpt is-lead">This was taken at about the same time and location as another photo I shared last week, but I only saw it recently when I received film scans. I like this composition a lot more. The shadows balance the mural wall, there are fewer …</span>
+              </span>
+            </a>
+          </li>
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry" href="/2024/05/25/last-night-just.html">
+              
+              <span class="pr-text">
+                <span class="pr-date">May</span>
+                
+                <span class="pr-excerpt is-lead">Last night, just before I slept, a thought occurred to me and I visualized a photograph in my head. I woke up at 4:30am, and as the pre-dawn light started to illuminate the room, that photo popped back into my head. I couldn’t get …</span>
+              </span>
+            </a>
+          </li>
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2024/03/27/105807.html">
+              <span class="pr-thumb"><img src="https://samgrover.micro.blog/uploads/2024/31ef9ce3-05c6-4558-981b-13f2b4866606.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Mar</span>
+                
+                <span class="pr-excerpt is-lead">I noticed this bird from my kitchen window, took out my iPhone, zoomed in to 8x (digital) and took a few photos, and a few more when it flew over to another point. These two were picked from those, and even though they were …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2022">
+      <h2>2022</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2022/05/08/neighborhood-dogwoods-in.html">
+              <span class="pr-thumb"><img src="https://samgrover.micro.blog/uploads/2022/9b46f0a9f0.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">May</span>
+                
+                <span class="pr-excerpt is-lead">Neighborhood dogwoods in the gray. As I was taking these photos I was thinking how I prefer the 2x for compositions when it comes to zoom. 3x is handy but I have so many years of composing in ~50mm (2x on iPhone). Alas, iPhone 13 …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2021">
+      <h2>2021</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2021/09/12/i-went-on.html">
+              <span class="pr-thumb"><img src="https://samgrover.micro.blog/uploads/2021/4dd9da9f1e.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Sep</span>
+                
+                <span class="pr-excerpt is-lead">I went on a photowalk with my friend Andrew today and got to try a really old Leica lens that he found in a thrift store recently. It was a Leitz Hektor 135mm f/4.5 and was probably made in the 1950s. It’s remarkable how I can …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2020">
+      <h2>2020</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2020/09/01/all-my-august.html">
+              <span class="pr-thumb"><img src="https://live.staticflickr.com/65535/54603143499_6db1607456_h.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Sep</span>
+                <span class="pr-title">All My August Photo Challenge Posts on Micro.blog</span>
+                <span class="pr-excerpt">Some notes: I constrained myself to photos taken on that day. No digging into the archives. A lot of these were taken around the house or the …</span>
+              </span>
+            </a>
+          </li>
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2020/03/02/all-my-february.html">
+              <span class="pr-thumb"><img src="https://live.staticflickr.com/65535/54580829395_0dcb7080b4_h.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Mar</span>
+                <span class="pr-title">All My February Photo Challenge Posts on Micro.blog</span>
+                <span class="pr-excerpt">Some notes: I constrained myself to photos taken on that day. No digging into the archives. A lot of these were taken around the house or the …</span>
+              </span>
+            </a>
+          </li>
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2020/02/04/reflecting-on-the.html">
+              <span class="pr-thumb"><img src="https://live.staticflickr.com/65535/54570205769_cebedc724e_h.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Feb</span>
+                
+                <span class="pr-excerpt is-lead">Reflecting on the fact that daily prompts for photography aren’t really my thing but I’m giving it a shot anyway.</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2015">
+      <h2>2015</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry" href="/2015/01/04/street-photography-in.html">
+              
+              <span class="pr-text">
+                <span class="pr-date">Jan</span>
+                <span class="pr-title">Street Photography in Savannah or: How I Overcame the Feeling of Being in a Slump</span>
+                <span class="pr-excerpt">I practice photography regularly. I wander with my camera and take photos of whatever I find interesting, but particularly I love street photography, …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2009">
+      <h2>2009</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2009/05/30/practicing-photography.html">
+              <span class="pr-thumb"><img src="https://live.staticflickr.com/174/423814367_0132443f48_h.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">May</span>
+                <span class="pr-title">Practicing Photography</span>
+                <span class="pr-excerpt">Mike Johnston, over at T.O.P, writes interesting posts quite often. He has recently written a couple of them that hit close to home. They are The …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2008">
+      <h2>2008</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry" href="/2008/03/24/you-cant-have.html">
+              
+              <span class="pr-text">
+                <span class="pr-date">Mar</span>
+                
+                <span class="pr-excerpt is-lead">You can’t have art without resistance in the materials. — William Morris (via A Brief Message: No Resistance Is Futile) - I’ve known this intuitively as I added constraints to my photography. Current constraints: 50mm prime lens, …</span>
+              </span>
+            </a>
+          </li>
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2008/01/19/one-year-with.html">
+              <span class="pr-thumb"><img src="https://farm1.static.flickr.com/172/420818937_3eb85528cf_m.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Jan</span>
+                <span class="pr-title">One year with a Voigtländer Bessa R2A rangefinder</span>
+                <span class="pr-excerpt">It was heavier than I expected. I had ignored my cardinal law in purchasing a camera, “Hold it in your hands to see how it feels”. One year has gone …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2007">
+      <h2>2007</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2007/12/27/a-selection-of.html">
+              <span class="pr-thumb"><img src="https://farm1.static.flickr.com/174/423814367_99f7c65e86_m.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Dec</span>
+                <span class="pr-title">A selection of my photos from 2007</span>
+                <span class="pr-excerpt">I don’t like calling any photo of mine a favorite, but some are just more interesting than others. Two years ago I listed just a couple of photos. …</span>
+              </span>
+            </a>
+          </li>
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry" href="/2007/07/04/back.html">
+              
+              <span class="pr-text">
+                <span class="pr-date">Jul</span>
+                <span class="pr-title">Back</span>
+                <span class="pr-excerpt">It’s been a while since I updated this blog. About ten months. I’ve been an intern at Intel during that period and I recently joined as an employee. …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2006">
+      <h2>2006</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2006/10/01/stark-street.html">
+              <span class="pr-thumb"><img src="https://static.flickr.com/115/257746536_e079a12354_m.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Oct</span>
+                <span class="pr-title">Stark Street</span>
+                <span class="pr-excerpt">Russ wanted to recreate the cover of The Beatles’ Abbey Road album cover along with his wife, Patty and son, Riley. He planned the shot and scouted …</span>
+              </span>
+            </a>
+          </li>
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2006/05/27/early-experience-with.html">
+              <span class="pr-thumb"><img src="https://live.staticflickr.com/50/151705515_95ff46683a_h.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">May</span>
+                <span class="pr-title">Early experience with a rangefinder camera</span>
+                <span class="pr-excerpt">I borrowed a rangefinder camera from a friend a couple of weeks ago. The camera is a Canonet QL17 G-III. I&#39;ve gone through one roll on it and it&#39;s …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+    <section class="pr-year" id="y2005">
+      <h2>2005</h2>
+      <ol class="pr-entries">
+        
+          
+          
+
+          
+          
+          
+          
+          
+          
+          
+
+          <li>
+            <a class="pr-entry has-thumb" href="/2005/12/30/my-photography-in.html">
+              <span class="pr-thumb"><img src="https://live.staticflickr.com/33/45245477_f309f169a6_h.jpg" alt="" loading="lazy" decoding="async"></span>
+              <span class="pr-text">
+                <span class="pr-date">Dec</span>
+                <span class="pr-title">My photography in 2005</span>
+                <span class="pr-excerpt">This has been a watershed year for my photography. I’ve always had a casual interest in it, but this year I invested time and money into practicing …</span>
+              </span>
+            </a>
+          </li>
+        
+      </ol>
+    </section>
+  
+</article>
+</main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
+</footer>
+</body>
+</html>

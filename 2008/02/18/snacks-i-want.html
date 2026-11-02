@@ -12,7 +12,7 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#fdd4b8; --bg-dark:#1f0807; --text-light:#681917; --text-dark:#fdd4b8; --accent:#e80310; --accent-dark:#f48188; --bg:#fdd4b8; --text:#681917;"
+  style="--bg-light:#f8f9fa; --bg-dark:#1c1e21; --text-light:#212529; --text-dark:#e9ecef; --accent:#6c757d; --accent-dark:#6c757d; --bg:#f8f9fa; --text:#212529;"
   lang="en-us"
   dir="ltr"
 ><head>
@@ -37,7 +37,7 @@
   <meta name="description" content="For the last few weeks, I&rsquo;ve had a new personal assistant, Sandy. I came to her after trying Backpack, Remember the Milk, Stikkit and others that I don&rsquo;t even remember any more. She&rsquo;s the best one I&rsquo;ve had so far. She makes me want her more. So far my girlfriend is cool with that, even though Sandy lives right here in Portland.
 This weekend I saw Helvetica. I got excited when I noticed that Movie Madness had it on their list but it was never in stock when I got there. On Saturday it wasn&rsquo;t on the shelves either, but Liz suggested that I peruse the un-shelved DVDs and there it was. I&rsquo;ve never thought about the history behind types. This film was enjoyable just for that. And there&rsquo;s a lot more about typography and graphic design in there. To top it all, the film is set to a really cool soundtrack." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.4eca5800ef8dbe15b91bd280103fada2dd634603cb755fa263e68dc7967e7eac.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -201,9 +201,12 @@ This weekend I saw Helvetica. I got excited when I noticed that Movie Madness ha
         color: var(--bg-dark) !important;
       }
     </style><header class="site-header">
-  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a></nav>
 
   <div class="site-tools">
+    <a class="site-search" href="https://samgrover.com/search/" aria-label="Search">
+      <img src="https://samgrover.com/search.svg" alt="" />
+    </a>
     <button
       class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
       type="button"
@@ -221,8 +224,8 @@ This weekend I saw Helvetica. I got excited when I noticed that Movie Madness ha
 
     
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fdd4b8'.replace(/"/g, '');
-    const darkBg = '#1f0807'.replace(/"/g, '');
+    const lightBg = '#f8f9fa'.replace(/"/g, '');
+    const darkBg = '#1c1e21'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');

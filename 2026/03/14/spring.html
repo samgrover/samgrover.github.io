@@ -12,7 +12,7 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#fdd4b8; --bg-dark:#1f0807; --text-light:#681917; --text-dark:#fdd4b8; --accent:#e80310; --accent-dark:#f48188; --bg:#fdd4b8; --text:#681917;"
+  style="--bg-light:#f8f9fa; --bg-dark:#1c1e21; --text-light:#212529; --text-dark:#e9ecef; --accent:#6c757d; --accent-dark:#6c757d; --bg:#f8f9fa; --text:#212529;"
   lang="en-us"
   dir="ltr"
 ><head>
@@ -54,7 +54,7 @@ Some photos had highlights or shadows adjusted. No other settings were changed.
 
 " />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.4eca5800ef8dbe15b91bd280103fada2dd634603cb755fa263e68dc7967e7eac.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -138,7 +138,8 @@ All photos processed in Adobe Lightroom Classic as follows:
 The Leica photos have an aspect ratio of 3:2, so I cropped the iPhone’s 4:3 photos to match that. I cropped the iPhone photos some more to get them as close as possible to match the frame. The perspective is different because the Leica photos were taken with a 35mm f/2 lens and the iPhone ones were taken with the 17 Pro’s f/1.8 24mm equivalent lens. Leica photos started as RAWs. iPhone photos started as ProRAWs, not BayerRAWs. No HEIF&#43; conversion is involved in these. White Balance was set to Daylight for all photos. Some photos had highlights or shadows adjusted. No other settings were changed. Leica M10 iPhone 17 Pro">
 	<meta itemprop="datePublished" content="2026-03-14T16:30:23-07:00">
 	<meta itemprop="dateModified" content="2026-03-14T16:30:23-07:00">
-	<meta itemprop="wordCount" content="192"><meta property="og:url" content="https://samgrover.com/2026/03/14/spring.html">
+	<meta itemprop="wordCount" content="192">
+	<meta itemprop="keywords" content="The Practice"><meta property="og:url" content="https://samgrover.com/2026/03/14/spring.html">
 	<meta property="og:site_name" content="samgrover.com">
 	<meta property="og:title" content="A Totally Silly Comparison of Photos">
 	<meta property="og:description" content="Spring is here, and along with all the blossoms, I’m also enjoying the No Fusion app. So much so that I wanted to try and do some side-by-side comparisons between photos taken with it and with my Leica camera. Please note this is all just for fun and I acknowledge the silliness.
@@ -221,9 +222,12 @@ The Leica photos have an aspect ratio of 3:2, so I cropped the iPhone’s 4:3 ph
         color: var(--bg-dark) !important;
       }
     </style><header class="site-header">
-  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a></nav>
 
   <div class="site-tools">
+    <a class="site-search" href="https://samgrover.com/search/" aria-label="Search">
+      <img src="https://samgrover.com/search.svg" alt="" />
+    </a>
     <button
       class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
       type="button"
@@ -241,8 +245,8 @@ The Leica photos have an aspect ratio of 3:2, so I cropped the iPhone’s 4:3 ph
 
     
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fdd4b8'.replace(/"/g, '');
-    const darkBg = '#1f0807'.replace(/"/g, '');
+    const lightBg = '#f8f9fa'.replace(/"/g, '');
+    const darkBg = '#1c1e21'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');

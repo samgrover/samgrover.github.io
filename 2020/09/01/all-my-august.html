@@ -12,7 +12,7 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#fdd4b8; --bg-dark:#1f0807; --text-light:#681917; --text-dark:#fdd4b8; --accent:#e80310; --accent-dark:#f48188; --bg:#fdd4b8; --text:#681917;"
+  style="--bg-light:#f8f9fa; --bg-dark:#1c1e21; --text-light:#212529; --text-dark:#e9ecef; --accent:#6c757d; --accent-dark:#6c757d; --bg:#f8f9fa; --text:#212529;"
   lang="en-us"
   dir="ltr"
 ><head>
@@ -76,7 +76,7 @@ This photo challenge was managed by @macgenie.
 The last one I did was the February photoblogging challenge.
 " />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.4eca5800ef8dbe15b91bd280103fada2dd634603cb755fa263e68dc7967e7eac.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -164,7 +164,8 @@ Some notes:
 I constrained myself to photos taken on that day. No digging into the archives. A lot of these were taken around the house or the neighborhood, i.e. the pandemic life. There was one day where I took a photo but forgot to post and posted the next morning. So there goes my 30 day photo blogging pin on Micro.blog. Again 🤦‍♂️ Some days I kinda winged it, as can be seen 😬. This photo challenge was managed by @macgenie. The last one I did was the February photoblogging challenge.">
 	<meta itemprop="datePublished" content="2020-09-01T09:16:46-07:00">
 	<meta itemprop="dateModified" content="2020-10-25T13:26:39-07:00">
-	<meta itemprop="wordCount" content="153"><meta property="og:url" content="https://samgrover.com/2020/09/01/all-my-august.html">
+	<meta itemprop="wordCount" content="153">
+	<meta itemprop="keywords" content="The Practice"><meta property="og:url" content="https://samgrover.com/2020/09/01/all-my-august.html">
 	<meta property="og:site_name" content="samgrover.com">
 	<meta property="og:title" content="All My August Photo Challenge Posts on Micro.blog">
 	<meta property="og:description" content="1: up 2: floating 3: bug 4: peace 5: flow 6: bisect
@@ -255,9 +256,12 @@ I constrained myself to photos taken on that day. No digging into the archives. 
         color: var(--bg-dark) !important;
       }
     </style><header class="site-header">
-  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a></nav>
 
   <div class="site-tools">
+    <a class="site-search" href="https://samgrover.com/search/" aria-label="Search">
+      <img src="https://samgrover.com/search.svg" alt="" />
+    </a>
     <button
       class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
       type="button"
@@ -275,8 +279,8 @@ I constrained myself to photos taken on that day. No digging into the archives. 
 
     
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fdd4b8'.replace(/"/g, '');
-    const darkBg = '#1f0807'.replace(/"/g, '');
+    const lightBg = '#f8f9fa'.replace(/"/g, '');
+    const darkBg = '#1c1e21'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');

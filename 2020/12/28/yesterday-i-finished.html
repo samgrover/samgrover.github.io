@@ -12,7 +12,7 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#fdd4b8; --bg-dark:#1f0807; --text-light:#681917; --text-dark:#fdd4b8; --accent:#e80310; --accent-dark:#f48188; --bg:#fdd4b8; --text:#681917;"
+  style="--bg-light:#f8f9fa; --bg-dark:#1c1e21; --text-light:#212529; --text-dark:#e9ecef; --accent:#6c757d; --accent-dark:#6c757d; --bg:#f8f9fa; --text:#212529;"
   lang="en-us"
   dir="ltr"
 ><head>
@@ -37,7 +37,7 @@
   <meta name="description" content="Yesterday I finished reading The Broken Earth Trilogy by N.K. Jemisin.
 I read the first book last year. I was sufficiently intrigued that I bought the second book soon after, but for whatever reason I didn&rsquo;t start reading it until a couple of months ago. Fortunately it starts in a way that helped recall the story within the first few chapters. It then built upon the world and the characters as any good middle book. Once I&rsquo;d finished that, I couldn&rsquo;t wait to read the third one. I bought it right away and read it voraciously over the last two weeks. It did a great job of tying it all together and was very satisfying." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.4eca5800ef8dbe15b91bd280103fada2dd634603cb755fa263e68dc7967e7eac.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -201,9 +201,12 @@ I read the first book last year. I was sufficiently intrigued that I bought the 
         color: var(--bg-dark) !important;
       }
     </style><header class="site-header">
-  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a></nav>
 
   <div class="site-tools">
+    <a class="site-search" href="https://samgrover.com/search/" aria-label="Search">
+      <img src="https://samgrover.com/search.svg" alt="" />
+    </a>
     <button
       class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
       type="button"
@@ -221,8 +224,8 @@ I read the first book last year. I was sufficiently intrigued that I bought the 
 
     
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fdd4b8'.replace(/"/g, '');
-    const darkBg = '#1f0807'.replace(/"/g, '');
+    const lightBg = '#f8f9fa'.replace(/"/g, '');
+    const darkBg = '#1c1e21'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');

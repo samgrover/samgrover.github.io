@@ -12,7 +12,7 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg-light:#fdd4b8; --bg-dark:#1f0807; --text-light:#681917; --text-dark:#fdd4b8; --accent:#e80310; --accent-dark:#f48188; --bg:#fdd4b8; --text:#681917;"
+  style="--bg-light:#f8f9fa; --bg-dark:#1c1e21; --text-light:#212529; --text-dark:#e9ecef; --accent:#6c757d; --accent-dark:#6c757d; --bg:#f8f9fa; --text:#212529;"
   lang="en-us"
   dir="ltr"
 ><head>
@@ -37,7 +37,7 @@
   <meta name="description" content="It&rsquo;s been a while since I updated this blog. About ten months. I&rsquo;ve been an intern at Intel during that period and I recently joined as an employee.
 Also, now it&rsquo;s been one year since I moved to the SE Portland. I like it here. I have a hour-or-so long commute each way on TriMet, which isn&rsquo;t terribly bad as it gives me time to read. However, public transit doesn&rsquo;t work too well when there are more things to do in a day, especially in different parts of town. Even though my schedule at work is quite flexible, public transit can become a bottleneck. That occurs when I want to do more than go to work in the morning and return home in the evening. I thought that was sufficient excuse for me to go in for a car ;-) and placed an order for a new Mini Cooper S in April. I expect to have delivery within a month and am looking forward to that. It will be my first car." />
   <meta name="author" content="samgrover.com" />
-  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.0fa5b2e73f092ac08e12e7d57aba3158f462b3e7d3cae649037f6908bcb26a86.css" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.4eca5800ef8dbe15b91bd280103fada2dd634603cb755fa263e68dc7967e7eac.css" />
 
   
   <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
@@ -120,7 +120,8 @@ Also, now it&rsquo;s been one year since I moved to the SE Portland. I like it h
 Also, now it’s been one year since I moved to the SE Portland. I like it here. I have a hour-or-so long commute each way on TriMet, which isn’t terribly bad as it gives me time to read. However, public transit doesn’t work too well when there are more things to do in a day, especially in different parts of town. Even though my schedule at work is quite flexible, public transit can become a bottleneck. That occurs when I want to do more than go to work in the morning and return home in the evening. I thought that was sufficient excuse for me to go in for a car ;-) and placed an order for a new Mini Cooper S in April. I expect to have delivery within a month and am looking forward to that. It will be my first car.">
 	<meta itemprop="datePublished" content="2007-07-04T22:06:23-07:00">
 	<meta itemprop="dateModified" content="2007-07-04T22:06:23-07:00">
-	<meta itemprop="wordCount" content="269"><meta property="og:url" content="https://samgrover.com/2007/07/04/back.html">
+	<meta itemprop="wordCount" content="269">
+	<meta itemprop="keywords" content="The Practice"><meta property="og:url" content="https://samgrover.com/2007/07/04/back.html">
 	<meta property="og:site_name" content="samgrover.com">
 	<meta property="og:title" content="Back">
 	<meta property="og:description" content="It’s been a while since I updated this blog. About ten months. I’ve been an intern at Intel during that period and I recently joined as an employee.
@@ -201,9 +202,12 @@ Also, now it’s been one year since I moved to the SE Portland. I like it here.
         color: var(--bg-dark) !important;
       }
     </style><header class="site-header">
-  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a><a href="/search/">Search</a></nav>
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a></nav>
 
   <div class="site-tools">
+    <a class="site-search" href="https://samgrover.com/search/" aria-label="Search">
+      <img src="https://samgrover.com/search.svg" alt="" />
+    </a>
     <button
       class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
       type="button"
@@ -221,8 +225,8 @@ Also, now it’s been one year since I moved to the SE Portland. I like it here.
 
     
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = '#fdd4b8'.replace(/"/g, '');
-    const darkBg = '#1f0807'.replace(/"/g, '');
+    const lightBg = '#f8f9fa'.replace(/"/g, '');
+    const darkBg = '#1c1e21'.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
