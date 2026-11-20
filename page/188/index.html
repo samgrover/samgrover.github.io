@@ -1,0 +1,293 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg-light:#f8f9fa; --bg-dark:#1c1e21; --text-light:#212529; --text-dark:#e9ecef; --accent:#6c757d; --accent-dark:#6c757d; --bg:#f8f9fa; --text:#212529;"
+  lang="en-us"
+  dir="ltr"
+><head>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>samgrover.com</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
+  <meta name="author" content="samgrover.com" />
+  <link rel="preload stylesheet" as="style" href="https://samgrover.com/main.min.4eca5800ef8dbe15b91bd280103fada2dd634603cb755fa263e68dc7967e7eac.css" />
+
+  
+  <link rel="preload" as="image" href="https://samgrover.com/theme.svg" />
+
+  
+
+  <link rel="preload" as="image" href="https://samgrover.com/rss.svg" />
+
+  
+
+  
+  
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="samgrover.com">
+
+  <meta name="generator" content="Hugo 0.168.0">
+  <script>
+    document.addEventListener('load', (event) => {
+      const image = event.target;
+      if (image.tagName !== 'IMG' || !image.closest('.post-body')) return;
+      const holder = image.closest('figure, p');
+      if (!holder) return;
+      holder.style.setProperty('--ar', (image.naturalWidth / image.naturalHeight).toFixed(4));
+      holder.style.setProperty('--native-width', `${image.naturalWidth}px`);
+      schedulePhotoRowLimit();
+    }, true);
+
+    
+    
+    
+    function limitPhotoRows() {
+      const limit = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--photos-per-row'), 10);
+      document.querySelectorAll('.photo-row-break').forEach((rowBreak) => rowBreak.remove());
+      document.querySelectorAll('.post-body').forEach((body) => {
+        let rowTop = null;
+        let photosInRow = 0;
+        body.querySelectorAll(':scope > :is(figure, .post-photo)').forEach((photo) => {
+          if (photo.offsetTop !== rowTop) {
+            rowTop = photo.offsetTop;
+            photosInRow = 0;
+          }
+          photosInRow += 1;
+          if (photosInRow > limit) {
+            const rowBreak = document.createElement('span');
+            rowBreak.className = 'photo-row-break';
+            photo.before(rowBreak);
+            rowTop = photo.offsetTop;
+            photosInRow = 1;
+          }
+        });
+      });
+    }
+
+    
+    let photoRowLimitPending = false;
+    function schedulePhotoRowLimit() {
+      if (photoRowLimitPending) return;
+      photoRowLimitPending = true;
+      requestAnimationFrame(() => {
+        photoRowLimitPending = false;
+        limitPhotoRows();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', schedulePhotoRowLimit);
+    window.addEventListener('resize', schedulePhotoRowLimit);
+  </script>
+
+  
+	<meta itemprop="name" content="samgrover.com">
+	<meta itemprop="datePublished" content="2026-11-20T08:24:46-08:00">
+	<meta itemprop="dateModified" content="2026-11-20T08:24:46-08:00"><meta property="og:url" content="https://samgrover.com/">
+	<meta property="og:site_name" content="samgrover.com">
+	<meta property="og:title" content="samgrover.com">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="website">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="samgrover.com">
+<link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://samgrover.com/index.xml"
+    title="samgrover.com"
+  />
+  <link rel="me" href="https://xoxo.zone/@sam" />
+  <link rel="me" href="https://samgrover.studio" />
+  <link rel="me" href="https://bsky.app/profile/samgrover.bsky.social" />
+
+  
+  <link rel="canonical" href="https://samgrover.com/" />
+</head>
+<body
+    class="bg-(--bg) antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent]"
+  >
+    <style>
+       
+      article, article *, .prose, .prose *, main p, main p * {
+        color: var(--text-light) !important;
+      }
+       
+      .site-header, .site-header *, .site-footer, .site-footer * {
+        color: var(--ui-ink) !important;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-color: transparent;
+        pointer-events: none;
+      }
+       
+      html.dark article, html.dark article *, html.dark .prose, html.dark .prose *, html.dark main p, html.dark main p * {
+        color: var(--text-dark) !important;
+      }
+       
+      html.dark .site-header, html.dark .site-header *, html.dark .site-footer, html.dark .site-footer * {
+        color: var(--ui-ink) !important;
+      }
+      html.dark body::before {
+        background-color: color-mix(in srgb, var(--bg-dark) 85%, transparent);
+      }
+       
+      article figure a, section figure a {
+        display: block !important;
+        line-height: 0 !important;
+      }
+      article figure img, section figure img {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      article figure figcaption, section figure figcaption {
+        font-family: var(--font-display) !important;
+        font-size: var(--text-small) !important;
+        font-style: normal !important;
+        opacity: 0.8 !important;
+        margin-top: 0.4rem !important;
+        text-align: left !important;
+      }
+       
+      .btn {
+        background-color: var(--text-light) !important;
+        color: var(--bg-light) !important;
+      }
+      html.dark .btn {
+        background-color: var(--text-dark) !important;
+        color: var(--bg-dark) !important;
+      }
+    </style><header class="site-header">
+  <a class="site-name" href="https://samgrover.com/">samgrover.com</a><nav class="site-nav" aria-label="Main"><a href="/about/">About</a><a href="/topics/">Topics</a><a href="/archive/">Archive</a></nav>
+
+  <div class="site-tools">
+    <a class="site-search" href="https://samgrover.com/search/" aria-label="Search">
+      <img src="https://samgrover.com/search.svg" alt="" />
+    </a>
+    <button
+      class="btn-dark [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert"
+      type="button"
+      aria-label="Switch between light and dark"
+    ></button><a class="site-feed" href="https://samgrover.com/index.xml" rel="alternate" aria-label="RSS feed">
+      <img src="https://samgrover.com/rss.svg" alt="" />
+    </a></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#f8f9fa'.replace(/"/g, '');
+    const darkBg = '#1c1e21'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? darkBg : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    let isDarkMode;
+    if (htmlClass.contains('dark')) {
+      isDarkMode = true;
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      isDarkMode = darkVal ? darkVal === 'true' : darkScheme.matches;
+    }
+    
+    setDark(isDarkMode);
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+</header>
+<main class="site-main prose prose-neutral dark:prose-invert relative">
+
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/05/11/sony-psp-and.html">Sony PSP and Nintendo DS</a></h2>
+    </div><section class="post-body"><p>Today, Sony released the PSP and Nintendo released the DS at E<sup>3</sup>. I think the PSP looks much cooler than the DS and would love to get my hands on it. Dunno if or when that will happen but it would be cool.</p>
+<p><a href="https://www.gizmodo.com/archives/e3-sony-psp-high-resolution-shots-and-final-specs-016102.php">E3: Sony PSP High Resolution Shots and Final Specs</a></p>
+<p><a href="https://www.gizmodo.com/archives/e3-nintendo-ds-high-res-shot-016107.php">E3: Nintendo DS High Res Shot</a></p>
+</section>
+
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/05/11/sony-psp-and.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-05-11T15:08:00-07:00"
+          >May 11, 2004</time
+        >
+      </a>
+    </footer></div>
+</article>
+
+<article class="post post--flow">
+  <div class="post-sheet">
+    <div class="post-heading"><h2 class="post-title"><a href="https://samgrover.com/2004/05/11/first-post.html">First Post!</a></h2>
+    </div><section class="post-body"><p>This post marks the beginning of a blog that I hope to update regularly. Of course, if I don&rsquo;t, then I will delete this blog after some time and this post will never have existed. Well, it may be archived on some server somewhere on the web, but then that is inevitable.</p>
+</section>
+
+    <footer class="post-meta">
+      <a class="post-meta-line" href="https://samgrover.com/2004/05/11/first-post.html">
+        <span class="post-meta-label">Published on</span>
+        <time class="post-meta-date" datetime="2004-05-11T00:43:00-07:00"
+          >May 11, 2004</time
+        >
+      </a>
+    </footer></div>
+</article><nav class="page-nav"><a class="btn not-prose" href="/page/187/"
+    >←Prev Page</a
+  ></nav></main><footer class="site-footer">
+  <div>© 2004-2026 samgrover.com</div>
+</footer>
+</body>
+</html>
