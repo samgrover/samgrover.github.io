@@ -7,7 +7,20 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© 2004-2026 samgrover.com</copyright>
-    <lastBuildDate>Wed, 18 Nov 2026 18:59:13 -0800</lastBuildDate><atom:link href="https://samgrover.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Nov 2026 08:24:46 -0800</lastBuildDate><atom:link href="https://samgrover.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://samgrover.com/2026/11/20/yardbirds.html</link>
+      <pubDate>Fri, 20 Nov 2026 08:24:46 -0800</pubDate>
+      
+      <guid>https://samgrover.com/2026/11/20/yardbirds.html</guid>
+      <description>&lt;p&gt;I utilized a couple of open source projects and set things up so we can identify birds that visit our yard or pass overhead based on their &lt;a href=&#34;https://github.com/tphakala/birdnet-go&#34;&gt;calls&lt;/a&gt;, and create an image with &lt;a href=&#34;https://github.com/arnegiacomo/fugleramme&#34;&gt;illustrations&lt;/a&gt; of the identified birds, and it’s really cool 😃&lt;/p&gt;
+&lt;p&gt;View them on the &lt;a href=&#34;https://samgrover.com/yardbirds/&#34;&gt;Yard Birds&lt;/a&gt; page.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>I utilized a couple of open source projects and set things up so we can identify birds that visit our yard or pass overhead based on their <a href="https://github.com/tphakala/birdnet-go">calls</a>, and create an image with <a href="https://github.com/arnegiacomo/fugleramme">illustrations</a> of the identified birds, and it’s really cool 😃</p>
+<p>View them on the <a href="https://samgrover.com/yardbirds/">Yard Birds</a> page.</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title></title>
       <link>https://samgrover.com/2026/11/18/voyager-1.html</link>
