@@ -1322,14 +1322,85 @@ Previous
     });
   </script>
 </header>
-<main class="site-main prose prose-neutral dark:prose-invert relative"><article class="post post--flow">
-  <div class="post-sheet"><div class="post-heading">
-    <h1 class="post-title">Books</h1>
-  </div><section class="post-body"><p>An ongoing list of books I&rsquo;ve read (<a href="https://f001.backblazeb2.com/file/com-samgrover-dropshare/books.png">stats</a>).</p>
+<main class="site-main prose prose-neutral dark:prose-invert relative">
+
+
+
+
+
+
+<style>
+   
+  .pj-books {
+    --rule: color-mix(in srgb, currentColor 16%, transparent);
+    --rule-strong: color-mix(in srgb, currentColor 55%, transparent);
+    width: 100%;
+    max-width: 66rem;
+    margin-inline: auto;
+  }
+  .pj-books h1 { margin: 0 0 1rem; }
+   
+  .pj-books .bk-intro p { margin: 0 0 0.6rem; }
+
+   
+  .pj-books .bk-year {
+    display: grid;
+    grid-template-columns: minmax(8rem, 12rem) 1fr;
+    gap: 0 clamp(1.5rem, 4vw, 4rem);
+    padding-block: clamp(1.75rem, 4vh, 2.75rem);
+    border-top: 1px solid var(--rule);
+  }
+  .pj-books .bk-year:first-of-type { margin-top: clamp(2rem, 5vh, 3.5rem); border-top-color: var(--rule-strong); }
+  .pj-books h2 {
+    margin: 0; align-self: start; position: sticky; top: 1.25rem;
+    display: flex; flex-direction: column; line-height: 1;
+  }
+  .pj-books .bk-y { font-size: clamp(2.25rem, 1.6rem + 2.4vw, 4rem); letter-spacing: -0.01em; }
+  .pj-books .bk-n { font-size: var(--text-body); font-weight: 500; opacity: 0.6; margin-top: 0.5rem; letter-spacing: 0.04em; }
+
+   
+  .pj-books table { width: 100%; margin: 0; border-collapse: collapse; table-layout: auto; }
+   
+  .pj-books thead {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .pj-books tr { border-bottom: 1px solid var(--rule); }
+  .pj-books tbody tr:last-child { border-bottom: 0; }
+  .pj-books td { padding: 0.55rem 0; border: 0; vertical-align: baseline; }
+  .pj-books td:nth-child(1) { width: 100%; padding-right: 1.5rem; }
+  .pj-books td:nth-child(2) {
+    text-align: right; padding-right: 0.75rem; white-space: nowrap;
+    font-family: var(--font-display); font-size: var(--text-small);
+    opacity: 0.7; font-variant-numeric: lining-nums tabular-nums;
+  }
+  .pj-books td:nth-child(3) { width: 1.5em; text-align: center; white-space: nowrap; }
+
+   
+  .pj-books a { text-decoration: none; }
+  .pj-books a:hover .bk-t { text-decoration: underline; text-underline-offset: 0.15em; }
+  .pj-books .bk-t { font-family: var(--font-display); font-stretch: 92%; font-weight: 600; font-size: 1.06em; }
+  .pj-books .bk-by,
+  .pj-books .bk-a { opacity: 0.72; }
+  .pj-books .bk-by { font-style: italic; }
+
+   
+  @media (max-width: 46rem) {
+    .pj-books .bk-year { grid-template-columns: 1fr; }
+    .pj-books h2 { position: static; flex-direction: row; align-items: baseline; gap: 0.6rem; margin-bottom: 0.75rem; }
+    .pj-books .bk-n { margin-top: 0; }
+  }
+</style>
+
+<article class="pj-books">
+  <h1>Books</h1>
+  
+  
+  <div class="bk-intro"><p>An ongoing list of books I&rsquo;ve read (<a href="https://f001.backblazeb2.com/file/com-samgrover-dropshare/books.png">stats</a>).</p>
 <p>📚 indicates that I have a physical copy that is lendable, if you want.<br>
 🎧 indicates that I listened to an audiobook version.</p>
-<h2 id="2026-16">2026 (16)</h2>
-<table>
+</div>
+  <section class="bk-year"><h2 id="2026-16"><span class="bk-y">2026</span> <span class="bk-n">(16)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1339,89 +1410,88 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Cosmos+Carl+Sagan">Cosmos by Carl Sagan</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Cosmos+Carl+Sagan"><span class="bk-t">Cosmos</span> <span class="bk-by">by</span> <span class="bk-a">Carl Sagan</span></a></td>
 					<td>24th Nov</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://standardebooks.org/ebooks/dashiell-hammett/the-maltese-falcon">The Maltese Falcon by Dashiell Hammett</a></td>
+					<td><a href="https://standardebooks.org/ebooks/dashiell-hammett/the-maltese-falcon"><span class="bk-t">The Maltese Falcon</span> <span class="bk-by">by</span> <span class="bk-a">Dashiell Hammett</span></a></td>
 					<td>4th Sep</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=AI+for+Good+Josh+Tyrangiel">AI for Good by Josh Tyrangiel</a></td>
+					<td><a href="https://bookshop.org/search?keywords=AI+for+Good+Josh+Tyrangiel"><span class="bk-t">AI for Good</span> <span class="bk-by">by</span> <span class="bk-a">Josh Tyrangiel</span></a></td>
 					<td>19th Jul</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=There+is+no+Antimemetics+Division+qntm">There is no Antimemetics Division by qntm</a></td>
+					<td><a href="https://bookshop.org/search?keywords=There+is+no+Antimemetics+Division+qntm"><span class="bk-t">There is no Antimemetics Division</span> <span class="bk-by">by</span> <span class="bk-a">qntm</span></a></td>
 					<td>26th Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Proust+and+the+Squid+Maryanne+Wolf">Proust and the Squid by Maryanne Wolf</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Proust+and+the+Squid+Maryanne+Wolf"><span class="bk-t">Proust and the Squid</span> <span class="bk-by">by</span> <span class="bk-a">Maryanne Wolf</span></a></td>
 					<td>9th Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Big+Jim+and+the+White+Boy+David+F.+Walker+and+Marcus+Kwame+Anderson">Big Jim and the White Boy by David F. Walker and Marcus Kwame Anderson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Big+Jim+and+the+White+Boy+David+F.+Walker+and+Marcus+Kwame+Anderson"><span class="bk-t">Big Jim and the White Boy</span> <span class="bk-by">by</span> <span class="bk-a">David F. Walker and Marcus Kwame Anderson</span></a></td>
 					<td>16th May</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Sapiens+Yuval+Noah+Harari">Sapiens by Yuval Noah Harari</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Sapiens+Yuval+Noah+Harari"><span class="bk-t">Sapiens</span> <span class="bk-by">by</span> <span class="bk-a">Yuval Noah Harari</span></a></td>
 					<td>15th May</td>
 					<td>🎧</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=A+Murder+of+Quality+John+le+Carr%C3%A9">A Murder of Quality by John le Carré</a></td>
+					<td><a href="https://bookshop.org/search?keywords=A+Murder+of+Quality+John+le+Carr%C3%A9"><span class="bk-t">A Murder of Quality</span> <span class="bk-by">by</span> <span class="bk-a">John le Carré</span></a></td>
 					<td>18th Apr</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=A+Random+Walk+Down+Wall+Street+Burton+G.+Malkiel">A Random Walk Down Wall Street by Burton G. Malkiel</a></td>
+					<td><a href="https://bookshop.org/search?keywords=A+Random+Walk+Down+Wall+Street+Burton+G.+Malkiel"><span class="bk-t">A Random Walk Down Wall Street</span> <span class="bk-by">by</span> <span class="bk-a">Burton G. Malkiel</span></a></td>
 					<td>9th Apr</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://standardebooks.org/ebooks/f-scott-fitzgerald/the-great-gatsby">The Great Gatsby by F. Scott Fitzgerald</a></td>
+					<td><a href="https://standardebooks.org/ebooks/f-scott-fitzgerald/the-great-gatsby"><span class="bk-t">The Great Gatsby</span> <span class="bk-by">by</span> <span class="bk-a">F. Scott Fitzgerald</span></a></td>
 					<td>27th Mar</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Nuclear+War+Annie+Jacobsen">Nuclear War by Annie Jacobsen</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Nuclear+War+Annie+Jacobsen"><span class="bk-t">Nuclear War</span> <span class="bk-by">by</span> <span class="bk-a">Annie Jacobsen</span></a></td>
 					<td>28th Feb</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Dark+Matter+Blake+Crouch">Dark Matter by Blake Crouch</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Dark+Matter+Blake+Crouch"><span class="bk-t">Dark Matter</span> <span class="bk-by">by</span> <span class="bk-a">Blake Crouch</span></a></td>
 					<td>16th Feb</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Science+and+Human+Values+J.+Bronowski">Science and Human Values by J. Bronowski</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Science+and+Human+Values+J.+Bronowski"><span class="bk-t">Science and Human Values</span> <span class="bk-by">by</span> <span class="bk-a">J. Bronowski</span></a></td>
 					<td>7th Feb</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Black+Fantastic+Andr%C3%A9+M.+Carrington">The Black Fantastic by André M. Carrington</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Black+Fantastic+Andr%C3%A9+M.+Carrington"><span class="bk-t">The Black Fantastic</span> <span class="bk-by">by</span> <span class="bk-a">André M. Carrington</span></a></td>
 					<td>31st Jan</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Kindred+Octavia+E.+Butler">Kindred by Octavia E. Butler</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Kindred+Octavia+E.+Butler"><span class="bk-t">Kindred</span> <span class="bk-by">by</span> <span class="bk-a">Octavia E. Butler</span></a></td>
 					<td>19th Jan</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Ripples+on+the+Cosmic+Ocean+Dagomar+Degroot">Ripples on the Cosmic Ocean by Dagomar Degroot</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Ripples+on+the+Cosmic+Ocean+Dagomar+Degroot"><span class="bk-t">Ripples on the Cosmic Ocean</span> <span class="bk-by">by</span> <span class="bk-a">Dagomar Degroot</span></a></td>
 					<td>8th Jan</td>
 					<td>📚</td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2025-21">2025 (21)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2025-21"><span class="bk-y">2025</span> <span class="bk-n">(21)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1431,114 +1501,113 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Flesh+David+Szalay">Flesh by David Szalay</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Flesh+David+Szalay"><span class="bk-t">Flesh</span> <span class="bk-by">by</span> <span class="bk-a">David Szalay</span></a></td>
 					<td>2nd Dec</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Silmarillion+J.R.R.+Tolkien">The Silmarillion by J.R.R. Tolkien</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Silmarillion+J.R.R.+Tolkien"><span class="bk-t">The Silmarillion</span> <span class="bk-by">by</span> <span class="bk-a">J.R.R. Tolkien</span></a></td>
 					<td>22nd Nov</td>
 					<td>🎧</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Call+for+the+Dead+John+le+Carr%C3%A9">Call for the Dead by John le Carré</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Call+for+the+Dead+John+le+Carr%C3%A9"><span class="bk-t">Call for the Dead</span> <span class="bk-by">by</span> <span class="bk-a">John le Carré</span></a></td>
 					<td>19th Nov</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Bird+by+Bird+Anne+Lamott">Bird by Bird by Anne Lamott</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Bird+by+Bird+Anne+Lamott"><span class="bk-t">Bird by Bird</span> <span class="bk-by">by</span> <span class="bk-a">Anne Lamott</span></a></td>
 					<td>13th Nov</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Ice+Limit+Douglas+Preston+and+Lincoln+Child">The Ice Limit by Douglas Preston and Lincoln Child</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Ice+Limit+Douglas+Preston+and+Lincoln+Child"><span class="bk-t">The Ice Limit</span> <span class="bk-by">by</span> <span class="bk-a">Douglas Preston and Lincoln Child</span></a></td>
 					<td>29th Oct</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://standardebooks.org/ebooks/geronimo/geronimos-story-of-his-life">Geronimo&rsquo;s Story of His Life by Geronimo and S.M. Barrett</a></td>
+					<td><a href="https://standardebooks.org/ebooks/geronimo/geronimos-story-of-his-life"><span class="bk-t">Geronimo&rsquo;s Story of His Life</span> <span class="bk-by">by</span> <span class="bk-a">Geronimo and S.M. Barrett</span></a></td>
 					<td>22nd Sep</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Automatic+Noodle+Annalee+Newitz">Automatic Noodle by Annalee Newitz</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Automatic+Noodle+Annalee+Newitz"><span class="bk-t">Automatic Noodle</span> <span class="bk-by">by</span> <span class="bk-a">Annalee Newitz</span></a></td>
 					<td>6th Sep</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Fugitive+Telemetry+Martha+Wells">Fugitive Telemetry by Martha Wells</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Fugitive+Telemetry+Martha+Wells"><span class="bk-t">Fugitive Telemetry</span> <span class="bk-by">by</span> <span class="bk-a">Martha Wells</span></a></td>
 					<td>15th Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Building+a+Second+Brain+Tiago+Forte">Building a Second Brain by Tiago Forte</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Building+a+Second+Brain+Tiago+Forte"><span class="bk-t">Building a Second Brain</span> <span class="bk-by">by</span> <span class="bk-a">Tiago Forte</span></a></td>
 					<td>19th Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://www.pentagram.com/work/how-to-see/">How to See by George Nelson</a></td>
+					<td><a href="https://www.pentagram.com/work/how-to-see/"><span class="bk-t">How to See</span> <span class="bk-by">by</span> <span class="bk-a">George Nelson</span></a></td>
 					<td>11th Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Network+Effect+Martha+Wells">Network Effect by Martha Wells</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Network+Effect+Martha+Wells"><span class="bk-t">Network Effect</span> <span class="bk-by">by</span> <span class="bk-a">Martha Wells</span></a></td>
 					<td>23rd May</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Writing+to+Learn+William+Zinsser">Writing to Learn by William Zinsser</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Writing+to+Learn+William+Zinsser"><span class="bk-t">Writing to Learn</span> <span class="bk-by">by</span> <span class="bk-a">William Zinsser</span></a></td>
 					<td>7th May</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://standardebooks.org/ebooks/james-joyce/a-portrait-of-the-artist-as-a-young-man">A Portrait of the Artist as a Young Man by James Joyce</a></td>
+					<td><a href="https://standardebooks.org/ebooks/james-joyce/a-portrait-of-the-artist-as-a-young-man"><span class="bk-t">A Portrait of the Artist as a Young Man</span> <span class="bk-by">by</span> <span class="bk-a">James Joyce</span></a></td>
 					<td>26th Apr</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+PARA+Method+Tiago+Forte">The PARA Method by Tiago Forte</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+PARA+Method+Tiago+Forte"><span class="bk-t">The PARA Method</span> <span class="bk-by">by</span> <span class="bk-a">Tiago Forte</span></a></td>
 					<td>12th Mar</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Exit+Strategy+Martha+Wells">Exit Strategy by Martha Wells</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Exit+Strategy+Martha+Wells"><span class="bk-t">Exit Strategy</span> <span class="bk-by">by</span> <span class="bk-a">Martha Wells</span></a></td>
 					<td>25th Feb</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://www.amazon.com/dp/B07WK7PVFT">Forward (collection) by Various</a></td>
+					<td><a href="https://www.amazon.com/dp/B07WK7PVFT"><span class="bk-t">Forward (collection)</span> <span class="bk-by">by</span> <span class="bk-a">Various</span></a></td>
 					<td>20th Feb</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Breakfast+of+Champions+Kurt+Vonnegut">Breakfast of Champions by Kurt Vonnegut</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Breakfast+of+Champions+Kurt+Vonnegut"><span class="bk-t">Breakfast of Champions</span> <span class="bk-by">by</span> <span class="bk-a">Kurt Vonnegut</span></a></td>
 					<td>10th Feb</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Meditations+for+Mortals+Oliver+Burkeman">Meditations for Mortals by Oliver Burkeman</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Meditations+for+Mortals+Oliver+Burkeman"><span class="bk-t">Meditations for Mortals</span> <span class="bk-by">by</span> <span class="bk-a">Oliver Burkeman</span></a></td>
 					<td>1st Feb</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Rogue+Protocol+Martha+Wells">Rogue Protocol by Martha Wells</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Rogue+Protocol+Martha+Wells"><span class="bk-t">Rogue Protocol</span> <span class="bk-by">by</span> <span class="bk-a">Martha Wells</span></a></td>
 					<td>25th Jan</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://shop.specialprojects.jp/products/kissa-by-kissa-5th-ed">Kissa by Kissa by Craig Mod</a></td>
+					<td><a href="https://shop.specialprojects.jp/products/kissa-by-kissa-5th-ed"><span class="bk-t">Kissa by Kissa</span> <span class="bk-by">by</span> <span class="bk-a">Craig Mod</span></a></td>
 					<td>19th Jan</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=An+Immense+World+Ed+Yong">An Immense World by Ed Yong</a></td>
+					<td><a href="https://bookshop.org/search?keywords=An+Immense+World+Ed+Yong"><span class="bk-t">An Immense World</span> <span class="bk-by">by</span> <span class="bk-a">Ed Yong</span></a></td>
 					<td>15th Jan</td>
 					<td>📚</td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2024-17">2024 (17)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2024-17"><span class="bk-y">2024</span> <span class="bk-n">(17)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1548,94 +1617,93 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Alchemist+Paulo+Coelho">The Alchemist by Paulo Coelho</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Alchemist+Paulo+Coelho"><span class="bk-t">The Alchemist</span> <span class="bk-by">by</span> <span class="bk-a">Paulo Coelho</span></a></td>
 					<td>13th Dec</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Artificial+Condition+Martha+Wells">Artificial Condition by Martha Wells</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Artificial+Condition+Martha+Wells"><span class="bk-t">Artificial Condition</span> <span class="bk-by">by</span> <span class="bk-a">Martha Wells</span></a></td>
 					<td>6th Dec</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=All+Systems+Red+Martha+Wells">All Systems Red by Martha Wells</a></td>
+					<td><a href="https://bookshop.org/search?keywords=All+Systems+Red+Martha+Wells"><span class="bk-t">All Systems Red</span> <span class="bk-by">by</span> <span class="bk-a">Martha Wells</span></a></td>
 					<td>30th Nov</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Coming+Wave+Mustafa+Suleyman+and+Michael+Bhaskar">The Coming Wave by Mustafa Suleyman and Michael Bhaskar</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Coming+Wave+Mustafa+Suleyman+and+Michael+Bhaskar"><span class="bk-t">The Coming Wave</span> <span class="bk-by">by</span> <span class="bk-a">Mustafa Suleyman and Michael Bhaskar</span></a></td>
 					<td>27th Nov</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Hawa+Hawa+Nabarun+Bhattacharya+and+Subha+Prasad+Sanyal">Hawa Hawa by Nabarun Bhattacharya and Subha Prasad Sanyal</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Hawa+Hawa+Nabarun+Bhattacharya+and+Subha+Prasad+Sanyal"><span class="bk-t">Hawa Hawa</span> <span class="bk-by">by</span> <span class="bk-a">Nabarun Bhattacharya and Subha Prasad Sanyal</span></a></td>
 					<td>27th Oct</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://sive.rs/n">Hell Yeah or No by Derek Sivers</a></td>
+					<td><a href="https://sive.rs/n"><span class="bk-t">Hell Yeah or No</span> <span class="bk-by">by</span> <span class="bk-a">Derek Sivers</span></a></td>
 					<td>2nd Oct</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+World+We+Make+N.K.+Jemisin">The World We Make by N.K. Jemisin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+World+We+Make+N.K.+Jemisin"><span class="bk-t">The World We Make</span> <span class="bk-by">by</span> <span class="bk-a">N.K. Jemisin</span></a></td>
 					<td>17th Sep</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Meditations+Marcus+Aurelius">Meditations by Marcus Aurelius</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Meditations+Marcus+Aurelius"><span class="bk-t">Meditations</span> <span class="bk-by">by</span> <span class="bk-a">Marcus Aurelius</span></a></td>
 					<td>2nd Sep</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Sum+David+Eagleman">Sum by David Eagleman</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Sum+David+Eagleman"><span class="bk-t">Sum</span> <span class="bk-by">by</span> <span class="bk-a">David Eagleman</span></a></td>
 					<td>11th Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://www.biblio.com/9781848373280">Dr Jekyll &amp; Mr Hyde - And Other Strange Tales by Robert Louis Stevenson</a></td>
+					<td><a href="https://www.biblio.com/9781848373280"><span class="bk-t">Dr Jekyll &amp; Mr Hyde - And Other Strange Tales</span> <span class="bk-by">by</span> <span class="bk-a">Robert Louis Stevenson</span></a></td>
 					<td>24th May</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Checklist+Manifesto+Atul+Gawande">The Checklist Manifesto by Atul Gawande</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Checklist+Manifesto+Atul+Gawande"><span class="bk-t">The Checklist Manifesto</span> <span class="bk-by">by</span> <span class="bk-a">Atul Gawande</span></a></td>
 					<td>11th May</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Tomorrow%2C+and+Tomorrow%2C+and+Tomorrow+Gabrielle+Zevin">Tomorrow, and Tomorrow, and Tomorrow by Gabrielle Zevin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Tomorrow%2C+and+Tomorrow%2C+and+Tomorrow+Gabrielle+Zevin"><span class="bk-t">Tomorrow, and Tomorrow, and Tomorrow</span> <span class="bk-by">by</span> <span class="bk-a">Gabrielle Zevin</span></a></td>
 					<td>18th Apr</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Slow+Productivity+Cal+Newport">Slow Productivity by Cal Newport</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Slow+Productivity+Cal+Newport"><span class="bk-t">Slow Productivity</span> <span class="bk-by">by</span> <span class="bk-a">Cal Newport</span></a></td>
 					<td>28th Mar</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Dispossessed+Ursula+K.+Le+Guin">The Dispossessed by Ursula K. Le Guin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Dispossessed+Ursula+K.+Le+Guin"><span class="bk-t">The Dispossessed</span> <span class="bk-by">by</span> <span class="bk-a">Ursula K. Le Guin</span></a></td>
 					<td>10th Mar</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=English%2C+August+Upamanyu+Chatterjee">English, August by Upamanyu Chatterjee</a></td>
+					<td><a href="https://bookshop.org/search?keywords=English%2C+August+Upamanyu+Chatterjee"><span class="bk-t">English, August</span> <span class="bk-by">by</span> <span class="bk-a">Upamanyu Chatterjee</span></a></td>
 					<td>27th Feb</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Starship+Troopers+Robert+A.+Heinlein">Starship Troopers by Robert A. Heinlein</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Starship+Troopers+Robert+A.+Heinlein"><span class="bk-t">Starship Troopers</span> <span class="bk-by">by</span> <span class="bk-a">Robert A. Heinlein</span></a></td>
 					<td>10th Feb</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Creative+Act+Rick+Rubin">The Creative Act by Rick Rubin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Creative+Act+Rick+Rubin"><span class="bk-t">The Creative Act</span> <span class="bk-by">by</span> <span class="bk-a">Rick Rubin</span></a></td>
 					<td>27th Jan</td>
 					<td>📚</td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2023-5">2023 (5)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2023-5"><span class="bk-y">2023</span> <span class="bk-n">(5)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1645,34 +1713,33 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Saving+Time+Jenny+Odell">Saving Time by Jenny Odell</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Saving+Time+Jenny+Odell"><span class="bk-t">Saving Time</span> <span class="bk-by">by</span> <span class="bk-a">Jenny Odell</span></a></td>
 					<td>23rd Nov</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Negative+Money+Lillian-Yvonne+Bertram">Negative Money by Lillian-Yvonne Bertram</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Negative+Money+Lillian-Yvonne+Bertram"><span class="bk-t">Negative Money</span> <span class="bk-by">by</span> <span class="bk-a">Lillian-Yvonne Bertram</span></a></td>
 					<td>18th Oct</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://synthesizer-cookbook.com">Welsh&rsquo;s Synthesizer Cookbook by Fred Welsh</a></td>
+					<td><a href="https://synthesizer-cookbook.com"><span class="bk-t">Welsh&rsquo;s Synthesizer Cookbook</span> <span class="bk-by">by</span> <span class="bk-a">Fred Welsh</span></a></td>
 					<td>2nd Jul</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bjooks.com/products/patch-tweak-exploring-modular-synthesis">Patch and Tweak by Kim Bjørn and Chris Meyer</a></td>
+					<td><a href="https://bjooks.com/products/patch-tweak-exploring-modular-synthesis"><span class="bk-t">Patch and Tweak</span> <span class="bk-by">by</span> <span class="bk-a">Kim Bjørn and Chris Meyer</span></a></td>
 					<td>30th Apr</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+City+We+Became+N.K.+Jemisin">The City We Became by N.K. Jemisin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+City+We+Became+N.K.+Jemisin"><span class="bk-t">The City We Became</span> <span class="bk-by">by</span> <span class="bk-a">N.K. Jemisin</span></a></td>
 					<td>28th Mar</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2022-6">2022 (6)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2022-6"><span class="bk-y">2022</span> <span class="bk-n">(6)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1682,39 +1749,38 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Flow+Mihaly+Csikszentmihalyi">Flow by Mihaly Csikszentmihalyi</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Flow+Mihaly+Csikszentmihalyi"><span class="bk-t">Flow</span> <span class="bk-by">by</span> <span class="bk-a">Mihaly Csikszentmihalyi</span></a></td>
 					<td>26th Dec</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Four+Thousand+Weeks+Oliver+Burkeman">Four Thousand Weeks by Oliver Burkeman</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Four+Thousand+Weeks+Oliver+Burkeman"><span class="bk-t">Four Thousand Weeks</span> <span class="bk-by">by</span> <span class="bk-a">Oliver Burkeman</span></a></td>
 					<td>24th Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Mirror+Made+of+Rain+Naheed+Phiroze+Patel">Mirror Made of Rain by Naheed Phiroze Patel</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Mirror+Made+of+Rain+Naheed+Phiroze+Patel"><span class="bk-t">Mirror Made of Rain</span> <span class="bk-by">by</span> <span class="bk-a">Naheed Phiroze Patel</span></a></td>
 					<td>10th Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Notes+of+a+Native+Son+James+Baldwin">Notes of a Native Son by James Baldwin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Notes+of+a+Native+Son+James+Baldwin"><span class="bk-t">Notes of a Native Son</span> <span class="bk-by">by</span> <span class="bk-a">James Baldwin</span></a></td>
 					<td>21st May</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Termination+Shock+Neal+Stephenson">Termination Shock by Neal Stephenson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Termination+Shock+Neal+Stephenson"><span class="bk-t">Termination Shock</span> <span class="bk-by">by</span> <span class="bk-a">Neal Stephenson</span></a></td>
 					<td>30th Apr</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=On+Photography+Susan+Sontag">On Photography by Susan Sontag</a></td>
+					<td><a href="https://bookshop.org/search?keywords=On+Photography+Susan+Sontag"><span class="bk-t">On Photography</span> <span class="bk-by">by</span> <span class="bk-a">Susan Sontag</span></a></td>
 					<td>26th Feb</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2021-8">2021 (8)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2021-8"><span class="bk-y">2021</span> <span class="bk-n">(8)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1724,49 +1790,48 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://shapeofdesignbook.com">The Shape of Design by Frank Chimero</a></td>
+					<td><a href="https://shapeofdesignbook.com"><span class="bk-t">The Shape of Design</span> <span class="bk-by">by</span> <span class="bk-a">Frank Chimero</span></a></td>
 					<td>20th Dec</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Project+Hail+Mary+Andy+Weir">Project Hail Mary by Andy Weir</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Project+Hail+Mary+Andy+Weir"><span class="bk-t">Project Hail Mary</span> <span class="bk-by">by</span> <span class="bk-a">Andy Weir</span></a></td>
 					<td>5th Sep</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Ikigai+H%C3%A9ctor+Garc%C3%ADa+and+Francesc+Miralles">Ikigai by Héctor García and Francesc Miralles</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Ikigai+H%C3%A9ctor+Garc%C3%ADa+and+Francesc+Miralles"><span class="bk-t">Ikigai</span> <span class="bk-by">by</span> <span class="bk-a">Héctor García and Francesc Miralles</span></a></td>
 					<td>21st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+God+of+Small+Things+Arundhati+Roy">The God of Small Things by Arundhati Roy</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+God+of+Small+Things+Arundhati+Roy"><span class="bk-t">The God of Small Things</span> <span class="bk-by">by</span> <span class="bk-a">Arundhati Roy</span></a></td>
 					<td>11th Apr</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=A+Wizard+of+Earthsea+Ursula+K.+Le+Guin">A Wizard of Earthsea by Ursula K. Le Guin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=A+Wizard+of+Earthsea+Ursula+K.+Le+Guin"><span class="bk-t">A Wizard of Earthsea</span> <span class="bk-by">by</span> <span class="bk-a">Ursula K. Le Guin</span></a></td>
 					<td>20th Mar</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+End+of+Everything+%28Astrophysically+Speaking%29+Katie+Mack">The End of Everything (Astrophysically Speaking) by Katie Mack</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+End+of+Everything+%28Astrophysically+Speaking%29+Katie+Mack"><span class="bk-t">The End of Everything (Astrophysically Speaking)</span> <span class="bk-by">by</span> <span class="bk-a">Katie Mack</span></a></td>
 					<td>9th Mar</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Rembrandt+Typex">Rembrandt by Typex</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Rembrandt+Typex"><span class="bk-t">Rembrandt</span> <span class="bk-by">by</span> <span class="bk-a">Typex</span></a></td>
 					<td>14th Feb</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=How+to+Read+a+Book+Mortimer+J.+Adler+and+Charles+Van+Doren">How to Read a Book by Mortimer J. Adler and Charles Van Doren</a></td>
+					<td><a href="https://bookshop.org/search?keywords=How+to+Read+a+Book+Mortimer+J.+Adler+and+Charles+Van+Doren"><span class="bk-t">How to Read a Book</span> <span class="bk-by">by</span> <span class="bk-a">Mortimer J. Adler and Charles Van Doren</span></a></td>
 					<td>7th Feb</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2020-10">2020 (10)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2020-10"><span class="bk-y">2020</span> <span class="bk-n">(10)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1776,59 +1841,58 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Stone+Sky+N.K.+Jemisin">The Stone Sky by N.K. Jemisin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Stone+Sky+N.K.+Jemisin"><span class="bk-t">The Stone Sky</span> <span class="bk-by">by</span> <span class="bk-a">N.K. Jemisin</span></a></td>
 					<td>27th Dec</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Obelisk+Gate+N.K.+Jemisin">The Obelisk Gate by N.K. Jemisin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Obelisk+Gate+N.K.+Jemisin"><span class="bk-t">The Obelisk Gate</span> <span class="bk-by">by</span> <span class="bk-a">N.K. Jemisin</span></a></td>
 					<td>13th Dec</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Ants+Among+Elephants+Sujatha+Gidla">Ants Among Elephants by Sujatha Gidla</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Ants+Among+Elephants+Sujatha+Gidla"><span class="bk-t">Ants Among Elephants</span> <span class="bk-by">by</span> <span class="bk-a">Sujatha Gidla</span></a></td>
 					<td>22nd Oct</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Digital+Minimalism+Cal+Newport">Digital Minimalism by Cal Newport</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Digital+Minimalism+Cal+Newport"><span class="bk-t">Digital Minimalism</span> <span class="bk-by">by</span> <span class="bk-a">Cal Newport</span></a></td>
 					<td>22nd Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Left+Hand+of+Darkness+Ursula+K.+Le+Guin">The Left Hand of Darkness by Ursula K. Le Guin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Left+Hand+of+Darkness+Ursula+K.+Le+Guin"><span class="bk-t">The Left Hand of Darkness</span> <span class="bk-by">by</span> <span class="bk-a">Ursula K. Le Guin</span></a></td>
 					<td>19th Jun</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Keep+Going+Austin+Kleon">Keep Going by Austin Kleon</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Keep+Going+Austin+Kleon"><span class="bk-t">Keep Going</span> <span class="bk-by">by</span> <span class="bk-a">Austin Kleon</span></a></td>
 					<td>25th May</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Fall%3B+or%2C+Dodge+in+Hell+Neal+Stephenson">Fall; or, Dodge in Hell by Neal Stephenson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Fall%3B+or%2C+Dodge+in+Hell+Neal+Stephenson"><span class="bk-t">Fall; or, Dodge in Hell</span> <span class="bk-by">by</span> <span class="bk-a">Neal Stephenson</span></a></td>
 					<td>24th May</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=There+There+Tommy+Orange">There There by Tommy Orange</a></td>
+					<td><a href="https://bookshop.org/search?keywords=There+There+Tommy+Orange"><span class="bk-t">There There</span> <span class="bk-by">by</span> <span class="bk-a">Tommy Orange</span></a></td>
 					<td>15th Mar</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Good+Talk%3A+A+Memoir+in+Conversations+Mira+Jacob">Good Talk: A Memoir in Conversations by Mira Jacob</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Good+Talk%3A+A+Memoir+in+Conversations+Mira+Jacob"><span class="bk-t">Good Talk: A Memoir in Conversations</span> <span class="bk-by">by</span> <span class="bk-a">Mira Jacob</span></a></td>
 					<td>27th Feb</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Deep+Work+Cal+Newport">Deep Work by Cal Newport</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Deep+Work+Cal+Newport"><span class="bk-t">Deep Work</span> <span class="bk-by">by</span> <span class="bk-a">Cal Newport</span></a></td>
 					<td>12th Jan</td>
 					<td>📚</td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2019-9">2019 (9)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2019-9"><span class="bk-y">2019</span> <span class="bk-n">(9)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1838,54 +1902,53 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=How+to+Do+Nothing+Jenny+Odell">How to Do Nothing by Jenny Odell</a></td>
+					<td><a href="https://bookshop.org/search?keywords=How+to+Do+Nothing+Jenny+Odell"><span class="bk-t">How to Do Nothing</span> <span class="bk-by">by</span> <span class="bk-a">Jenny Odell</span></a></td>
 					<td>28th Dec</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Atomic+Habits+James+Clear">Atomic Habits by James Clear</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Atomic+Habits+James+Clear"><span class="bk-t">Atomic Habits</span> <span class="bk-by">by</span> <span class="bk-a">James Clear</span></a></td>
 					<td>12th Oct</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Fifth+Season+N.K.+Jemisin">The Fifth Season by N.K. Jemisin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Fifth+Season+N.K.+Jemisin"><span class="bk-t">The Fifth Season</span> <span class="bk-by">by</span> <span class="bk-a">N.K. Jemisin</span></a></td>
 					<td>11th Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Rework+Jason+Fried">Rework by Jason Fried</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Rework+Jason+Fried"><span class="bk-t">Rework</span> <span class="bk-by">by</span> <span class="bk-a">Jason Fried</span></a></td>
 					<td>24th Jul</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=How+to+Be+Black+Baratunde+R.+Thurston">How to Be Black by Baratunde R. Thurston</a></td>
+					<td><a href="https://bookshop.org/search?keywords=How+to+Be+Black+Baratunde+R.+Thurston"><span class="bk-t">How to Be Black</span> <span class="bk-by">by</span> <span class="bk-a">Baratunde R. Thurston</span></a></td>
 					<td>20th Jul</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Miracle+Morning+Hal+Elrod">The Miracle Morning by Hal Elrod</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Miracle+Morning+Hal+Elrod"><span class="bk-t">The Miracle Morning</span> <span class="bk-by">by</span> <span class="bk-a">Hal Elrod</span></a></td>
 					<td>2nd Jul</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Why+Buddhism+is+True+Robert+Wright">Why Buddhism is True by Robert Wright</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Why+Buddhism+is+True+Robert+Wright"><span class="bk-t">Why Buddhism is True</span> <span class="bk-by">by</span> <span class="bk-a">Robert Wright</span></a></td>
 					<td>3rd Mar</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=When+Breath+Becomes+Air+Paul+Kalanithi">When Breath Becomes Air by Paul Kalanithi</a></td>
+					<td><a href="https://bookshop.org/search?keywords=When+Breath+Becomes+Air+Paul+Kalanithi"><span class="bk-t">When Breath Becomes Air</span> <span class="bk-by">by</span> <span class="bk-a">Paul Kalanithi</span></a></td>
 					<td>1st Mar</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=An+Absolutely+Remarkable+Thing+Hank+Green">An Absolutely Remarkable Thing by Hank Green</a></td>
+					<td><a href="https://bookshop.org/search?keywords=An+Absolutely+Remarkable+Thing+Hank+Green"><span class="bk-t">An Absolutely Remarkable Thing</span> <span class="bk-by">by</span> <span class="bk-a">Hank Green</span></a></td>
 					<td>17th Feb</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2018-4">2018 (4)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2018-4"><span class="bk-y">2018</span> <span class="bk-n">(4)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1895,29 +1958,28 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Seven+Brief+Lessons+on+Physics+Carlo+Rovelli">Seven Brief Lessons on Physics by Carlo Rovelli</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Seven+Brief+Lessons+on+Physics+Carlo+Rovelli"><span class="bk-t">Seven Brief Lessons on Physics</span> <span class="bk-by">by</span> <span class="bk-a">Carlo Rovelli</span></a></td>
 					<td>3rd Nov</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=March%3A+Book+One+John+Lewis">March: Book One by John Lewis</a></td>
+					<td><a href="https://bookshop.org/search?keywords=March%3A+Book+One+John+Lewis"><span class="bk-t">March: Book One</span> <span class="bk-by">by</span> <span class="bk-a">John Lewis</span></a></td>
 					<td>30th Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+War+of+Art+Steven+Pressfield">The War of Art by Steven Pressfield</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+War+of+Art+Steven+Pressfield"><span class="bk-t">The War of Art</span> <span class="bk-by">by</span> <span class="bk-a">Steven Pressfield</span></a></td>
 					<td>30th Aug</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Painted+Word+Tom+Wolfe">The Painted Word by Tom Wolfe</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Painted+Word+Tom+Wolfe"><span class="bk-t">The Painted Word</span> <span class="bk-by">by</span> <span class="bk-a">Tom Wolfe</span></a></td>
 					<td>30th Aug</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2017-2">2017 (2)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2017-2"><span class="bk-y">2017</span> <span class="bk-n">(2)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1927,19 +1989,18 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Leviathan+Wakes+James+S.A.+Corey">Leviathan Wakes by James S.A. Corey</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Leviathan+Wakes+James+S.A.+Corey"><span class="bk-t">Leviathan Wakes</span> <span class="bk-by">by</span> <span class="bk-a">James S.A. Corey</span></a></td>
 					<td>6th Oct</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Quicksilver+Neal+Stephenson">Quicksilver by Neal Stephenson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Quicksilver+Neal+Stephenson"><span class="bk-t">Quicksilver</span> <span class="bk-by">by</span> <span class="bk-a">Neal Stephenson</span></a></td>
 					<td>16th Sep</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2016-3">2016 (3)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2016-3"><span class="bk-y">2016</span> <span class="bk-n">(3)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1949,24 +2010,23 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Death%27s+End+Cixin+Liu">Death&rsquo;s End by Cixin Liu</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Death%27s+End+Cixin+Liu"><span class="bk-t">Death&rsquo;s End</span> <span class="bk-by">by</span> <span class="bk-a">Cixin Liu</span></a></td>
 					<td>9th Oct</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Dark+Forest+Cixin+Liu">The Dark Forest by Cixin Liu</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Dark+Forest+Cixin+Liu"><span class="bk-t">The Dark Forest</span> <span class="bk-by">by</span> <span class="bk-a">Cixin Liu</span></a></td>
 					<td>31st Jan</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Ancillary+Justice+Ann+Leckie">Ancillary Justice by Ann Leckie</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Ancillary+Justice+Ann+Leckie"><span class="bk-t">Ancillary Justice</span> <span class="bk-by">by</span> <span class="bk-a">Ann Leckie</span></a></td>
 					<td>17th Jan</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2015-8">2015 (8)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2015-8"><span class="bk-y">2015</span> <span class="bk-n">(8)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -1976,49 +2036,48 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=On+Being+a+Photographer+David+Hurn">On Being a Photographer by David Hurn</a></td>
+					<td><a href="https://bookshop.org/search?keywords=On+Being+a+Photographer+David+Hurn"><span class="bk-t">On Being a Photographer</span> <span class="bk-by">by</span> <span class="bk-a">David Hurn</span></a></td>
 					<td>31st Dec</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Three-Body+Problem+Cixin+Liu">The Three-Body Problem by Cixin Liu</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Three-Body+Problem+Cixin+Liu"><span class="bk-t">The Three-Body Problem</span> <span class="bk-by">by</span> <span class="bk-a">Cixin Liu</span></a></td>
 					<td>12th Sep</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Ready+Player+One+Ernest+Cline">Ready Player One by Ernest Cline</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Ready+Player+One+Ernest+Cline"><span class="bk-t">Ready Player One</span> <span class="bk-by">by</span> <span class="bk-a">Ernest Cline</span></a></td>
 					<td>17th Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Moon+Is+Down+John+Steinbeck">The Moon Is Down by John Steinbeck</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Moon+Is+Down+John+Steinbeck"><span class="bk-t">The Moon Is Down</span> <span class="bk-by">by</span> <span class="bk-a">John Steinbeck</span></a></td>
 					<td>10th Aug</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Martian+Andy+Weir">The Martian by Andy Weir</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Martian+Andy+Weir"><span class="bk-t">The Martian</span> <span class="bk-by">by</span> <span class="bk-a">Andy Weir</span></a></td>
 					<td>2nd Jul</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Seveneves+Neal+Stephenson">Seveneves by Neal Stephenson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Seveneves+Neal+Stephenson"><span class="bk-t">Seveneves</span> <span class="bk-by">by</span> <span class="bk-a">Neal Stephenson</span></a></td>
 					<td>23rd Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Of+Mice+and+Men+John+Steinbeck">Of Mice and Men by John Steinbeck</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Of+Mice+and+Men+John+Steinbeck"><span class="bk-t">Of Mice and Men</span> <span class="bk-by">by</span> <span class="bk-a">John Steinbeck</span></a></td>
 					<td>2nd Apr</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Light%2C+Gesture%2C+and+Color+Jay+Maisel">Light, Gesture, and Color by Jay Maisel</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Light%2C+Gesture%2C+and+Color+Jay+Maisel"><span class="bk-t">Light, Gesture, and Color</span> <span class="bk-by">by</span> <span class="bk-a">Jay Maisel</span></a></td>
 					<td>16th Mar</td>
 					<td>📚</td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2014-1">2014 (1)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2014-1"><span class="bk-y">2014</span> <span class="bk-n">(1)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -2028,14 +2087,13 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Fahrenheit+451+Ray+Bradbury">Fahrenheit 451 by Ray Bradbury</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Fahrenheit+451+Ray+Bradbury"><span class="bk-t">Fahrenheit 451</span> <span class="bk-by">by</span> <span class="bk-a">Ray Bradbury</span></a></td>
 					<td>19th Dec</td>
 					<td>📚</td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2013-2">2013 (2)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2013-2"><span class="bk-y">2013</span> <span class="bk-n">(2)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -2045,19 +2103,18 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Garry+Winogrand+Garry+Winogrand">Garry Winogrand by Garry Winogrand</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Garry+Winogrand+Garry+Winogrand"><span class="bk-t">Garry Winogrand</span> <span class="bk-by">by</span> <span class="bk-a">Garry Winogrand</span></a></td>
 					<td>15th May</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=A+Fire+Upon+the+Deep+Vernor+Vinge">A Fire Upon the Deep by Vernor Vinge</a></td>
+					<td><a href="https://bookshop.org/search?keywords=A+Fire+Upon+the+Deep+Vernor+Vinge"><span class="bk-t">A Fire Upon the Deep</span> <span class="bk-by">by</span> <span class="bk-a">Vernor Vinge</span></a></td>
 					<td>15th May</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2012-3">2012 (3)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2012-3"><span class="bk-y">2012</span> <span class="bk-n">(3)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -2067,24 +2124,23 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Life+of+Pi+Yann+Martel">Life of Pi by Yann Martel</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Life+of+Pi+Yann+Martel"><span class="bk-t">Life of Pi</span> <span class="bk-by">by</span> <span class="bk-a">Yann Martel</span></a></td>
 					<td>2nd Dec</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Aleph+and+Other+Stories+Jorge+Luis+Borges">The Aleph and Other Stories by Jorge Luis Borges</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Aleph+and+Other+Stories+Jorge+Luis+Borges"><span class="bk-t">The Aleph and Other Stories</span> <span class="bk-by">by</span> <span class="bk-a">Jorge Luis Borges</span></a></td>
 					<td>24th Nov</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Ender%27s+Game+Orson+Scott+Card">Ender&rsquo;s Game by Orson Scott Card</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Ender%27s+Game+Orson+Scott+Card"><span class="bk-t">Ender&rsquo;s Game</span> <span class="bk-by">by</span> <span class="bk-a">Orson Scott Card</span></a></td>
 					<td>14th Oct</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2011-2">2011 (2)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2011-2"><span class="bk-y">2011</span> <span class="bk-n">(2)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -2094,19 +2150,18 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Reamde+Neal+Stephenson">Reamde by Neal Stephenson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Reamde+Neal+Stephenson"><span class="bk-t">Reamde</span> <span class="bk-by">by</span> <span class="bk-a">Neal Stephenson</span></a></td>
 					<td>23rd Oct</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Mindfulness+in+Plain+English+Bhante+Henepola+Gunaratana">Mindfulness in Plain English by Bhante Henepola Gunaratana</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Mindfulness+in+Plain+English+Bhante+Henepola+Gunaratana"><span class="bk-t">Mindfulness in Plain English</span> <span class="bk-by">by</span> <span class="bk-a">Bhante Henepola Gunaratana</span></a></td>
 					<td>6th Sep</td>
 					<td>📚</td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2010-6">2010 (6)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2010-6"><span class="bk-y">2010</span> <span class="bk-n">(6)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -2116,39 +2171,38 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Absolute+Superman+Brian+Azzarello">Absolute Superman by Brian Azzarello</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Absolute+Superman+Brian+Azzarello"><span class="bk-t">Absolute Superman</span> <span class="bk-by">by</span> <span class="bk-a">Brian Azzarello</span></a></td>
 					<td>6th Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Siddhartha+Hermann+Hesse">Siddhartha by Hermann Hesse</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Siddhartha+Hermann+Hesse"><span class="bk-t">Siddhartha</span> <span class="bk-by">by</span> <span class="bk-a">Hermann Hesse</span></a></td>
 					<td>12th Apr</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=A+Deepness+in+the+Sky+Vernor+Vinge">A Deepness in the Sky by Vernor Vinge</a></td>
+					<td><a href="https://bookshop.org/search?keywords=A+Deepness+in+the+Sky+Vernor+Vinge"><span class="bk-t">A Deepness in the Sky</span> <span class="bk-by">by</span> <span class="bk-a">Vernor Vinge</span></a></td>
 					<td>14th Mar</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Rendezvous+with+Rama+Arthur+C.+Clarke">Rendezvous with Rama by Arthur C. Clarke</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Rendezvous+with+Rama+Arthur+C.+Clarke"><span class="bk-t">Rendezvous with Rama</span> <span class="bk-by">by</span> <span class="bk-a">Arthur C. Clarke</span></a></td>
 					<td>11th Feb</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Robot+Dreams+Isaac+Asimov">Robot Dreams by Isaac Asimov</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Robot+Dreams+Isaac+Asimov"><span class="bk-t">Robot Dreams</span> <span class="bk-by">by</span> <span class="bk-a">Isaac Asimov</span></a></td>
 					<td>9th Feb</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Food+Rules+Michael+Pollan">Food Rules by Michael Pollan</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Food+Rules+Michael+Pollan"><span class="bk-t">Food Rules</span> <span class="bk-by">by</span> <span class="bk-a">Michael Pollan</span></a></td>
 					<td>17th Jan</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2009-14">2009 (14)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2009-14"><span class="bk-y">2009</span> <span class="bk-n">(14)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -2158,79 +2212,78 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Stranger+in+a+Strange+Land+Robert+A.+Heinlein">Stranger in a Strange Land by Robert A. Heinlein</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Stranger+in+a+Strange+Land+Robert+A.+Heinlein"><span class="bk-t">Stranger in a Strange Land</span> <span class="bk-by">by</span> <span class="bk-a">Robert A. Heinlein</span></a></td>
 					<td>29th Oct</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Zodiac+Neal+Stephenson">Zodiac by Neal Stephenson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Zodiac+Neal+Stephenson"><span class="bk-t">Zodiac</span> <span class="bk-by">by</span> <span class="bk-a">Neal Stephenson</span></a></td>
 					<td>13th Oct</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Snows+of+Kilimanjaro+and+Other+Stories+Ernest+Hemingway">The Snows of Kilimanjaro and Other Stories by Ernest Hemingway</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Snows+of+Kilimanjaro+and+Other+Stories+Ernest+Hemingway"><span class="bk-t">The Snows of Kilimanjaro and Other Stories</span> <span class="bk-by">by</span> <span class="bk-a">Ernest Hemingway</span></a></td>
 					<td>13th Oct</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Forward+the+Foundation+Isaac+Asimov">Forward the Foundation by Isaac Asimov</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Forward+the+Foundation+Isaac+Asimov"><span class="bk-t">Forward the Foundation</span> <span class="bk-by">by</span> <span class="bk-a">Isaac Asimov</span></a></td>
 					<td>9th Sep</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Prelude+to+Foundation+Isaac+Asimov">Prelude to Foundation by Isaac Asimov</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Prelude+to+Foundation+Isaac+Asimov"><span class="bk-t">Prelude to Foundation</span> <span class="bk-by">by</span> <span class="bk-a">Isaac Asimov</span></a></td>
 					<td>31st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Stranger+Albert+Camus">The Stranger by Albert Camus</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Stranger+Albert+Camus"><span class="bk-t">The Stranger</span> <span class="bk-by">by</span> <span class="bk-a">Albert Camus</span></a></td>
 					<td>29th Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Foundation+and+Earth+Isaac+Asimov">Foundation and Earth by Isaac Asimov</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Foundation+and+Earth+Isaac+Asimov"><span class="bk-t">Foundation and Earth</span> <span class="bk-by">by</span> <span class="bk-a">Isaac Asimov</span></a></td>
 					<td>23rd Jul</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Foundation%27s+Edge+Isaac+Asimov">Foundation&rsquo;s Edge by Isaac Asimov</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Foundation%27s+Edge+Isaac+Asimov"><span class="bk-t">Foundation&rsquo;s Edge</span> <span class="bk-by">by</span> <span class="bk-a">Isaac Asimov</span></a></td>
 					<td>8th Jul</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Second+Foundation+Isaac+Asimov">Second Foundation by Isaac Asimov</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Second+Foundation+Isaac+Asimov"><span class="bk-t">Second Foundation</span> <span class="bk-by">by</span> <span class="bk-a">Isaac Asimov</span></a></td>
 					<td>22nd Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Foundation+and+Empire+Isaac+Asimov">Foundation and Empire by Isaac Asimov</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Foundation+and+Empire+Isaac+Asimov"><span class="bk-t">Foundation and Empire</span> <span class="bk-by">by</span> <span class="bk-a">Isaac Asimov</span></a></td>
 					<td>18th Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Foundation+Isaac+Asimov">Foundation by Isaac Asimov</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Foundation+Isaac+Asimov"><span class="bk-t">Foundation</span> <span class="bk-by">by</span> <span class="bk-a">Isaac Asimov</span></a></td>
 					<td>5th Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Omnivore%27s+Dilemma+Michael+Pollan">The Omnivore&rsquo;s Dilemma by Michael Pollan</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Omnivore%27s+Dilemma+Michael+Pollan"><span class="bk-t">The Omnivore&rsquo;s Dilemma</span> <span class="bk-by">by</span> <span class="bk-a">Michael Pollan</span></a></td>
 					<td>1st Jun</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Outliers+Malcolm+Gladwell">Outliers by Malcolm Gladwell</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Outliers+Malcolm+Gladwell"><span class="bk-t">Outliers</span> <span class="bk-by">by</span> <span class="bk-a">Malcolm Gladwell</span></a></td>
 					<td>19th Feb</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Anathem+Neal+Stephenson">Anathem by Neal Stephenson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Anathem+Neal+Stephenson"><span class="bk-t">Anathem</span> <span class="bk-by">by</span> <span class="bk-a">Neal Stephenson</span></a></td>
 					<td>3rd Jan</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="2008-4">2008 (4)</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="2008-4"><span class="bk-y">2008</span> <span class="bk-n">(4)</span></h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -2240,29 +2293,28 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Cat%27s+Cradle+Kurt+Vonnegut">Cat&rsquo;s Cradle by Kurt Vonnegut</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Cat%27s+Cradle+Kurt+Vonnegut"><span class="bk-t">Cat&rsquo;s Cradle</span> <span class="bk-by">by</span> <span class="bk-a">Kurt Vonnegut</span></a></td>
 					<td>15th Sep</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Catcher+in+the+Rye+J.D.+Salinger">The Catcher in the Rye by J.D. Salinger</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Catcher+in+the+Rye+J.D.+Salinger"><span class="bk-t">The Catcher in the Rye</span> <span class="bk-by">by</span> <span class="bk-a">J.D. Salinger</span></a></td>
 					<td>31st Jul</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Slaughterhouse+Five+Kurt+Vonnegut">Slaughterhouse Five by Kurt Vonnegut</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Slaughterhouse+Five+Kurt+Vonnegut"><span class="bk-t">Slaughterhouse Five</span> <span class="bk-by">by</span> <span class="bk-a">Kurt Vonnegut</span></a></td>
 					<td>18th Jul</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Thinking+with+Type+Ellen+Lupton">Thinking with Type by Ellen Lupton</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Thinking+with+Type+Ellen+Lupton"><span class="bk-t">Thinking with Type</span> <span class="bk-by">by</span> <span class="bk-a">Ellen Lupton</span></a></td>
 					<td>12th May</td>
 					<td>📚</td>
 			</tr>
 	</tbody>
-</table>
-<h2 id="previous">Previous</h2>
-<table>
+</table></section>
+<section class="bk-year"><h2 id="previous">Previous</h2><table>
 	<thead>
 			<tr>
 					<th>Title &amp; Author</th>
@@ -2272,127 +2324,125 @@ Previous
 	</thead>
 	<tbody>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Blink+Malcolm+Gladwell">Blink by Malcolm Gladwell</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Blink+Malcolm+Gladwell"><span class="bk-t">Blink</span> <span class="bk-by">by</span> <span class="bk-a">Malcolm Gladwell</span></a></td>
 					<td>22nd Sep</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Second+Coming+of+Steve+Jobs+Alan+Deutschman">The Second Coming of Steve Jobs by Alan Deutschman</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Second+Coming+of+Steve+Jobs+Alan+Deutschman"><span class="bk-t">The Second Coming of Steve Jobs</span> <span class="bk-by">by</span> <span class="bk-a">Alan Deutschman</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Fugitives+and+Refugees+Chuck+Palahniuk">Fugitives and Refugees by Chuck Palahniuk</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Fugitives+and+Refugees+Chuck+Palahniuk"><span class="bk-t">Fugitives and Refugees</span> <span class="bk-by">by</span> <span class="bk-a">Chuck Palahniuk</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Down+and+Out+in+the+Magic+Kingdom+Cory+Doctorow">Down and Out in the Magic Kingdom by Cory Doctorow</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Down+and+Out+in+the+Magic+Kingdom+Cory+Doctorow"><span class="bk-t">Down and Out in the Magic Kingdom</span> <span class="bk-by">by</span> <span class="bk-a">Cory Doctorow</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Pattern+Recognition+William+Gibson">Pattern Recognition by William Gibson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Pattern+Recognition+William+Gibson"><span class="bk-t">Pattern Recognition</span> <span class="bk-by">by</span> <span class="bk-a">William Gibson</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Why+I+Am+So+Wise+Friedrich+Nietzsche">Why I Am So Wise by Friedrich Nietzsche</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Why+I+Am+So+Wise+Friedrich+Nietzsche"><span class="bk-t">Why I Am So Wise</span> <span class="bk-by">by</span> <span class="bk-a">Friedrich Nietzsche</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Zen+Flesh%2C+Zen+Bones+Paul+Reps">Zen Flesh, Zen Bones by Paul Reps</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Zen+Flesh%2C+Zen+Bones+Paul+Reps"><span class="bk-t">Zen Flesh, Zen Bones</span> <span class="bk-by">by</span> <span class="bk-a">Paul Reps</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Interpreter+of+Maladies+Jhumpa+Lahiri">Interpreter of Maladies by Jhumpa Lahiri</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Interpreter+of+Maladies+Jhumpa+Lahiri"><span class="bk-t">Interpreter of Maladies</span> <span class="bk-by">by</span> <span class="bk-a">Jhumpa Lahiri</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Mind%27s+Eye+Henri+Cartier-Bresson">The Mind&rsquo;s Eye by Henri Cartier-Bresson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Mind%27s+Eye+Henri+Cartier-Bresson"><span class="bk-t">The Mind&rsquo;s Eye</span> <span class="bk-by">by</span> <span class="bk-a">Henri Cartier-Bresson</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Camera+Ansel+Adams">The Camera by Ansel Adams</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Camera+Ansel+Adams"><span class="bk-t">The Camera</span> <span class="bk-by">by</span> <span class="bk-a">Ansel Adams</span></a></td>
 					<td>1st Aug</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Welcome+to+the+Monkey+House+Kurt+Vonnegut">Welcome to the Monkey House by Kurt Vonnegut</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Welcome+to+the+Monkey+House+Kurt+Vonnegut"><span class="bk-t">Welcome to the Monkey House</span> <span class="bk-by">by</span> <span class="bk-a">Kurt Vonnegut</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Freakonomics+Steven+D.+Levitt">Freakonomics by Steven D. Levitt</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Freakonomics+Steven+D.+Levitt"><span class="bk-t">Freakonomics</span> <span class="bk-by">by</span> <span class="bk-a">Steven D. Levitt</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Search+John+Battelle">The Search by John Battelle</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Search+John+Battelle"><span class="bk-t">The Search</span> <span class="bk-by">by</span> <span class="bk-a">John Battelle</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Diamond+Age+Neal+Stephenson">The Diamond Age by Neal Stephenson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Diamond+Age+Neal+Stephenson"><span class="bk-t">The Diamond Age</span> <span class="bk-by">by</span> <span class="bk-a">Neal Stephenson</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Cryptonomicon+Neal+Stephenson">Cryptonomicon by Neal Stephenson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Cryptonomicon+Neal+Stephenson"><span class="bk-t">Cryptonomicon</span> <span class="bk-by">by</span> <span class="bk-a">Neal Stephenson</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Snow+Crash+Neal+Stephenson">Snow Crash by Neal Stephenson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Snow+Crash+Neal+Stephenson"><span class="bk-t">Snow Crash</span> <span class="bk-by">by</span> <span class="bk-a">Neal Stephenson</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Structure+of+Scientific+Revolutions+Thomas+S.+Kuhn">The Structure of Scientific Revolutions by Thomas S. Kuhn</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Structure+of+Scientific+Revolutions+Thomas+S.+Kuhn"><span class="bk-t">The Structure of Scientific Revolutions</span> <span class="bk-by">by</span> <span class="bk-a">Thomas S. Kuhn</span></a></td>
 					<td>1st Aug</td>
 					<td>📚</td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Surely+You%27re+Joking%2C+Mr.+Feynman%21+Richard+P.+Feynman">Surely You&rsquo;re Joking, Mr. Feynman! by Richard P. Feynman</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Surely+You%27re+Joking%2C+Mr.+Feynman%21+Richard+P.+Feynman"><span class="bk-t">Surely You&rsquo;re Joking, Mr. Feynman!</span> <span class="bk-by">by</span> <span class="bk-a">Richard P. Feynman</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=Winogrand%3A+Figments+from+the+Real+World+Garry+Winogrand">Winogrand: Figments from the Real World by Garry Winogrand</a></td>
+					<td><a href="https://bookshop.org/search?keywords=Winogrand%3A+Figments+from+the+Real+World+Garry+Winogrand"><span class="bk-t">Winogrand: Figments from the Real World</span> <span class="bk-by">by</span> <span class="bk-a">Garry Winogrand</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=The+Ultimate+Hitchhiker%27s+Guide+to+the+Galaxy+Douglas+Adams">The Ultimate Hitchhiker&rsquo;s Guide to the Galaxy by Douglas Adams</a></td>
+					<td><a href="https://bookshop.org/search?keywords=The+Ultimate+Hitchhiker%27s+Guide+to+the+Galaxy+Douglas+Adams"><span class="bk-t">The Ultimate Hitchhiker&rsquo;s Guide to the Galaxy</span> <span class="bk-by">by</span> <span class="bk-a">Douglas Adams</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=On+Intelligence+Jeff+Hawkins">On Intelligence by Jeff Hawkins</a></td>
+					<td><a href="https://bookshop.org/search?keywords=On+Intelligence+Jeff+Hawkins"><span class="bk-t">On Intelligence</span> <span class="bk-by">by</span> <span class="bk-a">Jeff Hawkins</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=On+Art+and+Life+John+Ruskin">On Art and Life by John Ruskin</a></td>
+					<td><a href="https://bookshop.org/search?keywords=On+Art+and+Life+John+Ruskin"><span class="bk-t">On Art and Life</span> <span class="bk-by">by</span> <span class="bk-a">John Ruskin</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 			<tr>
-					<td><a href="https://bookshop.org/search?keywords=A+Short+History+of+Nearly+Everything+Bill+Bryson">A Short History of Nearly Everything by Bill Bryson</a></td>
+					<td><a href="https://bookshop.org/search?keywords=A+Short+History+of+Nearly+Everything+Bill+Bryson"><span class="bk-t">A Short History of Nearly Everything</span> <span class="bk-by">by</span> <span class="bk-a">Bill Bryson</span></a></td>
 					<td>1st Aug</td>
 					<td></td>
 			</tr>
 	</tbody>
-</table>
-</section>
+</table></section>
 
-  </div>
-
-  </article></main><footer class="site-footer">
+</article>
+</main><footer class="site-footer">
   <div>© 2004-2026 samgrover.com</div>
 </footer>
 </body>
